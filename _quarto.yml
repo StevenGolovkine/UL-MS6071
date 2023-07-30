@@ -16,6 +16,11 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    css:
+    - ./ul.css
+    - include/webex.css
+    smooth-scroll: true
+    include-after-body: include/webex.js
   pdf:
     documentclass: scrreprt
 
