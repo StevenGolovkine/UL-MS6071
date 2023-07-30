@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 05f4ac97-d5e3-42d3-8b60-8327a4b5ed8e
+      url: 'https://r-programming-course.netlify.app'
