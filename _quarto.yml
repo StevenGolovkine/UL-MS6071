@@ -2,8 +2,8 @@ project:
   type: book
 
 book:
-  title: "test"
-  author: "Norah Jones"
+  title: "R programming course"
+  author: "Steven Golovkine"
   date: "7/30/2023"
   chapters:
     - index.qmd
