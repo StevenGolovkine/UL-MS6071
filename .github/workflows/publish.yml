@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   push:
-    branches: main
+    branches: [main]
 
 name: Quarto Publish
 
@@ -14,6 +14,8 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true 
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2
