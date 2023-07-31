@@ -1,29 +1,95 @@
 project:
-  type: book
+  type: website
 
-book:
-  title: "R programming course"
-  author: "Steven Golovkine"
-  date: "7/30/2023"
-  chapters:
-    - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+website:
+  page-navigation: true
+  title: "R for Statistical Data Science"
+  description: "Homepage for STA 210 - Regression Analysis at Duke University, Spring 2022."
+  site-url: "https://r-programming-course.netlify.app"
 
-bibliography: references.bib
+  repo-url: https://github.com/StevenGolovkine/MSDSSLTFA_R_course
+  repo-actions: [edit, issue]
+
+  open-graph: true
+
+  page-footer:
+    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+    left: "&copy; Copyright 2023, Steven Golovkine"
+    background: "#D9E3E4"
+
+  sidebar:
+    background: "#D9E3E4"
+    # logo: "images/logo.png"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/StevenGolovkine/MSDSSLTFA_R_course
+        text: "GitHub organization"
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - section: "Course information"
+        contents:
+          - href: information/overview.qmd
+            text: Overview
+          - href: information/syllabus.qmd
+            text: Syllabus
+          - href: information/support.qmd
+            text: Support
+          - href: information/team.qmd
+            text: Teaching team
+          - href: index.qmd
+            text: Schedule
+          - href: information/links.qmd
+            text: Useful links
+          - href: information/faq.qmd
+            text: FAQ
+      - section: "Project"
+        contents:
+          - href: project/description.qmd
+            text: Description
+          - href: project/tips-resources.qmd
+            text: Tips + resources
+      - section: "Weekly materials"
+        contents:
+          - href: weeks/week-1.qmd
+            text: "Week 1"
+          - href: weeks/week-2.qmd
+            text: "Week 2"
+          - href: weeks/week-3.qmd
+            text: "Week 3"
+          - href: weeks/week-4.qmd
+            text: "Week 4"
+          - href: weeks/week-5.qmd
+            text: "Week 5"
+          - href: weeks/week-6.qmd
+            text: "Week 6"
+          - href: weeks/week-7.qmd
+            text: "Week 7"
+          - href: weeks/week-8.qmd
+            text: "Week 8"
+          - href: weeks/week-9.qmd
+            text: "Week 9"
+          - href: weeks/week-10.qmd
+            text: "Week 10"
+          - href: weeks/week-11.qmd
+            text: "Week 11"
+          - href: weeks/week-12.qmd
+            text: "Week 12"
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: [cosmo]
     css:
     - ./ul.css
     - include/webex.css
+    code-copy: true
+    code-overflow: wrap
+    toc: true
     smooth-scroll: true
     include-after-body: include/webex.js
-  pdf:
-    documentclass: scrreprt
 
-execute:
-  freeze: auto
-
+freeze: auto

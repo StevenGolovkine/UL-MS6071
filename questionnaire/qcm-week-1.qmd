@@ -1,0 +1,102 @@
+---
+title: "Basics - Questionnaire"
+engine: knitr
+---
+
+```{r}
+#| echo: false
+library(webexercises)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+question <- "Which function is used to install packages in R?"
+question_choices <- c(
+    "`package_install()`",
+    answer = "`install.packages()`",
+    "`package_installation()`",
+    "`library_install(`)"
+)
+cat(question, longmcq(question_choices))
+
+question <- "What is the correct syntax for creating a vector in R?"
+question_choices <- c(
+    "`vec(1, 2, 3)`",
+    "`vector(1, 2, 3)`",
+    answer = "`c(1, 2, 3)`",
+    "`array(1, 2, 3)`"
+)
+cat(question, longmcq(question_choices))
+
+question <- "To access the help documentation for a specific function in R, you can use:"
+question_choices <- c(
+    answer = "`help(function_name)`",
+    "`??function_name`",
+    "`documentation(function_name)`",
+    "`get_help(function_name)`"
+)
+cat(question, longmcq(question_choices))
+
+question <- "Which symbol is used for assignment in R?"
+question_choices <- c(
+    "`~`",
+    "`-`",
+    "`<<`",
+    answer = "`<-`"
+)
+cat(question, longmcq(question_choices))
+
+question <- "What does the `class()` function in R do?"
+question_choices <- c(
+    "Returns the dimensions of an object",
+    answer = "Returns the data type of an object",
+    "Converts an object to a character type",
+    "Checks if an object is empty"
+)
+cat(question, longmcq(question_choices))
+
+question <- "Which function is used to generate a sequence of numbers in R?"
+question_choices <- c(
+    answer = "`seq()`",
+    "`create_seq()`",
+    "`range()`",
+    "`generate_sequence()`"
+)
+cat(question, longmcq(question_choices))
+
+question <- "In R, how do you check if a certain element exists in a vector?"
+question_choices <- c(
+    "`is_element()`",
+    "`exists()`",
+    "`in_vector()`",
+    answer = "`%in%`"
+)
+cat(question, longmcq(question_choices))
+
+question <- "What is the output of the following R code?\n
+    x <- 10
+    y <- 5
+    result <- x * y
+    print(result)
+"
+question_choices <- c(
+    "`NULL`",
+    "Error: unexpected 'print'",
+    answer = "50",
+    "The code does not produce any output"
+)
+cat(question, longmcq(question_choices))
+
+question <- "The `data.frame()` function in R is used to create:"
+question_choices <- c(
+    "Matrices",
+    answer = "Data frames",
+    "Vectors",
+    "Arrays"
+)
+cat(question, longmcq(question_choices))
+
+```
+
+
