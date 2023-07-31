@@ -97,6 +97,49 @@ question_choices <- c(
 )
 cat(question, longmcq(question_choices))
 
+question <- "What is the purpose of the 'if-else' statement?"
+question_choices <- c(
+    answer = "To conditionally execute code based on a logical test",
+    "To create a loop that repeats a block of code",
+    "To define a function in R",
+    "To assign a value to a variable"
+)
+cat(question, longmcq(question_choices))
+
+question <- "Which operator is used to combine multiple conditions in an 'if' statement?"
+question_choices <- c(
+    "`&`",
+    "`+`",
+    answer = "`&&`",
+    "`%>%`"
+)
+cat(question, longmcq(question_choices))
+
+question <- "What will be the output of the following 'if-else' statement?\n
+    x <- 5
+    if (x < 3) {
+        result <- 'small'
+    } else {
+        result <- 'large'
+    }
+    print(result)
+"
+question_choices <- c(
+    "'small'",
+    answer = "'large'",
+    "'x < 3'",
+    "Error: unexpected symbol"
+)
+cat(question, longmcq(question_choices))
+
+question <- "In an `if-else` statement, if the condition in `if` is FALSE, and there is no `else` statement, what happens?"
+question_choices <- c(
+    "The program exits with an error",
+    "The `if-else` statement automatically creates an `else` block",
+    answer = "The program continues without executing the `if` block",
+    "The program enters an infinite loop"
+)
+cat(question, longmcq(question_choices))
 ```
 
 
