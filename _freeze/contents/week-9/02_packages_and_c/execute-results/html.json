@@ -1,0 +1,14 @@
+{
+  "hash": "2f158d3b753938e292a075a961e0bce8",
+  "result": {
+    "markdown": "---\ntitle: \"Packaging with C++ integration\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

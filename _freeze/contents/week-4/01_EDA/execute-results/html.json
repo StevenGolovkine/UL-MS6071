@@ -1,0 +1,14 @@
+{
+  "hash": "ac5f951abd76fcd23bf39b611ad0f37c",
+  "result": {
+    "markdown": "---\ntitle: \"Exploratory Data Analysis using R\"\nengine: knitr\n---\n\n\n\n\nData are being generated on a huge scale in every area of our lives. How do we extract valuable information and draw meaningful conclusions from data? The term *data analytics* is often used in place of the term *statistics*. Statistics (data analytics) is the science of learning from data that gives us the tools to answer interesting questions!\n\n## Data collection\n\nThe data collection process is the MOST important step but is often ignored or given little thought. Data tend to be collected in a very ad hoc way, without thinking about the problem at hand. There is **nothing** data analytics (or statistics or machine learning or AI!) can do if the data are poor quality.\n\n## Descriptive statistics \n\nAlso called *exploratory analysis*. Creates simple summaries of the data to describe and understand the data, and how the variables relate to one another. \n\nConsists of two parts:  \n\n1. Data visualisation \n2. Numerical summaries (e.g. mean, median, standard deviation, variance, etc.)\n\n\n## Statistical inference\n\nStatistical inference means interpreting and drawing conclusions from the data in the presence of variability.\n\nGeneralising the results.\n\nUses hypothesis testing, confidence intervals, predictive modelling, etc.\n\n## Goal\n\nHave sets of variables that have something in common but differ from individual to individual.\n\nDifferent values  => *variability*.\n\nVariability can obscure the patterns (signal) which are of interest to us. \n\nStatistics helps us to distinguish the pattern (signal) from the variability (noise).\n\n\n## Sources of variability\n\nThere are two main sources of variability.\n\n- **Natural variation**: e.g. genetic, environmental. Try to average out sources of variation that we cannot control by carrying out data collection in a well-planned way.\n- **Measurement process variation**: e.g. rounding error, instrumentation may not be sensitive enough, human error, etc.\n\n## Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

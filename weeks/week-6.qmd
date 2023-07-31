@@ -7,9 +7,13 @@ editor: visual
 
 ## Prepare
 
-📖 Read the [syllabus](/course-syllabus.html)
+📖 Interactivity [🔗](/contents/week-6/01_interactivity.qmd)
 
-📖 Read the [support](/course-support.html) resources
+📖 Shiny [🔗](/contents/week-6/02_shiny.qmd)
+
+📖 Flexdashboard [🔗](/contents/week-6/03_flexdashboard.qmd)
+
+📖 Plotly [🔗](/contents/week-6/04_plotly.qmd)
 
 
 ## Questionnaire

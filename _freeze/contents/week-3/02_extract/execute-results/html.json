@@ -1,0 +1,14 @@
+{
+  "hash": "22d36a089d0b48f404c37e8444560f63",
+  "result": {
+    "markdown": "---\ntitle: \"Extract\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

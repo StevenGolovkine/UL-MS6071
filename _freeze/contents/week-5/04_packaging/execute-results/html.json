@@ -1,0 +1,14 @@
+{
+  "hash": "a90df9fa13fa8fa40b771e23fcf3d7d1",
+  "result": {
+    "markdown": "---\ntitle: \"Packaging in R\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

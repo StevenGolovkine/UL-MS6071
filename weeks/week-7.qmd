@@ -7,9 +7,13 @@ editor: visual
 
 ## Prepare
 
-📖 Read the [syllabus](/course-syllabus.html)
+📖 Simulation [🔗](/contents/week-7/01_simulation.qmd)
 
-📖 Read the [support](/course-support.html) resources
+📖 Distributions [🔗](/contents/week-7/02_distributions.qmd)
+
+📖 Models [🔗](/contents/week-7/03_models.qmd)
+
+📖 Monte-Carlo [🔗](/contents/week-7/04_monte_carlo.qmd)
 
 
 ## Questionnaire

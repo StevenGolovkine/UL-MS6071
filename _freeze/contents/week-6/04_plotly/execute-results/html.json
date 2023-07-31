@@ -1,0 +1,14 @@
+{
+  "hash": "06e6a1b1679c4725a6c4ebc585f2b3dd",
+  "result": {
+    "markdown": "---\ntitle: \"Interactive plots in plotly\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

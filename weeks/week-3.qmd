@@ -7,9 +7,13 @@ editor: visual
 
 ## Prepare
 
-📖 Read the [syllabus](/course-syllabus.html)
+📖 ETL [🔗](/contents/week-3/01_ETL.qmd)
 
-📖 Read the [support](/course-support.html) resources
+📖 Extract [🔗](/contents/week-3/02_extract.qmd)
+
+📖 Transform [🔗](/contents/week-3/03_transform.qmd)
+
+📖 Load [🔗](/contents/week-3/04_load.qmd)
 
 
 ## Questionnaire

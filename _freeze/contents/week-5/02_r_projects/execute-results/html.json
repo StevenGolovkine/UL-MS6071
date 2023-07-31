@@ -1,0 +1,14 @@
+{
+  "hash": "f96a1919559609ca45322e21bbbebda1",
+  "result": {
+    "markdown": "---\ntitle: \"R projects\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

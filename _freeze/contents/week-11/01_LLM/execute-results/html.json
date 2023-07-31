@@ -1,0 +1,14 @@
+{
+  "hash": "a5dc348cd1bc4e1f5f33867bbd2443ff",
+  "result": {
+    "markdown": "---\ntitle: \"Large Language Model\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

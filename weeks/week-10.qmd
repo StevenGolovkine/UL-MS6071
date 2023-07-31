@@ -7,9 +7,15 @@ editor: visual
 
 ## Prepare
 
-📖 Read the [syllabus](/course-syllabus.html)
+📖 Memory Issues [🔗](/contents/week-10/01_memory_issues.qmd)
 
-📖 Read the [support](/course-support.html) resources
+📖 Large Files [🔗](/contents/week-10/02_large_files.qmd)
+
+📖 Sparse Matrices [🔗](/contents/week-10/03_sparse_matrices.qmd)
+
+📖 Packages for large files [🔗](/contents/week-10/04_packages_large_files.qmd)
+
+📖 Parallelisation [🔗](/contents/week-10/05_parallelisation.qmd)
 
 
 ## Questionnaire

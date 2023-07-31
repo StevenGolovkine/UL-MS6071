@@ -7,9 +7,11 @@ editor: visual
 
 ## Prepare
 
-📖 Read the [syllabus](/course-syllabus.html)
+📖 C++ [🔗](/contents/week-9/01_c_plus_plus.qmd)
 
-📖 Read the [support](/course-support.html) resources
+📖 Packaging [🔗](/contents/week-9/02_packages_and_c.qmd)
+
+📖 Armadillo [🔗](/contents/week-9/03_armadillo.qmd)
 
 
 ## Questionnaire

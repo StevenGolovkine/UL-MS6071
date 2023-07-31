@@ -1,0 +1,14 @@
+{
+  "hash": "9c33c1ecab695dc8e6d6dcf0366de39e",
+  "result": {
+    "markdown": "---\ntitle: \"Memory Issues in R\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

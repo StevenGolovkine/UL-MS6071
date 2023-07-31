@@ -7,9 +7,9 @@ editor: visual
 
 ## Prepare
 
-📖 Read the [syllabus](/course-syllabus.html)
+📖 Large Language Models [🔗](/contents/week-11/01_LLM.qmd)
 
-📖 Read the [support](/course-support.html) resources
+📖 Request API [🔗](/contents/week-11/02_request_API.qmd)
 
 
 ## Questionnaire

@@ -7,9 +7,9 @@ editor: visual
 
 ## Prepare
 
-📖 Read the [syllabus](/course-syllabus.html)
+📖 Code Debugging [🔗](/contents/week-8/01_code_debugging.qmd)
 
-📖 Read the [support](/course-support.html) resources
+📖 Code Profiling [🔗](/contents/week-8/02_code_profiling.qmd)
 
 
 ## Questionnaire

@@ -1,0 +1,14 @@
+{
+  "hash": "3202c275907193fb7a7068ffac7c871c",
+  "result": {
+    "markdown": "---\ntitle: \"Transform\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

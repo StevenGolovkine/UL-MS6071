@@ -7,10 +7,9 @@ editor: visual
 
 ## Prepare
 
-📖 Read the [syllabus](/course-syllabus.html)
+📖 Exploratory Data Analysis [🔗](/contents/week-4/01_EDA.qmd)
 
-📖 Read the [support](/course-support.html) resources
-
+📖 Statistical Plots [🔗](/contents/week-4/02_statistical_plots.qmd)
 
 ## Questionnaire
 
