@@ -1,0 +1,14 @@
+{
+  "hash": "bbf4dad0d864c86c2f754640683c1537",
+  "result": {
+    "markdown": "---\ntitle: \"Functional programming with purrr\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

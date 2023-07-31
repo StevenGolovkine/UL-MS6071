@@ -1,0 +1,14 @@
+{
+  "hash": "03d4c293ad2c6d783bc444d8b02fa80e",
+  "result": {
+    "markdown": "---\ntitle: \"Other packages\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

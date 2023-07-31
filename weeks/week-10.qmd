@@ -1,0 +1,27 @@
+---
+title: "Week 10"
+subtitle: "Memory Issues"
+editor: visual
+---
+
+
+## Prepare
+
+📖 Read the [syllabus](/course-syllabus.html)
+
+📖 Read the [support](/course-support.html) resources
+
+
+## Questionnaire
+
+⌨️ [Questionnaire R Basics](/questionnaire/qcm-week-10.qmd)
+
+## Practice
+
+📋 [Tutorials](/labs/lab-week-10.qmd)
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [course schedule](/ "Course schedule") ⏎
+:::

@@ -1,9 +1,6 @@
 ---
 title: "Types and Classes in R"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
 ## R types

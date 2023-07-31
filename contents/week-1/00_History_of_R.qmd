@@ -1,0 +1,48 @@
+---
+title: "Quick History of R"
+engine: knitr
+---
+
+## Origins of R
+
+R is an open source version of the S language. It has been created by R. Ihaka and R. Gentleman in 1993. It has been released under the GNU General Public License (GPL) and is maintained by the R Core Team.
+
+::: {#fig-creators}
+
+![](images/RossIhaka_RobertGentleman.jpg)
+
+The creators of R: Ihaka and Gentleman.
+
+:::
+
+## The R philosophy
+
+The language emphasizes ease of use, extensive graphics capabilities and simple programming. It makes state-of-the-art statistical methodology accessible to users. It provides a broad, extensible, and integrated environment for data analysis. Despite its simplicity, it is flexible enough for experienced programmers to extend.
+
+## Basic features of R
+
+Nowadays, a core group controls the primary source code for R. R runs on any standard computing platform and operating system. It has regular updates and releases, where major new features are incorporated and released to the public. Many people worldwide make contributions to R via bug fixes, creating new features, or creating add-on *packages* (more later).
+
+## Why using R?
+
+R has extremely powerful functionality for statistical modelling and data analytics. R has exceptional, sophisticated data visualization capabilities. (Follow the #TidyTuesday hashtag on Twitter for some inspiration!) The development of RStudio as a companion to R has been a game-changer.
+
+And it's open-source!
+
+
+::: {#fig-art layout-ncol=2}
+
+![Interacting paths.](./images/pollen_small.jpg){#fig-path}
+
+![Bound.](./images/dreamlike_small.jpg){#fig-bound}
+
+R Art by [Danielle Navarro](https://art.djnavarro.net/).
+:::
+
+## Additional resources
+
+For further information:
+
+- Official [R website](https://www.r-project.org).
+
+- The Wikipedia [page](https://en.wikipedia.org/wiki/R_(programming_language)).

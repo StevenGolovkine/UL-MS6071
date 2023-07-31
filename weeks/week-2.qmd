@@ -1,0 +1,36 @@
+---
+title: "Week 2"
+subtitle: "Tidyverse"
+editor: visual
+---
+
+
+## Prepare
+
+📖 The Tidyverse [🔗](/contents/week-2/01_tidyverse.qmd)
+
+📖 Tibble [🔗](/contents/week-2/02_readr_tibble.qmd)
+
+📖 dplyr [🔗](/contents/week-2/03_dplyr.qmd)
+
+📖 tidyr [🔗](/contents/week-2/04_tidyr.qmd)
+
+📖 purrr [🔗](/contents/week-2/05_purrr.qmd)
+
+📖 ggplot2 [🔗](/contents/week-2/06_ggplot.qmd)
+
+📖 Others packages [🔗](/contents/week-2/07_others.qmd)
+
+## Questionnaire
+
+⌨️ [Questionnaire R Basics](/questionnaire/qcm-week-2.qmd)
+
+## Practice
+
+📋 [Tutorials](/labs/lab-week-2.qmd)
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [course schedule](/ "Course schedule") ⏎
+:::

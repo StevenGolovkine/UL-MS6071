@@ -1,0 +1,19 @@
+---
+title: "Week 12"
+subtitle: "Group projects"
+editor: visual
+---
+
+
+## Prepare
+
+📖 Read the [syllabus](/course-syllabus.html)
+
+📖 Read the [support](/course-support.html) resources
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [course schedule](/ "Course schedule") ⏎
+:::

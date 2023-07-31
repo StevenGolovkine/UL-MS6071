@@ -1,0 +1,14 @@
+{
+  "hash": "1e2019cd7cb487e932525e5724d498ad",
+  "result": {
+    "markdown": "---\ntitle: \"Data reading and storing with readr and tibble\"\nengine: knitr\n---\n\n\n\n\nIn most data analytics projects, data will need to be read into R from an external file.  The `readr` package is part of the `tidyverse` and was created to read in large, flat data files (e.g. csv, text) to R. The package is built on similar base R functions but has made them much more efficient. It also interacts consistently with other `tidyverse` packages.\n\n## readr functions\n\nThere are several `readr` functions to choose from. These are:\n    \n* **read_csv()** - reads comma delimited files.\n* **read_tsv()** - reads tab delimited files.\n* **read_delim()** - reads in files with any delimiter.\n* **read_table()** - reads in fixed width files where columns are separated by white space.\n\nThe function used will depend on the type of file that is being read into R.\n\n## How to use read_csv()\n\nA typical call to `read_csv()` has the form:\n\n::: {.cell}\n\n```{.r .cell-code}\ntibble_name <- read_csv(file = \"filepath/filename.csv\")\n```\n:::\n\n\nThe `file = ` argument is used to specify the file location (filepath), and the name of the file being read in (filename.csv). The function returns a tibble which can be stored with a name of your choice.\n\nThe `col_names` argument of the `read_csv()` function can be `TRUE` or `FALSE` or a character vector of column names. If `TRUE` (the default) the first row of input in the csv file will be used as the column names. If `FALSE` column names will be generated automatically (`X1`, `X2`, etc.). If a character vector, these will be used as the column names. By default, `read_csv()` reads in a csv file line-by-line. It will also read in the first few rows of the data and try to figure out the data type/class of each column. Sometimes it can make mistakes when doing this and often it is a good idea to explicitly specify the column types. This is achieved using the `col_types` argument. For example if a file has 10 columns, 8 of which are character and 2 of which are integer we can specify:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nmy_dat <- read_csv(\"data/filename.csv\", col_types = \"ccicccccci\")\n```\n:::\n\n\nThe `col_types = c` means that column stores character values. The `col_types = i` means that column stores integer values.\n\n## Checking the data\n\nIt is good practice to check that the data have read in correctly to R. Use the `head()`, `tail()`, `summarise()`, `str()`, `dim()` commands to quickly check for any anomalies.\n\n**NOTE**: To read in Excel files, another package (`readxl`) can be downloaded and used to achieve this.\n\n\n## Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

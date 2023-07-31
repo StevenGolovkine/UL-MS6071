@@ -1,0 +1,3 @@
+# R for Statistical Data Science
+
+R is the core programming language in statistical data science. This module will start with an introduction to programming in R, building to more complex topics such as writing R packages. The module will cover data wrangling, data visualisation and dash-boarding, statistical modelling in R, and how to create R packages. Students will also learn about reproducible research, coding and modelling practices.

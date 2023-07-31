@@ -15,10 +15,10 @@ website:
   page-footer:
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
     left: "&copy; Copyright 2023, Steven Golovkine"
-    background: "#D9E3E4"
+    background: "#fdf5e6"
 
   sidebar:
-    background: "#D9E3E4"
+    background: "#fdf5e6"
     # logo: "images/logo.png"
     pinned: true
     align: center
@@ -38,8 +38,6 @@ website:
             text: Syllabus
           - href: information/support.qmd
             text: Support
-          - href: information/team.qmd
-            text: Teaching team
           - href: index.qmd
             text: Schedule
           - href: information/links.qmd

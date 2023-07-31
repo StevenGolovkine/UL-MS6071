@@ -7,18 +7,35 @@ editor: visual
 
 ## Prepare
 
-📖 Read the [syllabus](/course-syllabus.html)
+📖 Quick history of R [🔗](/contents/week-1/00_History_of_R.qmd)
 
-📖 Read the [support](/course-support.html) resources
+📖 R Basics [🔗](/contents/week-1/01_R_Basics.qmd)
 
+📖 Types and Classes [🔗](/contents/week-1/02_R_Types_Classes.qmd)
+
+📖 Logical Operators [🔗](/contents/week-1/03_Logical_Ops.qmd)
+
+📖 Vectors [🔗](/contents/week-1/04_Vectors.qmd)
+
+📖 Lists [🔗](/contents/week-1/05_Lists.qmd)
+
+📖 Functions [🔗](/contents/week-1/06_Functions.qmd)
+
+📖 Conditional Statements [🔗](/contents/week-1/07_If_Else.qmd)
+
+📖 Loops [🔗](/contents/week-1/08_Loops.qmd)
+
+📖 Dataframes [🔗](/contents/week-1/09_Dataframes.qmd)
+
+📖 Packages [🔗](/contents/week-1/10_Packages.qmd)
 
 ## Questionnaire
 
-⌨️ [Questionnaire R Basics](/questionnaire/qcm-week-1.qmd)
+📋 Questionnaire R Basics [🔗](/questionnaire/qcm-week-1.qmd)
 
 ## Practice
 
-📋 [AE 0 - Movies](/ae/ae-0-movies.html)
+⌨️ Tutorial [🔗](/labs/lab-week-1.qmd)
 
 <br><br>
 

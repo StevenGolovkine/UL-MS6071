@@ -1,0 +1,261 @@
+---
+title: "Data visualisation with ggplot2"
+engine: knitr
+---
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| include: false
+library(palmerpenguins)
+library(tidyverse)
+```
+
+We have seen that R's base graphics system can create plots or graphs, with the ability to control almost every aspect of them. The `ggplot2` package is part of the `tidyverse` and is used to create complex and sophisticated visualisations of large data sets. The package uses the *grammar of graphics* (gg), a coherent system for building graphics. `ggplot2` creates graphics iteratively over several layers. You can read more about it [here](https://ggplot2-book.org/getting-started.html).
+
+## Creating a ggplot
+
+The `ggplot()` function is used to create a ggplot. The function works on data frames rather than vectors like in base R. Once a basic ggplot has been created, the plot can be enhanced by adding more layers to it.
+
+A ggplot has three key components:  
+
+1. **Data** - ggplot() requires a data frame to be supplied in tidy format.  
+2. **Mapping** - aesthetic mapping(s) between variables in the data and visual properties.  
+3. **Layer(s)** - at least one layer describing how to render (i.e. plot) each observation. Usually created using `geom` functions.
+
+
+## Scatterplot bill length vs flipper length
+
+```{r plot1}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(
+    data = penguins, # data
+    aes(x = bill_length_mm, y = flipper_length_mm)  # aesthetic
+) + 
+  geom_point()  # layer
+```
+
+This produces a scatterplot defined by:
+
+1. **Data:** penguins
+2. **Mapping:** bill length mapped to x axis, flipper length to y axis
+3. **Layer:** points
+
+## The data
+
+The first argument specified is the data frame to be used in the plotting process. Here this is the penguins data frame. Using `ggplot(data = penguins)` will create an empty plot (try it!). We can then add layers to that plot. By default these layers will use the data specified in the `ggplot()` command, however we can change this behaviour if needed.
+
+## Mappings and aesthetics
+
+The `aes()` command is a mapping from the columns in our data to aesthetics which are the visual properties of our plot.  In most scenarios this will map columns to the x and/or y-axes. We can also map columns of our data to colour, shape or size of the plotted points, for example.
+
+## Geometries
+
+Layers are added using *geometries* or `geom` functions and the `+` operator. The `geom`s automatically inherit the default aesthetic mappings specified in the `ggplot()` command, however this behaviour can be modified. 
+
+Examples include:
+
+* `geom_point()` - adds a layer of points to the plot
+* `geom_lines()` - adds a layer of lines to the plot
+* `geom_histogram()` - adds a histogram to the plot
+* `geom_boxplot()` - adds a boxplot to the plot
+* `geom_smooth()` - adds a smoother to the plot
+
+
+### Boxplot of bill length
+
+```{r plot2}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(
+    data = penguins,  # data
+    aes(y = bill_length_mm)  # aesthetic
+) + 
+    geom_boxplot()  # layer
+```
+
+This produces a boxplot defined by:
+
+1. **Data:** penguins
+2. **Mapping:** bill length mapped to y axis
+3. **Layer:** boxplot
+
+### Scatterplot smooth bill vs flipper length
+
+```{r plot3}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(
+    data = penguins,  # data
+    aes(x = bill_length_mm, y = flipper_length_mm)  # aesthetic
+) + 
+    geom_point() +  # layer 1
+    geom_smooth()  # << # layer 2 
+```
+
+
+## Colour, size, shape attributes
+
+The `aes()` argument can also map columns in the data frame to other aesthetics like colour, size and shape. To change the colour, shape and size of the points plotted in the scatterplot of bill length versus flipper length by species:
+
+* `aes(x = bill_length_mm, y = flipper_length_mm, colour = species)`
+* `aes(x = bill_length_mm, y = flipper_length_mm, shape = species)`
+* `aes(x = bill_length_mm, y = flipper_length_mm, size = species)`
+    
+ggplot2 converts the data (e.g. Gentoo, Adelie and Chinstrap) into aesthetics (e.g., ‘red’, ‘yellow’, ‘green’) with a scale. 
+
+## Change colour
+
+```{r plot4}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(
+    data = penguins, 
+    aes(
+        x = bill_length_mm, 
+        y = flipper_length_mm,
+        colour = species  # <<
+    )
+) + 
+    geom_point() 
+```
+
+## Change shape
+
+```{r plot5}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(
+    data = penguins, 
+    aes(
+        x = bill_length_mm, 
+        y = flipper_length_mm,
+        shape = species  # <<
+    )
+) +
+    geom_point() 
+```
+
+## Change size
+
+```{r plot6}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(
+    data = penguins, 
+    aes(
+        x = bill_length_mm, 
+        y = flipper_length_mm,
+        size = species  # <<
+    )
+) +
+    geom_point() 
+```
+
+## Change colour, shape and size
+
+```{r plot7}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(
+    data = penguins, 
+    aes(
+        x = bill_length_mm, 
+        y = flipper_length_mm,
+        colour = species,  # <<
+        shape = species,  # <<
+        size = species  # <<
+    )
+) +  
+    geom_point() 
+```
+
+## Labels and titles
+
+Axis labels can be added separately using the `+` operator and `xlab()` and/or `ylab()`. A plot title can be added using the `+` operator and `ggtitle()`. Using the `+` operator and the `labs()` function can add axis labels, plot title and plot sub-titles all in one step.
+
+```{r plot8}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(
+    data = penguins, 
+    aes(
+        x = bill_length_mm, 
+        y = flipper_length_mm,
+        colour = species
+    )
+) +  
+    geom_point() +
+    xlab("Bill length (mm)") +  # <<
+    ylab("Flipper length (mm)") +  # <<
+    ggtitle("Penguin data")  # <<
+```
+
+```{r plot9}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(
+    data = penguins, 
+    aes(
+        x = bill_length_mm, 
+        y = flipper_length_mm,
+        colour = species
+    )
+) + 
+    geom_point() +
+    labs(
+        x = "Bill length (mm)",  # <<
+        y = "Flipper length (mm)",  # <<
+        title = "Penguin data",  # <<
+        subtitle = "Scatterplot by species"  # <<
+    )
+```
+
+## Themes
+
+Themes allow you control over the non-data elements of your plot. These include the font, ticks, panel strips and background. The default theme in `ggplot()` is the grey theme (please do not use it...). Other themes that you can use are given [here](https://ggplot2-book.org/polishing.html)
+
+
+### theme_bw()
+
+```{r plot10}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(
+    data = penguins, 
+    aes(
+        x = bill_length_mm, 
+        y = flipper_length_mm,
+        colour = species
+    )
+) + 
+    geom_point() +
+    labs(
+        x = "Bill length (mm)",  
+        y = "Flipper length (mm)",
+        title = "Penguin data",  
+        subtitle = "Scatterplot by species"
+    ) + 
+    theme_bw()  # <<
+```
+
+
+## What else can I do?
+
+Lots! 
+
+The `ggplot2` package is extremely powerful and there are great resources to be found such as the [coding club](https://ourcodingclub.github.io/tutorials/dataviz-beautification-synthesis/), [blog posts](https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/) and [short talks](https://yegrug.github.io/data-vis-practice/ggplot2-intro_2021-12-16.html#1) to get you started. Great advice is to find code for plots you like and then modify it for your needs!
+
+
+## Additional resources

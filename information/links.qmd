@@ -1,0 +1,6 @@
+# Useful links
+
+
+|                            |                                               |
+|----------------------------|-----------------------------------------------|
+| Course GitHub organization | 🔗 on [GitHub](https://github.com/StevenGolovkine/MSDSSLTFA_R_course) |

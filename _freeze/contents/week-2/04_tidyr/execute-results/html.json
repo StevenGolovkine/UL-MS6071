@@ -1,0 +1,14 @@
+{
+  "hash": "d0a0b35ac84919786f489b99bc54cae6",
+  "result": {
+    "markdown": "---\ntitle: \"Tidy data with tidyr\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

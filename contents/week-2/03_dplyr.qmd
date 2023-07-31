@@ -1,0 +1,407 @@
+---
+title: "Data manipulation with dplyr"
+engine: knitr
+---
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| include: false
+library(palmerpenguins)
+library(tidyverse)
+```
+
+The `dplyr` package is one of the `tidyverse` packages. It greatly simplifies how we work with data frames (tibbles) in R and speeds up any associated computations. `dplyr` uses a *grammar* for data manipulation and working with data frames. This grammar consists of a number of different *verbs*. These verbs allow us to communicate how we are manipulating a data frame so that other people can understand it easily.
+
+## The dplyr verbs
+
+Almost all data analytics projects will require us to use 5 basic `dplyr` verbs. These are:
+
+- **filter()** - extracts a subset of the rows of a data frame using logical conditions  
+- **arrange()** - reorder the rows of a data frame  
+- **select()** - extract a subset of the columns of a data frame 
+- **mutate()** - add new variables/columns or transform existing variables to a data frame
+- **summarise()/summarize()** - calculate summary statistics of different variables in a data frame
+    
+
+Another (very) useful verb is `group_by()`. This performs each of the previous operations by different strata as given by categories or groups (e.g. by species in the palmer penguin data). The pipe operator, `%>%`, is used to connect several of these verbs together into a pipeline.
+
+## How dplyr functions work
+
+All of the `dplyr` functions work in a similar way. The first argument is a data frame (or tibble). Subsequent arguments describe what to do with the data frame (or tibble) using the variable names. The result of running the function(s) is a new data frame (or tibble).
+
+**NOTE**: the data must be in *tidy* format, i.e. one observation per row, one variable per column, one value per cell.
+
+## What is filter()?
+
+The `filter()` function extracts subsets of rows from a data frame. It selects the *rows* using logical operators/conditions.  The logical conditions relate to the *columns* of the data frame.
+
+### How to use filter()?
+
+There are two ways to use the `filter()` command. The first is:
+```{r}
+#| class-output: outputcode
+#| eval: false
+filter(data, condition_1, condition_2, condition_3)
+```
+
+The second uses the pipe:
+```{r}
+#| class-output: outputcode
+#| eval: false
+data %>%
+    filter(condition_1, condition_2, condition_3)
+```
+
+All conditions must be `TRUE` for the row to be extracted.
+
+
+### Example palmer penguins data
+
+Let's use the penguins dataset from the `palmerpenguins` package to demonstrate. To access the data, make sure that you have downloaded the package into RStudio. Then load the package by running the `library(palmerpenguins)` command or ticking the checkbox beside the package name in the `Packages` tab in RStudio. The `tidyverse` packages must also be loaded!
+
+- Example - one condition
+
+To start, we will use a single condition in the `filter()` command. To filter all penguins (rows) with bill length > 38mm use:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+filter(penguins, bill_length_mm > 38)
+```
+
+We can do exactly the same using the pipe, `%>%`:
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins %>%
+    filter(bill_length_mm > 38)
+```
+    
+Both of these are (almost) equivalent to using the base R command:
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins[penguins$bill_length_mm > 38, ]
+```
+
+There are 2 extra rows in the base R version. Why? When using `filter()`, if a condition evaluates to `NA` the row will be dropped, unlike base subsetting with `[ ]`.
+
+
+- Example - two conditions
+
+Next extract penguins from the Adelie species who have bill length > 38mm:
+```{r}
+#| class-output: outputcode
+#| eval: true
+filter(penguins, bill_length_mm > 38, species == "Adelie")
+```
+
+Do this using the pipe:
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins %>%
+    filter(bill_length_mm > 38, species == "Adelie")
+```
+
+Or using base R:
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins[penguins$bill_length_mm > 38 & penguins$species == "Adelie", ]
+```
+
+This is much more difficult to read. 
+
+## What is arrange()?
+
+The `arrange()` function orders the rows of a data frame. It arranges the rows by the values of selected columns. The default is to arrange the values in ascending order (from smallest to largest).
+
+### How to use arrange()?
+
+There are two ways to use the `arrange()` command. The first is:
+```{r}
+#| class-output: outputcode
+#| eval: false
+arrange(data, column_1, column_2, column_3)
+```
+
+The second uses the pipe:
+```{r}
+#| class-output: outputcode
+#| eval: false
+data %>%
+    arrange(column_1, column_2, column_3)
+```
+We will use the second version.
+
+The default arrangement from smallest to largest can be changed using the `desc()` function. `NA` values are automatically sorted to the end.
+
+- Example - ascending order
+
+To arrange all penguins by their bill length:
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins %>%
+    arrange(bill_length_mm)
+```
+Notice the values in the `bill_length_mm` column. It is much more difficult to do this in base R!
+
+- Example - descending order
+
+To arrange the rows in descending value of bill length:
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins %>%
+    arrange(desc(bill_length_mm))
+```
+
+### Multiple columns
+
+You can also arrange multiple columns using `arrange()`. This works if there are multiple repeating values in column 1, and then column 2 is arranged. Therefore it doesn't work well for the `penguins` data.
+
+## What is select()?
+
+The `select()` function is used to select columns of a data frame that you want to focus on. In any data analysis project, you will have a large data frame that contains all of the data. However, for a particular analysis (or part of an analysis) only a subset of these data are needed.
+
+### How to use select()?
+
+There are two ways to use the `select()` command. The first is:
+```{r}
+#| class-output: outputcode
+#| eval: false
+select(data, column_1, column_2, column_3)
+```
+
+The second uses the pipe:
+```{r}
+#| class-output: outputcode
+#| eval: false
+data %>%
+    select(column_1, column_2, column_3)
+```
+We will use the second version.
+
+- Example - one column
+
+To select just the bill length from the `penguins` data:
+```{r}
+#| class-output: outputcode
+#| eval: false
+penguins %>%
+    select(bill_length_mm)
+```
+
+- Example - except one column
+
+To select everything *except* the bill length column:
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins %>%
+    select(-bill_length_mm)
+```
+
+- Example - multiple columns
+
+To select the bill length and body mass columns:
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins %>%
+    select(bill_length_mm, body_mass_g)
+```
+
+We can use the minus sign to select everything except these columns:
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins %>%
+    select(-bill_length_mm, -body_mass_g)
+```
+
+- Example - a range of columns
+
+You can use the `:` to select all columns that are between two columns (inclusive). For the `penguins` data remember that:
+```{r}
+#| class-output: outputcode
+#| eval: true
+names(penguins)
+```
+There are 8 columns, with names as given above. To extract all the columns between `bill_length_mm` and `flipper_length_mm` (inclusive) use:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins %>%
+    select(bill_length_mm:flipper_length_mm)
+```
+    
+Putting the minus sign in front drops these columns:
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins %>%
+    select(-(bill_length_mm:flipper_length_mm))
+```
+
+**NOTE**: Brackets around the column names!
+
+
+### Re-arranging columns
+
+You can also re-arrange the order of the columns using `select()` and `everything()`. To put the `year` column first, followed by everything else:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins %>%
+    select(year, everything())
+```
+
+## What is mutate()?
+
+It is often useful to create new variables that are derived from existing ones in a data frame. The `mutate()` function is used to compute transformations of existing variables (columns) in a data frame. For example, we might want to transform from hours to minutes, millimeters to centimeters, etc. `mutate()` provides a simple interface to achieve this.
+
+### How to use mutate()?
+
+To use `mutate()` with the pipe:
+```{r}
+#| class-output: outputcode
+#| eval: false
+data %>%
+    mutate(
+        new_column_name_1 = func_of_column_name_X,
+        new_column_name_2 = func_of_column_name_Y,
+        new_column_name_3 = func_of_column_name_Z
+    )
+```
+
+The transformed `X`, `Y`, `Z` columns will then be stored in new columns with the column names specified on the LHS of the `=`.
+
+- Example - one new variable (column)
+
+We will first convert the bill length in the `penguins` data from mm to cm:
+```{r}
+#| class-output: outputcode
+#| eval: true
+new.penguins <- penguins %>%
+    mutate(bill_length_cm = bill_length_mm / 100) 
+```
+and store the results in a new data frame (tibble), `new.penguins`
+
+Check the names of `new.penguins`:
+```{r}
+#| class-output: outputcode
+#| eval: true
+names(new.penguins)
+```
+
+Extract just the `bill_length_mm` and `bill_length_cm` columns:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+new.penguins %>%
+    select(bill_length_mm, bill_length_cm)
+```
+
+- Example - two new variables
+
+To convert the bill length and flipper length from mm to cm and store the result in a new data frame `new.penguins`:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+new.penguins <- penguins %>%
+    mutate(
+        bill_length_cm = bill_length_mm / 100,
+        flipper_length_cm = flipper_length_mm / 100
+    )
+```
+
+Again check the names:
+```{r}
+#| class-output: outputcode
+#| eval: true
+names(new.penguins)
+```
+
+- Example - two new variables
+
+Extract the `bill_length_mm`, `bill_length_cm`, `flipper_length_mm` and `flipper_length_cm` columns:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+new.penguins %>%
+    select(bill_length_mm, bill_length_cm, flipper_length_mm, flipper_length_cm)
+```
+
+## What is summarise()?
+
+The `summarise()` function is used to compute statistical summaries of the variables (columns) or rows in a data frame. It will take a vector of data and reduce it to a single summary statistic, e.g. mean, median, min, max. The `summarise()` function can be used directly, or with the pipe.
+
+### How to use summarise()?
+
+To use `summarise()` with the pipe:
+```{r}
+#| class-output: outputcode
+#| eval: false
+data %>%
+    summarise(
+        summary_1 = summary_func_1(column_name),
+        summary_2 = summary_func_2(column_name),
+        summary_3 = summary_func_3(column_name)
+    )
+```
+The `data` is the data frame or tibble that you want to summarise. The `summary_1/2/3/etc` values are the names of the summary statistics. The `summary_func_1/2/3/etc` values are the summary functions used, e.g. mean, median, min, max.  The `column_name` is the vector of data to summarise (typically a column(s) of the data frame).
+
+- Example - one summary
+
+To calculate the mean bill length in the `penguins` data:
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins %>%
+    summarise(
+        mean_bill_len = mean(bill_length_mm, na.rm = TRUE)
+    )
+```
+This returns a tibble with 1 element, the mean bill length. We could store this into a new object if needed.
+
+- Example - two summaries
+
+Calculate the mean bill length and flipper length:
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins %>%
+    summarise(
+        mean_bill_len = mean(bill_length_mm, na.rm = TRUE),
+        mean_flipper_len = mean(flipper_length_mm, na.rm = TRUE)
+    )
+```
+    
+This gives a tibble with 1 row and 2 columns (one for the mean of each variable).
+
+You could also use other summary functions, `median()`, `sd()`, `min()`, `max()`, `IQR()`, etc. 
+
+### Calculating grouped summaries
+
+Often `summarise()` is used with the `group_by()` function. `group_by()` allows us to "split" our data into sections as defined by our *grouping* variable, e.g. species. We can then perform calculations on each section separately. When used with `summarise()`, summaries are calculated separately for each of the unique groups created by `group_by()`.
+
+To calculate the mean bill length for each species:
+```{r}
+#| class-output: outputcode
+#| eval: true
+penguins %>%
+        group_by(species) %>%
+        summarise(mean_bill_len = mean(bill_length_mm, na.rm = TRUE))
+```
+A tibble with 3 rows and 2 columns is returned. The first column contains the group names and the second the corresponding mean values. 
+
+## Additional resources

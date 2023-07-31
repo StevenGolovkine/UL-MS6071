@@ -1,0 +1,14 @@
+{
+  "hash": "806204f728dc3f3a662cf57835a360ac",
+  "result": {
+    "markdown": "---\ntitle: \"Data frames\"\nengine: knitr\n---\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
