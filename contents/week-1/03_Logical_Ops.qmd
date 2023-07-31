@@ -1,0 +1,112 @@
+---
+title: "Logical operators"
+engine: knitr
+---
+
+## Logical operators
+
+Logical operators are used to compare objects. Every logical operator returns a
+logical (Boolean) vector of `TRUE`/`FALSE` values. We can then use these `TRUE`
+and `FALSE` values to create subsets of our data. The primary logical operators
+that we can use in R are
+
+| Operator | Meaning                        |
+|:--------:|:-------------------------------|
+|   `==`   | equality                       |
+|   `!=`   | non-equality                   |
+|   `<`    | less than                      |
+|   `>`    | greater than                   |
+|   `<=`   | less than or equal to          |
+|   `>=`   | greater than or equal to       |
+|   `!`    | returns opposite Boolean value |
+
+## Examples
+
+For this example, let's set up a numeric vector `x`:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+x <- c(1, 3.5, 7.9, 10, 12.3, NA, 15.8)
+```
+
+Now, let's use some logical operators:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+x == 3.5
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+x != 3.5
+```
+
+Notice that the `!` operator changes `TRUE` to `FALSE` and vice-versa.
+
+If we want to identify where we have values $> 3.5$, we use:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+x > 3.5
+```
+
+If we use the `!` operator:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+!(x > 3.5)
+```
+
+## The OR and AND operators
+
+Two other very useful operators are the `|` (the OR operator) and the `&` (the
+AND operator). These are used to combine two or more logical operations. The `|`
+(OR) operator returns `TRUE` if any of the conditions are met. The `&` (AND)
+operator returns `TRUE` if both of the conditions are met. There are other
+functions such as `any()`, `all()` and `%in%` that you can use to apply OR and
+AND operators on logical vectors.
+
+### The OR operator
+
+Say we want to return `TRUE` if the value of `x` is $> 7.9$ OR $< 3.5$:
+
+```{r}
+#| eval: true
+#| class-output: outputcode
+x > 7.9 | x < 3.5
+```
+
+The table for the OR operator is
+
+|   `x`   |   `y`   | <code>x \| y</code> |
+|:-------:|:-------:|:-------------------:|
+| `TRUE`  | `TRUE`  |       `TRUE`        |
+| `FALSE` | `TRUE`  |       `TRUE`        |
+| `TRUE`  | `FALSE` |       `TRUE`        |
+| `FALSE` | `FALSE` |       `FALSE`       |
+
+### The AND operator
+
+Say we want to return `TRUE` if the value of `x` is $> 7.9$ AND $< 3.5$:
+
+```{r}
+#| eval: true
+#| class-output: outputcode
+x > 7.9 & x < 3.5
+```
+
+The table for the AND operator is
+
+|   `x`   |   `y`   | <code>x & y</code> |
+|:-------:|:-------:|:------------------:|
+| `TRUE`  | `TRUE`  |       `TRUE`       |
+| `FALSE` | `TRUE`  |      `FALSE`       |
+| `TRUE`  | `FALSE` |      `FALSE`       |
+| `FALSE` | `FALSE` |      `FALSE`       |
+
+## Additional resources

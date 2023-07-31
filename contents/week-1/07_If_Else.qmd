@@ -1,0 +1,99 @@
+---
+title: "If-Else statement"
+engine: knitr
+---
+
+
+The `if-else` combination is extremely common in R and in many other programming languages. These statements allow you to execute chunks of code if a particular condition is met (or not). We will look at `if`, `else` and `else if` statements.
+
+## if statements
+
+- The basic format of an `if` statement is:
+```{r}
+#| class-output: outputcode
+#| eval: false
+if (condition) {
+    # Execute this code
+}
+    
+# Otherwise continue with rest of code
+```
+
+The `condition` must be a logical operator, i.e. return only a TRUE or FALSE value. If the `condition` is TRUE, the code between the `{ }` will be executed.  If the `condition` is FALSE, the code between the `{ }` will be skipped and the next line(s) of code executed.
+
+A random number between 0 and 100 is generated and stored in `x`.  **Pass** will be printed if `x` is >50. The code is as follows:
+```{r}
+#| class-output: outputcode
+#| eval: true
+x <- sample(1:100, 1)
+if (x > 50) {
+    print("Pass")
+}
+
+```
+
+## else statements
+
+The latter code will do nothing if the `condition` returns FALSE. If you want something specific to happen, an `else` statement is needed. This has the general form:
+```{r}
+#| class-output: outputcode
+#| eval: false
+if (condition) {
+    # Execute this code
+} else {
+    # Execute this code instead
+}
+```
+    
+
+A random number between 0 and 100 is generated and stored in `x`. **Pass** will be printed if `x` is >50. **Fail** will be printed otherwise.
+
+The code is as follows:
+```{r}
+#| class-output: outputcode
+#| eval: true
+x <- sample(1:100, 1)
+
+if (x > 50) {
+    print("Pass")
+} else {
+    print("Fail")
+}
+
+```
+
+
+## if, else if, else statements
+
+You can have a series of tests by starting with an `if` statement and following it with several `else if` statements. This has the general form:
+```{r}
+#| class-output: outputcode
+#| eval: false
+if (condition_1) {
+    # Execute code chunk 1
+} else if (condition_2) {
+    # Execute code chunk 2
+} else {
+    # Execute this code
+}
+```
+
+
+A random number between 0 and 100 is generated and stored in `x`.  **Pass** will be printed if `x` is >50. **Check** will be printed if `x` is >30 and <= 50. **Fail** will be printed otherwise.
+
+The code is as follows:
+```{r}
+#| class-output: outputcode
+#| eval: true
+x <- sample(1:100, 1)
+if (x > 50) {
+    print("Pass")
+} else if (x > 30 & x <= 50) {
+    print("Check")
+} else {
+    print("Fail")
+}
+```
+
+
+## Additional resource

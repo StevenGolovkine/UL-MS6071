@@ -1,0 +1,90 @@
+---
+title: "R Basics"
+engine: knitr
+---
+
+## How does R work?
+
+By running coding *expressions* in the R console. A prompt, the `>` sign, is displayed when R is waiting for an expression.
+
+*Expressions* in R are line(s) of code that perform a particular task; are separated by a semi-colon (`;`) or a new line; can be grouped together using braces (`{` and `}`); are often stored in *functions*.
+
+## Using the R console
+
+\[Picture of 2 + 2 in the R console\]
+
+## Using the R console
+
+If an expression is incomplete at the end of a line, a `+` is displayed on subsequent lines until it is syntactically complete.
+
+\[Picture of incomplete expression\]
+
+## Evaluation
+
+When a complete expression is entered into the R console, it is *evaluated*. The result of the evaluated expression is then *returned*. Depending on the expression, the result might be printed or not. For example, the following expression is evaluated but nothing is printed.
+
+```{r noprint}
+x <- 1  # Nothing is printed...
+```
+
+To print the result, we use the `print` function or simply type the name of the object.
+
+## R as a calculator
+
+R is basically a calculator! Most of the usual mathematical functions are already implemented (`+`, `-`, `*`, `sqrt`, `exp`, etc.). You can type `?S4groupGeneric` to see all the default implemented mathematical functions.
+
+## Order of operations
+
+As for mathematics, the order in which you list operations is important. R uses the BODMAS rule to decide on the ordering of the calculations:
+
+1.  **B**rackets
+2.  **O**rders (powers and roots)
+3.  **D**ivision
+4.  **M**ultiplication
+5.  **A**ddition
+6.  **S**ubtraction
+
+It is often very useful to use brackets to make the ordering explicit. For example the following:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+10 + 4 / 2
+```
+
+will perform the `4 / 2` part first and then add the result to `10`. While if we use brackets:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+(10 + 4) / 2
+```
+
+the `10 + 4` part is calculated first and the result is then divided by `2`.
+
+## Assignment operators
+
+In R, the basic *assignment* operator is `<-`. For example, to store the value $1$ into the variable `x`, type:
+
+```{r assignment}
+#| eval: false
+x <- 1
+```
+
+You could also use `=` as assignment operator, but this is generally reserved for use in function arguments. Rarely, you will come across the assignment operator `<<-`. This operator is used to define variables in *a different environment* than the one you are working in.
+
+## Getting help in R
+
+Type the name of the function into the search bar in the Help pan and press Enter. The Help file can be opened from the R console using the command `?function` or `help(function)`.
+
+Google is your friend! And so is [stackoverflow](https://stackoverflow.com/collectives/r-language)...
+
+\[Picture of the help file of sqrt\]
+
+## Additional resources
+
+- [R manual](https://cran.r-project.org/doc/manuals/R-lang.html) by the R Core Team.
+
+- [R reference](https://cran.r-project.org/doc/contrib/Short-refcard.pdf) card by Tom Short.
+
+- Assignment operator [`<<-`](https://cran.r-project.org/doc/manuals/R-intro.html#Scope).

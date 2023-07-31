@@ -1,0 +1,54 @@
+---
+title: "Types and Classes in R"
+engine: knitr
+format:
+  html:
+    css: ../ul.css
+---
+
+## R types
+
+Types refer to the basic built-in data types that R understands natively. The most common types are:
+
+- `logical` (a vector of logical (`TRUE/FALSE`) values)
+- `double` (a vector of real numbers, i.e. have decimal places)
+- `character` (a vector of character values)
+- `closure` (for functions)
+- `list` (for list)
+
+You can access to the type of an object using the `typeof` function.
+
+## Vectors definition
+
+Vectors are a sequence of values of the same data types. There are six basic vector types: `logical`, `integer`, `double`, `complex`, `character` and `raw`.
+
+Examples of vectors:
+```{r vectors}
+#| eval: false
+double_vector <- c(1, 2, 3)
+integer_vector <- c(1L, 2L, 3L)  # Note the difference with the previous vector.
+character_vector <- c("apple", "banana", "peach")
+```
+
+Vector is the most basic data type. Single numbers or strings are vectors of length 1. Note that it is possible to define vectors with length zero.
+
+## Lists
+
+Lists are generic data structures that allows you to store different types of data objects. The *elements* of a list can be any data structure (even other lists).
+
+Examples of lists:
+```{r lists}
+#| eval: false
+l <- list(1, FALSE, "hello")
+
+l <- list(
+    a = c(1, 2, 3),
+    b = "hello",
+    c = c(TRUE, FALSE)
+)
+```
+
+## R classes
+
+
+## Additional resources

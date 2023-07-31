@@ -1,0 +1,178 @@
+---
+title: "Vectors"
+engine: knitr
+---
+
+## Creating a vector
+
+A vector is created using the `c()` function. To create a numeric vector with the values 1, 2, 3 and 4, we can use:
+
+```{r vec_create}
+#| eval: true
+#| class-output: outputcode
+vec <- c(1, 2, 3, 4)
+vec  # Print the contents
+```
+
+## Length and type of a vector
+
+The `length()` function is used to count the number of elements within a vector.
+
+```{r vec_length}
+#| eval: true
+#| class-output: outputcode
+vec <- c(10.4, 5.6, 3.1, 6.4, 21.7)  # Numeric vector with 5 elements
+length(vec)
+```
+
+To check the type of a vector, you can use:
+
+```{r vec_type}
+#| eval: true
+#| class-output: outputcode
+typeof(vec)
+```
+
+## Combining vectors
+
+Vectors can be combined using the `c()` command. For example, to combine twice the `vec` vectors:
+
+```{r vec_combine}
+#| eval: true
+#| class-output: outputcode
+c(vec, vec)
+```
+
+Be careful, if you try to combine vectors with different type, the type of the resulting vector will be the most general one. For example, here, the numbers are converted to characters.
+
+```{r vec_combine_type}
+#| eval: true
+#| class-output: outputcode
+c(vec, "Mary")
+```
+
+## Indexing vectors
+
+Accessing to specific element(s) of a vector is possible using the `[]` operator. For example, `vec[2]` will return the second element of the vector `vec`
+
+```{r vec_index}
+#| eval: true
+#| class-output: outputcode
+vec[2]
+```
+
+Specifying negative values in the indices will drop that element(s).
+
+```{r vec_index_neg}
+#| eval: true
+#| class-output: outputcode
+vec[-2]
+```
+
+Multiple elements can be accessed by supplying a vector of indices. To access the first and third elements of `vec`:
+
+```{r vec_index_multi}
+#| eval: true
+#| class-output: outputcode
+vec[c(1, 3)]
+```
+
+To access consecutive indices, you can use `:`. For example, to access the first, second and third elements of `vec`:
+
+```{r vec_index_multi_consecutive}
+#| eval: true
+#| class-output: outputcode
+vec[1:3]
+```
+
+Logical operators can be used for subsetting vectors. If we want to work with just the components of `vec` that are larger than 6:
+
+```{r vec_index_logic}
+#| eval: true
+#| class-output: outputcode
+mask <- vec > 6
+vec[mask]
+```
+
+Note that it could be done in one line using `vec[vec > 6]`. R returns the values in `vec` where a `TRUE` is recorded for `vec > 6`.
+
+## Operations
+
+Usual mathematical operators can be carried on vectors:
+
+-   Addition: `+`
+-   Subtraction: `-`
+-   Multiplication: `*`
+-   Division: `/`
+-   Euclidean division: `%%` and `%/%`
+-   Exponentiation: `^`
+
+Computations are (typically) performed *element-wise*. Recall the vector `vec`:
+
+```{r}
+#| eval: true
+#| class-output: outputcode
+vec <- c(10.4, 5.6, 3.1, 6.4, 21.7)
+```
+
+If we calculate `vec^2`, we get:
+
+```{r expo}
+#| eval: true
+#| class-output: outputcode
+vec^2
+```
+i.e. R takes each elements of `vec` and calculates `value^2`.
+
+If you are unsure if the calculations are element-wise, you should check on some elements. Other examples of common operations are `log()`, `exp()`, `sin()`, `cos()`, etc.
+
+```{r vec_op}
+#| eval: true
+#| class-output: outputcode
+log(vec)
+exp(vec)
+sin(vec)
+```
+
+## Vectors of the same length
+
+We can add, subtract, multiply or divide vectors of the same length easily. In this case, R takes the values in the same locations (e.g. the first element of each vector) and performs the computations. For example, to add two vectors of the same length:
+
+```{r two_vec_op}
+#| eval: true
+#| class-output: outputcode
+vec_1 <- c(1, 3, 5, 7, 9)
+vec_2 <- c(0, 2, 4, 6, 8)
+
+vec_1 + vec_2
+```
+
+
+## Vector of different lengths
+
+To carry out an operation on two vectors of different lengths, the shorter vector is *recycled* to match the length of the longer one. Let's look at an example to understand the concept.
+
+```{r recycled_vec}
+#| eval: true
+#| class-output: outputcode
+vec_1 <- c(1, 3, 5, 7, 9)
+vec_2 <- c(0, 2)
+
+vec_1 * vec_2
+```
+Let's dive into the different elements of the resulting vector.
+
+-   The first element is `1 * 0 = 0`.
+-   The second element is `3 * 2 = 6`.
+-   The third element is `5 * 0 = 0`.
+-   The fourth element is `7 * 2 = 14`.
+-   The fifth element is `9 * 0 = 0`.
+
+The version of `vec_2` that was actually multiplied to `vec_1` is therefore:
+
+```{r}
+#| eval: false
+c(0, 2, 0, 2, 0)
+```
+
+## Additional resources
