@@ -1,13 +1,13 @@
 ---
-title: "R for Statistical Data Science"
-tbl-colwidths: [5,10,30,5,5,5,5,5,5,5]
+title: "MS6071 -- R for Statistical Data Science"
+tbl-colwidths: [5,10,15,5,5,5,5]
 ---
 
 This page contains an outline of the topics, content, and assignments for the semester.
 Note that this schedule will be updated as the semester progresses, with all changes documented here.
 
 ::: column-screen-inset-right
-| Week | Date| Topic | Prepare | AE | Lab | Project |
+| Week | Date| Topic | Prepare | MCQ | Lab | Project |
 |:------:|--------|--------|:------:|:------:|:------:|:------:|:------:|:------:|
 | [1](/weeks/week-1.qmd) | ? | R Basics | [🖥️](/weeks/week-1.qmd "Contents week 1"){aria-label="Contents week 1"}| [📋](/questionnaire/qcm-week-1.qmd "MCQ Week 1"){aria-label="MCQ Week 1"} | [💻](/labs/lab-week-1.qmd "Labs Week 1"){aria-label="Labs Week 1"} |
 | [2](/weeks/week-2.qmd) | ? | Tidyverse | [🖥️](/weeks/week-2.qmd "Contents week 2"){aria-label="Contents week 2"}| [📋](/questionnaire/qcm-week-1.qmd "MCQ Week 2"){aria-label="MCQ Week 2"} | [💻](/labs/lab-week-2.qmd "Labs Week 2"){aria-label="Labs Week 2"} |
