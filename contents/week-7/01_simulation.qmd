@@ -1,11 +1,9 @@
 ---
 title: "Simulation in R"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
-
+## A motivated example
 
 # Additional resources
+

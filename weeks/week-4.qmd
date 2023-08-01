@@ -13,11 +13,11 @@ editor: visual
 
 ## Questionnaire
 
-⌨️ [Questionnaire R Basics](/questionnaire/qcm-week-4.qmd)
+⌨️ Questionnaire [🔗](/questionnaire/qcm-week-4.qmd)
 
 ## Practice
 
-📋 [Tutorials](/labs/lab-week-4.qmd)
+📋 Tutorials [🔗](/labs/lab-week-4.qmd)
 
 <br><br>
 

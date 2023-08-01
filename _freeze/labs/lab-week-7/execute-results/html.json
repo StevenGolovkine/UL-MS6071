@@ -1,0 +1,14 @@
+{
+  "hash": "c9b435260b5e16fb966148fc169e15b1",
+  "result": {
+    "markdown": "---\ntitle: \"Labs - Simulation\"\nengine: knitr\n---\n\n\n## The inverse transform method\n\nLet $f : x \\in (0, 1/2) \\to 1/\\sqrt{2x}$ be a probability density function of a random variable $X$. Generate using the inverse transform method a sample of size 100 of $X$.\n\n\nGenerate a sample from the cumulative density function $F(x)=1- \\exp(-\\exp((x-\\mu)/\\sigma))$. Compare the empirical cumulative density function of the generated sample with $F$.\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

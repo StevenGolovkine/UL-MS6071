@@ -31,7 +31,7 @@ editor: visual
 
 ## Questionnaire
 
-📋 Questionnaire R Basics [🔗](/questionnaire/qcm-week-1.qmd)
+📋 Questionnaire [🔗](/questionnaire/qcm-week-1.qmd)
 
 ## Practice
 

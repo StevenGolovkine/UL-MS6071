@@ -77,6 +77,8 @@ website:
           - href: weeks/week-12.qmd
             text: "Week 12"
 
+bibliography: bibliography.bib
+
 format:
   html:
     theme:

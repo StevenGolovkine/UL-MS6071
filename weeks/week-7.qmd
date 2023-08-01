@@ -9,20 +9,22 @@ editor: visual
 
 📖 Simulation [🔗](/contents/week-7/01_simulation.qmd)
 
-📖 Distributions [🔗](/contents/week-7/02_distributions.qmd)
+📖 Pseudo-random number [🔗](/contents/week-7/02_pseudo_random_number.qmd)
 
-📖 Models [🔗](/contents/week-7/03_models.qmd)
+📖 Distributions [🔗](/contents/week-7/03_distributions.qmd)
 
-📖 Monte-Carlo [🔗](/contents/week-7/04_monte_carlo.qmd)
+📖 Models [🔗](/contents/week-7/04_models.qmd)
+
+📖 Monte-Carlo [🔗](/contents/week-7/05_monte_carlo.qmd)
 
 
 ## Questionnaire
 
-⌨️ [Questionnaire R Basics](/questionnaire/qcm-week-7.qmd)
+⌨️ Questionnaire [🔗](/questionnaire/qcm-week-7.qmd)
 
 ## Practice
 
-📋 [Tutorials](/labs/lab-week-7.qmd)
+📋 Tutorials [🔗](/labs/lab-week-7.qmd)
 
 <br><br>
 

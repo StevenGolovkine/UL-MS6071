@@ -1,8 +1,10 @@
 {
-  "hash": "19f3836d99772dbc26e6b2fb38bc3648",
+  "hash": "e4b4cdc6240f08fb3172e79d01c472e3",
   "result": {
-    "markdown": "---\ntitle: \"Simulation in R\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n\n# Additional resources\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Simulation in R\"\nengine: knitr\n---\n\n\n## A motivated example\n\n# Additional resources\n\n",
+    "supporting": [
+      "01_simulation_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
