@@ -10,7 +10,7 @@ engine: knitr
 library(tidyverse)
 ```
 
-In most data analytics projects, data will need to be read into R from an external file.  The `readr` package is part of the `tidyverse` and was created to read in large, flat data files (e.g. csv, text) to R. The package is built on similar base R functions but has made them much more efficient. It also interacts consistently with other `tidyverse` packages.
+In most data analytics projects, the first step is to load data into R from an external file.  The `readr` package is part of the `tidyverse` and was created to read in large, flat data files (e.g. csv, text) to R. The package is built on similar base R functions but has made them much more efficient. It also interacts consistently with other `tidyverse` packages. The class to store data.frames in the tidyverse is `tibble`. You can think of a tibble object as a (modern) data.frame.
 
 ## readr functions
 
@@ -39,7 +39,10 @@ The `col_names` argument of the `read_csv()` function can be `TRUE` or `FALSE` o
 ```{r}
 #| class-output: outputcode
 #| eval: false
-my_dat <- read_csv("data/filename.csv", col_types = "ccicccccci")
+my_dat <- read_csv(
+    "data/filename.csv",
+    col_types = "ccicccccci"
+)
 ```
 
 The `col_types = c` means that column stores character values. The `col_types = i` means that column stores integer values.
@@ -52,3 +55,9 @@ It is good practice to check that the data have read in correctly to R. Use the 
 
 
 ## Additional resources
+
+* `tibble` package: [link](https://tibble.tidyverse.org)
+
+* `readr` package: [link](https://readr.tidyverse.org)
+
+* Cheat sheet: [link](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf)

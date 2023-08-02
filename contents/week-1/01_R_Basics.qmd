@@ -19,6 +19,15 @@ If an expression is incomplete at the end of a line, a `+` is displayed on subse
 
 \[Picture of incomplete expression\]
 
+## Comments
+
+In R, comments are designed with `#`. Multi-lines comments do not exists, you have put another `#` at the beginning of each line.
+
+```{r comments}
+# This is a comment.
+# And, here another one!
+```
+
 ## Evaluation
 
 When a complete expression is entered into the R console, it is *evaluated*. The result of the evaluated expression is then *returned*. Depending on the expression, the result might be printed or not. For example, the following expression is evaluated but nothing is printed.
@@ -81,10 +90,25 @@ Google is your friend! And so is [stackoverflow](https://stackoverflow.com/colle
 
 \[Picture of the help file of sqrt\]
 
+
+## R coding style
+
+Maintaining readable, clear, and maintainable code is essential in good programming practice. The first step towards achieving this is adhering to a consistent and organized coding style. For most cases, I highly recommend adopting the [tidyverse style guide](https://style.tidyverse.org/index.html). Following this style guide can greatly enhance code readability and facilitate collaboration in your R projects.
+
+
 ## Additional resources
 
 - [R manual](https://cran.r-project.org/doc/manuals/R-lang.html) by the R Core Team.
 
 - [R reference](https://cran.r-project.org/doc/contrib/Short-refcard.pdf) card by Tom Short.
 
+- [Style guide](https://style.tidyverse.org/index.html) from the tidyverse.
+
 - Assignment operator [`<<-`](https://cran.r-project.org/doc/manuals/R-intro.html#Scope).
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 01](/weeks/week-1.qmd) ⏎
+:::

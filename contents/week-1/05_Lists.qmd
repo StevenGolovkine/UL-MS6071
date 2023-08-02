@@ -134,3 +134,10 @@ l_mix$new <- "This is new!"
 The list `l_mix` has now `r length(l_mix)` entries.
 
 ## Additional resources
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 01](/weeks/week-1.qmd) ⏎
+:::

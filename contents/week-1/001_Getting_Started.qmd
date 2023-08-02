@@ -1,0 +1,115 @@
+---
+title: "Getting started with R and RStudio"
+engine: knitr
+---
+
+## Using R
+
+The primary way to use R is through a command-line interface. To access the R
+console via a terminal, simply enter the `R` command. To create an R script,
+open your preferred text editor and save the file with a `.R` extension, for
+example `script.R`. The script can then be executed using the command:
+
+```{bash}
+#| eval: false
+Rscript script.R
+```
+
+::: {#fig-r-terminal}
+![](./images/r_terminal.png)
+
+R console in a terminal.
+:::
+
+## Using R with Rgui
+
+Rgui is a program that is installed alongside R when you install it. It is the
+standard R user interface. But nobody uses it...
+
+::: {#fig-r-rgui}
+![](./images/r_gui.png)
+
+R GUI on macOS.
+:::
+
+## Using R with RStudio
+
+RStudio is an integrated development environment (IDE) designed primarily for
+running R code. It adds many more features and tools to R that allow us to
+create, e.g.: 
+
+- reproducible data analyses (via Rmarkdown/Quarto);
+- interactive dashboarding tools (via RShiny).
+
+It is now possible to run Python code, C++ code, SQL queries, ... directly from RStudio.
+
+::: {#fig-r-rstudio}
+![](./images/rstudio.png)
+
+RStudio interface.
+:::
+
+### Using R with RStudio --- Console
+
+::: {#fig-r-rstudio-console}
+![](./images/rstudio_console.png)
+
+RStudio console.
+:::
+
+### Using R with RStudio --- Script
+
+::: {#fig-r-rstudio-script}
+![](./images/rstudio_script.png)
+
+RStudio script.
+:::
+
+### Using R with RStudio --- Environment
+
+::: {#fig-r-rstudio-environment}
+![](./images/rstudio_env.png)
+
+RStudio environment.
+:::
+
+### Using R with RStudio --- Packages
+
+::: {#fig-r-rstudio-packages}
+![](./images/rstudio_packages.png)
+
+RStudio packages.
+:::
+
+### Using R with RStudio --- Files
+
+::: {#fig-r-rstudio-files}
+![](./images/rstudio_files.png)
+
+RStudio files.
+:::
+
+### Using R with RStudio --- Shortcuts
+
+Some useful keyboard shortcuts:
+
+-   Run current line/selection: Ctrl + Enter (⌘ + ⏎)
+
+-   Insert assignment operator: Alt + − (⎇ + −)
+
+-   Insert pipe operator: Ctrl + Shift + M (⌘ + ⇧ + M)
+
+To see all the shortcuts and modify them:
+
+<center><code>Tools -\> Modify Keyboard Shortcuts...</code></center>
+
+## Additional resources
+
+-   RStudio [education](https://education.rstudio.com)
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 01](/weeks/week-1.qmd) ⏎
+:::

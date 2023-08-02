@@ -18,7 +18,7 @@ editor: visual
 
 ## Questionnaire
 
-⌨️ Questionnaire (/questionnaire/qcm-week-5.qmd)
+⌨️ Questionnaire [🔗](/questionnaire/qcm-week-5.qmd)
 
 ## Practice
 

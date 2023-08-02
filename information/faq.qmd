@@ -1,1 +1,60 @@
-# FAQ
+---
+title: "FAQ"
+engine: knitr
+---
+
+
+## Installation of R
+
+There are multiple ways to install R and RStudio for Windows, macOS and Linux.
+The easiest installation on Windows is a direct download from the website, while
+we can use command line interface on macOS and Linux.
+
+### Installation on Windows
+
+To download R go to:
+
+<center><https://cloud.r-project.org></center>
+
+To download RStudio go to:
+
+<center><https://www.rstudio.com></center>
+
+### Installation on macOS
+
+First, install [Homebrew](https://brew.sh), then run the following command lines
+in a terminal:
+
+```{bash}
+#| echo: true
+#| eval: false
+brew install r
+brew install --cask rstudio
+```
+
+### Installation on Linux (Ubuntu 22.04)
+
+Run the following command lines in a terminal:
+
+```{bash}
+#| echo: true
+#| eval: false
+sudo apt update
+sudo apt install r-base
+wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.06.0-421-amd64.deb
+sudo apt install -f ./rstudio-2023.03.0-386-amd64.deb
+rm ./rstudio-2023.03.0-386-amd64.deb
+```
+
+Note that if you have another Unix distribution, the commands might be a bit
+different. You might also want to change the version of RStudio to be installed.
+
+### Videos
+
+If you require additional assistance, feel free to ask me or refer to the instructional videos.
+
+-   Installation of R in [video](https://player.vimeo.com/video/203516510) by
+    RStudio Education.
+
+-   Installation of RStudio in [video](https://player.vimeo.com/video/203516968)
+    by RStudio Education.

@@ -1,0 +1,93 @@
+---
+title: "The tidyverse - Questionnaire"
+engine: knitr
+---
+
+```{r}
+#| echo: false
+library(webexercises)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+question <- "What is the tidyverse in R?"
+question_choices <- c(
+    "A statistical model for data analysis",
+    "A package for interactive data visualization",
+    answer = "A collection of R packages for data manipulation and visualization",
+    "A function for generating random data")
+cat(question, longmcq(sample(question_choices)))
+
+question <- "Which package in the tidyverse is used for data manipulation?"
+question_choices <- c(
+    answer = "`dplyr`",
+    "`ggplot2`",
+    "`tidyr`",
+    "`readr`"
+)
+cat(question, longmcq(sample(question_choices)))
+
+question <- "Which function in dplyr is used to filter rows based on certain conditions?"
+question_choices <- c(
+    answer = "`filter()`",
+    "`mutate()`",
+    "`group_by()`",
+    "`arrange()`"
+)
+cat(question, longmcq(sample(question_choices)))
+
+question <- "The `pivot_longer()` function in tidyr is used to:"
+question_choices <- c(
+    "Remove missing values from a data frame",
+    "Merge two data frames based on a common column",
+    answer = "Reshape data from wide to long format",
+    "Reshape data from long to wide format"
+)
+cat(question, longmcq(sample(question_choices)))
+
+question <- "What does the `mutate()` function in dplyr do?"
+question_choices <- c(
+    answer = "Add new variables or columns to a tibble",
+    "Calculate summary statistics for a variable",
+    answer = "Modify existing variables or create new ones based on transformations",
+    answer = "Remove variables from a tibble"
+)
+cat(question, longmcq(sample(question_choices)))
+
+question <- "Which function in `ggplot2` is used to add a title to a plot?"
+question_choices <- c(
+    "`title()`",
+    answer = "`ggtitle()`",
+    "`main()`",
+    "`add_title()`"
+)
+cat(question, longmcq(sample(question_choices)))
+
+question <- "The `select()` function in dplyr is used to:"
+question_choices <- c(
+    answer = "Choose specific columns from a data frame",
+    "Filter rows based on a condition",
+    "Group data by one or more variables",
+    "Arrange rows in ascending or descending order"
+)
+cat(question, longmcq(sample(question_choices)))
+
+question <- "Which package in the tidyverse is used for data import and export?"
+question_choices <- c(
+    "`ggplot2`",
+    "`tidyr`",
+    "`broom`",
+    answer = "`readr`"
+)
+cat(question, longmcq(sample(question_choices)))
+
+question <- "What does the `arrange()` function in dplyr do?"
+question_choices <- c(
+    "Filter rows based on a condition",
+    answer = "Arrange rows in ascending or descending order",
+    "Group data by one or more variables",
+    "Calculate summary statistics for a variable"
+)
+cat(question, longmcq(sample(question_choices)))
+```

@@ -110,3 +110,10 @@ The table for the AND operator is
 | `FALSE` | `FALSE` |      `FALSE`       |
 
 ## Additional resources
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 01](/weeks/week-1.qmd) ⏎
+:::

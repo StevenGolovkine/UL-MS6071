@@ -16,9 +16,9 @@ question_choices <- c(
     "`package_install()`",
     answer = "`install.packages()`",
     "`package_installation()`",
-    "`library_install(`)"
+    "`library_install()`"
 )
-cat(question, longmcq(question_choices))
+cat(question, longmcq(sample(question_choices)))
 
 question <- "What is the correct syntax for creating a vector in R?"
 question_choices <- c(
@@ -27,7 +27,7 @@ question_choices <- c(
     answer = "`c(1, 2, 3)`",
     "`array(1, 2, 3)`"
 )
-cat(question, longmcq(question_choices))
+cat(question, longmcq(sample(question_choices)))
 
 question <- "To access the help documentation for a specific function in R, you can use:"
 question_choices <- c(
@@ -36,7 +36,7 @@ question_choices <- c(
     "`documentation(function_name)`",
     "`get_help(function_name)`"
 )
-cat(question, longmcq(question_choices))
+cat(question, longmcq(sample(question_choices)))
 
 question <- "Which symbol is used for assignment in R?"
 question_choices <- c(
@@ -45,7 +45,7 @@ question_choices <- c(
     "`<<`",
     answer = "`<-`"
 )
-cat(question, longmcq(question_choices))
+cat(question, longmcq(sample(question_choices)))
 
 question <- "What does the `class()` function in R do?"
 question_choices <- c(
@@ -54,7 +54,7 @@ question_choices <- c(
     "Converts an object to a character type",
     "Checks if an object is empty"
 )
-cat(question, longmcq(question_choices))
+cat(question, longmcq(sample(question_choices)))
 
 question <- "Which function is used to generate a sequence of numbers in R?"
 question_choices <- c(
@@ -63,7 +63,7 @@ question_choices <- c(
     "`range()`",
     "`generate_sequence()`"
 )
-cat(question, longmcq(question_choices))
+cat(question, longmcq(sample(question_choices)))
 
 question <- "In R, how do you check if a certain element exists in a vector?"
 question_choices <- c(
@@ -72,7 +72,7 @@ question_choices <- c(
     "`in_vector()`",
     answer = "`%in%`"
 )
-cat(question, longmcq(question_choices))
+cat(question, longmcq(sample(question_choices)))
 
 question <- "What is the output of the following R code?\n
     x <- 10
@@ -86,7 +86,7 @@ question_choices <- c(
     answer = "50",
     "The code does not produce any output"
 )
-cat(question, longmcq(question_choices))
+cat(question, longmcq(sample(question_choices)))
 
 question <- "The `data.frame()` function in R is used to create:"
 question_choices <- c(
@@ -95,7 +95,7 @@ question_choices <- c(
     "Vectors",
     "Arrays"
 )
-cat(question, longmcq(question_choices))
+cat(question, longmcq(sample(question_choices)))
 
 question <- "What is the purpose of the 'if-else' statement?"
 question_choices <- c(
@@ -104,7 +104,7 @@ question_choices <- c(
     "To define a function in R",
     "To assign a value to a variable"
 )
-cat(question, longmcq(question_choices))
+cat(question, longmcq(sample(question_choices)))
 
 question <- "Which operator is used to combine multiple conditions in an 'if' statement?"
 question_choices <- c(
@@ -113,7 +113,7 @@ question_choices <- c(
     answer = "`&&`",
     "`%>%`"
 )
-cat(question, longmcq(question_choices))
+cat(question, longmcq(sample(question_choices)))
 
 question <- "What will be the output of the following 'if-else' statement?\n
     x <- 5
@@ -130,7 +130,7 @@ question_choices <- c(
     "'x < 3'",
     "Error: unexpected symbol"
 )
-cat(question, longmcq(question_choices))
+cat(question, longmcq(sample(question_choices)))
 
 question <- "In an `if-else` statement, if the condition in `if` is FALSE, and there is no `else` statement, what happens?"
 question_choices <- c(
@@ -139,7 +139,7 @@ question_choices <- c(
     answer = "The program continues without executing the `if` block",
     "The program enters an infinite loop"
 )
-cat(question, longmcq(question_choices))
+cat(question, longmcq(sample(question_choices)))
 ```
 
 

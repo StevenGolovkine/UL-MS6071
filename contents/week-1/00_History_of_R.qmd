@@ -46,3 +46,10 @@ For further information:
 - Official [R website](https://www.r-project.org).
 
 - The Wikipedia [page](https://en.wikipedia.org/wiki/R_(programming_language)).
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 01](/weeks/week-1.qmd) ⏎
+:::
