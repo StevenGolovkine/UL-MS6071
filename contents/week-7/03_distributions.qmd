@@ -1,11 +1,80 @@
 ---
 title: "Sampling from statistical distributions"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
+## Distributions the `stats` package in R
 
+Some of the classical distributions have already been implemented in R, and you can easily sampled from them. All functions are based on the same schema:
+
+* `dxxx`: the density/mass function
+* `pxxx`: the cumulative distribution function
+* `qxxx`: the quantile function
+* `rxxx`: the pseuso-random number generator.
+
+The `xxx` has be replaced by the name of the distribution, e.g., `norm` for a normal distribution, `unif` for a uniform.
+
+### Example: a sample from $\mathcal{N}(0, 1)$
+
+Here, we generate a sample of $5$ observations following a standard normal distribution.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+set.seed(42)
+rnorm(5)
+```
+
+### Example: a sample from $\mathcal{B}(10, 0.5)$
+
+We generate a sample of $5$ observations following a binomial distribution with parameters $n = 10$ and $p = 0.5$. This can be interpreted as the number of successes in $n$ trials, the probability of success being $p$.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+set.seed(42)
+rbinom(5, 10, 0.5)
+```
+
+### Example: the probability density function of $\mathcal{B}(2, 2)$
+
+Using a generated sample with a Beta $\mathcal{B}(2, 2)$ distribution, we estimate the probability density function and compare to the truth.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+set.seed(42)
+sample <- rbeta(1000, 2, 2)  # Generate B(2, 2)
+
+plot(density(sample))
+curve(dbeta(x, 2, 2), col = 'red', add = TRUE)
+legend(
+  -0.1, 1.5, lty = 1,
+  legend = c("Estimate", "True"),
+  col = c("black", "red")
+)
+```
+
+
+### Example: the cumulative density function of $\mathcal{P}(5)$
+
+Using the generated sample with a Poisson $\mathcal{P}(5)$ distribution, we estimate the cumulative distribution function and compare to the truth.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+set.seed(42)
+sample <- rpois(1000, 5)  # Generate P(5)
+
+plot(ecdf(sample))
+curve(ppois(x, 5), col = 'red', type = 's', add = TRUE)
+legend(
+  -0.1, 1.5, lty = 1,
+  legend = c("Estimate", "True"),
+  col = c("black", "red")
+)
+```
 
 # Additional resources
+
+* Distributions in R: [link](https://cran.r-project.org/web/views/Distributions.html)
