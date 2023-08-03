@@ -1,0 +1,131 @@
+---
+title: "Numerical Oddities"
+engine: knitr
+---
+
+```{r}
+#| eval: true
+#| echo: false
+source('./source/functions.R')
+```
+
+## Motivated examples
+
+In these examples, we will consider at how R is representing floating points.
+(You can re-run the examples on your own laptop to convince yourself.)
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+(1.0 - 0.5) == 0.5
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+(1.0 - 0.9) == 0.1
+```
+
+So, it seems that 
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+x <- 100 * (1 - 0.34)
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| echo: false
+paste('Using as.integer(x): ', as.integer(x))
+paste('Using floor(x):', floor(x))
+paste('Using round(x):', round(x))
+paste('Using floor(x):', x - 66)
+```
+
+All these problems are tightly related to how a computer is working. Understand clearly why these things happen will help you with your R coding.
+
+## Fixed-point representation
+
+For any $x \in \mathbb{R}$, we can write 
+$$x = \sum_{k = -\infty}^{+\infty} m_k b^k,$$
+
+where the integer $b \geq 2$ is the **base** (usually, $b = 2$ for a computer) and where the coefficients $m_k$, the **digits**, belongs to the set $\{0, 1, \dots, b - 1\}$, for all $k \in \mathbb{Z}$.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+The number $x = 10.625$ can be written in decimal notation ($b = 10$) as
+$$x = 1 \times 10^1 + 0 \times 10^0 + 6 \times 10^{-1} + 2 \times 10^{-2} + 5 \times 10^{-3}.$$
+By noting that $10.625 = 8 + 2 + 0.5 + 0.125$, we can write the same in binary notation as
+$$x = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 0 \times 2^0 + 1 \times 2^{-1} + 0 \times 2^{-2} + 1 \times 2^{-3}.$$
+So the number $10.625$ is written in binary form $1010.101$.
+:::
+
+You can convert decimal numbers to binary and the opposite using the functions `bin2dec` and `dec2bin` in the provided code source.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+bin2dec(1010.101)
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+dec2bin(10.625, 3)
+```
+
+Some numbers with a finite base $10$ representation are not **dyadic**, that is they have an infinite base $2$ expansion, e.g. $0.2$. This shows that using fixed-point representation to code numbers in a computer is very costly in terms of **bits**. So, most computers use a **floating point** representation.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+dec2bin(0.2, 30)
+```
+
+## Floating point representation
+
+Given a base $b$, any real number $x \in \mathbb{R}$, can be written as
+$$x = (-1)^s m b^e,$$
+where
+
+* **s** is called the sign bit of $x$, and is equal to $0$ or $1$;
+
+* **m** is the significand, or mantissa, and can be written $m = m_1.m_2\cdots m_{\infty}$ where each $m_k \in \{0, 1, \dots, b - 1\}$ is called a digit;
+
+* **e** $\in \mathbb{Z}$ is called the exponent.
+
+This notation is called the **floating point representation** of $x$ in base $b$. The integer $m_1$ is the integer part of the significand, the other digits $m_2, \dots m_{\infty}$ are the fractional part of the significand.
+
+We must impose a constraint that the first digit be non zero ($m_1 \neq 0$), so as to insure that the representation is unique. Of course, this constraint cannot be applied for the particular case $x = 0$.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+The number $x = -0.6345$ can be written in floating point representation by taking $s = 1$, $m_1 = 6$, $m_2 = 3$, $m_3 = 4$, $m_4 = 5$, $m_k = 0$ for all $k > 4$, and $e = -1$:
+$$-0.6345 = (-1)^1 \times 6.345 \times 10^{-1}.$$
+The decimal point has been moved to express the same number in a different way.
+:::
+
+In a computer, a slightly different formula using $64$ bits is used:
+$$ x =
+    \begin{cases}
+      (-1)^s \times (1 + f) \times 2^{e - 1023} & \text{if}& e > 0\\
+      (-1)^s \times f \times 2^{-1022} & \text{if}& e = 0
+    \end{cases},
+$$
+where $s$ is an integer coded on a single bit, called sign bit), $e$ is a non-negative integer coded on $11$ bits, taking values from $0$ to $2^{11} - 1 = 2047$, and $f \in [0, 1)$ is a number coded on $52$ bits $m_k$, written
+$$f = \sum_{k = 1}^{52} m_k 2^{-k},$$
+where the bits $m_k$'s take the values $0$ or $1$. By convention, the value $e = 0$, and $f = 0$, means that $x = 0$ and the value $e = 2047$ means that $x = \infty$ or $x = -\infty$, depending on the value of $s$.
+
+::: {.callout-tip appearance="simple"}
+## Limitation due to the significand
+
+A computer is a (limited) physical system. So the significand $1 + f$ is finite as well as the exponent $e \in [e_{min}, e_{max}]$. This is why it is not possible to (exactly) store on a computer a number such as $\pi = 3.1415\dots$
+:::
+
+## Additional resources

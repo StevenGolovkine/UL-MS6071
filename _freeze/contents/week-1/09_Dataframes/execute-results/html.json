@@ -1,8 +1,10 @@
 {
-  "hash": "806204f728dc3f3a662cf57835a360ac",
+  "hash": "c15caa1298f4636c452a58fee540519b",
   "result": {
-    "markdown": "---\ntitle: \"Data frames\"\nengine: knitr\n---\n\n\n# Additional resources\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Data frames\"\nengine: knitr\n---\n\n\n# Additional resources\n\n\n<br><br>\n\n::: {style=\"font-size: 0.875em;\"}\nBack to [week 01](/weeks/week-1.qmd) ⏎\n:::",
+    "supporting": [
+      "09_Dataframes_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

@@ -7,7 +7,7 @@ editor: visual
 
 ## Prepare
 
-📖 Memory Issues [🔗](/contents/week-10/01_memory_issues.qmd)
+📖 Numerical Oddities [🔗](/contents/week-10/01_numerical_oddities.qmd)
 
 📖 Large Files [🔗](/contents/week-10/02_large_files.qmd)
 
