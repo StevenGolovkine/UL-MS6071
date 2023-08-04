@@ -128,4 +128,18 @@ where the bits $m_k$'s take the values $0$ or $1$. By convention, the value $e =
 A computer is a (limited) physical system. So the significand $1 + f$ is finite as well as the exponent $e \in [e_{min}, e_{max}]$. This is why it is not possible to (exactly) store on a computer a number such as $\pi = 3.1415\dots$
 :::
 
+::: {.callout-tip appearance="simple"}
+## Limitation due to the exponent
+
+Since the exponent $e$ of the floating point representation of a computer is necessarily bounded (since it is coded on $11$ bits), there exists a smallest and largest real number which can be represented on a given computer. If you try to represent a number out of this range will lead to an underflow or overflow. R is rather well conceived (at least on this point) and will return the value `-Inf` or `+Inf`.
+:::
+
+### Representing number close to $0$
+
+To represent some numbers very close to $0$ (called subnormal numbers), $m_1$ is allowed to be $0$. Practically, the mantissa $m$ is stored without the leading $1$, i.e. $m_1$, except for subnormal numbers (and zero). Thus, the interpretation is:
+
+* if the exponent $e$ is non-minimal, i.e. $e > 0$, there is an implicit leading $1$. $m_1 = 1$ and $m = 1 + f$.
+
+* if the exponent $e$ is minimal, i.e. $e = 0$, there is not. The number of subnormal, in which case $m = f$.
+
 ## Additional resources
