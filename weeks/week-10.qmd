@@ -9,13 +9,15 @@ editor: visual
 
 📖 Numerical Oddities [🔗](/contents/week-10/01_numerical_oddities.qmd)
 
-📖 Large Files [🔗](/contents/week-10/02_large_files.qmd)
+📖 Memory [🔗](/contents/week-10/02_memory.qmd)
 
-📖 Sparse Matrices [🔗](/contents/week-10/03_sparse_matrices.qmd)
+📖 Large Files [🔗](/contents/week-10/03_large_files.qmd)
 
-📖 Packages for large files [🔗](/contents/week-10/04_packages_large_files.qmd)
+📖 Sparse Matrices [🔗](/contents/week-10/04_sparse_matrices.qmd)
 
-📖 Parallelisation [🔗](/contents/week-10/05_parallelisation.qmd)
+📖 Packages for large files [🔗](/contents/week-10/05_packages_large_files.qmd)
+
+📖 Parallelisation [🔗](/contents/week-10/06_parallelisation.qmd)
 
 
 ## Questionnaire

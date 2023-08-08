@@ -1,0 +1,103 @@
+---
+title: "Memory"
+engine: knitr
+---
+
+Here, we will give a general overview into how the memory is adressed in a computer and in R.
+
+## Organisation of the RAM
+
+The Random-Access Memory (RAM) is organised as an ordered sequence of boxes, each box can contain a binary digit: $0$ or $1$. The information contained in a box, the smallest quantity of information that can be contained, is called a **bit** (for binary digit). Information is actually often organised in blocks of $8$ boxes.
+
+Another unit has thus been introduced: the **byte**, which is worth $8$ bits. Note that each block is numbered; the number of a block is called its **memory address**. A memory address is thus an identifier, which designates a specific zone of memory where data (or instructions to run) can be read and stored. This identifier is usually an integer expressed in haxedecimal notation (base $16$).
+
+[Add picture]
+
+## Accessing the memory
+
+To access a given zone of memory, R uses what is called a **pointer**. A pointer is a variable containing a memory address (it points to the desired memory zone). R does that in a transparent way hidden from the user. At the address contained in a given pointer, we can find for example a data point. Remember that rach data point has a specific type, such as integer, double, etc.
+
+An integer is coded on $4$ bytes, a double on $8$ bytes, a character on $1$ byte, a logical on $4$ bytes and a complex on $16$ bytes to cite the most common variable types. This is true on a $32$ bit processor and on a $64$ bit processor.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+x <- 3L  # Create the value 3 of type integer.
+```
+
+So, what happen when we previous command is run? A memory slot of $32$ successive blocks ($4$ bytes of $8$ bits each) is allocated (or reserved) and a pointer is created containing the address of the first of these boxes. Actually, the pointer must not only contain the address of the variable `x` but also its type to know over how many boxes the variable is stored. The pointers are said to be **typed**. When a typed pointer is incremented, i.e., when we need to add one unit to the address it contains, it is not necessarily incremented by $1$, but by the size of the pointed type.
+
+[Add picture]
+
+## Issues with integers
+
+Since a (signed) integer is coded over $4$ bytes, i.e. $32$ bits, the largest integer that can be represented is $2147483647$. Indeed, if the first bit is reserved for the sign, there are $31$ remaining available boxes, or $2^31$ possible arrangements. Counting $0$, the largest available integer is this $2^{31} - 1$:
+```{r}
+#| class-output: outputcode
+#| eval: true
+as.integer(2^31 - 1)  
+.Machine$integer.max
+```
+
+If you try to convert to $2^{31}$ as integer, you will get an `NA`. You need a *double* variable to handle number larger than $2^{31}$.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+as.integer(2^31)  
+is.double(2^31)
+```
+
+As the length of a vector (or matrix) is stored as a signed integer, this result has a very pratical application. You can not create a vector with more than $2^{31} - 1$ elements, whether on a $32$ bit or $64$ bit processor. 
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+Regarding how the variables are stored, it can result in an overflow (or not).
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+46360 * 46360  # 46360 is stored as a double.
+46360L * 46360L  # 46360L is stored as an integer.
+```
+
+It might be tricky when combined with usual mathematical operations.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+sum(1:304)  # sum(1:304) is stored as an integer.
+sum(1:304) * sum(1:304)  # is a product of integer.
+46360^2  # 46360 is stored as a double
+sum(1:304)^2  # ...
+```
+
+The last command, following what happened previously, should have result in an integer overflow warning. The exponent function, however, transforms its arguments into reals and returns a real number. 
+:::
+
+## Object size in R
+
+We may expect that the size of the object `3L` to be $8$ bytes, but it is not actually the case.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+object.size(3L)  # on a 64 bit processor
+```
+
+In fact, in R, each object contains a header which takes up some space in the RAM: $24$ bytes on a $32$ bit processor and $40$ bytes on a $64$ bit processor. This header is used to save information of the created object: its type, its length, etc.
+
+We can find out what kind of processor R is runnig using 
+```{r}
+#| class-output: outputcode
+#| eval: true
+.Machine$sizeof.pointer
+```
+
+The value $8$ is returned for a $64$ bit processor and the value $4$ for a $32$ bit processor. Nowadays, $32$ bit processor are not really used anymore.
+
+## Additional resources
+
+* The Wikipedia RAM [page](https://en.wikipedia.org/wiki/Random-access_memory).
