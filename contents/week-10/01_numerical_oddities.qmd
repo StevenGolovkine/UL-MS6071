@@ -38,10 +38,10 @@ x <- 100 * (1 - 0.34)
 #| class-output: outputcode
 #| eval: true
 #| echo: false
-paste('Using as.integer(x): ', as.integer(x))
+paste('Using as.integer(x):', as.integer(x))
 paste('Using floor(x):', floor(x))
 paste('Using round(x):', round(x))
-paste('Using floor(x):', x - 66)
+paste('Computing x - 66:', x - 66)
 ```
 
 All these problems are tightly related to how a computer is working. Understand clearly why these things happen will help you with your R coding.
@@ -142,4 +142,18 @@ To represent some numbers very close to $0$ (called subnormal numbers), $m_1$ is
 
 * if the exponent $e$ is minimal, i.e. $e = 0$, there is not. The number of subnormal, in which case $m = f$.
 
+### Representing very large number
+
+We remark that it may exist a large gap between *successive* large numbers. For example, consider the number $2^{150}$. It can be represented using the floating point representation as
+$$2^{150} = (-1)^0 (1 + 0) 2^{1173 - 1023}.$$
+
+The next number that the computer can code is given by the values $s = 0$, $e = 1173$ and $f = 2^{-52}$ (smallest non-zero fractional part of the significand), i.e.,
+$$(-1)^0 (1 + 2^{-52}) 2^{150} = 2^{150} + 2^{98}.$$
+
+So, there is a *huge gap* of length $2^{98} \approx 3.2 \times 10^{29}$ between $2^{150}$ and the next number!
+
 ## Additional resources
+
+* The Wikipedia [page](https://en.wikipedia.org/wiki/Computer_number_format).
+
+* Dyadic number [page](https://en.wikipedia.org/wiki/Dyadic_rational).
