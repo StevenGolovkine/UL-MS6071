@@ -35,7 +35,7 @@ typeof(vec)
 
 ## Combining vectors
 
-Vectors can be combined using the `c()` command. For example, to combine twice the `vec` vectors:
+Vectors can be combined using the `c()` command. For example, to combine twice the `vec` vector:
 
 ```{r vec_combine}
 #| eval: true
@@ -107,7 +107,7 @@ Usual mathematical operators can be carried on vectors:
 -   Euclidean division: `%%` and `%/%`
 -   Exponentiation: `^`
 
-Computations are (typically) performed *element-wise*. Recall the vector `vec`:
+Computations are (typically) performed **element-wise**. Recall the vector `vec`:
 
 ```{r}
 #| eval: true
@@ -150,7 +150,7 @@ vec_1 + vec_2
 
 ## Vector of different lengths
 
-To carry out an operation on two vectors of different lengths, the shorter vector is *recycled* to match the length of the longer one. Let's look at an example to understand the concept.
+To carry out an operation on two vectors of different lengths, the shorter vector is **recycled** to match the length of the longer one. Let's look at an example to understand the concept.
 
 ```{r recycled_vec}
 #| eval: true
@@ -160,6 +160,7 @@ vec_2 <- c(0, 2)
 
 vec_1 * vec_2
 ```
+
 Let's dive into the different elements of the resulting vector.
 
 -   The first element is `1 * 0 = 0`.

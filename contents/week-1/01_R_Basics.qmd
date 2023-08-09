@@ -5,32 +5,30 @@ engine: knitr
 
 ## How does R work?
 
-By running coding *expressions* in the R console. A prompt, the `>` sign, is displayed when R is waiting for an expression.
+By running coding **expressions** in the R console. A prompt, the `>` sign, is displayed when R is waiting for an expression.
 
-*Expressions* in R are line(s) of code that perform a particular task; are separated by a semi-colon (`;`) or a new line; can be grouped together using braces (`{` and `}`); are often stored in *functions*.
+**Expressions** in R denote code lines accomplishing specific tasks. These lines can be divided by a semicolon (`;`) or a new line. They can also be grouped using curly braces (`{` and `}`). Frequently, these expressions are stored together within **functions**.
 
-## Using the R console
+### Using the R console
 
 \[Picture of 2 + 2 in the R console\]
-
-## Using the R console
 
 If an expression is incomplete at the end of a line, a `+` is displayed on subsequent lines until it is syntactically complete.
 
 \[Picture of incomplete expression\]
 
-## Comments
+### Comments
 
-In R, comments are designed with `#`. Multi-lines comments do not exists, you have put another `#` at the beginning of each line.
+In R, comments are designed with `#`. Multi-lines comments do not exists, you have to put another `#` at the beginning of each line.
 
 ```{r comments}
 # This is a comment.
 # And, here another one!
 ```
 
-## Evaluation
+### Evaluation
 
-When a complete expression is entered into the R console, it is *evaluated*. The result of the evaluated expression is then *returned*. Depending on the expression, the result might be printed or not. For example, the following expression is evaluated but nothing is printed.
+When a complete expression is entered into the R console, it is **evaluated**. The result of the evaluated expression is then **returned**. Depending on the expression, the result might be printed or not. For example, the following expression is evaluated but nothing is printed.
 
 ```{r noprint}
 x <- 1  # Nothing is printed...
@@ -38,11 +36,11 @@ x <- 1  # Nothing is printed...
 
 To print the result, we use the `print` function or simply type the name of the object.
 
-## R as a calculator
+### R as a calculator
 
 R is basically a calculator! Most of the usual mathematical functions are already implemented (`+`, `-`, `*`, `sqrt`, `exp`, etc.). You can type `?S4groupGeneric` to see all the default implemented mathematical functions.
 
-## Order of operations
+### Order of operations
 
 As for mathematics, the order in which you list operations is important. R uses the BODMAS rule to decide on the ordering of the calculations:
 
@@ -71,9 +69,9 @@ will perform the `4 / 2` part first and then add the result to `10`. While if we
 
 the `10 + 4` part is calculated first and the result is then divided by `2`.
 
-## Assignment operators
+### Assignment operators
 
-In R, the basic *assignment* operator is `<-`. For example, to store the value $1$ into the variable `x`, type:
+In R, the basic **assignment** operator is `<-`. For example, to store the value $1$ into the variable `x`, type:
 
 ```{r assignment}
 #| eval: false

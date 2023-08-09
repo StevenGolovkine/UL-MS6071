@@ -37,7 +37,7 @@ In the pop-up, type in the package name (without quotes), make sure the `Install
 
 ## Loading packages
 
-Once the package has been downloaded (the `>` will appear in the R console), it must be *loaded* into R to use it. This is achieved using
+Once the package has been downloaded (the `>` will appear in the R console), it must be **loaded** into R to use it. This is achieved using
 
 ```{r}
 #| eval: false

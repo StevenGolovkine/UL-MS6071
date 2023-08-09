@@ -5,7 +5,7 @@ engine: knitr
 
 ## What are functions?
 
-R is a *functional* programming language, but some OOP systems are implemented.
+R is a **functional** programming language, but some OOP systems are implemented.
 Big tasks are broken down into smaller pieces, and functions are written to
 perform each of the smaller tasks. Functions are another type of R object
 (`closure`). We have already see many of the built-in functions in R, e.g.
@@ -18,7 +18,7 @@ Functions are often created if a code chunk needs to be evaluated numerous times
 with different inputs. A function acts as an interface to a set of code via a
 set of parameters that the user specifies. This provides an abstraction of the
 in-depth workings of the code and allows other users to use the code without
-writing all of it themselves. A function must be written and *loaded* into the
+writing all of it themselves. A function must be written and **loaded** into the
 environment before it can be used (as for usual variables). Functions can also
 be passed as inputs to other functions.
 
@@ -35,7 +35,7 @@ There are three advantages to using functions over copying and pasting code:
 
 Functions have some key properties:
 
-1.  **Name** -- every function has a name which is used to *call* the function.
+1.  **Name** -- every function has a name which is used to **call** the function.
 2.  **Body** -- the code to be executed when the function is called.
 3.  **Arguments** -- a list of input objects that the user needs to specify.
 4.  **Outputs** -- a list of output objects that are returned once the function
@@ -78,7 +78,7 @@ first_func <- function() {
 }
 ```
 
-To *call* or execute this function:
+To **call** or execute this function:
 
 ```{r}
 #| eval: true
@@ -88,7 +88,7 @@ first_func()
 
 ## Adding a body
 
-Code that you want to be executed when you call a function is called the *body*
+Code that you want to be executed when you call a function is called the **body**
 of the function. This can be as simple or as complex as you like. We can also
 call other functions. Let's modify our function to print something when called:
 

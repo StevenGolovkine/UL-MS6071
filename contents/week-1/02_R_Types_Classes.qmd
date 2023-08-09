@@ -31,7 +31,7 @@ Vector is the most basic data type. Single numbers or strings are vectors of len
 
 ## Lists
 
-Lists are generic data structures that allows you to store different types of data objects. The *elements* of a list can be any data structure (even other lists).
+Lists are generic data structures that allows you to store different types of data objects. The **elements** of a list can be any data structure (even other lists).
 
 Examples of lists:
 ```{r lists}

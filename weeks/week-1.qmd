@@ -17,7 +17,7 @@ packages.
 
 📖 Quick history of R [🔗](/contents/week-1/00_History_of_R.qmd)
 
-📖 Getting started with R and RStudio [🔗](/contents/week-1/001_Getting_Started.qmd)
+📖 Getting started with R and RStudio [🔗](/contents/week-1/01_Getting_Started.qmd)
 
 📖 R Basics [🔗](/contents/week-1/01_R_Basics.qmd)
 
@@ -38,6 +38,10 @@ packages.
 📖 Dataframes [🔗](/contents/week-1/09_Dataframes.qmd)
 
 📖 Packages [🔗](/contents/week-1/10_Packages.qmd)
+
+## Source code
+
+🧑‍💻 Source code [🔗](/contents/week-1/source/week01.R)
 
 ## Questionnaire
 

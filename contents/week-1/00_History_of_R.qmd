@@ -21,7 +21,7 @@ The language emphasizes ease of use, extensive graphics capabilities and simple 
 
 ## Basic features of R
 
-Nowadays, a core group controls the primary source code for R. R runs on any standard computing platform and operating system. It has regular updates and releases, where major new features are incorporated and released to the public. Many people worldwide make contributions to R via bug fixes, creating new features, or creating add-on *packages* (more later).
+Nowadays, a core group controls the primary source code for R. R runs on any standard computing platform and operating system. It has regular updates and releases, where major new features are incorporated and released to the public. Many people worldwide make contributions to R via bug fixes, creating new features, or creating add-on **packages** (more later).
 
 ## Why using R?
 

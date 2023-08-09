@@ -20,9 +20,9 @@ that we can use in R are
 |   `>=`   | greater than or equal to       |
 |   `!`    | returns opposite Boolean value |
 
-## Examples
+### Examples
 
-For this example, let's set up a numeric vector `x`:
+For these examples, let's set up a numeric vector `x`:
 
 ```{r}
 #| class-output: outputcode
