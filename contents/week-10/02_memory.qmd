@@ -31,7 +31,7 @@ So, what happen when we previous command is run? A memory slot of $32$ successiv
 
 ## Issues with integers
 
-Since a (signed) integer is coded over $4$ bytes, i.e. $32$ bits, the largest integer that can be represented is $2147483647$. Indeed, if the first bit is reserved for the sign, there are $31$ remaining available boxes, or $2^31$ possible arrangements. Counting $0$, the largest available integer is this $2^{31} - 1$:
+Since a (signed) integer is coded over $4$ bytes, i.e. $32$ bits, the largest integer that can be represented is $2147483647$. Indeed, if the first bit is reserved for the sign, there are $31$ remaining available boxes, or $2^{31}$ possible arrangements. Counting $0$, the largest available integer is this $2^{31} - 1$:
 ```{r}
 #| class-output: outputcode
 #| eval: true
@@ -98,6 +98,34 @@ We can find out what kind of processor R is runnig using
 
 The value $8$ is returned for a $64$ bit processor and the value $4$ for a $32$ bit processor. Nowadays, $32$ bit processor are not really used anymore.
 
+
+## Total memory used by R
+
+The total size of virtual memory allocated to R in a session includes:
+
+* memory used to store the values of the objects;
+* memory used to store the headers of the objects.
+
+The information is accessible using the `gc()` functions. The variable `Ncells` represents the number of cells used for the headers and the variable `Vcells` the number of blocks for the values.
+
+The total amount of memory available to R depends on several factors:
+
+* the amount of RAM physically present on the computer;
+* the amount of RAM already used by the operating system and the other softwares being run on that system (e.g. web browser);
+* the type of the processor. On a $64$ bit processor, an address is coded over $64$ bits, so theoretically, the addressable memory is *limited* to $2^{64}$ bytes. In practice, it is usually limited by the processor's architeture.
+
+So R allocates memory for the creation of (large) objects. When they are no longer used, these objects are cleared from memory. This process is called **garbage collection**. This process is usually automatic but you can force a garbage collection using the function `gc()`. When creating a large object in R, the memory reserved must be contiguous, i.e. it cannot be fragmented into multiple blocks. It is thus possible that there remains enough total memory for R, but no gap large enough to fit the data of a single large object.
+
+## Some recommendations
+
+An elementary understandinf of memory management on a computer, in general, and in R, in particular, could be very useful to help identify the origin of memory-related issues.
+
+* **Calculate the size of the object**: Before creating an object, we can calculate an approximation of its size. For example, imagine we want to create a matrix of real number of size $n \times p$. Since a real number uses up to $8$ bytes, this matrix will require $8np$ bytes. A square matrix of size $16000 \times 16000$ will roughly use $2$ Gb.
+* **Remove useless objects**: If you are not able to create a large object, we can try to remove other useless large objects, using the function `rm()`, and to free up some memory using `gc()`. You can also close other running software.
+* **Split the problem into multiple ones**: Returning to the matrix problem, you can split the matrix into several submatrices and find a way to perform your analysis on those, before combining the results (e.g. the MapReduce framework).
+
 ## Additional resources
 
 * The Wikipedia RAM [page](https://en.wikipedia.org/wiki/Random-access_memory).
+
+* MapReduce [page](https://www.databricks.com/glossary/mapreduce).

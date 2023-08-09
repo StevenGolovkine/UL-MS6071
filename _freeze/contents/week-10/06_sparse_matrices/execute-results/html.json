@@ -1,0 +1,14 @@
+{
+  "hash": "af3472ccdd0d8f44cf6c4f07966e3d29",
+  "result": {
+    "markdown": "---\ntitle: \"Sparse matrices\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
