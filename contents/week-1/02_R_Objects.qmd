@@ -1,0 +1,133 @@
+---
+title: "Objects in R"
+engine: knitr
+---
+
+<br>
+The entities manipulated by R are formally referred to as **objects**.
+
+## Intrinsic attributes
+
+An object has two intrinsic attributes: its **mode** and its **length**. The **mode** refers to the type of the object, while the **length** represents the number of elements the object can have.
+
+### Mode
+
+The mode of an object is the basic type of its fundamental components. Vectors must have all their values (or components) of the same mode. Vectors are **atomic** structures as their components have the same type (numeric, complex, logical, character, or raw). Vectors have thus one of the five types without ambiguity.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+A <- c(1, 2, 3)
+mode(A)
+```
+
+::: {.callout-note appearance="simple"}
+Note that the terms **mode** and **type** can be used (almost) interchangeably.
+:::
+
+More complex objects, such as lists or functions, are **recursive** structure (and not atomic). Their individual components may be of any mode (even list or function). The mode of a list is `list` and the mode of a function is `function`.
+
+### Length
+
+The length of an object defines how many elements the object contains. It can be accessed (and also modify) using the `length` function.
+
+Let's look at an example to understand how it works. First, we create a simple vector of length $10$. 
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+A <- 1:10
+print(A)
+```
+
+We then set the length of the vector to be $3$. It cuts all the elements that are in position greater than $3$.
+```{r}
+#| class-output: outputcode
+#| eval: true
+length(A) <- 3
+print(A)
+```
+
+Finally, we want this vector to have a length of $6$. R will fill the position $4$ to $6$ of this vector with `NA`. Be careful that it will not recover the previous values, once the length is changed, the values are removed.
+```{r}
+#| class-output: outputcode
+#| eval: true
+length(A) <- 6
+print(A)
+```
+
+### Empty objects
+
+In R, there is no problem to define empty objects with a particular mode. To create such a vector, the functions are `integer()`, `complex()`, `logical()`, `character()` and `raw()`. You can also define lists using empty vectors. The length of an empty vector is $0$.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+null_vector <- integer()  # Vector of integer of length zero.
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+mode(null_vector)
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+length(null_vector)
+```
+
+
+
+## R classes
+
+A class represents the structure of an object. All objects have a class reported by the `class` function. It provides essential information about how an object is organized and interpreted by R and how it can be manipulated. Each class has its own set of methods and functions. It permits an object-oriented programming approach. You can define your own classes using the `class` method and define methods for this class using `name_function.name_class`. This feature is particularly convenient to override existing methods.
+
+For example, we will create a new class for a simple vector and override the `print` function.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+A <- c(1, 2, 3)
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+typeof(A)  # type of A
+class(A)  # class of A
+print(A)  # print A
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+class(A) <- "my_class"
+
+print.my_class <- function(obj) {
+    print(paste("Vector: ", obj))
+}
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+typeof(A)  # type of A
+class(A)  # class of A
+print(A)  # print A
+```
+
+So, the type of the object did not change, but we have defined our own class with a particular `print` function.
+
+
+## Additional resources
+
+- R manual by the R Core Team, [Section 3 on objects](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Objects).
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 01](/weeks/week-1.qmd) ⏎
+:::

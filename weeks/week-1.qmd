@@ -12,6 +12,8 @@ Archive Network
 to enhance its capabilities. As of today, there are around $20000$ available
 packages.
 
+Prior to diving into the materials, ensure that you have R and RStudio installed. You can find instructions on their installation [here](/information/faq.qmd). If you need any help, don't hesitate to contact me.
+
 
 ## Prepare
 
@@ -21,7 +23,7 @@ packages.
 
 📖 R Basics [🔗](/contents/week-1/01_R_Basics.qmd)
 
-📖 Types and Classes [🔗](/contents/week-1/02_R_Types_Classes.qmd)
+📖 R Objects [🔗](/contents/week-1/02_R_Objects.qmd)
 
 📖 Logical Operators [🔗](/contents/week-1/03_Logical_Ops.qmd)
 
