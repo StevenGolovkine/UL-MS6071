@@ -9,9 +9,14 @@ By running coding **expressions** in the R console. A prompt, the `>` sign, is d
 
 **Expressions** in R denote code lines accomplishing specific tasks. These lines can be divided by a semicolon (`;`) or a new line. They can also be grouped using curly braces (`{` and `}`). Frequently, these expressions are stored together within **functions**.
 
-### Using the R console
+::: {#fig-creators}
 
-\[Picture of 2 + 2 in the R console\]
+![](./images/expression.png)
+
+An expression.
+
+:::
+
 
 If an expression is incomplete at the end of a line, a `+` is displayed on subsequent lines until it is syntactically complete.
 
