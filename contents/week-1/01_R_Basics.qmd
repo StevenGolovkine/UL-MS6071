@@ -20,7 +20,13 @@ An expression.
 
 If an expression is incomplete at the end of a line, a `+` is displayed on subsequent lines until it is syntactically complete.
 
-\[Picture of incomplete expression\]
+::: {#fig-creators}
+
+![](./images/incomplete_expression.png)
+
+An incomplete expression.
+
+:::
 
 ### Comments
 
