@@ -3,12 +3,11 @@ title: "Functions"
 engine: knitr
 ---
 
-## What are functions?
+<br>
 
 R is a **functional** programming language, but some OOP systems are implemented.
 Big tasks are broken down into smaller pieces, and functions are written to
-perform each of the smaller tasks. Functions are another type of R object
-(`closure`). We have already see many of the built-in functions in R, e.g.
+perform each of the smaller tasks. Functions are another mode of R object (`function`). We have already see many of the built-in functions in R, e.g.
 `c()`, `list()` or `sqrt()`. Writing functions is a core activity of an R
 programmer and is used for reproducibility.
 
@@ -104,7 +103,7 @@ first_func()
 
 ## Additional resource
 
-
+- R manual by the R Core Team, [Section 10 on functions](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Writing-your-own-functions).
 
 <br><br>
 
