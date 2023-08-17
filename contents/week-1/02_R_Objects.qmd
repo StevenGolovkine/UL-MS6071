@@ -33,7 +33,7 @@ The length of an object defines how many elements the object contains. It can be
 
 ::: {.callout-note appearance="simple"}
 
-## Examples
+## Example
 
 First, we create a simple vector of length $10$. 
 
@@ -92,7 +92,7 @@ A class represents the structure of an object. All objects have a class reported
 
 ::: {.callout-note appearance="simple"}
 
-## Examples
+## Example
 
 To create a new class for a simple vector and override the `print` function.
 

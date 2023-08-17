@@ -3,47 +3,58 @@ title: "Vectors"
 engine: knitr
 ---
 
+<br>
+A vector is a single entity consisting of an ordered collection of elements.
+
 ## Creating a vector
 
-A vector is created using the `c()` function. To create a numeric vector with the values 1, 2, 3 and 4, we can use:
+A vector is created using the `c()` function. To create a numeric vector with the values $10.4, 5.6, 3.1, 6.4,$ and $21.7$, we can use:
 
 ```{r vec_create}
 #| eval: true
 #| class-output: outputcode
-vec <- c(1, 2, 3, 4)
+vec <- c(10.4, 5.6, 3.1, 6.4, 21.7)  # Numeric vector with 5 elements
 vec  # Print the contents
 ```
 
-## Length and type of a vector
-
-The `length()` function is used to count the number of elements within a vector.
+As we have seen before, a vector has two intrinsic properties: its `mode` and its `length`.
+```{r vec_type}
+#| eval: true
+#| class-output: outputcode
+mode(vec)
+```
 
 ```{r vec_length}
 #| eval: true
 #| class-output: outputcode
-vec <- c(10.4, 5.6, 3.1, 6.4, 21.7)  # Numeric vector with 5 elements
 length(vec)
-```
-
-To check the type of a vector, you can use:
-
-```{r vec_type}
-#| eval: true
-#| class-output: outputcode
-typeof(vec)
 ```
 
 ## Combining vectors
 
-Vectors can be combined using the `c()` command. For example, to combine twice the `vec` vector:
+Vectors can be combined using the `c()` command.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To combine two copies of the `vec` vector with a zero in the middle place, you would use:
 
 ```{r vec_combine}
 #| eval: true
 #| class-output: outputcode
-c(vec, vec)
+c(vec, 0, vec)
 ```
 
-Be careful, if you try to combine vectors with different type, the type of the resulting vector will be the most general one. For example, here, the numbers are converted to characters.
+:::
+
+Be careful, if you try to combine vectors with different type, the type of the resulting vector will be the most general one.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+When combine numbers and characters, the numbers are converted to characters:
 
 ```{r vec_combine_type}
 #| eval: true
@@ -51,9 +62,17 @@ Be careful, if you try to combine vectors with different type, the type of the r
 c(vec, "Mary")
 ```
 
+:::
+
 ## Indexing vectors
 
-Accessing to specific element(s) of a vector is possible using the `[]` operator. For example, `vec[2]` will return the second element of the vector `vec`
+Accessing to specific element(s) of a vector is possible using the `[]` operator. Note that, in R, the indexing of a vector starts at $1$ (unlike most programming language that start at $0$).
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+`vec[2]` will return the second element of the vector `vec`:
 
 ```{r vec_index}
 #| eval: true
@@ -61,7 +80,13 @@ Accessing to specific element(s) of a vector is possible using the `[]` operator
 vec[2]
 ```
 
+:::
+
 Specifying negative values in the indices will drop that element(s).
+
+::: {.callout-note appearance="simple"}
+
+## Example
 
 ```{r vec_index_neg}
 #| eval: true
@@ -69,7 +94,15 @@ Specifying negative values in the indices will drop that element(s).
 vec[-2]
 ```
 
-Multiple elements can be accessed by supplying a vector of indices. To access the first and third elements of `vec`:
+:::
+
+Multiple elements can be accessed by supplying a vector of indices.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To access the first and third elements of `vec`:
 
 ```{r vec_index_multi}
 #| eval: true
@@ -77,7 +110,15 @@ Multiple elements can be accessed by supplying a vector of indices. To access th
 vec[c(1, 3)]
 ```
 
-To access consecutive indices, you can use `:`. For example, to access the first, second and third elements of `vec`:
+:::
+
+To access consecutive indices, you can use `:`.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To access the first, second and third elements of `vec`:
 
 ```{r vec_index_multi_consecutive}
 #| eval: true
@@ -85,7 +126,15 @@ To access consecutive indices, you can use `:`. For example, to access the first
 vec[1:3]
 ```
 
-Logical operators can be used for subsetting vectors. If we want to work with just the components of `vec` that are larger than 6:
+:::
+
+Logical operators can be used for subsetting vectors.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+If we want to work with just the components of `vec` that are larger than 6:
 
 ```{r vec_index_logic}
 #| eval: true
@@ -94,7 +143,9 @@ mask <- vec > 6
 vec[mask]
 ```
 
-Note that it could be done in one line using `vec[vec > 6]`. R returns the values in `vec` where a `TRUE` is recorded for `vec > 6`.
+It could be done in one line using `vec[vec > 6]`. R returns the values in `vec` where a `TRUE` is recorded for `vec > 6`.
+
+:::
 
 ## Operations
 
@@ -107,15 +158,13 @@ Usual mathematical operators can be carried on vectors:
 -   Euclidean division: `%%` and `%/%`
 -   Exponentiation: `^`
 
-Computations are (typically) performed **element-wise**. Recall the vector `vec`:
+Computations are (typically) performed **element-wise**.
 
-```{r}
-#| eval: true
-#| class-output: outputcode
-vec <- c(10.4, 5.6, 3.1, 6.4, 21.7)
-```
+::: {.callout-note appearance="simple"}
 
-If we calculate `vec^2`, we get:
+## Example
+
+To calculate the square of `vec`, `vec^2`, we use:
 
 ```{r expo}
 #| eval: true
@@ -123,8 +172,13 @@ If we calculate `vec^2`, we get:
 vec^2
 ```
 i.e. R takes each elements of `vec` and calculates `value^2`.
+:::
 
 If you are unsure if the calculations are element-wise, you should check on some elements. Other examples of common operations are `log()`, `exp()`, `sin()`, `cos()`, etc.
+
+::: {.callout-note appearance="simple"}
+
+## Example
 
 ```{r vec_op}
 #| eval: true
@@ -134,9 +188,17 @@ exp(vec)
 sin(vec)
 ```
 
-## Vectors of the same length
+:::
 
-We can add, subtract, multiply or divide vectors of the same length easily. In this case, R takes the values in the same locations (e.g. the first element of each vector) and performs the computations. For example, to add two vectors of the same length:
+### Vectors of the same length
+
+We can add, subtract, multiply or divide vectors of the same length easily. In this case, R takes the values in the same locations (e.g. the first element of each vector) and performs the computations.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To add two vectors of the same length:
 
 ```{r two_vec_op}
 #| eval: true
@@ -147,10 +209,17 @@ vec_2 <- c(0, 2, 4, 6, 8)
 vec_1 + vec_2
 ```
 
+:::
 
-## Vector of different lengths
+### Vector of different lengths
 
-To carry out an operation on two vectors of different lengths, the shorter vector is **recycled** to match the length of the longer one. Let's look at an example to understand the concept.
+When you perform an operation on vectors of unequal lengths, R automatically **recycles** the shorter vector to match the length of the longer one. This recycling process is applied to ensure that the operation can be carried out element-wise across the vectors. If the shorter vector's length is not an exact divisor of the longer vector's length, the replication is done in a circular manner until both vectors have the same length and a warning message is issued. This indicates that the recycling might not be complete and that the operation may not behave as expected.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+Let's look at an example to understand the concept.
 
 ```{r recycled_vec}
 #| eval: true
@@ -176,8 +245,14 @@ The version of `vec_2` that was actually multiplied to `vec_1` is therefore:
 c(0, 2, 0, 2, 0)
 ```
 
+:::
+
+Recycling is particularly useful when you want to perform operations on vectors of different lengths without explicitly extending the shorter vector. However, it is important to be cautious when relying on recycling, as it can lead to unexpected results if not used carefully. Always ensure that the recycling behavior aligns with your intended operation.
+
+
 ## Additional resources
 
+- R manual by the R Core Team, [Section 2 on vectors](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Simple-manipulations-numbers-and-vectors).
 
 <br><br>
 

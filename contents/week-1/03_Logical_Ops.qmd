@@ -23,7 +23,7 @@ that we can use in R are
 
 ::: {.callout-note appearance="simple"}
 
-## Examples
+## Example
 
 For these examples, let's set up a numeric vector `x`:
 
@@ -94,7 +94,7 @@ The table for the OR operator is
 
 ::: {.callout-note appearance="simple"}
 
-## Examples
+## Example
 
 Say we want to return `TRUE` if the value of `x` is $> 7.9$ OR $< 3.5$:
 
@@ -118,7 +118,7 @@ The table for the AND operator is
 
 ::: {.callout-note appearance="simple"}
 
-## Examples
+## Example
 
 Say we want to return `TRUE` if the value of `x` is $< 7.9$ AND $> 3.5$:
 
