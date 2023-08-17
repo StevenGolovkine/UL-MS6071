@@ -84,7 +84,7 @@ length(null_vector)
 
 A class represents the structure of an object. All objects have a class reported by the `class` function. It provides essential information about how an object is organized and interpreted by R and how it can be manipulated. Each class has its own set of methods and functions. It permits an object-oriented programming approach. You can define your own classes using the `class` method and define methods for this class using `name_function.name_class`. This feature is particularly convenient to override existing methods.
 
-For example, we will create a new class for a simple vector and override the `print` function.
+For example, to create a new class for a simple vector and override the `print` function.
 
 ```{r}
 #| class-output: outputcode
