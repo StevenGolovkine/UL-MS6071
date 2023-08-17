@@ -62,7 +62,11 @@ As for mathematics, the order in which you list operations is important. R uses 
 5.  **A**ddition
 6.  **S**ubtraction
 
-It is often very useful to use brackets to make the ordering explicit. For example the following:
+It is often very useful to use brackets to make the ordering explicit.
+
+::: {.callout-note appearance="simple"}
+
+## Examples
 
 ```{r}
 #| class-output: outputcode
@@ -79,6 +83,8 @@ will perform the `4 / 2` part first and then add the result to `10`. While if we
 ```
 
 the `10 + 4` part is calculated first and the result is then divided by `2`.
+
+:::
 
 ### Assignment operators
 

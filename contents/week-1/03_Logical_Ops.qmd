@@ -6,7 +6,7 @@ engine: knitr
 ## Logical operators
 
 Logical operators are used to compare objects. Every logical operator returns a
-logical (Boolean) vector of `TRUE`/`FALSE` values. We can then use these `TRUE`
+logical (boolean) vector of `TRUE`/`FALSE` values. We can then use these `TRUE`
 and `FALSE` values to create subsets of our data. The primary logical operators
 that we can use in R are
 
@@ -18,9 +18,12 @@ that we can use in R are
 |   `>`    | greater than                   |
 |   `<=`   | less than or equal to          |
 |   `>=`   | greater than or equal to       |
-|   `!`    | returns opposite Boolean value |
+|   `!`    | returns opposite boolean value |
 
-### Examples
+
+::: {.callout-note appearance="simple"}
+
+## Examples
 
 For these examples, let's set up a numeric vector `x`:
 
@@ -62,6 +65,15 @@ If we use the `!` operator:
 !(x > 3.5)
 ```
 
+This is equivalent to getting the values $\leq 3.5$:
+```{r}
+#| class-output: outputcode
+#| eval: true
+x <= 3.5
+```
+
+:::
+
 ## The OR and AND operators
 
 Two other very useful operators are the `|` (the OR operator) and the `&` (the
@@ -70,16 +82,6 @@ AND operator). These are used to combine two or more logical operations. The `|`
 operator returns `TRUE` if both of the conditions are met. There are other
 functions such as `any()`, `all()` and `%in%` that you can use to apply OR and
 AND operators on logical vectors.
-
-### The OR operator
-
-Say we want to return `TRUE` if the value of `x` is $> 7.9$ OR $< 3.5$:
-
-```{r}
-#| eval: true
-#| class-output: outputcode
-x > 7.9 | x < 3.5
-```
 
 The table for the OR operator is
 
@@ -90,15 +92,20 @@ The table for the OR operator is
 | `TRUE`  | `FALSE` |       `TRUE`        |
 | `FALSE` | `FALSE` |       `FALSE`       |
 
-### The AND operator
+::: {.callout-note appearance="simple"}
 
-Say we want to return `TRUE` if the value of `x` is $> 7.9$ AND $< 3.5$:
+## Examples
+
+Say we want to return `TRUE` if the value of `x` is $> 7.9$ OR $< 3.5$:
 
 ```{r}
 #| eval: true
 #| class-output: outputcode
-x > 7.9 & x < 3.5
+x > 7.9 | x < 3.5
 ```
+
+:::
+
 
 The table for the AND operator is
 
@@ -109,8 +116,25 @@ The table for the AND operator is
 | `TRUE`  | `FALSE` |      `FALSE`       |
 | `FALSE` | `FALSE` |      `FALSE`       |
 
+::: {.callout-note appearance="simple"}
+
+## Examples
+
+Say we want to return `TRUE` if the value of `x` is $< 7.9$ AND $> 3.5$:
+
+```{r}
+#| eval: true
+#| class-output: outputcode
+x < 7.9 & x > 3.5
+```
+
+:::
+
+The `|` and `&` operators perform elementwise comparisons. So, they return a vector. To evaluate the statement from left to right, we use the `||` and `&&` operators. These operators can not be applied on vectors with more than one element. This is the appropriate form of the OR and AND operators in conditional statements.
+
 ## Additional resources
 
+- The Logic documentation page ([?base::Logic](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html))
 
 <br><br>
 

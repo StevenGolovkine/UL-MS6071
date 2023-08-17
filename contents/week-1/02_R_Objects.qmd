@@ -31,7 +31,11 @@ More complex objects, such as lists or functions, are **recursive** structure (a
 
 The length of an object defines how many elements the object contains. It can be accessed (and also modify) using the `length` function.
 
-Let's look at an example to understand how it works. First, we create a simple vector of length $10$. 
+::: {.callout-note appearance="simple"}
+
+## Examples
+
+First, we create a simple vector of length $10$. 
 
 ```{r}
 #| class-output: outputcode
@@ -55,6 +59,8 @@ Finally, we want this vector to have a length of $6$. R will fill the position $
 length(A) <- 6
 print(A)
 ```
+
+:::
 
 ### Empty objects
 
@@ -84,7 +90,11 @@ length(null_vector)
 
 A class represents the structure of an object. All objects have a class reported by the `class` function. It provides essential information about how an object is organized and interpreted by R and how it can be manipulated. Each class has its own set of methods and functions. It permits an object-oriented programming approach. You can define your own classes using the `class` method and define methods for this class using `name_function.name_class`. This feature is particularly convenient to override existing methods.
 
-For example, to create a new class for a simple vector and override the `print` function.
+::: {.callout-note appearance="simple"}
+
+## Examples
+
+To create a new class for a simple vector and override the `print` function.
 
 ```{r}
 #| class-output: outputcode
@@ -120,6 +130,7 @@ print(A)  # print A
 
 So, the type of the object did not change, but we have defined our own class with a particular `print` function.
 
+:::
 
 ## Additional resources
 
