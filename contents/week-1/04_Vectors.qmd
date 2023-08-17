@@ -22,13 +22,9 @@ As we have seen before, a vector has two intrinsic properties: its `mode` and it
 #| eval: true
 #| class-output: outputcode
 mode(vec)
-```
-
-```{r vec_length}
-#| eval: true
-#| class-output: outputcode
 length(vec)
 ```
+
 
 ## Combining vectors
 

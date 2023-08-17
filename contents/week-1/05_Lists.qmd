@@ -3,137 +3,127 @@ title: "Lists"
 engine: knitr
 ---
 
+<br>
+A list is an object consisting of an ordered collection of objects (its components). Each component of a list can have a different type (or mode).
+
 ## Creating a list
 
 A list is created using the `list()` function. We pass R objects as arguments to this function, separated by a `,`. If no arguments are passed, then the list is empty. Elements of a list can have names, which often makes them easier to access.
 
-Examples of lists:
+::: {.callout-note appearance="simple"}
+
+## Example
+
 ```{r lists}
 #| eval: false
 #| class-output: outputcode
-l <- list(1, FALSE, "hello")  # List without name 
-l <- list(a = c(1, 2, 3), b = "hello", c = c(TRUE, FALSE))  # List with name
+lst <- list(1, FALSE, "hello")  # List without name 
+lst <- list(a = c(1, 2, 3), b = "hello", c = c(TRUE, FALSE))  # List with name
 ```
 
 Lists can contain objects of different classes (vector, list, ...):
 ```{r list_mix}
 #| eval: true
 #| class-output: outputcode
-l_mix <- list(
+lst <- list(
     vec = c(1, 2, 4),  # Vector
-    l = list(v = "Hello"),  # List
+    lst = list(v = "Hello"),  # List
     mat = matrix(c(1, 0, 0, 1), nrow = 2)  # Matrix
 )
 ```
+:::
 
-
-## List attributes
-
-Lists are like vectors and have one dimension, their length. To determine how many elements are in a list, use:
+As for vectors, lists have two intrinsic properties: its `mode` and its `length`.
 
 ```{r list_length}
 #| eval: true
 #| class-output: outputcode
-length(l_mix)
+mode(lst)
+length(lst)
 ```
 
-Each element of the list will have its own attributes (e.g. dimension of a matrix):
-
-```{r list_sub_length}
-#| eval: true
-#| class-output: outputcode
-dim(l_mix$mat)
-```
-
-List elements also have names (if you choose to use them):
+In the case of named list, another property is added: its `names`.
 
 ```{r}
 #| eval: true
 #| class-output: outputcode
-names(l_mix)
+names(lst)
 ```
 
-Each element of the list may also have row and/or column names:
+## Indexing lists
 
-```{r}
-#| eval: true
-#| class-output: outputcode
-names(l_mix$l)
-```
-
-
-## Subsetting lists
-
-To subset/index lists we can use:
+To subset/index lists, we can use:
 
 - `[ ]` which returns a list element (this will be a list).
 
-- `[[ ]]` or `$` which returns the contents of a list element (this will be an object of the same class as the element, e.g. vector, matrix, list)
+- `[[ ]]` or `$` which returns the contents of a list element (this will be an object of the same class as the element, e.g. vector, matrix, list, ...).
 
-- To access the first element of `l_mix` using `[ ]`, we can use a number(s) indexing the position(s) of the element(s) in the list:
+The rules for indexing lists based on position are the same as those for vectors. Lists can also be indexed using component names, which is not applicable to vectors. Typically, we employ `[ ]` when extracting multiple elements from a list and use `[[ ]]` (with a position) or `$` (with a name) when we require a single element from the list.
 
-```{r}
-#| eval: true
-#| class-output: outputcode
-l_mix[1]
-class(l_mix[1])
-```
+::: {.callout-note appearance="simple"}
 
-- Or the name(s) of the element(s):
+## Example
+
+To access the first two elements of `lst` using `[ ]`, we can use a numbers indexing the positions of the elements in the list:
 
 ```{r}
 #| eval: true
 #| class-output: outputcode
-l_mix[c('vec', 'l')]
-class(l_mix[c('vec', 'l')])
+lst[c(1, 2)]
 ```
 
-- To access the first element of `l_mix` using `[[ ]]`, we can use a number(s) indexing the position(s) of the element(s) in the list:
+The same result can be achieved using the name of the elements:
 
 ```{r}
 #| eval: true
 #| class-output: outputcode
-l_mix[[1]]
-class(l_mix[[1]])
+lst[c('vec', 'lst')]
 ```
 
-- Or the name(s) of the element(s):
+To access the first element of `lst` using `[[ ]]`, we can use number indexing the position of the element in the list:
 
 ```{r}
 #| eval: true
 #| class-output: outputcode
-l_mix[['vec']]
-class(l_mix[['vec']])
+lst[[1]]
 ```
 
-- Using `[[ ]]` is equivalent to using the `$` symbol:
+To access the first element of `lst` using `$`:
 
 ```{r}
 #| eval: true
 #| class-output: outputcode
-l_mix$vec
-class(l_mix$vec)
+lst$vec
 ```
+:::
 
-## Appending lists
+## Appending to lists
 
-We can append lists using position:
+Appending new elements to a list can be directly done by assigning a new value to a specific index. As previsouly, to access the index, you can use `[[ ]]` or `$` (even if the entry does not exist). We usually use position indexing, with `[[ ]]`, to append to the list sequentially (e.g. in a loop), while we use name indexing to save results. 
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+Using position indexing:
 ```{r list_append_pos}
 #| eval: true
 #| class-output: outputcode
-l_mix[[4]] <- c(TRUE, FALSE, NA)
+lst[[4]] <- c(TRUE, FALSE, NA)
 ```
 
-We can also append lists using name:
+Using name indexing:
 ```{r list_append_name}
 #| eval: true
 #| class-output: outputcode
-l_mix$new <- "This is new!"
+lst$new <- "This is new!"
 ```
 
-The list `l_mix` has now `r length(l_mix)` entries.
+:::
 
 ## Additional resources
+
+- R manual by the R Core Team, [Section 6 on lists](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Lists-and-data-frames).
 
 
 <br><br>
