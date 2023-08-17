@@ -9,7 +9,7 @@ By running coding **expressions** in the R console. A prompt, the `>` sign, is d
 
 **Expressions** in R denote code lines accomplishing specific tasks. These lines can be divided by a semicolon (`;`) or a new line. They can also be grouped using curly braces (`{` and `}`). Frequently, these expressions are stored together within **functions**.
 
-::: {#fig-creators}
+::: {#fig-expression}
 
 ![](./images/expression.png)
 
@@ -20,7 +20,7 @@ An expression.
 
 If an expression is incomplete at the end of a line, a `+` is displayed on subsequent lines until it is syntactically complete.
 
-::: {#fig-creators}
+::: {#fig-incomplete-expression}
 
 ![](./images/incomplete_expression.png)
 
@@ -97,7 +97,23 @@ Type the name of the function into the search bar in the Help pan and press Ente
 
 Google is your friend! And so is [stackoverflow](https://stackoverflow.com/collectives/r-language)...
 
-\[Picture of the help file of sqrt\]
+An example of a documentation page is presented in @fig-help. The central elements are highlighted:
+
+- Description: Present a comprehensive outline of the function's purpose.
+
+- Usage: Outline the basic structure of the function.
+
+- Arguments: Detail the necessary input for the function.
+
+- Examples: Illustrate practical application of the function.
+
+::: {#fig-help}
+
+![](./images/documentation.png)
+
+Documentation of the `sqrt` function.
+
+:::
 
 
 ## R coding style
