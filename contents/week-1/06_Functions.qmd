@@ -4,8 +4,7 @@ engine: knitr
 ---
 
 <br>
-
-R is a **functional** programming language, but some OOP systems are implemented.
+R is a **functional** programming language, with some OOP systems implemented.
 Big tasks are broken down into smaller pieces, and functions are written to
 perform each of the smaller tasks. Functions are another mode of R object (`function`). We have already see many of the built-in functions in R, e.g.
 `c()`, `list()` or `sqrt()`. Writing functions is a core activity of an R
@@ -23,7 +22,7 @@ be passed as inputs to other functions.
 
 ## Advantages of using functions
 
-There are three advantages to using functions over copying and pasting code:
+There are three (main) advantages to using functions over copying and pasting code:
 
 1.  A function has a name which makes the code easier to understand.
 2.  If you change requirements, code only needs to be updated in one location
@@ -63,7 +62,34 @@ start of the function and throughout the code. The package
 [`roxygen2`](https://roxygen2.r-lib.org) provides functions to nicely format
 your documentation.
 
-## A first function
+Once the function is loaded in the environment, it can be invoked in several ways
+```{r}
+#| eval: false
+#| class-output: outputcode
+function_name(1, 'A')
+function_name(argument_1 = 1, argument_2 = 'A')
+function_name(1, argument_2 = 'A')
+```
+
+Arguments can have suitable default values assigned, making it possible to exclude them from the function call if the defaults are applicable.
+
+```{r}
+#| eval: false
+#| class-output: outputcode
+function_name <- function(argument_1, arg_with_default=1, ...) {
+    
+    Body/code
+    
+    Output
+    
+}
+```
+
+So, the call `function_name(1)` is equivalent to `function_name(1, 1)`.
+
+::: {.callout-note appearance="simple"}
+
+## Example
 
 To create a simple function, that takes no arguments and does nothing use:
 
@@ -77,7 +103,7 @@ first_func <- function() {
 }
 ```
 
-To **call** or execute this function:
+To call or execute this function:
 
 ```{r}
 #| eval: true
@@ -85,11 +111,7 @@ To **call** or execute this function:
 first_func()
 ```
 
-## Adding a body
-
-Code that you want to be executed when you call a function is called the **body**
-of the function. This can be as simple or as complex as you like. We can also
-call other functions. Let's modify our function to print something when called:
+Now, let's modify our function to print something when called:
 
 ```{r}
 #| eval: true
@@ -100,6 +122,68 @@ first_func <- function() {
 
 first_func()
 ```
+:::
+
+## The `return()` statement
+
+In R, the `return()` statement exists and is used to return a result from a function. By default, R will return the last expression evaluated within the function. So, if your function consists of a sequence of expressions, you don't need to explicitly use `return()`.
+
+In some case, however, you will need to explicitly return something:
+
+1. **Early stopping**: If you have conditions where you want to exit the function early.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+```{r}
+early_exit <- function(x) {
+    if (x < 0) {
+        return("Negative input not allowed!")
+    }
+    # rest of the function
+}
+```
+
+:::
+
+2. **Multiple returns**: If your function has multiple return points based on different conditions. 
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+```{r}
+multiple_returns <- function(x) {
+    if (x < 0) {
+        return("Negative input not allowed!")
+    } else if (x == 0) {
+        return("Input is zero!")
+    }
+    # rest of the function
+}
+```
+
+:::
+
+3. **Inside loops**: In iterative structure, you can exit the loop if a certain condition is met.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+```{r}
+inside_loops <- function(numbers) {
+    for (num in numbers) {
+        if (num < 0) {
+            return("Negative number found")
+        }
+    }
+    # rest of the function
+}
+```
+
+:::
 
 ## Additional resource
 
