@@ -3,10 +3,10 @@ title: "If-Else statement"
 engine: knitr
 ---
 
-
+<br>
 The `if-else` combination is extremely common in R and in many other programming languages. These statements allow you to execute chunks of code if a particular condition is met (or not). We will look at `if`, `else` and `else if` statements.
 
-## if statements
+## `if` statements
 
 The basic format of an `if` statement is:
 
@@ -22,7 +22,11 @@ if (condition) {
 
 The `condition` must be a logical operator, i.e. return only a TRUE or FALSE value. If the `condition` is TRUE, the code between the `{ }` will be executed.  If the `condition` is FALSE, the code between the `{ }` will be skipped and the next line(s) of code executed.
 
-For example, a random number between $0$ and $100$ is generated and stored in `x`.  **Pass** will be printed if `x` is $>50$. The code is as follows:
+::: {.callout-note appearance="simple"}
+
+## Example
+
+A random number between $0$ and $100$ is generated and stored in `x`.  **Pass** will be printed if `x` is $>50$. The code is as follows:
 
 ```{r}
 #| class-output: outputcode
@@ -34,7 +38,9 @@ if (x > 50) {
 
 ```
 
-## else statements
+:::
+
+## `else` statements
 
 The latter code will do nothing if the `condition` returns FALSE. If you want something specific to happen, an `else` statement is needed. This has the general form:
 ```{r}
@@ -48,14 +54,17 @@ if (condition) {
 ```
     
 
-For example, a random number between $0$ and $100$ is generated and stored in `x`. **Pass** will be printed if `x` is $>50$. **Fail** will be printed otherwise.
+::: {.callout-note appearance="simple"}
+
+## Example
+
+A random number between $0$ and $100$ is generated and stored in `x`. **Pass** will be printed if `x` is $>50$. **Fail** will be printed otherwise.
 
 The code is as follows:
 ```{r}
 #| class-output: outputcode
 #| eval: true
 x <- sample(1:100, 1)
-
 if (x > 50) {
     print("Pass")
 } else {
@@ -64,8 +73,9 @@ if (x > 50) {
 
 ```
 
+:::
 
-## if, else if, else statements
+## `if`, `else if`, `else` statements
 
 You can have a series of tests by starting with an `if` statement and following it with several `else if` statements. This has the general form:
 
@@ -81,8 +91,11 @@ if (condition_1) {
 }
 ```
 
+::: {.callout-note appearance="simple"}
 
-For example, a random number between $0$ and $100$ is generated and stored in `x`.  **Pass** will be printed if `x` is $>50$. **Check** will be printed if `x` is $>30$ and $\leq 50$. **Fail** will be printed otherwise.
+## Example
+
+A random number between $0$ and $100$ is generated and stored in `x`.  **Pass** will be printed if `x` is $>50$. **Check** will be printed if `x` is $>30$ and $\leq 50$. **Fail** will be printed otherwise.
 
 The code is as follows:
 ```{r}
@@ -91,16 +104,18 @@ The code is as follows:
 x <- sample(1:100, 1)
 if (x > 50) {
     print("Pass")
-} else if (x > 30 & x <= 50) {
+} else if (x > 30 && x <= 50) {
     print("Check")
 } else {
     print("Fail")
 }
 ```
 
+:::
 
 ## Additional resource
 
+- R manual by the R Core Team, [Section 9 on conditional execution](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Conditional-execution).
 
 <br><br>
 
