@@ -3,8 +3,7 @@ title: "Packages"
 engine: knitr
 ---
 
-## What are packages?
-
+<br>
 Much of R functionality is provided via packages. Packages are a collection of functions, data and documentation that are created to perform a particular task(s). Some packages are part of the base R installation (e.g., `base`, `mgcv`, `nlme`, `stats`, ...). Others can be downloaded and installed from [CRAN](https://cran.r-project.org/web/packages/available_packages_by_name.html). Packages can be created and shared by anyone in the R community.
 
 ## Downloading and installing packages
@@ -29,11 +28,21 @@ library(package_name)
 
 In RStudio, we also have the option of using the `Packages` tab and clicking on `Install`.
 
-\[\[Picture of packages installation in RStudio\]\]
+::: {#fig-r-install}
+![](./images/install.png)
+
+Install package.
+:::
+
 
 In the pop-up, type in the package name (without quotes), make sure the `Install dependencies` box is ticked and click `Install`.
 
-\[\[Picture of the pop-up\]\]
+::: {#fig-r-install_popup}
+![](./images/install_popup.png)
+
+Installation pop-up window.
+:::
+
 
 ## Loading packages
 
@@ -47,7 +56,12 @@ library(package_name)
 
 We usually have a series of these commands at the top of a script file, loading all of the packages we will use for the analysis. If you terminate your session, you will need to reload the relevant packages again. RStudio has the option to use the `Packages` tab to load packages where all of the downloaded packages are listed.
 
-\[\[ Picture \]\]
+::: {#fig-r-loaded}
+![](./images/loaded.png)
+
+Loaded package.
+:::
+
 
 ## Updating packages
 
@@ -90,6 +104,7 @@ MASS::select(...)   # For the MASS function
 
 ## Additional resources
 
+- R manual by the R Core Team, [Section 13 on packages](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Packages).
 
 <br><br>
 
