@@ -3,34 +3,36 @@ title: "Loops"
 engine: knitr
 ---
 
-## What are loops?
-
+<br>
 Loops are chunks of code that run repeatedly until a stopping criterion is reached. There are lots of different types of loops that are available, e.g. `while` loops, `repeat` loops, and `for` loops. We will focus on `for` loops as these are the most common type of loop you will need when programming in R.
 
 ::: {.callout-note appearance="simple"}
 
-It can be better for code efficiency to avoid using loops but often a loop works just fine!
+It can be better for code efficiency to avoid using loops, using vectorisation for example, but often a loop works just fine!
 
 :::
 
 
 ## Structure of for loops
 
-To loop/iterate through a certain number of repetitions, or carry out the same thing to lots of inputs (e.g. over all columns of a data frame), a `for` loop is used. In R `for` loops take an *iterator variable* and assign it successive values from a sequence or vector. The general structure of a `for` loop is:
+To loop/iterate through a certain number of repetitions, or carry out the same thing to lots of inputs (e.g. over all columns of a data frame), a `for` loop is used. In R, `for` loops take an **iterator variable** and assign it successive values from a sequence or vector. The general structure of a `for` loop is:
 
 ```{r}
 #| class-output: outputcode
 #| eval: false
-for (iterator_variable in some_vector) {
+for (iterator_variable in some_sequence) {
     # do something
 }
 ```
 
-Often we use `i` to denote the iterator variable name but any name can be used. Each time the loop is run, `i` then changes value as given by the numbers in `some_vector`. Typically `i` increments by $1$ (or some integer), but not always.
+Often we use `i` to denote the iterator variable name but any name can be used. Each time the loop is run, `i` then changes value as given by the numbers in `some_sequence`. Typically `i` increments by $1$ (or some integer), but not always.
 
-### A simple for loop
+::: {.callout-note appearance="simple"}
 
-In the simplest example:
+## Example
+
+First, we consider a simple example where we want to print the numbers from $1$ to $10$.
+
 ```{r}
 #| class-output: outputcode
 #| eval: true
@@ -41,19 +43,14 @@ for (i in 1:10) {
 
 Here `i` is the iterator variable and the sequence $1, 2, 3, \dots, 10$ is the vector of values `i` will take on. First `i` is given the value $1$, and the code between the curly brackets is executed. Here $1$ is printed to the screen. Once the code is executed, `i` is then incremented to the next value in the sequence $1, 2, 3, \dots, 10$, i.e. the number $2$. The code is executed again and $2$ is printed to the screen. The loop repeats until it reaches the final value in the sequence, $10$, executes the code and then exits the loop. 
 
-## Iterating
+:::
 
-The vector of values to iterate through can have many structures. To print even numbers between $1$ and $10$ use:  
-```{r}
-#| class-output: outputcode
-#| eval: true
-steps <- c(2, 4, 6, 8, 10)
-for (i in steps) {
-    print(i)
-}
-```
 
-Next say we have a character vector called `char_vec`:
+::: {.callout-note appearance="simple"}
+
+## Example
+
+Consider a vector of characters named `char_vec`:
 ```{r}
 #| class-output: outputcode
 #| eval: true
@@ -62,7 +59,7 @@ char_vec <- c("a", "b", "c", "d")
 
 To print the contents of `char_vec` there are several options. The following three loops all have the same behaviour.
 
-1. Iterate directly through `char_vec`:
+1. Iterate directly through `char_vec` as the previous example:
 ```{r}
 #| class-output: outputcode
 #| eval: true
@@ -93,39 +90,49 @@ for (i in seq_along(char_vec)) {
 }
 ```
 
+:::
+
 ## Storing outputs
 
-When using `for` loops we often want to store the results of the code we are executing in the loop. Typically the results will be stored in specific locations in a vector, data frame, or list depending on the value of `i`. Let's set up a list with $3$ elements, each of which is a numeric vector:
+When using `for` loops we often want to store the results of the code we are executing in the loop. Typically, the results will be stored in specific locations in a vector, data frame, or list depending on the value of `i`. 
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+Let's set up a list with $3$ elements, each of which is a numeric vector:
 
 ```{r}
 #| class-output: outputcode
 #| eval: true
-dat.list <- list(
+data_list <- list(
     el_1 = c(1, 2, 3, 4, 5),
     el_2 = c(3.4, 2.3, 3.1, 4),
     el_3 = c(19.3, 12.5, 6.1)
 )
 ```
 
-Say we want to calculate and store the mean of each of the vectors in `dat.list`. A `for` loop can be used to do this:
+Say we want to calculate and store the mean of each of the vectors in `data_list`. A `for` loop can be used to do this:
 
 ```{r}
 #| class-output: outputcode
 #| eval: true
 # Set up an empty numeric vector to store the means. 
-mean.vec <- vector(
+mean_vec <- vector(
     mode = "numeric",
-    length = length(dat.list)
+    length = length(data_list)
 )
 
 # Run the for loop 
-for (i in seq_along(dat.list)) {
-    mean.vec[i] <- mean(dat.list[[i]]) 
+for (i in seq_along(data_list)) {
+    mean_vec[i] <- mean(data_list[[i]]) 
 }
 
-mean.vec
+mean_vec
 ```
-    
+
+:::
+
 There are 3 steps in this process:
 
 1. **Output** - set up an empty object to store the results.  
@@ -136,45 +143,56 @@ There are 3 steps in this process:
 
 `for` loops can also be **nested**, i.e. we can have multiple loops iterating over different indices. For example, we might want to iterate over the rows and columns of a data frame.
 
+::: {.callout-note appearance="simple"}
+
+## Example
+
 A nested loop is constructed as follows:
 ```{r}
 #| class-output: outputcode
 #| eval: true
-my.data.frame <- data.frame(var.1 = 1:6, var.2 = 8:13)
-
-for (i in 1:nrow(my.data.frame)) {
-    for (j in 1:ncol(my.data.frame)) {
-        print(my.data.frame[i, j])
+my_data_frame <- data.frame(var1 = 1:6, var2 = 8:13)
+for (i in 1:nrow(my_data_frame)) {
+    for (j in 1:ncol(my_data_frame)) {
+        print(my_data_frame[i, j])
     }   
 }
 ```
+
+:::
 
 ## Implicit looping
 
 R has an in-built family of functions which implement looping in a compact and efficient way. The main functions in this family are:  
   
 * `lapply()` - loop over a list and evaluate a function on each element.
-* `sapply()` - same as `lapply()` by tries to simplify the result.
+* `sapply()` - same as `lapply()` by tries to simplify the result by returning a vector, matrix or array.
 * `tapply()` - apply a function over subsets of a vector.
 * `apply()` - apply a function over the margins of an array.
 * `mapply()` - a multivariate version of `lapply()`.
 
-To calculate the mean for each element of the data frame `dat.list` without using a `for` loop:
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To calculate the mean for each element of the data frame `data_list` without using a `for` loop:
 
 ```{r}
 #| class-output: outputcode
 #| eval: true
-dat.list <- list(
+data_list <- list(
     el_1 = c(1, 2, 3, 4, 5),
     el_2 = c(3.4, 2.3, 3.1, 4),
     el_3 = c(19.3, 12.5, 6.1)
 )
-lapply(dat.list, mean)
+sapply(data_list, mean)
 ```
 
+:::
 
 ## Additional resource
 
+- R manual by the R Core Team, [Section 9 on repetitive execution](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Repetitive-execution).
 
 <br><br>
 
