@@ -1,0 +1,41 @@
+---
+title: "Basics - Tutorial"
+engine: knitr
+---
+
+<br>
+
+The objective of today's tutorials is to familiarize you with fundamental R commands. To achieve this, we will create a basic version of the Hangman game. For this simple version, we will let R to chooses the word to guess.
+
+Rules of the game versus the computer:
+
+1. R chooses (randomly) a word from a database of words and draws a blank line for each letter of the word.
+
+2. The player takes turns guessing letters. If the guessed letter is in the word, R fills in all the spaces where that letter appears.
+
+3. If the guessed letter is not in the word, the player draws a body part of a hangman (remove one from the counts of lives).
+
+4. The game ends when the player guesses the entire word or when the hangman is complete (number of lives goes to zero).
+
+If the player guesses the word, he wins the game.
+
+Feel free to employ a word database of your preference. Alternatively, you can utilise this [resource](./ressources/words.txt), which constitutes the official Scrabble players' dictionary in English (excluding all two-letter words).
+
+
+Here is a list of functions you might find useful for the tutorials:
+
+* `read.delim`: to read a file
+
+* `readline`: to read user input
+
+* `strsplit`: to split a string into a list of characters
+
+* `gsub`: to replace a character by another in a vector
+
+::: {#fig-hangman}
+
+![](./images/hangman.png)
+
+My simple implementation of the Hangman game.
+
+:::
