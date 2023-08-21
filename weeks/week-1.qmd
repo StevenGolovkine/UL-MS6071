@@ -43,7 +43,7 @@ Prior to diving into the materials, ensure that you have R and RStudio installed
 
 ## Source code
 
-🧑‍💻 [Source code](/contents/week-1/source/week01.R)
+🧑‍💻 [Source code](/contents/week-1/source/all_code_chunks.R)
 
 ## Questionnaire
 

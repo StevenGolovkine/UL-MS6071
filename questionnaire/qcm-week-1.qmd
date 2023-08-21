@@ -3,12 +3,15 @@ title: "Basics - Questionnaire"
 engine: knitr
 ---
 
+<br>
+
 ```{r}
 #| echo: false
 library(webexercises)
 ```
 
 ```{r}
+#| class: webex-box
 #| echo: false
 #| results: asis
 question <- "Which function is used to install packages in R?"
@@ -19,7 +22,14 @@ question_choices <- c(
     "`library_install()`"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
 question <- "What is the correct syntax for creating a vector in R?"
 question_choices <- c(
     "`vec(1, 2, 3)`",
@@ -28,8 +38,15 @@ question_choices <- c(
     "`array(1, 2, 3)`"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
-question <- "To access the help documentation for a specific function in R, you can use:"
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "To access the documentation for a specific function in R, you can use:"
 question_choices <- c(
     answer = "`help(function_name)`",
     "`??function_name`",
@@ -37,7 +54,14 @@ question_choices <- c(
     "`get_help(function_name)`"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
 question <- "Which symbol is used for assignment in R?"
 question_choices <- c(
     "`~`",
@@ -46,7 +70,14 @@ question_choices <- c(
     answer = "`<-`"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
 question <- "What does the `class()` function in R do?"
 question_choices <- c(
     "Returns the dimensions of an object",
@@ -55,7 +86,14 @@ question_choices <- c(
     "Checks if an object is empty"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
 question <- "Which function is used to generate a sequence of numbers in R?"
 question_choices <- c(
     answer = "`seq()`",
@@ -64,7 +102,14 @@ question_choices <- c(
     "`generate_sequence()`"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
 question <- "In R, how do you check if a certain element exists in a vector?"
 question_choices <- c(
     "`is_element()`",
@@ -73,7 +118,14 @@ question_choices <- c(
     answer = "`%in%`"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
 question <- "What is the output of the following R code?\n
     x <- 10
     y <- 5
@@ -87,7 +139,14 @@ question_choices <- c(
     "The code does not produce any output"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
 question <- "The `data.frame()` function in R is used to create:"
 question_choices <- c(
     "Matrices",
@@ -96,8 +155,15 @@ question_choices <- c(
     "Arrays"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
-question <- "What is the purpose of the 'if-else' statement?"
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the purpose of the `if-else` statement?"
 question_choices <- c(
     answer = "To conditionally execute code based on a logical test",
     "To create a loop that repeats a block of code",
@@ -105,8 +171,15 @@ question_choices <- c(
     "To assign a value to a variable"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
-question <- "Which operator is used to combine multiple conditions in an 'if' statement?"
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "Which operator is used to combine multiple conditions in an `if` statement?"
 question_choices <- c(
     "`&`",
     "`+`",
@@ -114,8 +187,15 @@ question_choices <- c(
     "`%>%`"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
-question <- "What will be the output of the following 'if-else' statement?\n
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What will be the output of the following `if-else` statement?\n
     x <- 5
     if (x < 3) {
         result <- 'small'
@@ -131,8 +211,15 @@ question_choices <- c(
     "Error: unexpected symbol"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
-question <- "In an `if-else` statement, if the condition in `if` is FALSE, and there is no `else` statement, what happens?"
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "In an `if-else` statement, if the condition in `if` is `FALSE`, and there is no `else` statement, what happens?"
 question_choices <- c(
     "The program exits with an error",
     "The `if-else` statement automatically creates an `else` block",
@@ -142,4 +229,50 @@ question_choices <- c(
 cat(question, longmcq(sample(question_choices)))
 ```
 
+<br>
 
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the primary purpose of a `for` loop in R?"
+question_choices <- c(
+    "To define a function",
+    "To execute a block of code only once",
+    "To repeat a block of code a specific number of times",
+    answer = "To iterate over a sequence of values and perform operations"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What are the components of a `for` loop in R?"
+question_choices <- c(
+    "Initialization, condition, increment",
+    "Start, end, step size",
+    answer = "Sequence, variable, body of the loop",
+    "Counter, iteration, operation"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "In a `for` loop, how is the iteration variable typically updated?"
+question_choices <- c(
+    "It's incremented by 1 each time",
+    answer = "It's assigned a new value from a sequence at each iteration",
+    "It's multiplied by a constant factor",
+    "It's decremented by 1 each time"
+)
+cat(question, longmcq(sample(question_choices)))
+```

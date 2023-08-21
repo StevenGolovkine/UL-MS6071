@@ -293,6 +293,7 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 .outputcode {
   border: 1px solid black;
   background-color: white;
+  border-radius: .25em;
 }
 
 .pseudocode {
