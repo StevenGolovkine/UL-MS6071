@@ -61,3 +61,9 @@ It is good practice to check that the data have read in correctly to R. Use the 
 * `readr` package: [link](https://readr.tidyverse.org)
 
 * Cheat sheet: [link](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf)
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 02](/weeks/week-2.qmd) ⏎
+:::

@@ -193,3 +193,9 @@ Remember, this works because a tibble/data frame is stored as a list! In contras
 * The tidyverse [website](https://www.tidyverse.org).
 
 * The tibble [website](https://tibble.tidyverse.org/index.html).
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 02](/weeks/week-2.qmd) ⏎
+:::
