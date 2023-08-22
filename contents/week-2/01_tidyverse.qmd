@@ -21,7 +21,9 @@ library(tidyverse)
 The `tidyverse` packages share the same design philosophy, grammar and data structures. When using these packages, the data are assumed to be in **tidy** format, i.e. are **tidy data** (see [here](http://www.jstatsoft.org/v59/i10/paper) for a paper discussing the merits of tidy data). Tidy data are much easier to work with and you can spend more time answering the data analytic question of interest. Tidy data have a rectangular format (rows and columns) and display 3 key properties:
 
 1. Each variable has its own column.
+
 2. Each observation has its own row.
+
 3. Each value has its own cell.
 
 **Tidying** your data to ensure it is in the above format is a vital first step in preparing it for analysis. All the tables are from the `tidyr` package.

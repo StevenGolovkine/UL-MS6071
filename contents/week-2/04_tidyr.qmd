@@ -1,12 +1,132 @@
 ---
 title: "Tidy data with tidyr"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
-# Additional resources
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| include: false
+library(tidyverse)
+```
+
+<br>
+Tidy data is a standard way of storing and organising data so that it is easy to understand and use. Recall that it has three main principles:
+
+1. Each variable is stored in a separate column.
+
+2. Each observation is stored in a separate row.
+
+3. Each value of a variable is stored in a single cell.
+
+The `tidyr` package is a collection of functions that help you to wrangle your data into a tidy format. It provides a consistent set of verbs for pivoting, gathering, spreading, and mutating data.
+
+## Reshaping data
+
+Reshaping data in R is the process of transforming data from one format to another. This can be done for a variety of reasons, such as to make the data easier to analyse, to make it more compatible with a particular statistical software package, or to make it easier to visualise.
+
+There are two main ways to reshape data in R:
+
+- **Pivoting** is the process of transforming data from a wide format to a long format. In wide format, each variable is stored in a separate column, and each observation is stored in a separate row. In long format, each observation is stored in a single row, and the variables are stored in a single column. We can use the `pivot_longer()` function to pivot the data frame. This function takes a data frame and gathers multiple columns into a single column, with the values of the multiple columns stored in a new column.
+- **Spreading** is the opposite of pivoting. It is the process of transforming data from a long format to a wide format. We can use the `pivot_wider()` function to spread the data frame. This function is the opposite of `pivot_longer()`. It takes a data frame and spreads a single column into multiple columns, with the values of the column split into the new columns.
+
+The `tidyr` package offers two functions to reshape a data frame: `pivot_longer()` for pivoting and `pivot_wider()` for spreading.
+
+::: {.callout-note appearance="simple"}
+
+Note that to you may find the functions `gather()` and `spread()` in some code. This functions are no longer in used and have been replaced by `pivot_longer()` and `pivot_wider()`.
+
+:::
+
+::: {.callout-note appearance="simple"}
+
+## Example 
+
+To understand the process of pivoting and spreading a data frame, we will work with a very small toy example with grades. To create the dataset, we use the `tribble()` function to make a tibble.
+
+Let's start with pivoting a data frame.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+df <- tribble(
+  ~student,   ~maths, ~physics,
+  'Alice',        18,       15,
+  'Bob',          14,       10,
+  'Charlie',       8,       16
+)
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+df |> pivot_longer(
+  cols = c(maths, physics),
+  names_to = 'course',
+  values_to = 'grade'
+)
+```
+
+Spreading is the opposite transformation of pivoting.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+df <- tribble(
+  ~student,   ~course, ~grade,
+  'Alice',    "maths",     18,
+  'Alice',  "physics",     15,
+  'Bob',      "maths",     14,
+  'Bob',    "physics",     10,
+  'Charlie',  "maths",      8,
+  'Charlie',"physics",     16
+)
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+df |> pivot_wider(
+  names_from = 'course',
+  values_from = 'grade'
+)
+```
+
+:::
+
+## Cell splitting
+
+Cell splitting in a data frame is the process of splitting a cell into multiple cells. This can be done for a variety of reasons, such as to extract data from a cell, to format data or to make the data tidy.
+
+::: {.callout-note appearance="simple"}
+
+## Example 
+
+```{r}
+df <- tribble(
+  ~student,      ~grades,
+  'Alice',    '18/15/20',
+  'Bob',      '14/10/12',
+  'Charlie',   '8/16/14'
+)
+
+df |> separate_wider_delim(
+  cols = grades,
+  delim = '/',
+  names = c('maths', 'physics', 'french')
+)
+```
+
+:::
+
+Partitioning cells into multiple columns can be particularly advantageous, especially for tasks like date manipulation. While the `unite()` function is available to collapse cells across various columns, it is employed less frequently in practice.
+
+
+## Additional resources
+
+* The `tidyr` [website](https://tidyr.tidyverse.org)
+
+* `tidyr` [cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf)
 
 
 <br><br>
