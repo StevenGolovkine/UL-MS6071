@@ -1,8 +1,10 @@
 {
-  "hash": "d0a0b35ac84919786f489b99bc54cae6",
+  "hash": "22cb94e407283758c6507ff75f3158d3",
   "result": {
-    "markdown": "---\ntitle: \"Tidy data with tidyr\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n# Additional resources\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Tidy data with tidyr\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n# Additional resources\n\n\n<br><br>\n\n::: {style=\"font-size: 0.875em;\"}\nBack to [week 02](/weeks/week-2.qmd) ⏎\n:::",
+    "supporting": [
+      "04_tidyr_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

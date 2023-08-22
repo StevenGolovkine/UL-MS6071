@@ -14,6 +14,13 @@ Prior to diving into the materials, ensure that you have the `tidyverse` install
 install.packages('tidyverse')
 ```
 
+Then, the library is assumed to be loaded for all materials:
+
+```{r}
+#| eval: false
+library(tidyverse)
+```
+
 ## Prepare
 
 📖 Principles of the [tidyverse](/contents/week-2/01_tidyverse.qmd)
