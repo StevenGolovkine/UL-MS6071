@@ -124,9 +124,9 @@ Partitioning cells into multiple columns can be particularly advantageous, espec
 
 ## Additional resources
 
-* The `tidyr` [website](https://tidyr.tidyverse.org)
+* The `tidyr` [website](https://tidyr.tidyverse.org).
 
-* `tidyr` [cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf)
+* `tidyr` [cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf).
 
 
 <br><br>

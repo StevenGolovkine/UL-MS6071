@@ -88,11 +88,11 @@ Note that to read in Excel files, another package (`readxl`) have to downloaded 
 
 ## Additional resources
 
-* The `tibble` [website](https://tibble.tidyverse.org)
+* The `tibble` [website](https://tibble.tidyverse.org).
 
-* The `readr` [website](https://readr.tidyverse.org)
+* The `readr` [website](https://readr.tidyverse.org).
 
-* `readr` [cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf)
+* `readr` [cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf).
 
 <br><br>
 
