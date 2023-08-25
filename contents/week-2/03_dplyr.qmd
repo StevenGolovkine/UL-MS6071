@@ -169,239 +169,212 @@ df |> arrange(fixed_acidity, volatile_acidity)
 
 :::
 
-## What is select()?
+## What is `select()`?
 
 The `select()` function is used to select columns of a data frame that you want to focus on. In any data analysis project, you will have a large data frame that contains all of the data. However, for a particular analysis (or part of an analysis) only a subset of these data are needed.
-
-### How to use select()?
 
 There are two ways to use the `select()` command. The first is:
 ```{r}
 #| class-output: outputcode
 #| eval: false
-#select(data, column_1, column_2, column_3)
+select(data, column_1, column_2, column_3)
 ```
 
 The second uses the pipe:
 ```{r}
 #| class-output: outputcode
 #| eval: false
-#data |> select(column_1, column_2, column_3)
+data |> select(column_1, column_2, column_3)
 ```
 We will use the second version.
 
-- Example - one column
+::: {.callout-note appearance="simple"}
 
-To select just the bill length from the `penguins` data:
-```{r}
-#| class-output: outputcode
-#| eval: false
-#penguins |> select(bill_length_mm)
-```
+## Example
 
-- Example - except one column
+- Select one column
 
-To select everything *except* the bill length column:
+To select just the quality from the wine quality data:
 ```{r}
 #| class-output: outputcode
 #| eval: true
-#penguins |> select(-bill_length_mm)
+df |> select(quality)
 ```
 
-- Example - multiple columns
+- Select all columns except one
 
-To select the bill length and body mass columns:
+To select everything *except* the quality column:
 ```{r}
 #| class-output: outputcode
 #| eval: true
-#penguins |> select(bill_length_mm, body_mass_g)
+df |> select(-quality)
+```
+
+- Select multiple columns
+
+To select the quality and alcohol columns:
+```{r}
+#| class-output: outputcode
+#| eval: true
+df |> select(alcohol, quality)
 ```
 
 We can use the minus sign to select everything except these columns:
 ```{r}
 #| class-output: outputcode
 #| eval: true
-#penguins |> select(-bill_length_mm, -body_mass_g)
+df |> select(-alcohol, -quality)
 ```
 
-- Example - a range of columns
+- Select a range of columns
 
-You can use the `:` to select all columns that are between two columns (inclusive). For the `penguins` data remember that:
+You can use the `:` to select all columns that are between two columns (inclusive). For the wine quality data remember that:
 ```{r}
 #| class-output: outputcode
 #| eval: true
-#names(penguins)
+names(df)
 ```
 
-There are 8 columns, with names as given above. To extract all the columns between `bill_length_mm` and `flipper_length_mm` (inclusive) use:
+There are $13$ columns, with names as given above. To extract all the columns between `chlorides` and `pH` (inclusive) use:
 
 ```{r}
 #| class-output: outputcode
 #| eval: true
-#penguins |> select(bill_length_mm:flipper_length_mm)
+df |> select(chlorides:pH)
 ```
-    
+
 Putting the minus sign in front drops these columns:
 ```{r}
 #| class-output: outputcode
 #| eval: true
-#penguins |> select(-(bill_length_mm:flipper_length_mm))
+df |> select(-(chlorides:pH))  # note the brackets
 ```
 
-**NOTE**: Brackets around the column names!
-
+:::
 
 ### Re-arranging columns
 
-You can also re-arrange the order of the columns using `select()` and `everything()`. To put the `year` column first, followed by everything else:
+You can also re-arrange the order of the columns using `select()` and `everything()`.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To put the `quality` column first, followed by everything else:
 
 ```{r}
 #| class-output: outputcode
 #| eval: true
-#penguins |> select(year, everything())
+df |> select(quality, everything())
 ```
 
-## What is mutate()?
+:::
+
+## What is `mutate()`?
 
 It is often useful to create new variables that are derived from existing ones in a data frame. The `mutate()` function is used to compute transformations of existing variables (columns) in a data frame. For example, we might want to transform from hours to minutes, millimeters to centimeters, etc. `mutate()` provides a simple interface to achieve this.
-
-### How to use mutate()?
 
 To use `mutate()` with the pipe:
 ```{r}
 #| class-output: outputcode
 #| eval: false
-# data |> 
-#     mutate(
-#         new_column_name_1 = func_of_column_name_X,
-#         new_column_name_2 = func_of_column_name_Y,
-#         new_column_name_3 = func_of_column_name_Z
-#     )
+data |> 
+    mutate(
+        new_column_name_1 = func_of_column_name_X,
+        new_column_name_2 = func_of_column_name_Y,
+        new_column_name_3 = func_of_column_name_Z
+    )
 ```
 
-The transformed `X`, `Y`, `Z` columns will then be stored in new columns with the column names specified on the LHS of the `=`.
+The transformed `X`, `Y`, `Z` columns will then be stored in new columns with the column names specified on the left-hand side of the `=` sign.
 
-- Example - one new variable (column)
+::: {.callout-note appearance="simple"}
 
-We will first convert the bill length in the `penguins` data from mm to cm:
-```{r}
-#| class-output: outputcode
-#| eval: true
-# new.penguins <- penguins %>%
-#     mutate(bill_length_cm = bill_length_mm / 100) 
-```
-and store the results in a new data frame (tibble), `new.penguins`
+## Example
 
-Check the names of `new.penguins`:
-```{r}
-#| class-output: outputcode
-#| eval: true
-#names(new.penguins)
-```
-
-Extract just the `bill_length_mm` and `bill_length_cm` columns:
+We will first compute the ratio between `free_sulfur_dioxide` and `total_sulfur_dioxode`:
 
 ```{r}
 #| class-output: outputcode
 #| eval: true
-# new.penguins %>%
-#     select(bill_length_mm, bill_length_cm)
+new_df <- df %>%
+    mutate(ratio_sulfur_dioxide = free_sulfur_dioxide / total_sulfur_dioxide) 
 ```
 
-- Example - two new variables
+and store the results in a new data frame (tibble), `new_df`.
 
-To convert the bill length and flipper length from mm to cm and store the result in a new data frame `new.penguins`:
+Extract just the `free_sulfur_dioxide`, `total_sulfur_dioxide` and `ratio_sulfur_dioxide` columns:
 
 ```{r}
 #| class-output: outputcode
 #| eval: true
-# new.penguins <- penguins %>%
-#     mutate(
-#         bill_length_cm = bill_length_mm / 100,
-#         flipper_length_cm = flipper_length_mm / 100
-#     )
+new_df %>%
+    select(free_sulfur_dioxide, total_sulfur_dioxide, ratio_sulfur_dioxide)
 ```
 
-Again check the names:
-```{r}
-#| class-output: outputcode
-#| eval: true
-# names(new.penguins)
-```
+:::
 
-- Example - two new variables
-
-Extract the `bill_length_mm`, `bill_length_cm`, `flipper_length_mm` and `flipper_length_cm` columns:
-
-```{r}
-#| class-output: outputcode
-#| eval: true
-# new.penguins |> 
-#     select(bill_length_mm, bill_length_cm, flipper_length_mm, flipper_length_cm)
-```
-
-## What is summarise()?
+## What is `summarise()`?
 
 The `summarise()` function is used to compute statistical summaries of the variables (columns) or rows in a data frame. It will take a vector of data and reduce it to a single summary statistic, e.g. mean, median, min, max. The `summarise()` function can be used directly, or with the pipe.
 
-### How to use summarise()?
-
 To use `summarise()` with the pipe:
+
 ```{r}
 #| class-output: outputcode
 #| eval: false
-# data |> 
-#     summarise(
-#         summary_1 = summary_func_1(column_name),
-#         summary_2 = summary_func_2(column_name),
-#         summary_3 = summary_func_3(column_name)
-#     )
+data |> 
+    summarise(
+        summary_1 = summary_func_1(column_name),
+        summary_2 = summary_func_2(column_name),
+        summary_3 = summary_func_3(column_name)
+    )
 ```
+
 The `data` is the data frame or tibble that you want to summarise. The `summary_1/2/3/etc` values are the names of the summary statistics. The `summary_func_1/2/3/etc` values are the summary functions used, e.g. mean, median, min, max.  The `column_name` is the vector of data to summarise (typically a column(s) of the data frame).
 
-- Example - one summary
+::: {.callout-note appearance="simple"}
 
-To calculate the mean bill length in the `penguins` data:
+## Example
+
+To calculate the mean alcohol by volume in the wine quality data:
+
 ```{r}
 #| class-output: outputcode
 #| eval: true
-# penguins |> 
-#     summarise(
-#         mean_bill_len = mean(bill_length_mm, na.rm = TRUE)
-#     )
+df |> 
+    summarise(
+        mean_alcohol = mean(alcohol, na.rm = TRUE)
+    )
 ```
-This returns a tibble with 1 element, the mean bill length. We could store this into a new object if needed.
 
-- Example - two summaries
+This returns a tibble with $1$ element, the mean alcohol by volume. We could store this into a new object if needed.
 
-Calculate the mean bill length and flipper length:
-```{r}
-#| class-output: outputcode
-#| eval: true
-# penguins |> 
-#     summarise(
-#         mean_bill_len = mean(bill_length_mm, na.rm = TRUE),
-#         mean_flipper_len = mean(flipper_length_mm, na.rm = TRUE)
-#     )
-```
-    
-This gives a tibble with 1 row and 2 columns (one for the mean of each variable).
+:::
 
 You could also use other summary functions, `median()`, `sd()`, `min()`, `max()`, `IQR()`, etc. 
 
+
 ### Calculating grouped summaries
 
-Often `summarise()` is used with the `group_by()` function. `group_by()` allows us to "split" our data into sections as defined by our *grouping* variable, e.g. species. We can then perform calculations on each section separately. When used with `summarise()`, summaries are calculated separately for each of the unique groups created by `group_by()`.
+Often `summarise()` is used with the `group_by()` function. `group_by()` allows us to "split" our data into sections as defined by our *grouping* variable. We can then perform calculations on each section separately. When used with `summarise()`, summaries are calculated separately for each of the unique groups created by `group_by()`.
 
-To calculate the mean bill length for each species:
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To calculate the mean alcohol by volume for each quality:
 ```{r}
 #| class-output: outputcode
 #| eval: true
-# penguins |> 
-#     group_by(species) |> 
-#     summarise(mean_bill_len = mean(bill_length_mm, na.rm = TRUE))
+df |> 
+    group_by(quality) |> 
+    summarise(mean_alcohol = mean(alcohol, na.rm = TRUE))
 ```
-A tibble with 3 rows and 2 columns is returned. The first column contains the group names and the second the corresponding mean values. 
+
+A tibble with $6$ rows and $2$ columns is returned. The first column contains the group names and the second the corresponding mean values. 
+
+:::
 
 ## Additional resources
 
