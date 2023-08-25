@@ -1,14 +1,44 @@
 ---
 title: "Functional programming with purrr"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
+<br>
+The `purrr` package introduces alternative approaches to the `apply` family of functions, presenting a more streamlined and uniform interface along with predefined return value types. This package enhances the concept of functional programming within R, offering an array of functions that empower users to effortlessly apply operations across data structures. These functions not only simplify the code syntax but also ensure a consistent and predictable output type, thus facilitating smoother integration into various data analysis processes.
 
-# Additional resources
+`purrr` functions are designed to operate on lists, and remember in R, data frames (tibbles) are stored as lists. As a result, leveraging `purrr` functions in tandem with data frames (tibbles) becomes remarkably advantageous, offering a convenient and efficient approach to data manipulation.
 
+## Map functions
+
+At the heart of the `purrr` package lies its fundamental tool, the `map` function. This function applies a function to every element within a list or vector, producing a corresponding list as output. Importantly, if you apply the `map` function of a data frame, it will apply a function on each column of the data frame.
+
+While the `map` function typically yields a list, certain derived functions are tailored to return vectors of the appropriate data type:
+
+* `map_dbl()` returns a double vector.
+
+* `map_int()` returns an integer vector.
+
+* `map_chr()` returns a character vector.
+
+* `map_lgl()` returns a logical vector.
+
+* `map_vec()` returns a vector of the simplest common type.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+:::
+
+
+Functions like `map2()` and its variations are explicitly designed to apply a function to pairs of elements drawn from two lists or vectors. Similarly, if you intend to apply a function to groups of elements stemming from a collection of lists or vectors, the `pmap()` function and its corresponding derivatives are your go-to tools.
+
+
+## Additional resources
+
+* The `purrr` [website](https://purrr.tidyverse.org).
+
+* `purrr` [cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/purrr.pdf).
 
 <br><br>
 

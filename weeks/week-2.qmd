@@ -27,9 +27,9 @@ library(tidyverse)
 
 📖 Reading data with [tibble and readr](/contents/week-2/02_readr_tibble.qmd)
 
-📖 Tidy data with [tidyr](/contents/week-2/04_tidyr.qmd)
+📖 Tidy data with [tidyr](/contents/week-2/03_tidyr.qmd)
 
-📖 Data manipulation with [dplyr](/contents/week-2/03_dplyr.qmd)
+📖 Data manipulation with [dplyr](/contents/week-2/04_dplyr.qmd)
 
 📖 Functional programming with [purrr](/contents/week-2/05_purrr.qmd)
 
