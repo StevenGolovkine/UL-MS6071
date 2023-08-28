@@ -7,53 +7,67 @@ engine: knitr
 #| class-output: outputcode
 #| eval: true
 #| include: false
-library(palmerpenguins)
 library(tidyverse)
 ```
 
-We have seen that R's base graphics system can create plots or graphs, with the ability to control almost every aspect of them. The `ggplot2` package is part of the `tidyverse` and is used to create complex and sophisticated visualisations of large data sets. The package uses the *grammar of graphics* (gg), a coherent system for building graphics. `ggplot2` creates graphics iteratively over several layers. You can read more about it [here](https://ggplot2-book.org/getting-started.html).
+<br>
+The `ggplot2` package is part of the `tidyverse` and is used to create complex and sophisticated visualisations of large data sets. The package uses the **grammar of graphics** (gg), a coherent system for building graphics. `ggplot2` creates graphics iteratively over several layers.
 
-## Creating a ggplot
+For all the examples in this section, we are going to use the wine quality dataset that we used previously. It can be loaded using:
+```{r}
+#| class-output: outputcode
+#| eval: true
+df <- read_csv(
+    './ressource/wine_quality.csv',
+    col_types = 'idddddddddddi'
+) |> 
+    mutate(quality = as.factor(quality))
+```
 
-The `ggplot()` function is used to create a ggplot. The function works on data frames rather than vectors like in base R. Once a basic ggplot has been created, the plot can be enhanced by adding more layers to it.
+## Creating a plot
 
-A ggplot has three key components:  
+The `ggplot()` function is used to create a plot. The function works on data frames rather than vectors like in base R. Once a basic plot has been created, it can be enhanced by adding more layers to it.
 
-1. **Data** - ggplot() requires a data frame to be supplied in tidy format.  
-2. **Mapping** - aesthetic mapping(s) between variables in the data and visual properties.  
-3. **Layer(s)** - at least one layer describing how to render (i.e. plot) each observation. Usually created using `geom` functions.
+A `ggplot()` has three key components:  
 
+1. **Data** - `ggplot()` requires a data frame to be supplied in tidy format.  
+2. **Mapping** - aesthetic mapping(s) between variables in the data and visual properties, defined with the function `aes()`. 
+3. **Layer(s)** - at least one layer describing how to render (i.e. plot) each observation. Usually created using `geom()` functions.
 
-## Scatterplot bill length vs flipper length
+::: {.callout-note appearance="simple"}
+
+## Example: a simple scatterplot
 
 ```{r plot1}
 #| class-output: outputcode
 #| eval: true
 #| warning: false
 ggplot(
-    data = penguins, # data
-    aes(x = bill_length_mm, y = flipper_length_mm)  # aesthetic
+    data = df, # data
+    aes(x = alcohol, y = fixed_acidity)  # aesthetic
 ) + 
   geom_point()  # layer
 ```
 
 This produces a scatterplot defined by:
 
-1. **Data:** penguins
-2. **Mapping:** bill length mapped to x axis, flipper length to y axis
-3. **Layer:** points
+1. **Data** - wine quality dataset (`df`)
+2. **Mapping** - alcohol by volume (`alcohol`) mapped to x axis, fixed acidity (`fixed_acidity`) to y axis
+3. **Layer** - points
 
-## The data
+:::
 
-The first argument specified is the data frame to be used in the plotting process. Here this is the penguins data frame. Using `ggplot(data = penguins)` will create an empty plot (try it!). We can then add layers to that plot. By default these layers will use the data specified in the `ggplot()` command, however we can change this behaviour if needed.
+### The data
 
-## Mappings and aesthetics
+The first argument specified is the data frame to be used in the plotting process. In the first example, this is the `df` data frame. Using `ggplot(data = df)` will create an empty plot (try it!). We can then add layers to that plot. By default these layers will use the data specified in the `ggplot()` command, however we can change this behaviour if needed.
+
+### Mappings and aesthetics
 
 The `aes()` command is a mapping from the columns in our data to aesthetics which are the visual properties of our plot.  In most scenarios this will map columns to the x and/or y-axes. We can also map columns of our data to colour, shape or size of the plotted points, for example.
 
-## Geometries
+### Geometries
 
-Layers are added using *geometries* or `geom` functions and the `+` operator. The `geom`s automatically inherit the default aesthetic mappings specified in the `ggplot()` command, however this behaviour can be modified. 
+Layers are added using **geometries** or `geom()` functions and the `+` operator. The `geom`s automatically inherit the default aesthetic mappings specified in the `ggplot()` command, however this behaviour can be modified. 
 
 Examples include:
 
@@ -61,143 +75,154 @@ Examples include:
 * `geom_lines()` - adds a layer of lines to the plot
 * `geom_histogram()` - adds a histogram to the plot
 * `geom_boxplot()` - adds a boxplot to the plot
-* `geom_smooth()` - adds a smoother to the plot
+* `geom_smooth()` - adds a smoother to the plot (please, be careful when using this function, the default behaviour might not be the expected one)
 
+::: {.callout-note appearance="simple"}
 
-### Boxplot of bill length
+## Example: a boxplot
 
 ```{r plot2}
 #| class-output: outputcode
 #| eval: true
 #| warning: false
 ggplot(
-    data = penguins,  # data
-    aes(y = bill_length_mm)  # aesthetic
+    data = df,  # data
+    aes(x = alcohol)  # aesthetic
 ) + 
     geom_boxplot()  # layer
 ```
 
 This produces a boxplot defined by:
 
-1. **Data:** penguins
-2. **Mapping:** bill length mapped to y axis
-3. **Layer:** boxplot
-
-### Scatterplot smooth bill vs flipper length
+1. **Data** - wine quality dataset (`df`)
+2. **Mapping** - alcohol by volume (`alcohol`) mapped to x axis
+3. **Layer** - boxplot
 
 ```{r plot3}
 #| class-output: outputcode
 #| eval: true
 #| warning: false
 ggplot(
-    data = penguins,  # data
-    aes(x = bill_length_mm, y = flipper_length_mm)  # aesthetic
+    data = df,  # data
+    aes(x = alcohol, y = 0)  # aesthetic
 ) + 
-    geom_point() +  # layer 1
-    geom_smooth()  # << # layer 2 
+    geom_boxplot() +  # layer 1
+    geom_jitter()  # layer 2 
 ```
 
+We added another layer (`geom_jitter()`) to the previous plot.
+
+:::
 
 ## Colour, size, shape attributes
 
-The `aes()` argument can also map columns in the data frame to other aesthetics like colour, size and shape. To change the colour, shape and size of the points plotted in the scatterplot of bill length versus flipper length by species:
+The `aes()` argument can also map columns in the data frame to other aesthetics like colour, size and shape. To change the colour, shape and size of the points plotted in the scatterplot of alcohol by volume versus fixed acidity by quality:
 
-* `aes(x = bill_length_mm, y = flipper_length_mm, colour = species)`
-* `aes(x = bill_length_mm, y = flipper_length_mm, shape = species)`
-* `aes(x = bill_length_mm, y = flipper_length_mm, size = species)`
+* `aes(x = alcohol, y = fixed_acidity, colour = quality)`
+* `aes(x = alcohol, y = fixed_acidity, shape = quality)`
+* `aes(x = alcohol, y = fixed_acidity, size = quality)`
     
-ggplot2 converts the data (e.g. Gentoo, Adelie and Chinstrap) into aesthetics (e.g., ‘red’, ‘yellow’, ‘green’) with a scale. 
+ggplot2 converts the data into aesthetics (e.g., ‘red’, ‘yellow’, ‘green’) with a scale. 
 
-## Change colour
+::: {.callout-note appearance="simple"}
+
+## Example
+
+* Change the color
 
 ```{r plot4}
 #| class-output: outputcode
 #| eval: true
 #| warning: false
 ggplot(
-    data = penguins, 
+    data = df, 
     aes(
-        x = bill_length_mm, 
-        y = flipper_length_mm,
-        colour = species  # <<
+        x = alcohol, 
+        y = fixed_acidity,
+        colour = quality  # Change color
     )
 ) + 
-    geom_point() 
+    geom_point()
 ```
 
-## Change shape
+* Change the shape
 
 ```{r plot5}
 #| class-output: outputcode
 #| eval: true
 #| warning: false
 ggplot(
-    data = penguins, 
+    data = df, 
     aes(
-        x = bill_length_mm, 
-        y = flipper_length_mm,
-        shape = species  # <<
+        x = alcohol, 
+        y = fixed_acidity,
+        shape = quality  # Change shape
     )
-) +
-    geom_point() 
+) + 
+    geom_point()
 ```
 
-## Change size
+* Change the size
 
 ```{r plot6}
 #| class-output: outputcode
 #| eval: true
 #| warning: false
 ggplot(
-    data = penguins, 
+    data = df, 
     aes(
-        x = bill_length_mm, 
-        y = flipper_length_mm,
-        size = species  # <<
+        x = alcohol, 
+        y = fixed_acidity,
+        size = quality  # Change size
     )
-) +
-    geom_point() 
+) + 
+    geom_point()
 ```
 
-## Change colour, shape and size
+* Change the color, shape and size
 
 ```{r plot7}
 #| class-output: outputcode
 #| eval: true
 #| warning: false
 ggplot(
-    data = penguins, 
+    data = df, 
     aes(
-        x = bill_length_mm, 
-        y = flipper_length_mm,
-        colour = species,  # <<
-        shape = species,  # <<
-        size = species  # <<
+        x = alcohol, 
+        y = fixed_acidity,
+        colour = quality,  # Change color
+        shape = quality,  # Change shape
+        size = quality  # Change size
     )
 ) +  
     geom_point() 
 ```
 
+:::
+
 ## Labels and titles
 
 Axis labels can be added separately using the `+` operator and `xlab()` and/or `ylab()`. A plot title can be added using the `+` operator and `ggtitle()`. Using the `+` operator and the `labs()` function can add axis labels, plot title and plot sub-titles all in one step.
+
+::: {.callout-note appearance="simple"}
+
+## Example
 
 ```{r plot8}
 #| class-output: outputcode
 #| eval: true
 #| warning: false
 ggplot(
-    data = penguins, 
+    data = df,
     aes(
-        x = bill_length_mm, 
-        y = flipper_length_mm,
-        colour = species
+        x = alcohol,
+        y = fixed_acidity
     )
-) +  
+) +
     geom_point() +
-    xlab("Bill length (mm)") +  # <<
-    ylab("Flipper length (mm)") +  # <<
-    ggtitle("Penguin data")  # <<
+    xlab("Alcohol by volume") +  # Change x axis labels
+    ylab("Fixed acidity") +  # Change y axis labels
+    ggtitle("Wine quality data")  # Change title
 ```
 
 ```{r plot9}
@@ -205,61 +230,85 @@ ggplot(
 #| eval: true
 #| warning: false
 ggplot(
-    data = penguins, 
+    data = df,
     aes(
-        x = bill_length_mm, 
-        y = flipper_length_mm,
-        colour = species
+        x = alcohol,
+        y = fixed_acidity,
+        colour = quality
     )
-) + 
+) +
     geom_point() +
     labs(
-        x = "Bill length (mm)",  # <<
-        y = "Flipper length (mm)",  # <<
-        title = "Penguin data",  # <<
-        subtitle = "Scatterplot by species"  # <<
+        x = "Alcohol by volume",  # Change x axis labels
+        y = "Fixed acidity",  # Change y axis labels
+        title = "Wine quality data",  # Change title
+        subtitle = "Scatterplot by quality"  # Change subtitle
     )
 ```
 
+:::
+
 ## Themes
 
-Themes allow you control over the non-data elements of your plot. These include the font, ticks, panel strips and background. The default theme in `ggplot()` is the grey theme (please do not use it...). Other themes that you can use are given [here](https://ggplot2-book.org/polishing.html)
+Themes allow you control over the non-data elements of your plot. These include the font, ticks, panel strips and background. The default theme in `ggplot()` is the grey theme (please do not use it...). Other themes that you can use are given [here](https://ggplot2-book.org/themes.html#sec-themes).
 
 
-### theme_bw()
+::: {.callout-note appearance="simple"}
+
+## Example
+
+* Using `theme_bw()`
 
 ```{r plot10}
 #| class-output: outputcode
 #| eval: true
 #| warning: false
 ggplot(
-    data = penguins, 
+    data = df, 
     aes(
-        x = bill_length_mm, 
-        y = flipper_length_mm,
-        colour = species
+        x = alcohol, 
+        y = fixed_acidity,
+        colour = quality
     )
 ) + 
     geom_point() +
-    labs(
-        x = "Bill length (mm)",  
-        y = "Flipper length (mm)",
-        title = "Penguin data",  
-        subtitle = "Scatterplot by species"
-    ) + 
-    theme_bw()  # <<
+    theme_bw()  # Change to theme_bw
 ```
 
+* Using `theme_minimal()`
 
-## What else can I do?
+```{r plot11}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(
+    data = df, 
+    aes(
+        x = alcohol, 
+        y = fixed_acidity,
+        colour = quality
+    )
+) + 
+    geom_point() +
+    theme_minimal()  # Change to theme_minimal
+```
 
-Lots! 
-
-The `ggplot2` package is extremely powerful and there are great resources to be found such as the [coding club](https://ourcodingclub.github.io/tutorials/dataviz-beautification-synthesis/), [blog posts](https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/) and [short talks](https://yegrug.github.io/data-vis-practice/ggplot2-intro_2021-12-16.html#1) to get you started. Great advice is to find code for plots you like and then modify it for your needs!
+:::
 
 
 ## Additional resources
 
+* `ggplot2`: Elegant Graphics for Data Analysis [book](https://ggplot2-book.org).
+
+* The `ggplot2` [website](https://ggplot2.tidyverse.org).
+
+* `ggplot2` [cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf).
+
+* The coding club on [data visualisation](https://ourcodingclub.github.io/tutorials/dataviz-beautification-synthesis/).
+
+* A `ggplot2` [tutorial](https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/) for beautiful plotting in R.
+
+* A [short talk](https://yegrug.github.io/data-vis-practice/ggplot2-intro_2021-12-16.html#1) on data visualisation with `ggplot2`.
 
 <br><br>
 
