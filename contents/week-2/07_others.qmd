@@ -1,13 +1,48 @@
 ---
 title: "Other packages"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
-# Additional resources
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| include: false
+library(tidyverse)
+```
 
+<br>
+The `tidyverse` packages we have explored constitute the core components of the `tidyverse`. There are a couple of additional packages within the core set: `stringr` for string manipulation, `forcats` for factors, and `lubridate` for date and time operations.
+
+## The `stringr` package
+
+The `stringr` package presents a comprehensive toolkit for string manipulation in R, streamlining a variety of text-related tasks.
+
+
+With functions like str_detect(), you can effortlessly identify specific patterns within strings. For instance, str_detect("analysis", "ana") returns TRUE. The str_extract() function allows you to extract specific substrings, such as str_extract("hello123", "\\d+") resulting in "123". Further, str_replace() enables the substitution of particular substrings with others, such as str_replace("colorful", "or", "our") producing "colourful". The intuitive and expressive nature of stringr empowers users to navigate complex string operations with simplicity and clarity.
+
+## The `forcats` package
+
+The `forcats` package focuses on the effective management and manipulation of categorical variables in R.
+
+This package offers an array of functions to reorganize, reorder, and transform factors. For instance, fct_reorder() facilitates the reordering of factor levels based on a summary statistic, like fct_reorder(fruit, price, .desc = TRUE). Another function, fct_infreq(), orders factor levels according to their frequency, as shown in fct_infreq(letters). Moreover, fct_collapse() allows for combining levels into broader categories, an operation especially useful for simplifying complex categorical data. By embracing the forcats package, users can efficiently manage and enhance the representation of categorical data, thereby optimizing their analytical processes.
+
+## The `lubridate` package
+
+The `lubridate` package offers a powerful suite of tools for handling date and time data in R. It simplifies tasks such as parsing, extracting, and manipulating temporal information.
+
+For instance, ymd("2023-05-31") instantly converts a character string into a Date object. The month() function facilitates the extraction of months, such as month(my_date). Additionally, arithmetic operations like my_date + days(7) efficiently calculate future dates. The lubridate package excels in scenarios like handling time zones, as with with_tz(my_date, "America/New_York"). Through its intuitive syntax, lubridate streamlines intricate date and time operations, significantly enhancing the clarity and efficiency of temporal data analysis.
+
+## Other (other) packages
+
+Up to now, we have seen all the core `tidyverse` packages, but other packages are also installed with `tidyverse`. We may cite `hms` to manipulate times, `jsonlite` to work with JSON files or `readxl` to work with Excel files. The complete list of the packages is on the `tidyverse` [website](https://tidyverse.tidyverse.org).
+
+## Additional resources
+
+* The `stringr` [website](https://stringr.tidyverse.org), [cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/strings.pdf).
+
+* The `forcats` [website](https://forcats.tidyverse.org), [cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/factors.pdf).
+
+* The `lubridate` [website](https://lubridate.tidyverse.org), [cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/lubridate.pdf).
 
 <br><br>
 

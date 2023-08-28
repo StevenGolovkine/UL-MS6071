@@ -44,6 +44,8 @@ website:
             text: Useful links
           - href: information/faq.qmd
             text: FAQ
+          - href: information/update.qmd
+            text: Updates
       - section: "Project"
         contents:
           - href: project/description.qmd

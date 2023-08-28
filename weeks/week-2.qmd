@@ -35,7 +35,7 @@ library(tidyverse)
 
 📖 Data visualisation with [ggplot2](/contents/week-2/06_ggplot.qmd)
 
-📖 [Others packages](/contents/week-2/07_others.qmd)
+📖 Other packages: [stringr, forcats and lubridate](/contents/week-2/07_others.qmd)
 
 ## Source code
 
