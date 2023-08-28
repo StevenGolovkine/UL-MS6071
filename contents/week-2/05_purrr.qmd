@@ -3,10 +3,27 @@ title: "Functional programming with purrr"
 engine: knitr
 ---
 
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| include: false
+library(tidyverse)
+```
+
 <br>
 The `purrr` package introduces alternative approaches to the `apply` family of functions, presenting a more streamlined and uniform interface along with predefined return value types. This package enhances the concept of functional programming within R, offering an array of functions that empower users to effortlessly apply operations across data structures. These functions not only simplify the code syntax but also ensure a consistent and predictable output type, thus facilitating smoother integration into various data analysis processes.
 
 `purrr` functions are designed to operate on lists, and remember in R, data frames (tibbles) are stored as lists. As a result, leveraging `purrr` functions in tandem with data frames (tibbles) becomes remarkably advantageous, offering a convenient and efficient approach to data manipulation.
+
+For all the examples in this section, we are going to use the wine quality dataset that we used previously. It can be loaded using:
+```{r}
+#| class-output: outputcode
+#| eval: true
+df <- read_csv(
+    './ressource/wine_quality.csv',
+    col_types = 'idddddddddddi'
+)
+```
 
 ## Map functions
 
@@ -24,15 +41,91 @@ While the `map` function typically yields a list, certain derived functions are 
 
 * `map_vec()` returns a vector of the simplest common type.
 
+Each function is build the same way. The first argument is a list and the second argument is a function that can be specified in different ways:
+
+* A named function, e.g. `mean`, `sum`.
+
+* An anonymous function, e.g. `\(x) mean(x)` or `function(x) sum(x)`.
+
+* A formula, e.g. `~ mean(.x)`.
+
 ::: {.callout-note appearance="simple"}
 
 ## Example
+
+* To compute the sum of each column and returns a named vector using a named function, we can run
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+df |> map_dbl(sum)  # Using a named function
+```
+
+* To compute the mean of each column and returns a named vector using an anonymous function, we can run
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+df |> map_dbl(function(x) mean(x))  # Using an anonymous function
+```
+
+* To compute the maximum of each column and returns a named vector using a formula function, we can run
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+df |> map_dbl(~ max(.x))  # Using a formula
+```
 
 :::
 
 
 Functions like `map2()` and its variations are explicitly designed to apply a function to pairs of elements drawn from two lists or vectors. Similarly, if you intend to apply a function to groups of elements stemming from a collection of lists or vectors, the `pmap()` function and its corresponding derivatives are your go-to tools.
 
+## List columns
+
+List-columns are columns of a data frame where each element is a list (or vector) instead of an atomic values. Columns can also be lists of data frames.
+
+A simple way to create list-columns is to group data frames by a variable and then nest the results.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To group the wine quality dataset by the quality of the wine and create a list-columns tibble, we can use:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+df |> 
+    group_by(quality) |> 
+    nest()
+```
+
+:::
+
+List-columns are useful to apply a function over a group of data. For example, we can run a linear regression per wine quality using the previous dataset.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+Using the nested dataset, we can create a new variable `lin_reg` defined as the linear regression of `volatile_acidity` onto `fixed_acidity` for each wine quality.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+df |> 
+    group_by(quality) |> 
+    nest() |> 
+    mutate(
+        lin_reg = map(data, ~ lm(.x$fixed_acidity ~ .x$volatile_acidity))
+    )
+```
+
+The results of the linear regressions can be accessed as any other variables.
+
+:::
 
 ## Additional resources
 

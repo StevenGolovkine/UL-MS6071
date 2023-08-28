@@ -13,7 +13,7 @@ library(tidyverse)
 <br>
 The `dplyr` package is one of the `tidyverse` packages. It greatly simplifies how we work with data frames (tibbles) in R and speeds up any associated computations. `dplyr` uses a **grammar** for data manipulation and working with data frames. This grammar consists of a number of different **verbs**. These verbs allow us to communicate how we are manipulating a data frame so that other people can understand it easily.
 
-For all the examples in this section, we are going to use the wine quality datasets that we used previously. It can be loaded using:
+For all the examples in this section, we are going to use the wine quality dataset that we used previously. It can be loaded using:
 ```{r}
 #| class-output: outputcode
 #| eval: true
