@@ -1,7 +1,9 @@
 ---
-title: "The tidyverse - Questionnaire"
+title: "The Tidyverse - Questionnaire"
 engine: knitr
 ---
+
+<br>
 
 ```{r}
 #| echo: false
@@ -9,6 +11,7 @@ library(webexercises)
 ```
 
 ```{r}
+#| class: webex-box
 #| echo: false
 #| results: asis
 question <- "What is the tidyverse in R?"
@@ -18,7 +21,14 @@ question_choices <- c(
     answer = "A collection of R packages for data manipulation and visualization",
     "A function for generating random data")
 cat(question, longmcq(sample(question_choices)))
+```
 
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
 question <- "Which package in the tidyverse is used for data manipulation?"
 question_choices <- c(
     answer = "`dplyr`",
@@ -27,8 +37,15 @@ question_choices <- c(
     "`readr`"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
-question <- "Which function in dplyr is used to filter rows based on certain conditions?"
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "Which function in `dplyr` is used to filter rows based on certain conditions?"
 question_choices <- c(
     answer = "`filter()`",
     "`mutate()`",
@@ -36,8 +53,15 @@ question_choices <- c(
     "`arrange()`"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
-question <- "The `pivot_longer()` function in tidyr is used to:"
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "The `pivot_longer()` function in `tidyr` is used to:"
 question_choices <- c(
     "Remove missing values from a data frame",
     "Merge two data frames based on a common column",
@@ -45,8 +69,15 @@ question_choices <- c(
     "Reshape data from long to wide format"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
-question <- "What does the `mutate()` function in dplyr do?"
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What does the `mutate()` function in `dplyr` do?"
 question_choices <- c(
     answer = "Add new variables or columns to a tibble",
     "Calculate summary statistics for a variable",
@@ -54,7 +85,14 @@ question_choices <- c(
     answer = "Remove variables from a tibble"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
 question <- "Which function in `ggplot2` is used to add a title to a plot?"
 question_choices <- c(
     "`title()`",
@@ -63,8 +101,15 @@ question_choices <- c(
     "`add_title()`"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
-question <- "The `select()` function in dplyr is used to:"
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "The `select()` function in `dplyr` is used to:"
 question_choices <- c(
     answer = "Choose specific columns from a data frame",
     "Filter rows based on a condition",
@@ -72,7 +117,14 @@ question_choices <- c(
     "Arrange rows in ascending or descending order"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
 question <- "Which package in the tidyverse is used for data import and export?"
 question_choices <- c(
     "`ggplot2`",
@@ -81,13 +133,83 @@ question_choices <- c(
     answer = "`readr`"
 )
 cat(question, longmcq(sample(question_choices)))
+```
 
-question <- "What does the `arrange()` function in dplyr do?"
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What does the `arrange()` function in `dplyr` do?"
 question_choices <- c(
     "Filter rows based on a condition",
     answer = "Arrange rows in ascending or descending order",
     "Group data by one or more variables",
     "Calculate summary statistics for a variable"
 )
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which `forcats` function can be used to reorder factor levels based on a summary statistic?"
+question_choices <- c(
+    "`fct_relevel()`",
+    answer = "`fct_reorder()`",
+    "`fct_infreq()`",
+    "`fct_recode()`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which package from the tidyverse is dedicated to handling date and time data?"
+question_choices <- c(
+    answer = "`lubridate`",
+    "`tidyr`",
+    "`dplyr`",
+    "`forcats`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which function is used to group data by specific variables for aggregation?"
+question_choices <- c(
+    answer = "`group_by()`",
+    "`gather()`",
+    "`summarise()`",
+    "`mutate()`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which function is employed to create summary tables of data?]"
+question_choices <- c(
+    "`group_by()`",
+    "`gather()`",
+    "`arrange()`",
+    answer = "`summarise()`")
 cat(question, longmcq(sample(question_choices)))
 ```
