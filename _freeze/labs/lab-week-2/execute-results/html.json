@@ -1,0 +1,14 @@
+{
+  "hash": "e8843258cc45ae7563c719dd88a3c6df",
+  "result": {
+    "markdown": "---\ntitle: \"Tidyverse - Tutorial\"\nengine: knitr\n---\n\n\n<br>\n\n## PART 1 - data importation\n\n1. Load the data set.\n\n2. Remove the columns `project_reference`, `activity_mob`, `field_of_education`, `education_level`, `participant_profile, `sending_organisation_erasmus_code`, `group_leader` and `receiving_organisation_erasmus_code`.\n\n3. Convert the columns `mobility_start_month` and `mobility_end_month` to Date.\n \n4. Convert the columns `academic_year` to ordered factor and `participant_nationality`, `participant_gender`, `sending_country_code` and `receiving_country_code` to factor.\n\n5. Convert the columns `special_needs` and`fewer_opportunities` to boolean.\n\n6. Is there any rows with inconsistencies, e.g., negative ages? Remove these rows.\n\n\n## PART 2 - Data manipulation\n\n7. What is the mean mobility duration?\n\n\n8. How many people stayed more than 3 months in the UK in the academic year 2015-2016?\n\n9. What are the top 5 countries that receive the most people?\n\n10. How many women went to Ireland during the academic year 2018=2019?\n\n11. Within this subset of the data, what is the proportion of participants that go to Dublin?\n\n\n## PART 3 - Plots\n\n12. Plot the distribution of participant ages (regardless the number of participants).\n\n13. Plot the evolution of the number of participants through academic year for the top 5 countries that received the most participants.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

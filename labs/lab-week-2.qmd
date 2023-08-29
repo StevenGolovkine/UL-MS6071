@@ -1,0 +1,41 @@
+---
+title: "Tidyverse - Tutorial"
+engine: knitr
+---
+
+<br>
+
+## PART 1 - data importation
+
+1. Load the data set.
+
+2. Remove the columns `project_reference`, `activity_mob`, `field_of_education`, `education_level`, `participant_profile, `sending_organisation_erasmus_code`, `group_leader` and `receiving_organisation_erasmus_code`.
+
+3. Convert the columns `mobility_start_month` and `mobility_end_month` to Date.
+ 
+4. Convert the columns `academic_year` to ordered factor and `participant_nationality`, `participant_gender`, `sending_country_code` and `receiving_country_code` to factor.
+
+5. Convert the columns `special_needs` and`fewer_opportunities` to boolean.
+
+6. Is there any rows with inconsistencies, e.g., negative ages? Remove these rows.
+
+
+## PART 2 - Data manipulation
+
+7. What is the mean mobility duration?
+
+
+8. How many people stayed more than 3 months in the UK in the academic year 2015-2016?
+
+9. What are the top 5 countries that receive the most people?
+
+10. How many women went to Ireland during the academic year 2018-2019?
+
+11. Within this subset of the data, what is the proportion of participants that go to Dublin?
+
+
+## PART 3 - Plots
+
+12. Plot the distribution of participant ages (regardless the number of participants).
+
+13. Plot the evolution of the number of participants through academic year for the top 5 countries that received the most participants.
