@@ -15,22 +15,208 @@ The `tidyverse` packages we have explored constitute the core components of the 
 
 ## The `stringr` package
 
-The `stringr` package presents a comprehensive toolkit for string manipulation in R, streamlining a variety of text-related tasks.
+The `stringr` package presents a comprehensive toolkit for string manipulation in R, streamlining a variety of text-related tasks. 
 
+* To identidy specific patterns within strings, we use the function `str_detect()`. This function accepts regular expressions. It can be used to check if an email is well formatted for example. The `negate` argument is used to return `TRUE` if the patterns do not match.
 
-With functions like str_detect(), you can effortlessly identify specific patterns within strings. For instance, str_detect("analysis", "ana") returns TRUE. The str_extract() function allows you to extract specific substrings, such as str_extract("hello123", "\\d+") resulting in "123". Further, str_replace() enables the substitution of particular substrings with others, such as str_replace("colorful", "or", "our") producing "colourful". The intuitive and expressive nature of stringr empowers users to navigate complex string operations with simplicity and clarity.
+::: {.callout-note appearance="simple"}
+
+## Example
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+email <- "name_surname@ul.ie"
+str_detect(email, "^[a-z]*[.][a-z]*@ul.ie", negate = TRUE)
+```
+
+This returns `TRUE` because the email does not match the pattern (the `.` is replaced by a `_`).
+
+:::
+
+* To extract substrings with specific patterns within strings, we use the function `str_extract()`. This function also accepts regular expressions. It can be used to extract information from email for example.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+email <- "name.surname@ul.ie"
+str_extract(email, "([a-z]*).([a-z]*)@ul.ie", group = 1)
+str_extract(email, "([a-z]*).([a-z]*)@ul.ie", group = 2)
+```
+
+:::
+
+* To substitute particular substrings with others, we use the function `str_replace()`. An example of usage of this function is to convert from British english to American english and the other way round. This function accepts regular expressions as well.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+str_replace("colorful", "or", "our")
+```
+
+:::
+
 
 ## The `forcats` package
 
-The `forcats` package focuses on the effective management and manipulation of categorical variables in R.
+The `forcats` package focuses on the effective management and manipulation of categorical variables in R. 
 
-This package offers an array of functions to reorganize, reorder, and transform factors. For instance, fct_reorder() facilitates the reordering of factor levels based on a summary statistic, like fct_reorder(fruit, price, .desc = TRUE). Another function, fct_infreq(), orders factor levels according to their frequency, as shown in fct_infreq(letters). Moreover, fct_collapse() allows for combining levels into broader categories, an operation especially useful for simplifying complex categorical data. By embracing the forcats package, users can efficiently manage and enhance the representation of categorical data, thereby optimizing their analytical processes.
+Let's reuse the wine quality data, here:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+df <- read_csv(
+    './ressource/wine_quality.csv',
+    col_types = 'idddddddddddi'
+) |> 
+    mutate(quality = as.factor(quality))
+```
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+By default, the `quality` factor levels are in increasing order.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+ggplot(df, aes(x=quality, y=alcohol)) +
+  geom_boxplot() +
+  theme_bw()
+```
+
+:::
+
+* To reorder factor levels using another variable, we use the function `fct_reorder()`.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+We may want to order the factors using their median values.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+ggplot(
+    data = df,
+    aes(x=fct_reorder(quality, alcohol, .fun = median), y=alcohol)
+) +
+  geom_boxplot() +
+  theme_bw()
+```
+
+:::
+
+* To reorder factor levels according to their frequency, we use the function `fct_infreq()`.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+We may want to order the factors using their frequency. The most frequent appears first.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+ggplot(
+    data = df,
+    aes(x=fct_infreq(quality), y=alcohol)
+) +
+  geom_boxplot() +
+  theme_bw()
+```
+
+:::
+
+* To combine levels into broader categories, we use the function `fct_collapse()`.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+If we think that $6$ categories is to much for the quality of the wine, we can change the category to be `low`, `average` and `good`.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+ggplot(
+    data = df,
+    aes(
+        x=fct_collapse(
+            quality,
+            low = c("3", "4"),
+            average = c("5", "6"),
+            good = c("7", "8")
+        ),
+        y=alcohol
+    )
+) +
+  geom_boxplot() +
+  theme_bw()
+```
+
+:::
 
 ## The `lubridate` package
 
 The `lubridate` package offers a powerful suite of tools for handling date and time data in R. It simplifies tasks such as parsing, extracting, and manipulating temporal information.
 
-For instance, ymd("2023-05-31") instantly converts a character string into a Date object. The month() function facilitates the extraction of months, such as month(my_date). Additionally, arithmetic operations like my_date + days(7) efficiently calculate future dates. The lubridate package excels in scenarios like handling time zones, as with with_tz(my_date, "America/New_York"). Through its intuitive syntax, lubridate streamlines intricate date and time operations, significantly enhancing the clarity and efficiency of temporal data analysis.
+Usually, the first operation to do is to convert character string into a Date object using the `ymd()` function.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+today <- ymd("2023-09-21")
+```
+
+:::
+
+We can then extract the day, month and year of the date using the function `day()`, `month()` and `year()` respectively.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+day(today)
+month(today)
+year(today)
+```
+
+:::
+
+Additionally, arithmetic operations are implemented to efficiently calculate dates.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+next_course <- today + days(7)
+next_course
+```
+
+:::
+
 
 ## Other (other) packages
 
