@@ -5,4 +5,4 @@
 
 |            | Day       | Time              | Room   |
 |----------- |-----------|-------------------|--------|
-| Tutorials  | Monday    | 8:00am - 10:00am  | C2-001 |
+| Tutorials  | Thursday  | 4:00pm - 6:00pm   | C2-062 |

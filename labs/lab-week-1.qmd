@@ -39,3 +39,10 @@ Here is a list of functions you might find useful for the tutorials:
 My simple implementation of the Hangman game.
 
 :::
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 01](/weeks/week-1.qmd) ⏎
+:::

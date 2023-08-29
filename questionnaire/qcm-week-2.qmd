@@ -213,3 +213,9 @@ question_choices <- c(
     answer = "`summarise()`")
 cat(question, longmcq(sample(question_choices)))
 ```
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 02](/weeks/week-2.qmd) ⏎
+:::
