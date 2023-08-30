@@ -4,25 +4,35 @@ subtitle: "Extract, Transform and Load"
 editor: visual
 ---
 
+Extract, Transform and Load (ETL) constitutes a process in data warehousing. This process involves extracting data from diverse sources, subsequently transforming it into a structure compatible with data warehouse requirements, and ultimately loading it into the designated repository. ETL encompasses the following three stages:
+
+* Extract data from various sources;
+
+* Transform data into a suitable format for loading into the data warehouse;
+
+* Load data into data warehouse.
 
 ## Prepare
 
-📖 ETL [🔗](/contents/week-3/01_ETL.qmd)
+📖 [ETL Philosophy](/contents/week-3/01_ETL.qmd)
 
-📖 Extract [🔗](/contents/week-3/02_extract.qmd)
+📖 [Extract](/contents/week-3/02_extract.qmd)
 
-📖 Transform [🔗](/contents/week-3/03_transform.qmd)
+📖 [Transform](/contents/week-3/03_transform.qmd)
 
-📖 Load [🔗](/contents/week-3/04_load.qmd)
+📖 [Load](/contents/week-3/04_load.qmd)
 
+## Source code
+
+🧑‍💻 [Source code](/contents/week-3/source/all_code_chunks.R)
 
 ## Questionnaire
 
-⌨️ Questionnaire [🔗](/questionnaire/qcm-week-3.qmd)
+⌨️ [Questionnaire](/questionnaire/qcm-week-3.qmd)
 
 ## Practice
 
-📋 Tutorials [🔗](/labs/lab-week-3.qmd)
+📋 [Tutorials](/labs/lab-week-3.qmd)
 
 <br><br>
 

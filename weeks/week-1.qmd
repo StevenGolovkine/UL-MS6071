@@ -4,10 +4,7 @@ subtitle: "R Basics"
 editor: visual
 ---
 
-**R** is a software environment for statistical analysis and data visualization. It
-is free, open source and available on macOS, Windows and Linux. It is regularly
-being updated and new packages are released everyday on the Comprehensive R
-Archive Network ([CRAN](https://cloud.r-project.org/web/packages/available_packages_by_date.html)) to enhance its capabilities. As of today, there are around $20000$ available packages.
+**R** is a software environment for statistical analysis and data visualization. It is free, open source and available on macOS, Windows and Linux. It is regularly being updated and new packages are released everyday on the Comprehensive R Archive Network ([CRAN](https://cloud.r-project.org/web/packages/available_packages_by_date.html)) to enhance its capabilities. As of today, there are around $20000$ available packages.
 
 Prior to diving into the materials, ensure that you have R and RStudio installed. You can find instructions on their installation [here](/information/faq.qmd). If you need any help, don't hesitate to contact me.
 

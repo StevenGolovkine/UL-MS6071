@@ -1,8 +1,10 @@
 {
-  "hash": "a5598ab0042386ff7c797b1bd9bf5f4d",
+  "hash": "dabd0109233383a3098ce5137f902127",
   "result": {
-    "markdown": "---\ntitle: \"Extract, Transform, Load using R\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n# Additional resources\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"ETL Philosophy\"\nengine: knitr\n---\n\n\n<br>\nThe process of Extract, Transform, and Load (ETL) is a cornerstone of data warehousing. It commences with the extraction of data from heterogeneous sources, followed by the transformation of this data into a format that adheres to the prerequisites of the data warehouse. The final step involves the loading of the processed data into the designated repository.\n\n\n::: {#fig-etl}\n\n![](images/etl.svg)\n\nA schematic view of the ETL process.\n\n:::\n\n## Additional resources\n",
+    "supporting": [
+      "01_ETL_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
