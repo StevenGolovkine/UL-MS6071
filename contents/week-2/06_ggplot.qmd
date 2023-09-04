@@ -310,6 +310,7 @@ ggplot(
 
 * A [short talk](https://yegrug.github.io/data-vis-practice/ggplot2-intro_2021-12-16.html#1) on data visualisation with `ggplot2`.
 
+* [An article](https://medium.com/bbc-visual-and-data-journalism/how-the-bbc-visual-and-data-journalism-team-works-with-graphics-in-r-ed0b35693535): How does the BBC use `ggplot2`?
 <br><br>
 
 ::: {style="font-size: 0.875em;"}

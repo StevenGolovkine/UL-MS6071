@@ -16,5 +16,53 @@ A schematic view of the ETL process.
 :::
 
 
+**1. Extract Data**
+
+Import data from various sources using R packages like readr (for reading flat files), readxl (for Excel files), DBI and odbc (for database connections), httr (for web APIs), and rvest (for web scraping).
+Retrieve data from cloud-based sources using packages like googledrive for Google Drive integration and cloudyr for various cloud platforms.
+
+**2. Transform Data**
+
+Utilize the tidyverse packages (e.g., dplyr, tidyr, stringr) for data transformation tasks.
+Cleanse data by removing duplicates, handling missing values, and correcting data types.
+Perform data aggregation and summarization with functions like group_by() and summarise().
+Create new features and variables through feature engineering.
+Reorganize data structures using functions like pivot_longer() and pivot_wider().
+
+**3. Load Data**
+
+Establish a connection to your target data repository, such as a database or data warehouse, using R packages like DBI, odbc, or RMySQL.
+Create database tables or schemas if necessary.
+Utilize functions like dbWriteTable() to load transformed data into the target repository.
+Implement error handling and logging mechanisms to ensure data integrity during the loading process.
+
+
+Besides the three steps of the ETL philosophy, there are a couple of others steps involved in the process.
+
+**4. Automation and Scheduling**
+
+Automate ETL processes by creating R scripts or functions that encapsulate the entire ETL pipeline.
+Schedule ETL jobs to run at specified intervals using tools like cron (on Unix-like systems) or specialized R packages like cronR or taskscheduleR (on Windows).
+
+**5. Monitoring and Logging**
+
+Implement logging and monitoring capabilities to track the status and performance of ETL processes.
+Use R packages like logger or custom logging functions to record important information, errors, and warnings.
+
+**6. Error Handling**
+
+Incorporate robust error handling mechanisms to address issues that may arise during the ETL process.
+Implement retry strategies for transient errors and notifications for critical errors.
+
+**7. Testing and Validation**
+
+Develop test cases and validation procedures to ensure the correctness of ETL transformations.
+Use R packages like testthat for unit testing and validation against expected results.
+
+**8. Documentation**
+
+Maintain comprehensive documentation of the ETL methodology, including data source details, transformation steps, and loading procedures.
+Document any business rules, assumptions, or dependencies.
+
 
 ## Additional resources
