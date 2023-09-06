@@ -19,7 +19,7 @@ We will use [The One API](https://the-one-api.dev) to fetch a Lord of the Rings 
 ```{r lists}
 #| eval: false
 #| class-output: outputcode
-if (httr2::secret_has_key("YOURPACKAGE_KEY")) {
+if (httr2::secret_has_key("THEONE_TOKEN")) {
   print('Coucou!')
 }
 ```
