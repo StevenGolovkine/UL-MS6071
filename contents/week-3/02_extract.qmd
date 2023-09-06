@@ -3,6 +3,12 @@ title: "Extract"
 engine: knitr
 ---
 
+```{r lists}
+#| eval: true
+#| class-output: outputcode
+THEONE_TOKEN <- Sys.getenv(THEONE_TOKEN)
+```
+
 <br>
 As we have explored, data extraction is the fundamental process of acquiring data from diverse sources. In this section, we focus on two specific methods for data retrieval: utilising APIs and employing web scraping techniques.
 
@@ -17,7 +23,13 @@ An API (Application Programming Interface) is a set of rules and protocols that 
 We will use [The One API](https://the-one-api.dev) to fetch a Lord of the Rings database. 
 
 ```{r lists}
-#| eval: false
+#| eval: true
+#| class-output: outputcode
+print(THEONE_TOKEN)
+```
+
+```{r}
+#| eval: true
 #| class-output: outputcode
 if (httr2::secret_has_key("THEONE_TOKEN")) {
   print('Coucou!')
