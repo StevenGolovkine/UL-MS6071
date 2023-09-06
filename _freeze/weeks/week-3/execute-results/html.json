@@ -1,0 +1,14 @@
+{
+  "hash": "6144d6b258f693209bbe66a591455676",
+  "result": {
+    "markdown": "---\ntitle: \"Week 3\"\nsubtitle: \"Extract, Transform and Load\"\neditor: visual\n---\n\n\nExtract, Transform and Load (ETL) constitutes a process in data warehousing. This process involves extracting data from diverse sources, subsequently transforming it into a structure compatible with data warehouse requirements, and ultimately loading it into the designated repository. ETL encompasses the following three stages:\n\n* Extract data from various sources;\n\n* Transform data into a suitable format for loading into the data warehouse;\n\n* Load data into data warehouse.\n\nThe `tidyverse` library is assumed to be loaded for all materials:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n```\n:::\n\n\n\n## Prepare\n\n📖 [ETL Philosophy](/contents/week-3/01_ETL.qmd)\n\n📖 [Extract](/contents/week-3/02_extract.qmd)\n\n📖 [Transform](/contents/week-3/03_transform.qmd)\n\n📖 [Load](/contents/week-3/04_load.qmd)\n\n## Source code\n\n🧑‍💻 [Source code](/contents/week-3/source/all_code_chunks.R)\n\n## Questionnaire\n\n⌨️ [Questionnaire](/questionnaire/qcm-week-3.qmd)\n\n## Practice\n\n📋 [Tutorials](/labs/lab-week-3.qmd)\n\n<br><br>\n\n::: {style=\"font-size: 0.875em;\"}\nBack to [course schedule](/ \"Course schedule\") ⏎\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

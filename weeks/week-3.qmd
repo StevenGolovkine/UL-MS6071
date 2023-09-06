@@ -12,6 +12,14 @@ Extract, Transform and Load (ETL) constitutes a process in data warehousing. Thi
 
 * Load data into data warehouse.
 
+The `tidyverse` library is assumed to be loaded for all materials:
+
+```{r}
+#| eval: false
+library(tidyverse)
+```
+
+
 ## Prepare
 
 📖 [ETL Philosophy](/contents/week-3/01_ETL.qmd)
