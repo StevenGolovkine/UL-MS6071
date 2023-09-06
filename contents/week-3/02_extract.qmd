@@ -1,10 +1,50 @@
 ---
 title: "Extract"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
+<br>
+As we have explored, data extraction is the fundamental process of acquiring data from diverse sources. In this section, we focus on two specific methods for data retrieval: utilising APIs and employing web scraping techniques.
 
-# Additional resources
+## Using APIs
+
+An API (Application Programming Interface) is a set of rules and protocols that enables different software applications to communicate with each other. It serves as an intermediary that allows one software system to request and exchange data or functionality from another, whether locally or over a network, like internet. APIs are a fundamental tool in modern software development, as they facilitate the integration of different services and systems, enabling the seamless exchange of data and functionality. They are commonly used for accessing web services, databases, and external platforms, making them a pivotal component in building interconnected and data-driven applications.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+We will use [The One API](https://the-one-api.dev) to fetch a Lord of the Rings database. 
+
+```{r lists}
+#| eval: false
+#| class-output: outputcode
+if (httr2::secret_has_key("YOURPACKAGE_KEY")) {
+  print('Coucou!')
+}
+```
+:::
+
+## Web scrapping
+
+Web scraping is a data extraction technique that involves automatically retrieving information from websites. It entails the automated parsing of HTML or other markup languages used to structure web pages, allowing the extraction of specific data elements. Web scraping is employed for a variety of purposes, such as collecting data for research, monitoring online content, aggregating information for analysis, and more. It is however important to note that web scraping should be performed ethically and in accordance with the terms of service of the website to respect the rights and policies of web content providers.
+
+::: {.callout-note appearance="simple"}
+The legality of web scraping is open to debate and can vary considerably from one jurisdiction to another. In a general context, web scraping may contravene the terms of service of certain websites. The extent to which these terms can be legally enforced however remains an area of uncertainty and contention.
+:::
+
+::: {.callout-note appearance="simple"}
+You can determine whether it is permissible to crawl a website by consulting the `robots.txt` file located at the website's root. The address should look similar to `http://example.com/robots.txt`.
+:::
+
+
+
+## Additional resources
+
+* [An article](https://www.infoworld.com/article/3269878/what-is-an-api-application-programming-interfaces-explained.html) on APIs.
+
+* The One API [webiste](https://the-one-api.dev).
+
+* [An article](https://web.archive.org/web/20120624103316/http://www.lkshields.ie/htmdocs/publications/newsletters/update26/update26_03.htm) on the legality of web scrapping with the case *Ryanair Limited v Billigfluege.de GmbH* and the [court decision](http://www.bailii.org/ie/cases/IEHC/2010/H47.html).
+
+* [An article](https://www.bbc.com/news/technology-23988890) on the ethics of web scrapping from the BBC.
