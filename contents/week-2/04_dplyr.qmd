@@ -382,7 +382,7 @@ A tibble with $6$ rows and $2$ columns is returned. The first column contains th
 
 * `dplyr` [cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf).
 
-* [Article](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe) on the difference between the pipes.
+* [An Article](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe) on the difference between the pipes.
 
 <br><br>
 
