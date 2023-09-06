@@ -32,11 +32,11 @@ jobs:
             any::xml2
             any::webexercises
             any::tidyverse
-        env:
-          THEONE_TOKEN: ${{ secrets.THEONE_TOKEN }}
 
       - name: Render and Publish 
         uses: quarto-dev/quarto-actions/publish@v2
+        env:
+          THEONE_TOKEN: ${{ secrets.THEONE_TOKEN }}
         with:
           target: netlify
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
