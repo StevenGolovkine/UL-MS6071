@@ -8,3 +8,6 @@
 /_book/
 
 /labs/solutions_temp/*
+
+_environment.local
+/_*.local

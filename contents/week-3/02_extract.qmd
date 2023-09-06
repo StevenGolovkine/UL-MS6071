@@ -5,8 +5,9 @@ engine: knitr
 
 ```{r}
 #| eval: true
+#| include: false
 #| class-output: outputcode
-THEONE_TOKEN <- Sys.getenv(THEONE_TOKEN)
+THEONE_TOKEN <- Sys.getenv("THEONE_TOKEN")
 ```
 
 <br>
@@ -25,16 +26,17 @@ We will use [The One API](https://the-one-api.dev) to fetch a Lord of the Rings 
 ```{r}
 #| eval: true
 #| class-output: outputcode
-print(THEONE_TOKEN)
+library(httr2)
 ```
 
 ```{r}
 #| eval: true
 #| class-output: outputcode
-if (httr2::secret_has_key("THEONE_TOKEN")) {
-  print('Coucou!')
-}
+req <- request("https://the-one-api.dev/v2") |> 
+    req_auth_bearer_token(THEONE_TOKEN)
+req
 ```
+
 :::
 
 ## Web scrapping
