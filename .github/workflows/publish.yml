@@ -32,7 +32,6 @@ jobs:
             any::xml2
             any::webexercises
             any::tidyverse
-            any:httr2
         env:
           THEONE_TOKEN: ${{ secrets.THEONE_TOKEN }}
 
