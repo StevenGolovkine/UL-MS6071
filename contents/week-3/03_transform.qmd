@@ -1,9 +1,10 @@
 ---
 title: "Transform"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
-# Additional resources
+<br>
+As explained in the [ETL philosohphy section](/contents/week-3/01_ETL.qmd), data transformation entails a sequence of actions aimed at readying data for analysis or incorporation into a database. These actions span various tasks such as removing duplicate entries, handling absent values, correcting data formats, performing aggregations, and crafting new attributes, among others. For these operations, we rely on packages within the tidyverse. We will not delve extensively into this aspect as it was the central theme of [Week 2](/weeks/week-2.qmd), but we will provide a brief overview of how to merge data frames or tibbles.
+
+
+## Additional resources

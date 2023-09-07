@@ -1,7 +1,7 @@
 {
-  "hash": "3202c275907193fb7a7068ffac7c871c",
+  "hash": "28ecd99efe022044a17202b9756a8345",
   "result": {
-    "markdown": "---\ntitle: \"Transform\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n# Additional resources\n",
+    "markdown": "---\ntitle: \"Transform\"\nengine: knitr\n---\n\n\nAs explained in the [ETL philosohphy section](/contents/week-3/01_ETL.qmd), data transformation entails a sequence of actions aimed at readying data for analysis or incorporation into a database. These actions span various tasks such as removing duplicate entries, handling absent values, correcting data formats, performing aggregations, and crafting new attributes, among others. For these operations, we rely on packages within the tidyverse. We will not delve extensively into this aspect as it was the central theme of [Week 2](/weeks/week-2.qmd), but we will provide a brief overview of how to merge data frames or tibbles.\n\n\n## Additional resources\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
