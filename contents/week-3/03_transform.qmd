@@ -3,8 +3,145 @@ title: "Transform"
 engine: knitr
 ---
 
-<br>
-As explained in the [ETL philosohphy section](/contents/week-3/01_ETL.qmd), data transformation entails a sequence of actions aimed at readying data for analysis or incorporation into a database. These actions span various tasks such as removing duplicate entries, handling absent values, correcting data formats, performing aggregations, and crafting new attributes, among others. For these operations, we rely on packages within the tidyverse. We will not delve extensively into this aspect as it was the central theme of [Week 2](/weeks/week-2.qmd), but we will provide a brief overview of how to merge data frames or tibbles.
+```{r}
+#| eval: true
+#| include: false
+#| class-output: outputcode
+library(httr2)
+library(tidyverse)
 
+THEONE_TOKEN <- Sys.getenv("THEONE_TOKEN")
+```
+
+<br>
+As explained in the [ETL philosohphy section](/contents/week-3/01_ETL.qmd), data transformation entails a sequence of actions aimed at readying data for analysis or incorporation into a database. These actions span various tasks such as removing duplicate entries, handling absent values, correcting data formats, performing aggregations, and crafting new attributes, among others. For these operations, we rely on packages within the tidyverse. We will not delve extensively into this aspect as it was the central theme of [Week 2](/weeks/week-2.qmd), but we will provide a brief overview of how to merge data frames or tibbles using `dplyr`.
+
+## Joining
+
+Joining involves combining two or more tibbles based on common columns or key variables, aligning rows with matching values. This process is crucial for merging different datasets, enabling comprehensive analyses that incorporate data from multiple sources.
+
+There are four main join:
+
+* **Inner join**: This join only includes observations that match in both X and Y. The `dplyr` function is `inner_join()`.
+
+::: {#fig-inner-join}
+
+![](images/inner_join.svg){width=50%}
+
+A schematic view of an inner join.
+
+:::
+
+* **Left join**: This join includes all observations in X, regardless of whether they match or not with observations in Y. This is the most commonly used join because it ensures that you do not lose observations from your primary table. The `dplyr` function is `left_join()`.
+
+::: {#fig-left-join}
+
+![](images/left_join.svg){width=50%}
+
+A schematic view of a left join.
+
+:::
+
+* **Right join**: This join includes all observations in Y, regardless of whether they match or not with observations in X. It is equivalent to `left_join(Y, X)`, but the columns and rows will be ordered differently. This join is rarely used as it can be replaced by a left join. The `dplyr` function is `right_join()`.
+
+::: {#fig-right-join}
+
+![](images/right_join.svg){width=50%}
+
+A schematic view of a right join.
+
+:::
+
+* **Full join**: This join includes all observations from X and Y. The `dplyr` function is `full_join()`.
+
+::: {#fig-full-join}
+
+![](images/full_join.svg){width=50%}
+
+A schematic view of a full join.
+
+:::
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+We will use [The One API](https://the-one-api.dev) to fetch a Lord of the Rings database. We assume that the `character`, `movie` and `quote` datasets have been loaded. The first observations of the datasets are:
+
+```{r}
+#| class-output: outputcode
+#| include: false
+#| cache: true
+#| eval: true
+req <- request("https://the-one-api.dev/v2") |>  # Create the request
+    req_auth_bearer_token(THEONE_TOKEN)  # API token
+
+resp <- req |>  
+    req_url_path_append("character") |>  # Create the route
+    req_perform()  # The request is only sent here
+characters <- resp |> 
+    resp_body_json() |>  # Read the results
+    pluck("docs") |>  # Extract the docs field (specific to this API)
+    map_dfr(function(x) {x = flatten(x)}) |>  # Convert to tibble
+    as_tibble()
+
+resp <- req |>  
+    req_url_path_append("movie") |>  # Create the route
+    req_perform()  # The request is only sent here
+movie <- resp |> 
+    resp_body_json() |>  # Read the results
+    pluck("docs") |>  # Extract the docs field (specific to this API)
+    map_dfr(function(x) {x = flatten(x)}) |>  # Convert to tibble
+    as_tibble()
+
+resp <- req |>  
+    req_url_path_append("quote") |>  # Create the route
+    req_perform()  # The request is only sent here
+quotes <- resp |> 
+    resp_body_json() |>  # Read the results
+    pluck("docs") |>  # Extract the docs field (specific to this API)
+    map_dfr(function(x) {x = flatten(x)}) |>  # Convert to tibble
+    as_tibble()
+
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+head(movie)
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+head(characters)
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+head(quotes)
+```
+
+We can remark that the `quotes` dataset has one column that refers to the movie and one column that refers to the character. We however do not have access to movie and character information in this dataset, but only their id in the other tables. We will join the three datasets: a left join between `quotes` and `movie` and a full join between the resulting dataset and `characters` because we would like to keep all the characters even if they do not have any quotes.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+dataset_join <- quotes |>
+    left_join(movie, by = join_by("movie" == "_id")) |> 
+    full_join(characters, by = join_by("character" == "_id"))
+head(dataset_join)
+```
+
+:::
 
 ## Additional resources
+
+* An [article](https://dplyr.tidyverse.org/articles/two-table.html) on joining.
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 03](/weeks/week-3.qmd) ⏎
+:::
