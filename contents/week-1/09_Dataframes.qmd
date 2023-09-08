@@ -46,6 +46,7 @@ Data frames are lists. So, you can index data frames the same way you would inde
 To select the name of the students in the data, we can use:
 
 ```{r}
+#| class-output: outputcode
 student_data$name
 ```
 
@@ -61,6 +62,7 @@ Adding a new variable (column) to a data frame is fairly simple as it works as a
 
 To add a variable with the class of the student:
 ```{r}
+#| class-output: outputcode
 student_data$class <- c("Maths", "Stat", "Stat", "Maths")
 student_data
 ```
@@ -75,6 +77,7 @@ Adding a new observation (row) to a data frame is a bit more difficult as it con
 
 To add another student:
 ```{r}
+#| class-output: outputcode
 new_student <- data.frame(
     student_id = 5,
     name = "Edward",
