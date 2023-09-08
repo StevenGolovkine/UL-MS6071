@@ -49,7 +49,7 @@ It is now possible to run Python code, C++ code, SQL queries, ... directly from 
 RStudio interface.
 :::
 
-### Using R with RStudio --- Console
+### Console
 
 ::: {#fig-r-rstudio-console}
 ![](./images/rstudio_console.png)
@@ -57,7 +57,7 @@ RStudio interface.
 RStudio console.
 :::
 
-### Using R with RStudio --- Script
+### Script
 
 ::: {#fig-r-rstudio-script}
 ![](./images/rstudio_script.png)
@@ -65,7 +65,7 @@ RStudio console.
 RStudio script.
 :::
 
-### Using R with RStudio --- Environment
+### Environment
 
 ::: {#fig-r-rstudio-environment}
 ![](./images/rstudio_env.png)
@@ -73,7 +73,7 @@ RStudio script.
 RStudio environment.
 :::
 
-### Using R with RStudio --- Packages
+### Packages
 
 ::: {#fig-r-rstudio-packages}
 ![](./images/rstudio_packages.png)
@@ -81,7 +81,7 @@ RStudio environment.
 RStudio packages.
 :::
 
-### Using R with RStudio --- Files
+### Files
 
 ::: {#fig-r-rstudio-files}
 ![](./images/rstudio_files.png)
@@ -89,7 +89,7 @@ RStudio packages.
 RStudio files.
 :::
 
-### Using R with RStudio --- Shortcuts
+### Shortcuts
 
 Some useful keyboard shortcuts:
 
