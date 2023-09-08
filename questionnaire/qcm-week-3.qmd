@@ -1,0 +1,144 @@
+---
+title: "ETL - Questionnaire"
+engine: knitr
+---
+
+<br>
+
+```{r}
+#| echo: false
+library(webexercises)
+```
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What does 'ETL' stand for?"
+question_choices <- c(
+    "Extract, Translate, Load",
+    "Edit, Transform, Log",
+    "Enhance, Transmit, Log",
+    answer = "Extract, Transform, Load"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which ETL phase involves preparing data for analysis or integration?"
+question_choices <- c(
+    "Extract",
+    "Load",
+    "Transmit",
+    answer = "Transform"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which package from the `tidyverse` is commonly used for data transformation?"
+question_choices <- c(
+    answer = "`dplyr`",
+    "`ggplot2`",
+    "`lubridate`",
+    "`purrr`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What is the primary purpose of the 'Load' phase in ETL?"
+question_choices <- c(
+    "Extract data",
+    "Transform data",
+    "Plot data",
+    answer = "Store data"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which function is commonly used for loading data into a database during the 'Load' phase of ETL?"
+question_choices <- c(
+    "`read_csv()`",
+    "`write.table()`",
+    "`readRDS()`",
+    answer = "`dbWriteTable()`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What is the significance of error handling during the 'Load' phase of ETL?"
+question_choices <- c(
+    "It is optional and not necessary",
+    "To generate more errors",
+    "To slow down the process",
+    answer = "To catch and address potential issues"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which file format is commonly used for exporting data for simple analysis?"
+question_choices <- c(
+    "JSON",
+    "XML",
+    "HTML",
+    answer = "RDS"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What does 'CSV' stand for in the context of file formats?"
+question_choices <- c(
+    "Compressed Standard Value",
+    "Common Structured View",
+    "Condensed Structured Variables",
+    answer = "Comma-Separated Values"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 02](/weeks/week-2.qmd) ⏎
+:::
