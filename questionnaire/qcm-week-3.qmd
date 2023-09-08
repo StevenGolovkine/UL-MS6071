@@ -136,9 +136,72 @@ question_choices <- c(
 cat(question, longmcq(sample(question_choices)))
 ```
 
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What is the purpose of scheduling ETL jobs?"
+question_choices <- c(
+    "To make them run once",
+    "To run them manually",
+    "To run them on demand",
+    answer = "To run them at specified intervals"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which package is used for creating and managing cron jobs on Windows?"
+question_choices <- c(
+    "`cronR`",
+    "`cron`",
+    "`ETLTask`",
+    answer = "`taskscheduleR`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Why is it important to schedule ETL jobs?"
+question_choices <- c(
+    "To make them complex",
+    "To introduce errors",
+    "To increase manual intervention",
+    answer = "To ensure regular and timely data processing"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which of the following tasks can be automated in ETL processes?"
+question_choices <- c(
+    "Data extraction only",
+    "Data transformation only",
+    "Data loading only",
+    answer = "All of the them"
+)
+cat(question, longmcq(sample(question_choices)))
+```
 
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 02](/weeks/week-2.qmd) ⏎
+Back to [week 03](/weeks/week-3.qmd) ⏎
 :::
