@@ -1,7 +1,7 @@
 {
-  "hash": "7fcf23d4adbbd5577c11f3e8ebcfa252",
+  "hash": "11b87759acf1691359dc7172b74b09c7",
   "result": {
-    "markdown": "---\ntitle: \"Load\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n# Additional resources\n",
+    "markdown": "---\ntitle: \"Load\"\nengine: knitr\n---\n\n\n\n## Additional resources\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

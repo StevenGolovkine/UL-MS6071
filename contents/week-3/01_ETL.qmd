@@ -27,7 +27,7 @@ Data transformation involves performing a series of operations to prepare the da
 
 ## Load Data
 
-If the structure of the database is already in place, you can establish a connection with your designated data repository using the `DBI` or `odbc` packages. If the structure is not already in place, you usually have to create the necessary database tables or schemas to accommodate the transformed data. Once the foundations are in place, we can use the `DBI` package to efficiently load the transformed data into the target repository. To maintain data integrity throughout, implementing robust error handling and logging mechanisms is essential, helping you catch and address any potential issues during the loading process. For simple analysis, you may just need to export your data as an `.rds` file.
+If the structure of the database is already in place, you can establish a connection with your designated data repository using the `DBI` or `odbc` packages. If the structure is not already in place, you usually have to create the necessary database tables or schemas to accommodate the transformed data. Once the foundations are in place, we can use the `DBI` package to efficiently load the transformed data into the target repository. To maintain data integrity throughout, implementing robust error handling and logging mechanisms is essential, helping you catch and address any potential issues during the loading process. For simple analysis, you may just need to export your data as an `.rds` or `.csv` file.
 
 ## Others
 

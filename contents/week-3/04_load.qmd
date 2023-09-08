@@ -1,10 +1,11 @@
 ---
 title: "Load"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
+<br>
+As we have seen, the loading step is where transformed data goes into the target destination like a database, data warehouse, or storage system. Specific procedures ensure correct mapping to the target schema.
 
-# Additional resources
+
+
+## Additional resources
