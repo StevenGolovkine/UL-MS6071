@@ -1,0 +1,17 @@
+---
+title: "Automation and Scheduling"
+engine: knitr
+---
+
+<br>
+Automation and scheduling involves the systematic execution of data workflows at specified intervals or under predefined conditions. This ensures that data tasks are performed consistently, reducing manual effort and minimizing the risk of errors. Automation simplifies repetitive data extraction, transformation, and loading steps, while scheduling allows these processes to run automatically at specific times, e.g., every week. By automating and scheduling their processes, organizations can streamline data operations and maintain data integrity.
+
+
+## Additional resources
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 03](/weeks/week-3.qmd) ⏎
+:::

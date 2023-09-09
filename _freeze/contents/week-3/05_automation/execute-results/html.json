@@ -1,0 +1,16 @@
+{
+  "hash": "6a066600eb63c0e2a875618c79a98edb",
+  "result": {
+    "markdown": "---\ntitle: \"Automation and Scheduling\"\nengine: knitr\n---\n\n\n<br>\nAutomation and scheduling in an ETL process involves the systematic execution of data workflows at specified intervals or under predefined conditions. This ensures that data tasks are performed consistently, reducing manual effort and minimizing the risk of errors. Automation simplifies repetitive data extraction, transformation, and loading steps, while scheduling allows these processes to run automatically at specific times, e.g., every week. By automating and scheduling their processes, organizations can streamline data operations and maintain data integrity.\n\n\n## Additional resources\n\n\n<br><br>\n\n::: {style=\"font-size: 0.875em;\"}\nBack to [week 03](/weeks/week-3.qmd) ⏎\n:::",
+    "supporting": [
+      "05_automation_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

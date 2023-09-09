@@ -1,0 +1,14 @@
+{
+  "hash": "48bdc9fdddde73ab64f37f9e11c35cef",
+  "result": {
+    "markdown": "---\ntitle: \"Monitoring and Logging\"\nengine: knitr\n---\n\n\n<br>\nMonitoring and logging in an ETL process involves the continuous tracking and recording of key events and metrics to ensure the integrity and performance of data workflows. Through monitoring, data professionals can observe job progress, resource utilization, and potential bottlenecks, enabling proactive problem-solving. Logging captures important information, including errors, warnings, and successful executions, facilitating post-processing analysis and debugging.\n\n\n## Additional resources\n\n\n<br><br>\n\n::: {style=\"font-size: 0.875em;\"}\nBack to [week 03](/weeks/week-3.qmd) ⏎\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

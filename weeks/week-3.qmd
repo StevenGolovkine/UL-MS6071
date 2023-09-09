@@ -30,6 +30,10 @@ library(tidyverse)
 
 📖 [Load](/contents/week-3/04_load.qmd)
 
+📖 [Automation and Scheduling](/contents/week-3/05_automation.qmd)
+
+📖 [Monitoring and Logging](/contents/week-3/06_monitoring.qmd)
+
 ## Source code
 
 🧑‍💻 [Source code](/contents/week-3/source/all_code_chunks.R)

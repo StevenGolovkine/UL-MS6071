@@ -1,0 +1,17 @@
+---
+title: "Monitoring and Logging"
+engine: knitr
+---
+
+<br>
+Monitoring and logging involves the continuous tracking and recording of key events and metrics to ensure the integrity and performance of data workflows. Through monitoring, data professionals can observe job progress, resource utilization, and potential bottlenecks, enabling proactive problem-solving. Logging captures important information, including errors, warnings, and successful executions, facilitating post-processing analysis and debugging.
+
+
+## Additional resources
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 03](/weeks/week-3.qmd) ⏎
+:::
