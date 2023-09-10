@@ -1,0 +1,34 @@
+# Assessment
+
+<br>
+
+The assessment will be a take-home project done by a group of two or three students. The idea will be to deepen one of the topics seen in class and write a small report on it (20 pages max.), followed by an oral presentation of 10–15 minutes in front of the class. Each group has to find its own project.
+
+Here are some examples of projects:
+
+* analyse a very big dataset, like the flight dataset;
+
+* create a package implementing some GPU computation;
+
+* explain how to debug R/C/C++ files using an IDE like VSCode;
+
+* develop a Shiny app for a particular dataset;
+
+* compare the results of the different LLM on the generation of R code.
+
+I expect to have a small discussion with each group during the Week 4 tutorial about their project before they actually start working on it, in order to see if it is doable.
+
+| Week | Date deadline | Hour deadline | % of the grade |
+|:------:|--------:|--------:|:--------:|
+| Project proposal | 03/10/23 | 5:00pm | 10 % |
+| Manuscript | 28/11/23 | 5:00pm | 50 % |
+| Presentation | 30/11/23 | 4:00pm | 40 % |
+
+**Important remark:**
+
+* Presence in class is strongly encouraged and the presence will be recorded.
+
+* Plagiarism is presenting another person’s work or ideas as your own. Plagiarism is a serious breach of ethics and is not taken lightly. It undermines academic integrity and it will not be tolerated.
+
+
+I will carefully consider the student responses to the evaluation of my course and their implications for course development. It is also common practice to discuss informally with students how the course and their mastery of it are progressing. Thank you in advance for your contribution!

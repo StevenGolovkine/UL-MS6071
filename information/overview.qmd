@@ -1,3 +1,35 @@
 # R for Statistical Data Science
 
+<br>
+
 R is the core programming language in statistical data science. This module will start with an introduction to programming in R, building to more complex topics such as writing R packages. The module will cover data wrangling, data visualisation and dash-boarding, statistical modelling in R, and how to create R packages. Students will also learn about reproducible research, coding and modelling practices.
+
+
+## Course aims
+
+The aim of the course is to introduce the main concepts about R programming. We will also learn about data manipulation and visualisation. Some chapters are about number representation, memory management and speed of execution in R, how this might create some problems, and what solutions can be used to solve them. We will also focus on the input/output and treatment of large data files.
+
+Upon successful completion of the requirements of this course, students should have the knowledge and skills to:
+
+- equip students with advanced proficiency in the R programming language.
+
+- provide in-depth knowledge of data manipulation techniques using R packages.
+
+- choose the appropriate R package to deal with the situation they face.
+
+- cultivate expertise in data visualization principles and advanced plotting.
+
+- understand the limitations imposed by R and how to circumvent these.
+
+- understand how memory is managed in R and avoid numerical pitfalls.
+
+- increase the speed of their computations with R.
+
+- deal with large data sets in R.
+
+- learn some usages and limitations of Large Language Models for R.
+
+
+## Assessment
+
+The assessment will be a take-home project. For more information, please see [here](../project/description.qmd).

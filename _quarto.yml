@@ -36,6 +36,8 @@ website:
             text: Overview
           - href: information/syllabus.qmd
             text: Syllabus
+          - href: information/assessment.qmd
+            text: Assessment
           - href: information/support.qmd
             text: Support
           - href: index.qmd
@@ -46,12 +48,6 @@ website:
             text: FAQ
           - href: information/update.qmd
             text: Updates
-      - section: "Project"
-        contents:
-          - href: project/description.qmd
-            text: Description
-          - href: project/tips-resources.qmd
-            text: Tips + resources
       - section: "Weekly materials"
         contents:
           - href: weeks/week-1.qmd

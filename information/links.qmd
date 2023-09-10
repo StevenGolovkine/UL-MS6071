@@ -1,5 +1,7 @@
 # Useful links
 
+<br>
+
 The page gathers some general ressources on R and statistical data science. Feel free to propose any ressource that you find meaningfull.
 
 |                            |                                               |
