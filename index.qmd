@@ -9,7 +9,6 @@ This page contains an outline of the topics, content, and assignments for the se
 
 Note that this schedule will be updated as the semester progresses, with all changes documented here.
 
-::: column-screen-inset-right
 | Week | Date| Topic | Prepare | MCQ | Lab | Lab solutions | Source code | 
 |:------:|--------|--------|:------:|:------:|:------:|:------:|:------:|
 | [1](/weeks/week-1.qmd) | 14/09/23 | R Basics | [🖥️](/weeks/week-1.qmd "Contents week 1"){aria-label="Contents week 1"}| [📋](/questionnaire/qcm-week-1.qmd "MCQ Week 1"){aria-label="MCQ Week 1"} | [💻](/labs/lab-week-1.qmd "Labs Week 1"){aria-label="Labs Week 1"} | | [🧑‍💻](/contents/week-1/source/all_code_chunks.R "Source Code Week 1"){aria-label="Source Code Week 1"}
@@ -24,4 +23,3 @@ Note that this schedule will be updated as the semester progresses, with all cha
 | [10](/weeks/week-10.qmd) | 16/11/23 | Memory Issues | [🖥️](/weeks/week-10.qmd "Contents week 10"){aria-label="Contents week 10"}| [📋](/questionnaire/qcm-week-10.qmd "MCQ Week 10"){aria-label="MCQ Week 10"} | [💻](/labs/lab-week-10.qmd "Labs Week 10"){aria-label="Labs Week 10"} |
 | [11](/weeks/week-11.qmd) | 23/11/23 | Large Language Models | [🖥️](/weeks/week-11.qmd "Contents week 11"){aria-label="Contents week 11"}| [📋](/questionnaire/qcm-week-11.qmd "MCQ Week 11"){aria-label="MCQ Week 11"} | [💻](/labs/lab-week-11.qmd "Labs Week 11"){aria-label="Labs Week 11"} |
 | [12](/weeks/week-12.qmd) | 30/11/23 | Group Projects | [🖥️](/weeks/week-12.qmd "Contents week 12"){aria-label="Contents week 12"}| [📋](/questionnaire/qcm-week-12.qmd "MCQ Week 12"){aria-label="MCQ Week 12"} | [💻](/labs/lab-week-12.qmd "Labs Week 12"){aria-label="Labs Week 12"} |
-:::

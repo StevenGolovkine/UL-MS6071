@@ -4,7 +4,6 @@ project:
 website:
   page-navigation: true
   title: "R for Statistical Data Science"
-  description: "Homepage for STA 210 - Regression Analysis at Duke University, Spring 2022."
   site-url: "https://r-programming-course.netlify.app"
 
   repo-url: https://github.com/StevenGolovkine/MSDSSLTFA_R_course

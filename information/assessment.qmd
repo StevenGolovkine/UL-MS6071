@@ -24,11 +24,13 @@ I expect to have a small discussion with each group during the Week 4 tutorial a
 | Manuscript | 28/11/23 | 5:00pm | 50 % |
 | Presentation | 30/11/23 | 4:00pm | 40 % |
 
-**Important remark:**
+::: {.callout-important}
+## Important remarks
 
 * Presence in class is strongly encouraged and the presence will be recorded.
 
 * Plagiarism is presenting another person’s work or ideas as your own. Plagiarism is a serious breach of ethics and is not taken lightly. It undermines academic integrity and it will not be tolerated.
 
+:::
 
 I will carefully consider the student responses to the evaluation of my course and their implications for course development. It is also common practice to discuss informally with students how the course and their mastery of it are progressing. Thank you in advance for your contribution!

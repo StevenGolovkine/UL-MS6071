@@ -11,13 +11,13 @@ The aim of the course is to introduce the main concepts about R programming. We 
 
 Upon successful completion of the requirements of this course, students should have the knowledge and skills to:
 
-- equip students with advanced proficiency in the R programming language.
+- be proficient in the R programming language.
 
-- provide in-depth knowledge of data manipulation techniques using R packages.
+- use differente data manipulation techniques using R packages.
 
 - choose the appropriate R package to deal with the situation they face.
 
-- cultivate expertise in data visualization principles and advanced plotting.
+- understand data visualisation principles and advanced plotting.
 
 - understand the limitations imposed by R and how to circumvent these.
 
@@ -27,7 +27,7 @@ Upon successful completion of the requirements of this course, students should h
 
 - deal with large data sets in R.
 
-- learn some usages and limitations of Large Language Models for R.
+- understand usages and limitations of Large Language Models for R.
 
 
 ## Assessment
