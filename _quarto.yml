@@ -90,3 +90,5 @@ format:
     include-after-body: include/webex.js
 
 freeze: auto
+
+editor: visual
