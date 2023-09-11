@@ -13,7 +13,7 @@ Upon successful completion of the requirements of this course, students should h
 
 - be proficient in the R programming language.
 
-- use differente data manipulation techniques using R packages.
+- use different data manipulation techniques using R packages.
 
 - choose the appropriate R package to deal with the situation they face.
 

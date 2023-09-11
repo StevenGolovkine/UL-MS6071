@@ -6,9 +6,6 @@ website:
   title: "R for Statistical Data Science"
   site-url: "https://r-programming-course.netlify.app"
 
-  repo-url: https://github.com/StevenGolovkine/MSDSSLTFA_R_course
-  repo-actions: [edit, issue]
-
   open-graph: true
 
   page-footer:

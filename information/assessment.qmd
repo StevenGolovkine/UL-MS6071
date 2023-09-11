@@ -18,7 +18,7 @@ Here are some examples of projects:
 
 I expect to have a small discussion with each group during the Week 4 tutorial about their project before they actually start working on it, in order to see if it is doable.
 
-| Week | Date deadline | Hour deadline | % of the grade |
+| Description | Date deadline | Hour deadline | % of the grade |
 |:------:|--------:|--------:|:--------:|
 | Project proposal | 03/10/23 | 5:00pm | 10 % |
 | Manuscript | 28/11/23 | 5:00pm | 50 % |
