@@ -6,9 +6,89 @@ engine: knitr
 <br>
 Automation and scheduling involves the systematic execution of data workflows at specified intervals or under predefined conditions. This ensures that data tasks are performed consistently, reducing manual effort and minimizing the risk of errors. Automation simplifies repetitive data extraction, transformation, and loading steps, while scheduling allows these processes to run automatically at specific times, e.g., every week. By automating and scheduling their processes, organizations can streamline data operations and maintain data integrity.
 
+We will dive into the Automation process during [Week 5](../../weeks/week-5.qmd) and focus on the Scheduling process here.
+
+## Scheduling
+
+Scheduling is a systematic process that involves planning and organizing tasks to occur at specific times or under predetermined conditions. The primary objective of scheduling is to ensure that tasks are executed efficiently. Schedules are typically created based on factors such as task dependencies, deadlines, available resources, and priorities. For example, imaging a dataset that is updated daily (as weather data), scheduling can be used to retrieve these data automatically.
+
+In R, we use the package `cronR`, on Unix systems, and the package `taskscheduleR`, on Windows systems, to schedule jobs. The two packages work the same, so we will just focus on the `cronR` package.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+As always, the first is to load the package.
+
+```{r}
+#| class-output: outputcode
+#| include: true
+#| eval: false
+library(cronR)
+```
+
+We then need to define the command to be scheduled. To do so, we use the `cron_rscript` function. We can pass the arguments of the script directly to the function.
+
+```{r}
+#| class-output: outputcode
+#| include: true
+#| eval: false
+f <- system.file("r_script.R")  # get the path of the file
+cmd <- cron_rscript(f, rscript_args = c("args1", "args2"))
+```
+
+To run the script every hour, we run:
+```{r}
+#| class-output: outputcode
+#| include: true
+#| eval: false
+cron_add(cmd, frequency = 'hourly', id = 'job1')
+```
+
+To run the script every Sunday at 8:00am, we run:
+```{r}
+#| class-output: outputcode
+#| include: true
+#| eval: false
+cron_add(cmd, frequency = 'daily', at = '08:20', days_of_week = 0)
+```
+
+To run the script every starting day of the month at 2:00pm, we run:
+```{r}
+#| class-output: outputcode
+#| include: true
+#| eval: false
+cron_add(
+    cmd, frequency = 'monthly', at = '14:00',
+    days_of_month = 'first', days_of_week = '*'
+)
+```
+
+To list all the scheduled jobs, we run:
+```{r}
+#| class-output: outputcode
+#| include: true
+#| eval: false
+cron_ls()
+```
+
+Finally, to remove all the scheduled jobs, we run:
+```{r}
+#| class-output: outputcode
+#| include: true
+#| eval: false
+cron_clear(ask = FALSE)
+```
+
+:::
 
 ## Additional resources
 
+* [Website](https://crontab.guru) to define cron schedule expressions.
+
+* The [`cronR`](https://cran.r-project.org/web/packages/cronR/index.html) package.
+
+* The [`taskscheduleR`](https://cran.r-project.org/web/packages/taskscheduleR/index.html) package.
 
 <br><br>
 

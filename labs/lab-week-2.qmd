@@ -52,3 +52,9 @@ For all the questions regarding the plots, make sure to set proper axis, titles,
 16. Plot the alluvial plot between the sending and receiving country by participant gender. To ease the visualisation, remove the rows where the receiving country is the sending country and only consider links with more than 50 participants. (You may need to install another package.)
 
 17. Propose your own plot using this dataset.
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 02](/weeks/week-2.qmd) ⏎
+:::

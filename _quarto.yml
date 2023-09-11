@@ -5,7 +5,8 @@ website:
   page-navigation: true
   title: "R for Statistical Data Science"
   site-url: "https://r-programming-course.netlify.app"
-
+  repo-url: https://github.com/StevenGolovkine/MSDSSLTFA_R_course
+  repo-actions: [issue, edit]
   open-graph: true
 
   page-footer:
@@ -18,6 +19,7 @@ website:
     logo: "./include/logo.svg"
     pinned: true
     align: center
+    toc-location: right
     tools:
       - icon: github
         href: https://github.com/StevenGolovkine/MSDSSLTFA_R_course
@@ -85,6 +87,7 @@ format:
     toc: true
     smooth-scroll: true
     include-after-body: include/webex.js
+
 
 freeze: auto
 
