@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  page-navigation: true
+  page-navigation: false
   title: "R for Statistical Data Science"
   site-url: "https://r-programming-course.netlify.app"
   repo-url: https://github.com/StevenGolovkine/MSDSSLTFA_R_course
