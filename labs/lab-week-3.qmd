@@ -1,3 +1,46 @@
+---
+title: "ETL - Tutorial"
+engine: knitr
+---
+
+<br>
+Today's tutorial has two purposes. Firstly, it aims to acquaint you with an API for data retrieval, enhance your expertise in using the `tidyverse` for data cleansing, investigate diverse output formatting techniques, and finalize the session with a simple scheduling procedure to automate API requests. Secondly, it focuses on familiarizing you with web scraping.
+
+For the API, we will use the [MoviesDatabase](https://rapidapi.com/SAdrian/api/moviesdatabase/details) from [RapidAPI](https://rapidapi.com/hub). You will need to create an account on RapidAPI to access the APIs. If you prefer using another API, feel free to change.
+
+Regarding web scraping, our focus will be on extracting data from Wikipedia. Specifically, we will assemble a dataset that compiles information from all the counties in Ireland.
+
+## Part 1 - The Movies Database
+
+1. Connect to the database.
+
+2. Go on [IMDB](https://www.imdb.com), find a tv serie you like, and get it's id (it is in the URL).
+
+3. Make a request to obtain all the identifiers for the episodes in the series. Transform it to a tibble.
+
+4. For each episode, make a request to obtain some information about it (name, duration, storyline, ...)
+
+5. For each episode, make a request to obtain their ratings.
+
+6. Clean the collected data to make a proper tibble.
+
+7. Plot the evolution of the rankings through the season.
+
+8. Export the data set in csv form.
+
+9. Automate the script.
+
+
+## Part 2 - Wikipedia scrapping
+
+10. Go on the Wikipedia page of [Ireland counties](https://en.wikipedia.org/wiki/Counties_of_Ireland). Create a scrapper to get a list of all the counties in Ireland using this page.
+
+11. Look at the page of the different counties and create a function to create the URL of the county. Create a new column in the tibble with the URL.
+
+12. Scrap the information box of each of the county to retrieve some information (established, area, elevation, population, postcode, ...).
+
+13. Perform some cleaning and export the data as csv.
+
 
 <br><br>
 
