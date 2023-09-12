@@ -1,0 +1,16 @@
+{
+  "hash": "cdd65cc2a8d1cff7a4d1337030681646",
+  "result": {
+    "markdown": "---\ntitle: \"Week 4\"\nsubtitle: \"Data Visualisation\"\neditor: visual\n---\n\n\nData visualisation plays a crucial role in the exploration of datasets. Specifically, it facilitates both exploratory data analysis and the generation of statistical plots. Through these visualizations, patterns, trends, and/or potential outliers within the data can be identified, aiding to understand the underlying relationships. Exploratory data analysis involves the initial visual inspection of data, while statistical plots encompass a range of graphics used to depict distributions, correlations, and statistical summaries.\n\nThe `tidyverse` library is assumed to be loaded for all materials:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n```\n:::\n\n\n\n## Prepare\n\n📖 [Exploratory Data Analysis](/contents/week-4/01_EDA.qmd)\n\n📖 [Statistical Plots](/contents/week-4/02_statistical_plots.qmd)\n\n## Source code\n\n🧑‍💻 [Source code](/contents/week-4/source/all_code_chunks.R)\n\n## Questionnaire\n\n⌨️ [Questionnaire](/questionnaire/qcm-week-4.qmd)\n\n## Practice\n\n📋 [Tutorials](/labs/lab-week-4.qmd)\n\n<br><br>\n\n::: {style=\"font-size: 0.875em;\"}\nBack to [course schedule](/ \"Course schedule\") ⏎\n:::",
+    "supporting": [
+      "week-4_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

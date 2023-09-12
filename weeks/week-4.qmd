@@ -4,20 +4,33 @@ subtitle: "Data Visualisation"
 editor: visual
 ---
 
+Data visualisation plays a crucial role in the exploration of datasets. Specifically, it facilitates both exploratory data analysis and the generation of statistical plots. Through these visualizations, patterns, trends, and/or potential outliers within the data can be identified, aiding to understand the underlying relationships. Exploratory data analysis involves the initial visual inspection of data, while statistical plots encompass a range of graphics used to depict distributions, correlations, and statistical summaries.
+
+The `tidyverse` library is assumed to be loaded for all materials:
+
+```{r}
+#| eval: false
+library(tidyverse)
+```
+
 
 ## Prepare
 
-📖 Exploratory Data Analysis [🔗](/contents/week-4/01_EDA.qmd)
+📖 [Exploratory Data Analysis](/contents/week-4/01_EDA.qmd)
 
-📖 Statistical Plots [🔗](/contents/week-4/02_statistical_plots.qmd)
+📖 [Statistical Plots](/contents/week-4/02_statistical_plots.qmd)
+
+## Source code
+
+🧑‍💻 [Source code](/contents/week-4/source/all_code_chunks.R)
 
 ## Questionnaire
 
-⌨️ Questionnaire [🔗](/questionnaire/qcm-week-4.qmd)
+⌨️ [Questionnaire](/questionnaire/qcm-week-4.qmd)
 
 ## Practice
 
-📋 Tutorials [🔗](/labs/lab-week-4.qmd)
+📋 [Tutorials](/labs/lab-week-4.qmd)
 
 <br><br>
 
