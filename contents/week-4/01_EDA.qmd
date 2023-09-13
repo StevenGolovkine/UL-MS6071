@@ -25,7 +25,7 @@ The data collection process is the **most** step, yet it is sometimes overlooked
 
 The initial stage of data analytics involves the generation of descriptive statistics, often referred to as exploratory analysis. In this step, we create simple summaries of our data to make it easier to understand, to describe any patterns in the data, or identify if any of our variables have relationships between them. It comprises two key components:
 
-1. Data visualization (which is the main focus of the chapter).
+1. Data visualisation (which is the main focus of the chapter).
 
 2. Numerical summaries (such as mean, median, standard deviation, variance, ...).
 

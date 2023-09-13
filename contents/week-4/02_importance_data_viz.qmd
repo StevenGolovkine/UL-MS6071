@@ -1,0 +1,171 @@
+---
+title: "Importance of data visualisation"
+engine: knitr
+---
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| include: false
+library(tidyverse)
+library(ggthemes)
+```
+
+<br>
+Before beginning to learn about what plots are appropriate for a particular variable type, we will highlight the importance of good data visualisation and some of the pitfalls when visualisation is done poorly.
+
+## Why visualise data?
+
+One of the biggest mistakes that is made when starting out in data analytics is not plotting the data as **the** first step. This example shows its importance.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+Here we have two numeric variables $x$ and $y$ and $4$ different datasets that have been generated. Let’s pretend that we do not plot the data and instead calculate numerical summaries, mean of $x$ and $y$, variance of $x$ and $y$, correlation coefficient between $x$ and $y$, which is a number describing how strong the relationship is between $x$ and $y$, and regression line. In all $4$ datasets, the value of these numerical summaries are exactly the same. 
+
+What does that tell us without a plot? Effectively nothing. Here’s why. Look now at the plots for each dataset. You should immediately notice how different the patterns are. 
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+#| class-output: outputcode
+df <- tibble(
+    group = factor(rep(1:4, each = 11)),
+    x = c(anscombe$x1, anscombe$x2, anscombe$x3, anscombe$x4),
+    y = c(anscombe$y1, anscombe$y2, anscombe$y3, anscombe$y4)
+)
+
+ggplot(df, aes(x = x, y = y)) +
+    geom_point() +
+    geom_smooth(method = 'lm') + 
+    facet_wrap(vars(group), labeller = labeller(
+        group = ~ paste("Dataset", .x)
+    )) +
+    theme_bw()
+
+```
+
+In the upper left plot, there is an even spread of points in both axes. In the upper right plot, we have a curved relationship. In the bottom plots, there are clumps of points with a single large outlier.
+
+This example is known as the Anscombe quartet [@anscombe1973].
+
+:::
+
+Sometimes, the numerical summary gives us no meaningfull information about the different dataset. If we were modelling these datasets, we would choose very different models depending on what the plot showed.
+
+## "Bad" data visualisation
+
+
+The lie factor
+
+## "Good" data visualisation
+
+In his book, @tufte2001 propose some principles for displaying quantitative information:
+
+* **Data**: Above all, show the data.
+
+* **Question**: Induce the viewer to think about the substance rather than about methodology, graphic design. Encourage the eye to compare different piece of data.
+
+* **Data-ink ratio**: Maximise the data-ink ratio. Erase all non data ink and redundant information.
+
+* **Integrity**: Avoid distorting what the data have to say.
+
+* **General to specific**: Reveal the data at different levels of detail, from broad picture to fine struture.
+
+* **Context**: Graphical display should be closely integrated with statistical and verbal descriptions of the data set.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+#| class-output: outputcode
+A <- list(
+    list(
+        group = "g1",
+        response = rnorm(100, 1.2, 1)
+    ),
+    list(
+        group = "g2",
+        response = rnorm(100, -.5, 1.2)
+    ),
+    list(
+        group = "g3",
+        response = rnorm(100, 0.5, 1)
+    ),
+    list(
+        group = "g4",
+        response = rt(100, 5, 1)
+    ),
+    list(
+        group = "g5",
+        response = rexp(100, 0.5)
+    )
+)
+
+df <- tibble(A) |>
+    unnest_wider(col = A) |> 
+    unnest(col = response)
+df_mean <- df |> 
+    group_by(group) |> 
+    summarise(mean_ = mean(response)) |> 
+    mutate(x_pos = c(0.75, 1.75, 2.75, 3.75, 4.75))
+```
+
+To explain Tufte principles, consider distribution of a continuous variable  on $5$ groups. We first use the default R function `boxplot`. We see that this plot is quite full.
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+#| class-output: outputcode
+boxplot(df$response ~ df$group)
+```
+
+After erasing all non data ink, all redundant information and show the data, we obtain the following plot. Do you think that we have lost anything?
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+#| class-output: outputcode
+ggplot(df, aes(x = group, y = response)) + 
+    geom_tufteboxplot() +
+    geom_text(
+        data = df_mean, 
+        mapping = aes(x = x_pos, y = mean_, label = round(mean_, 2)),
+        color = "darkred", na.rm = TRUE
+    ) +
+    scale_x_discrete(
+        labels=c("g1" = "1", "g2" = "2", "g3" = "3", "g4" = "4", "g5" = "5")
+    ) + 
+    xlab('Group') +
+    ylab('Response') +
+    theme_tufte() +
+    theme(
+        axis.ticks.x = element_blank()
+    )
+```
+
+:::
+
+### Fanous examples of good data visualisation
+
+
+::: {.callout-note appearance="simple"}
+
+Be careful to keep all your audience. For example, there are an estimated 300 million people in the world with color vision deficiency[^1]. Around 8% of men and 0.5% of women are colorblind. In `ggplot`, you can use the function `scale_colour_colorblind()` to create a color palette color-blind friendly.
+
+[^1]: [https://clintoneye.com/services/color-blindness/](https://clintoneye.com/services/color-blindness/)
+
+:::
+
+As this course is not about data visualisation, you may refer to @tufte2001 and @chen2008 for more information about data visualisation theory.
+
+## References
+
+::: {#refs}
+:::

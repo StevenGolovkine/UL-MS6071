@@ -18,7 +18,9 @@ library(tidyverse)
 
 📖 [Exploratory Data Analysis](/contents/week-4/01_EDA.qmd)
 
-📖 [Statistical Plots](/contents/week-4/02_statistical_plots.qmd)
+📖 [Importance of data visualisation](/contents/week-4/02_importance_data_viz.qmd)
+
+📖 [Statistical Plots](/contents/week-4/03_statistical_plots.qmd)
 
 ## Source code
 

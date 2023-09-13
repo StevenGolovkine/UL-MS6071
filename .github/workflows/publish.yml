@@ -33,6 +33,7 @@ jobs:
             any::webexercises
             any::tidyverse
             any::logger
+            any::ggthemes
 
       - name: Render and Publish 
         uses: quarto-dev/quarto-actions/publish@v2
