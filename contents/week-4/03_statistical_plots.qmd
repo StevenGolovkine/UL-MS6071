@@ -1,0 +1,250 @@
+---
+title: "Statistical Plots"
+engine: knitr
+---
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| include: false
+library(tidyverse)
+```
+
+<br>
+Statistical plots are graphical representations of data that provide insights into its underlying patterns and relationships. These visualizations help in understanding the distribution of data points, identifying trends, and assessing the presence of outliers. Various types of statistical plots are available, each designed to convey specific information about the data. Common examples include histograms, box plots, scatter plots, and bar charts.
+
+For this section, we will use a generated data set of exam scores for students at a public school ([link](http://roycekimmons.com/tools/generated_data/exams)). The dataset is assumed to be loaded using:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+df <- read_csv('./source/StudentsPerformance.csv')
+head(df)
+```
+
+## Categorical variables
+
+Categorical data are summarised using:
+
+* **counts**, which are also called frequencies (these count the number of individuals within each category);
+
+* **proportions**, which are the counts divided by the total number of individuals;
+
+* **percentages**, which are the proportions multiplied by 100.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+We can compute all these quantities using `dplyr`:
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+df_count <- df |>
+    count(`parental level of education`) |> 
+    mutate(
+        proportion = n / sum(n),
+        pct = 100 * proportion
+    )
+```
+
+:::
+
+There are two main types of plots to use for categorical data: a barchart, which is the one we usually prefer and a pie chart, which is deliberately hard to do in ggplot, and we generally avoid them.
+
+A barchart (or a pie chart) is created using the summary table of counts, proportions and percentages calculated. In a bar chart, there is a bar for each category in the data and the bars are plotted at a particular height. The height might be the count, the proportion or the percentage, depending on the application.
+
+To create a bar chart, we can use `ggplot()`, specify the data, and in the `aes()` command the variable we want to plot. We add a layer, `geom_bar()` which creates the barchart and use the black and white theme. Note that, there is no need to pass the tibble of count we previously computed to the function. The default behaviour of `geom_bar()` is to plot the counts on the y-axis. 
+
+::: {.callout-note appearance="simple"}
+
+## Example: bar chart of count
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(df, aes(x = `parental level of education`)) +
+    geom_bar() +  # Barchart
+    theme_bw()
+
+```
+
+:::
+
+Instead of plotting the counts, we could plot the proportions, or more commonly the percentages on the y-axis. For that, we will use the `df_count` dataset. We then need to specify the x-axis and y-axis. Because we are trying to overwrite the default behaviour of the bar chart (which is to plot the counts, not the percents), we need to use `stat = identity` in the `geom_bar()` layer. 
+
+::: {.callout-note appearance="simple"}
+
+## Example: bar chart of percentage
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(df_count, aes(x = `parental level of education`, y = pct)) + #
+    geom_bar(stat = 'identity') +  # Barchart
+    ylim(c(0, 100)) +
+    theme_bw()
+```
+
+:::
+
+## Numeric variables
+
+Quantitative (or numeric) data are more complex to summarise than categorical data. There are two main summaries that we want to calculate:
+
+1.	A **measure of centrality** (where the centre of the data is);
+
+2.	A **measure of variability** (or how spread out the data is).
+
+We always calculate and report both. Statistics is all about quantifying and understanding sources of variability. No measure of centrality is of use without a measure of variability given too. 
+
+### Measures of centrality
+
+Most often finding where the centre or average of the data is will be a key objective of any analysis. We need to calculate a number that will capture this information. There are three main measures of centrality:
+
+1. The **mean**, average value. To calculate it, add all of the numbers up and divide by the total number of numbers or use the `mean()` function.
+
+2. The **median**, middle value. To calculate it, the data must first be sorted from smallest to largest and get the middle number or use the `median()` function. In case of an even number of values, there are two middle values and we take the average of them.
+
+3. The **mode**, most frequent value. To calculate it, get the number that is the most frequent. R does not have an in-built function for the mode.
+
+The mean is severely impacted if we have any outlying or strange values in our data. Similarly if the data are skewed (or have values that are away from the bulk of the data), the mean will not give an accurate reflection of where the centre of the data is. In that scenario, we use the median instead. The mode is more rarely used.
+
+
+### Measures of variability
+
+It is also important to calculate a number that describes how spread out or far away from the centre the data tend to be. This is called a measure of dispersion or variability. There are three main measures of variability:
+
+1. The **range**, which is the largest value in the data minus the smallest value. R has an in-built function called `range()` but it does not actually calculate the range, it simply reports the min and max values. We need to use another step to subtract these numbers. The range is badly affected by outlying values in the dataset and is not that informative. We might report the min and max values in a summary table but in practice, we rarely use the range as a measure of variability.
+
+2. The **variance** (or the **standard deviation**), which gives us a measure of how spread out the data are around the mean. The variance can be computed using the `var()` function. The variance is reported in units squared. For example, if the data are measured in euro, the units for the variance are euro squared! Therefore, we instead report the standard deviation value, which is the square root of the variance. This has the same units as the data, in our example euro. 
+
+3. The inter-quartile range (IQR), which calculates the difference between the first and thirs quartiles. The IQR can be computed using the `IQR()` function.
+
+
+Like mean, the variance and the standard deviation will be inaccurate if the data are skewed or have any outlying values. In that instance, we use the IQR to describe the variability of the data.
+
+::: {.callout-important appearance="simple"}
+
+We always report the mean with standard deviation (or the variance) and the median with the IQR. But how do we know which pairing to use. This will depend on the shape of the distribution of the data.
+
+:::
+
+### Histograms and boxplots
+
+There are two main types of plots to use for quantitative variables: histogram and boxplot.
+
+#### Histograms
+
+A histogram is like a barchart, but for quantitative data. We saw for the barchart that each bar is a count (or percentage) of values in each category. However, quantitative data is just a list of numbers. It does not make sense to use a bar for each number. So we group the data into bins and then plot the count of values belonging to each bin to create an hostogram.
+
+To construct a histogram, we carry out the following steps:
+
+1.	Calculate the range of the data, `max – min`.
+
+2.	Choose how many bins we want – this is not an exact science but the default in `ggplot` is to use $30$ bins (this is often too many!). It is worth noting that changing the number of bins will change the shape of the histogram – that is one of the disadvantages.
+
+3.	Once we know the range and the number of bins, calculate the width of each bin as the range divided by the number of bins. 
+
+This will allow us to calculate a lower limit and an upper limit on each bin. Any value in our dataset that is in that range will belong to that bin.  The bins must be all inclusive, i.e. every data point belongs to a bin, and mutually exclusive, i.e. a data point can belong to one and only one bin.
+
+
+::: {.callout-note appearance="simple"}
+
+## Example: histogram
+
+We can plot an histogram for the `math score`.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(df, aes(x = `math score`)) +
+    geom_histogram() +  # Histogram
+    theme_bw()
+
+```
+
+We can change the number of bins using the `bins` argument of the `geom_histogram()` function.
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(df, aes(x = `math score`)) +
+    geom_histogram(bins = 15) +  # Histogram
+    theme_bw()
+
+```
+
+:::
+
+The histogram is the main tool we use to determine the shape or distribution of the data. We are interested in two properties: is the histogram symmetric (i.e. if we drew a line up the middle, would both halves look approximately the same) and is it bell shaped.
+
+#### Boxplots 
+
+Boxplots are extremely useful for plotting quantitative data. They are much better than histograms for identifying outlying values and are really useful for comparing across groups.
+
+To create a boxplot, we need to calculate the $5$ number summary. This includes the $25$th percentile ($Q_1$),  the median ($Q_2$),  the $75$th percentile ($Q_3$), the minimum and the maximum. $Q_1, Q_2$ and $Q_3$ will be used to create the box. 
+
+A boxplot also has whiskers, extending out of the box. To draw the whiskers, we first calculate an upper and lower fence:
+
+$$\text{Lower fence}: Q_1 - 1.5 \times \text{IQR},$$
+
+$$\text{Upper fence}: Q_3 + 1.5 \times \text{IQR}.$$
+
+This is the maximum length that our whiskers will be. Any value in our dataset that is bigger or smaller than the upper and lower fence values will be marked as outliers. The whiskers will extend to the values in the dataset that are closest to (but inside) the upper and lower fences. 
+
+::: {.callout-note appearance="simple"}
+
+## Example: boxplot
+
+Similarly to the histogram, we plot a boxplot for the `math score`.
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(df, aes(x = `math score`)) +
+    geom_boxplot() +  # Boxplot
+    theme_bw()
+
+```
+
+:::
+
+When looking at the boxplot, we are interested in a few properties. First, the shape of the boxplot. If the median line is in the centre of the box and the whiskers are similar in length, this tells us that the shape of the data is symmetric, but we do not know if the data are bell-shaped though, nor can we pick up a bi-modal shape like we could using a histogram. On the other hand if the median is pulled towards one side of the box and the whiskers are very different in length, then the data are skewed.
+
+One of the biggest advantage of the boxplot is its ability to identify outlying values much more easily than using a histogram. Here we can immediately see that there are a number of values that are quite unusual. 
+
+Finally, boxplots are excellent for comparing groups.
+
+::: {.callout-note appearance="simple"}
+
+## Example: boxplot
+
+To group boxplots, we add the grouping variable on the y-axis.
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplot(df, aes(x = `math score`, y = `parental level of education`)) +
+    geom_boxplot() +  # Boxplot
+    theme_bw()
+
+
+```
+
+:::
+
+
+## Additional resources
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 04](/weeks/week-4.qmd) ⏎
+:::
