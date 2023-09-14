@@ -111,7 +111,7 @@ Illustration of the lie factor using Fuel Economy standards [@tufte2001].
 :::
 
 
-::: {.callout-note appearance="simple"}
+::: {.callout-note appearance="simple"}git 
 
 Be careful to not strictly adhere to the lie factor principle without thinking. Sometimes a change in the data is relevant, but hardly visible.
 
