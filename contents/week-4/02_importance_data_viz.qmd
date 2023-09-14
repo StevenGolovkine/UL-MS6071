@@ -57,8 +57,66 @@ Sometimes, the numerical summary gives us no meaningfull information about the d
 
 ## "Bad" data visualisation
 
+#### YouGov pie chart
 
-The lie factor
+This plot from YouGov tries to represent the most liked pizza topping. As you can easily remark, the maths are not good... Multiple responses were possible for the survey but a pie chart is definitely not the right way to show the results!
+
+::: {#fig-fox-pie}
+
+![](./images/Its-a-pizza-Chart-Not-a-Pie-chart.png)
+
+YouGov pie chart (2017).
+
+:::
+
+
+#### Worst graphic ever?
+
+This plot appeared in an academic journal and was created to visualise the age profile of students enrolling in college courses across the years 1972 to 1976. The bottom red and blue component shows the numbers of enrolments over time for >25s. The top green and yellow is enrolments over time for <25s. 
+
+According to Tufte, "this may well be the worst graphic ever to find its way into print". The colours are awful! Why are they in 3D? Why is the top part upside-down? And why is the y-axis broken in the middle? 
+
+::: {#fig-worst-graph}
+
+![](./images/WorstGraphicEver.jpeg)
+
+Age of students enrolling in college (1976).
+
+:::
+
+#### Gun deaths in Florida
+
+The errors in the first two plots are easy to identify. But sometimes graphics are deliberately used to mislead. This plot was created to understand the impact of Florida’s ‘Stand your Ground’ law which was introduced in 2005 and allowed people to shoot someone in self defense. Notice that the graph goes downwards after the law was introduced, which could be interpreted that gun deaths went down after 2005. 
+
+**BUT!** Look at the y-axis – it is upside-down. In fact gun deaths rose significantly after 2005, not dropped.
+
+::: {#fig-gun-death}
+
+![](./images/FloridaGuns.png)
+
+Gun deaths in Florida by the Florida Department of Law Enforcement (2014).
+
+:::
+
+### The lie factor
+
+The lie factor refers to the value by which the size of an effect is distorted or misrepresented in a graph when compared to the actual data. It is defined as the ratio of the size of effect shown in graphic and the size of effect in the data. A lie factor greater than $1$ indicates that the visual representation exaggerates the data, while a lie factor less than $1$ implies an underestimation. Ideally, a well-constructed data visualization should have a lie factor close to 1 to accurately convey information without distortion or misinterpretation.
+
+::: {#fig-lie-factor}
+
+![](./images/Lie_factor.jpg)
+
+Illustration of the lie factor using Fuel Economy standards [@tufte2001].
+
+:::
+
+
+::: {.callout-note appearance="simple"}
+
+Be careful to not strictly adhere to the lie factor principle without thinking. Sometimes a change in the data is relevant, but hardly visible.
+
+:::
+
 
 ## "Good" data visualisation
 
@@ -152,8 +210,46 @@ ggplot(df, aes(x = group, y = response)) +
 
 :::
 
-### Fanous examples of good data visualisation
+### Famous examples of good data visualisation
 
+#### Napoleon campaign
+
+Charles Minard's chart from 1869 illustrates the size of Napoleon's army during the 1812 Russian campaign, their movements, and the temperatures they faced on their return path.
+
+::: {#fig-minard}
+
+![](./images/Minard.png)
+
+The map of Napoleon's Russian campaign by [Minard](https://en.wikipedia.org/wiki/Charles_Joseph_Minard#The_map_of_Napoleon's_Russian_campaign/) in 1869.
+
+:::
+
+#### Cholera map
+
+Snow's chart from 1854 illustrates the number of cholera cases during the London cholera epidemic.  Cholera cases are represented by black marks, highlighting clusters of cases with stacked rectangles.
+
+::: {#fig-snow}
+
+![](./images/Snow.jpg)
+
+London Cholera Map by [Snow](https://en.wikipedia.org/wiki/John_Snow#Cholera) in 1854.
+
+:::
+
+#### Causes of mortality in the army
+
+Nightingale's chart displays the yearly mortality rate per $1000$ individuals for each month, categorizing deaths into preventable diseases (depicted in blue), fatalities resulting from wounds (shown in red), and those attributed to other causes (represented in black).
+
+::: {#fig-nightingale}
+
+![](./images/Nightingale.jpg)
+
+Diagram of the causes of mortality in the army in the east by [Nightingale](https://en.wikipedia.org/wiki/Florence_Nightingale#Statistics_and_sanitary_reform) in 1858.
+
+:::
+
+
+## Some remarks
 
 ::: {.callout-note appearance="simple"}
 
@@ -164,6 +260,19 @@ Be careful to keep all your audience. For example, there are an estimated 300 mi
 :::
 
 As this course is not about data visualisation, you may refer to @tufte2001 and @chen2008 for more information about data visualisation theory.
+
+
+## Additional resources
+
+* [Article](https://nightingaledvs.com/the-lie-factor-and-the-baseline-paradox/) on the lie factor and the baseline paradox.
+
+* [\@datavizsociety](https://www.instagram.com/datavizsociety/), [\@amazingmap](https://www.instagram.com/amazingmap) and [\@terriblemap](https://www.instagram.com/terriblemap/) on Instagram.
+
+* The Wikipedia [page](https://en.wikipedia.org/wiki/Charles_Joseph_Minard) of Minard.
+
+* The Wikipedia [page](https://en.wikipedia.org/wiki/John_Snow) of Snow.
+
+* The Wikipedia [page](https://en.wikipedia.org/wiki/Florence_Nightingale) of Nightingale.
 
 ## References
 
