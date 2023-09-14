@@ -184,6 +184,120 @@ ggplot(df, aes(x = `math score`)) +
 
 The histogram is the main tool we use to determine the shape or distribution of the data. We are interested in two properties: is the histogram symmetric (i.e. if we drew a line up the middle, would both halves look approximately the same) and is it bell shaped.
 
+::: {.grid}
+
+::: {.g-col-6}
+This histogram is both symmetric and bell-shaped. In this instance, we use the mean and standard deviation or variance to summarise these data.
+:::
+
+::: {.g-col-6}
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+#| echo: false
+temp <- tibble(x = rnorm(1000))
+density_estim <- density(temp$x, n = 1000, from = -4, to = 4)
+temp$t <- density_estim$x
+temp$density <- density_estim$y
+ggplot(temp) +
+    geom_histogram(
+        aes(x = x, after_stat(density)),
+        fill = 'white', color = 'black'
+    ) +
+    geom_line(aes(x = t, y = density), col = 'red', size = 2) +
+    theme_void()
+```
+:::
+
+:::
+
+::: {.grid}
+
+::: {.g-col-6}
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+#| echo: false
+temp <- tibble(x = rbeta(1000, 2, 6))
+density_estim <- density(temp$x, n = 1000, from = 0, to = 1)
+temp$t <- density_estim$x
+temp$density <- density_estim$y
+ggplot(temp) +
+    geom_histogram(
+        aes(x = x, after_stat(density)),
+        fill = 'white', color = 'black'
+    ) +
+    geom_line(aes(x = t, y = density), col = 'red', size = 2) +
+    theme_void()
+
+```
+:::
+
+::: {.g-col-6}
+The data are right skewed. Note the long tail to the right. These data are not symmetric, they are skewed and they are not bell-shaped. In this instance we use the median and IQR to summarise the data.
+:::
+
+:::
+
+::: {.grid}
+
+::: {.g-col-6}
+The data are left skewed. Note the long tail to the left. These data are not symmetric, they are skewed and they are not bell-shaped. In this instance, we again use the median and IQR to summarise the data.
+:::
+
+::: {.g-col-6}
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+#| echo: false
+temp <- tibble(x = rbeta(1000, 6, 2))
+density_estim <- density(temp$x, n = 1000, from = 0, to = 1)
+temp$t <- density_estim$x
+temp$density <- density_estim$y
+ggplot(temp) +
+    geom_histogram(
+        aes(x = x, after_stat(density)),
+        fill = 'white', color = 'black'
+    ) +
+    geom_line(aes(x = t, y = density), col = 'red', size = 2) +
+    theme_void()
+
+```
+:::
+
+:::
+
+::: {.grid}
+
+::: {.g-col-6}
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+#| echo: false
+temp <- tibble(x = c(rnorm(500, 2), rnorm(500, -2)))
+density_estim <- density(temp$x, n = 1000, from = -5, to = 5)
+temp$t <- density_estim$x
+temp$density <- density_estim$y
+ggplot(temp) +
+    geom_histogram(
+        aes(x = x, after_stat(density)),
+        fill = 'white', color = 'black'
+    ) +
+    geom_line(aes(x = t, y = density), col = 'red', size = 2) +
+    theme_void()
+```
+:::
+
+::: {.g-col-6}
+These data are bi-modal, i.e. there are two peaks. Data like these are difficult to summarise with one number and can often be an indication that there are groups in the data, or that summarising the information by group is more appropriate.
+:::
+
+:::
+
 #### Boxplots 
 
 Boxplots are extremely useful for plotting quantitative data. They are much better than histograms for identifying outlying values and are really useful for comparing across groups.
@@ -239,10 +353,28 @@ ggplot(df, aes(x = `math score`, y = `parental level of education`)) +
 
 :::
 
+## What to report
+
+We will conclude this section with a comment on what to report. When writing a report to outline the results of your analysis, think about the target audience. A colleague will require different information to the CEO or they might need the same information but presented differently. 
+
+In general, the report should include a combination of the following:
+
+* A discussion of each variable (i.e. a univariate analysis), showing relevant plots and supplementing with text and summary statistics as appropriate.
+
+* If you have groups in the data that are of interest, report on the data by group and compare across groups.
+
+* You should also examine relationships between variables using scatterplots, pairs plots or contingency tables.
+
+
+Reporting is challenging and figuring out what you need to report (and more importantly what **not** to report) will be difficult at first. But you will learn more about how to do this as you gain more experience.
 
 ## Additional resources
 
+* R4DS Exploratory Data Analysis [chapter](https://r4ds.hadley.nz/eda).
 
+* Our coding club [website](https://ourcodingclub.github.io/tutorials/dataviz-beautification-synthesis/).
+
+* Cedric Scherer [website](https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/).
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
