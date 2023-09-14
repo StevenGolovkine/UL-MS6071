@@ -1,0 +1,205 @@
+---
+title: "Data Visualisation - Questionnaire"
+engine: knitr
+---
+
+<br>
+
+```{r}
+#| echo: false
+library(webexercises)
+```
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which type of plot is best suited for visualising the distribution of a single continuous variable?"
+question_choices <- c(
+    "Scatter plot",
+    "Bar chart",
+    "Pie chart",
+    answer = "Boxplot")
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which plot is used to visualize the relationship between two continuous variables?"
+question_choices <- c(
+    answer = "Scatter plot",
+    "Histogram",
+    "Bar chart",
+    "Pie chart")
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "In a histogram, what does the height of each bar represent by default?"
+question_choices <- c(
+    answer = "Frequency of data within a range",
+    "Mean of the dataset",
+    "Standard deviation of the dataset",
+    "Median of the dataset"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What type of plot is suitable for comparing the distribution of a continuous variable across different categories?"
+question_choices <- c(
+    "Scatter plot",
+    answer = "Box plot",
+    "Histogram",
+    "Line chart"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which plot is useful for identifying potential outliers in a dataset?"
+question_choices <- c(
+    "Bar chart",
+    "Line chart",
+    "Histogram",
+    answer = "Box plot"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What is the primary purpose of a bar chart?"
+question_choices <- c(
+    "Visualizing the distribution of a continuous variable",
+    "Displaying the relationship between two continuous variables",
+    "Identifying outliers in a dataset",
+    answer = "Visualizing the distribution of a discrete variable"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "In a box plot, what does the 'whisker' represent?"
+question_choices <- c(
+    "The median of the dataset",
+    "Outliers in the data",
+    "The range of the data",
+    answer = "The spread of the data"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "In a bar chart, what does the height of each bar represent?"
+question_choices <- c(
+    "The relationship between two continuous variables",
+    "The range of the data",
+    "The distribution of a single continuous variable",
+    answer = "The count or frequency within each category"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What type of plot is most suitable for visualising the skewness of continuous data?"
+question_choices <- c(
+    "Scatter plot",
+    "Bar chart",
+    "Line chart",
+    answer = "Histogram"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "In a positively skewed variables, where is the mean typically located in relation to the median?"
+question_choices <- c(
+    answer = "Mean > Median",
+    "Mean < Median",
+    "Mean = Median",
+    "It depends on the data"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which of the following statements is true regarding skewness and measures of central tendency?"
+question_choices <- c(
+    "In a left-skewed dataset, the mean is always greater than the median.",
+    "Skewness has no impact on measures of central tendency.",
+    "Skewness affects only the mode.",
+    answer = "In a right-skewed dataset, the mean is always greater than the median."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What does a negatively skewed histogram look like?"
+question_choices <- c(
+    answer = "Longer left tail",
+    "Longer right tail",
+    "Symmetrical",
+    "Bimodal"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 04](/weeks/week-4.qmd) ⏎
+:::

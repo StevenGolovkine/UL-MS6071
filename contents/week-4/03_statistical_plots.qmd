@@ -375,6 +375,7 @@ Reporting is challenging and figuring out what you need to report (and more impo
 * Our coding club [website](https://ourcodingclub.github.io/tutorials/dataviz-beautification-synthesis/).
 
 * Cedric Scherer [website](https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/).
+
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
