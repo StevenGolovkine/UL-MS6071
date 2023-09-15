@@ -47,6 +47,8 @@ Prior to diving into the materials, ensure that you have R and RStudio installed
 
 ⌨️ [Tutorial](/labs/lab-week-1.qmd)
 
+⌨️ [Solution proposal](/labs/solutions/week-1.R)
+
 <br><br>
 
 ::: {style="font-size: 0.875em;"}

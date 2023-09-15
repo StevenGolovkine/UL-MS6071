@@ -1,0 +1,14 @@
+{
+  "hash": "35c1b5f680241bdb778cb2aa2da07c8b",
+  "result": {
+    "markdown": "---\ntitle: \"Data Visualisation - Tutorial\"\nengine: knitr\n---\n\n\n<br>\n\n## Part 1 - Exploratory Data Analysis\n\n\n\n\n## Part 2 - \"Bad\" data visualisation",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
