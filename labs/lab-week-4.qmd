@@ -4,10 +4,69 @@ engine: knitr
 ---
 
 <br>
+Today's tutorial has two primary objectives. First, it aims to provide you with hands-on experience in Exploratory Data Analysis and reporting the findings. Second, you will work with examples of "bad" data visualizations, analyze their shortcomings, and explore ways to enhance them.
 
 ## Part 1 - Exploratory Data Analysis
 
+We work with a dataset related to Pokemon, sourced from [Kaggle](https://www.kaggle.com/datasets/mariotormo/complete-pokemon-dataset-updated-090420?select=pokedex_%28Update_05.20%29.csv). We will use a modified version of the dataset available [here](/labs/ressources/pokemon.csv).
 
+0. Load the data.
+
+1. Count the number of Pokemon for each type (use only `type_1`), and compute their proportions and percentages. Create a bar plot with these results. Comments on the distribution.
+
+2. Do the same for each individual generation. Create a bar plot for each generation. Comments on the distribution, compare specifically with the distribution from the previous question. 
+
+3. Plot the distribution of heights. Comments on the distribution (mean, median skewness, ...).
+
+4. Plot the distribution of attack. Try different number of bins in the histogram. 
+
+5. Plot a boxplot of the attack per type and per generation. Comment your results.
+
+6. Plot a scatter plot of the attack vs the defense. Create one per generation and one per type. 
+
+7. Create a small summary of your findings on this dataset.
 
 
 ## Part 2 - "Bad" data visualisation
+
+For each of the following plots, identify the issues and propose an improved version of each plot. The data for all the figures are [here](/labs/ressources/data_week4.rds).
+
+1. Life expectancy
+
+::: {#fig-life-expectancy}
+
+![](./images/LifeExpectancy.png)
+
+Life Expectancy in 2007.
+
+:::
+
+2. Covid cases
+
+::: {#fig-covid-case}
+
+![](./images/COVIDcasesFox.jpeg)
+
+Covid Case in USA.
+
+:::
+
+3. Disablity causes
+
+::: {#fig-disability}
+
+![](./images/CauseDisability.png)
+
+Major cause of disability.
+
+:::
+
+4. Percentage of senior managers
+
+::: {#fig-managers}
+
+![](./images/SeniorManagers.png)
+
+Percentage of seniors in OECD countries.
+
+:::

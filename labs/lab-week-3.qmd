@@ -6,11 +6,9 @@ engine: knitr
 <br>
 Today's tutorial has two purposes. Firstly, it aims to acquaint you with an API for data retrieval, enhance your expertise in using the `tidyverse` for data cleansing, investigate diverse output formatting techniques, and finalize the session with a simple scheduling procedure to automate API requests. Secondly, it focuses on familiarizing you with web scraping.
 
-For the API, we will use the [MoviesDatabase](https://rapidapi.com/SAdrian/api/moviesdatabase/details) from [RapidAPI](https://rapidapi.com/hub). You will need to create an account on RapidAPI to access the APIs. If you prefer using another API, feel free to change.
-
-Regarding web scraping, our focus will be on extracting data from Wikipedia. Specifically, we will assemble a dataset that compiles information from all the counties in Ireland.
-
 ## Part 1 - The Movies Database
+
+For the API, we use the [MoviesDatabase](https://rapidapi.com/SAdrian/api/moviesdatabase/details) from [RapidAPI](https://rapidapi.com/hub). You will need to create an account on RapidAPI to access the APIs. If you prefer using another API, feel free to change.
 
 1. Connect to the database.
 
@@ -32,6 +30,8 @@ Regarding web scraping, our focus will be on extracting data from Wikipedia. Spe
 
 
 ## Part 2 - Wikipedia scrapping
+
+Regarding web scraping, our focus will be on extracting data from Wikipedia. Specifically, we will assemble a dataset that compiles information from all the counties in Ireland.
 
 10. Go on the Wikipedia page of [Ireland counties](https://en.wikipedia.org/wiki/Counties_of_Ireland). Create a scrapper to get a list of all the counties in Ireland using this page.
 
