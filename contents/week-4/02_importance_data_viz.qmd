@@ -278,3 +278,9 @@ As this course is not about data visualisation, you may refer to @tufte2001 and 
 
 ::: {#refs}
 :::
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 04](/weeks/week-4.qmd) ⏎
+:::

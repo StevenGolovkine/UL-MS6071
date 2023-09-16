@@ -3,63 +3,69 @@ title: "R Markdown and Quarto document"
 engine: knitr
 ---
 
-R Markdown is an authoring format for data science and analytics.  An R script file which only contains code and comments. An R Markdown file contains: 
+<br>
+R Markdown and Quarto are authoring formats for data science and analytics. Unlike an R script file which only contains code and comments, an R Markdown or Quarto file is a plain text file that contains 3 pieces of content:
     
 1. code chunks
-2. text/narrative 
+2. text and narrative 
 3. meta data (tells it how to render the output)
 
-R Markdown can be used to create high-quality, fully reproducible, shareable and interactive reports.
+They can be used to create high-quality, fully reproducible, shareable and interactive reports.
 
-## What does R Markdown do?
+## What is R Markdown/Quarto?
 
-When you *knit* or *render* your R Markdown file, it will generate an output file in the format of your choice (e.g. HTML, Word, PDF). It will run the code embedded in the R Markdown file, dynamically updating any tables, plots or results that you want to create. You can then share your output file with colleagues.
+An R Markdown/Quarto file is represented on the @fig-rmarkdown. At the top of the file, the meta data (or YAML) which is surrounded by the dashes. The YAML will dictate how the file is rendered, what the colour scheme is, etc. Next we can see a code chunk which starts with 3 backticks and ends with 3 backticks. Finally, we add some text, with some simple text formatting (Sections, Headers, bullets, italics, bolding, etc) which will be the narrative we want to include alongside our analysis.
 
-## R Markdown workflow
+::: {#fig-rmarkdown}
 
-The following shows the basic workflow we'll follow when using R Markdown:
+![](./images/rmarkdown.png)
 
-1. Open a .Rmd File in RStudio using *File -> New File -> R Markdown*
+R Markdown / Quarto file.
+
+:::
+
+R Markdown/Quarto supports dozens of static and dynamic output formats. These include scientific/technical articles, CVs, Word and PDF documents, presentation slides, dashboards, websites and books, all created using the same general format (code chunks, text and meta data). This website is created using Quarto.
+
+When you **knit** (or **render**) your R Markdown/Quarto file, it will generate an output file in the format of your choice (e.g. HTML, Word, PDF, slides, book, etc). When rendering the output, it will run and execute the code embedded in the file, which means that it will dynamically update any tables, plots or results that you want to create. No more copying and pasting images and numbers from R into Word. You can then easily share your output file with colleagues.
+
+## R Markdown/Quarto workflow
+
+We will follow when using R Markdown/Quarto:
+
+1. Open a .Rmd file in RStudio using *File -> New File -> R Markdown* for R Markdown file and open a .qmd file in RStudio using *File -> New File -> Quarto Document* for Quarto file.
 2. Embed your code in code chunks.
 3. Write text and add tables, figures, images, and citations as necessary.
 4. Set the output format and options in the YAML header.
 5. Save and render (knit) the document.
-6. Share your work!
+6. Share your work (which could be in a Word document or HTML document or dashboard, etc.)
     
 ## Getting started
 
-You will first need to download and install the `rmarkdown` and `knitr` packages. You don't need to load these packages in the R Markdown file, they load automatically for you! If you want to render your files to PDF format, you will also need to download and install the `tinytex` package.
+To run R Markdown/Quarto, you will need to download and install some packages. R Studio will prompt you to install them. You do not need to load this package explicitly in the R Markdown file using the library command, it loads automatically for you. One other thing to note is if you want to render your files to PDF format, you will also need to download and install the `tinytex` package.    
 
-### Open an R Markdown file
+When creating new R Markdown/Quarto file, a pop-up window appears (@fig-new-doc). Creating a Document is the most common option but there are also options to create a presentation, a shiny app or open a host of other templates such as CVs, academic papers, posters, etc. By default when you select one of these options, RStudio will open a template document to get you started.  If you wanted to open a blank document, then you would click on the "Create Empty Document" button at the bottom of the screen. There are three output formats listed (the default is HTML), but PDF and Word are also available.
 
-[[add image]]
+::: {#fig-new-doc}
 
-### Open a new document
+![](./images/new_document.png)
 
-[[add image]]
+Open a new document.
 
-### The R Markdown file
+:::
 
-### Changing the display location
+Once the file is created, you should see a "Knit" button that will be used to render the file. From @fig-rmarkdown, in the YAML header there are two lines. The first line is "title" and the report is “Untitled” currently. The second line is the output which defaults to html_document. Therefore this file, when rendered, will produce a HTML file. Next, we see a code chunk (surrounded by 3 backticks). We can also see some plain text. There is a section header created with the hash symbols, there is an embedded link.
 
-[[add image]]
+::: {.callout-note appearance="simple"}
 
-### Rendering (knitting)
+When working with R Markdown or Quarto files, knit your file early (when it is small) and then knit regularly as you are building the complexity or length of the file up. This makes debugging much easier.
 
-[[add image]]
-
-### The knitted file
-
-[[add image]]
-
+:::
 
 ## What is YAML?
 
-Every R Markdown document starts with a YAML header. YAML settings customises how the output file is rendered. You can set lots of options in the YAML heading, e.g. themes, default figure sizes, default output type (HTML, PDF, Word), include table of contents, etc.
+Every R Markdown document starts with a YAML header. The options or settings that we choose to specify in the YAML header, customises how the output file is rendered and how it looks. There are many options to choose from. For example, you can choose what the default output type is when you knit the file (HTML, PDF, or Word). You can include a table of contents, section numbers, etc.
 
-### Default YAML
-
-The default YAML header in the template file is:
+The default YAML header in the template file is
 
 ```yaml
 ---
@@ -70,31 +76,35 @@ output: html_document
 
 The rendered document will be in HTML format. The rendered HTML file will have a title called "Untitled".
 
-**Exercise:** In the template file, change the title to "My first document". Knit the file and see what happens!
+Adding the name of the report author and the date of the report is straightforward. We add two new options to the YAML, namely author and the date.
 
-
-### Adding an author and date
-
-Adding an author and today's date:
 ```yaml
 ---
 title: "My first document"
-author: "Norma"
+author: "Steven"
 date:  "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
 ```
 
-**Exercise:** Add an author and date to the template file. Re-knit the file and see what happens!
+::: {.callout-note appearance="simple"}
 
-### Adding a table of contents
+If you want to use the most recent date and update it automatically, you can use a line of R code as shown here beside the date option:
 
-To add a table of contents we include a sub-heading in the output section:
+```{r}
+#| eval: false
+date:  "`r format(Sys.time(), '%d %B, %Y')`"
+```
+
+:::
+
+
+Adding a table of contents for ease of navigation is a good idea, particularly for large reports. To do so, we include a sub-heading in the output section:
 
 ```yaml
 ---
 title: "My first document"
-author: "Norma"
+author: "Steven"
 date:  "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
   html_document:
@@ -102,66 +112,37 @@ output:
 ---
 ```
 
-**NOTE**: the `html_document` has moved to the next line with a `:` at the end. This has tabbed in by one. The toc must be tabbed in twice. 
+::: {.callout-note appearance="simple"}
 
-**Exercise:** Add a table of contents to the template file. Re-knit and identify what has changed.
+The `html_document` has moved to the next line with a `:` at the end. This has tabbed in by one. The toc must be tabbed in twice. 
+:::
 
-### Adding a floating table of contents
-
-Specifying the `toc_float` option to float the table of contents to the left of the document (open in the browser for best viewing). This looks like:
-
-```yaml
----
-title: "My first document"
-author: "Norma"
-date:  "`r format(Sys.time(), '%d %B, %Y')`"
-output: 
-  html_document:
-    toc: true
-    toc_float: true
----
-```
-
-### Section numbering
-
-Next let's number the document sections. The YAML will be:
+Next, let's number the document sections. The YAML will be:
 
 ```yaml
 ---
 title: "My first document"
-author: "Norma"
+author: "Steven"
 date:  "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
   html_document:
     toc: true
-    toc_float: true
     number_sections: true
 ---
 ```
 
-When using the `number_sections` option, you should use HEADER 1 headers, i.e. use **# Header name** in the document. This is because HEADER 2 headers, i.e. **## Header name**, will be numbered with decimal points. 
+One thing to note when using the `number_sections` option, is that you need to use HEADER 1 i.e. use **# Header name** in the document. This is because HEADER 2 headers, i.e. **## Header name**, will be numbered with decimal points. 
 
-**Exercise:** Try adding section numbers to the template file, and re-knit the file. Notice how the section numbers appear.  
-
-Next change the headers to HEADER 1 headers (delete one #) and re-knit. What is the difference in the output?
-
-### Themes
-
-Themes change how the rendered file will be styled. There are many themes including: default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti.
-
-Let's try some of these to see what they look like!
-
-Let's choose the flatly theme and use it in the template file:
+Themes change how the rendered file will be styled. There are many themes including: default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti. You can also create your own theme using CSS.
 
 ```yaml
 ---
 title: "My first document"
-author: "Norma"
+author: "Steven"
 date:  "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
   html_document:
     toc: true
-    toc_float: true
     number_sections: true
     theme: flatly
 ---
@@ -169,254 +150,50 @@ output:
 
 The font, colour, link colour, etc. are all changed!
 
-**Exercise:** Try some of the other themes and pick your favourite.
 
 ## Including text
 
-Text or narrative is a fundamental part of any R Markdown document. There are several components that we can modify easily to change how the file is structured. These include bolding text, italicising text, (bulleted) lists, sectioning, etc.
+When writing a report, we don’t just include pictures and tables. It’s essential that we provide some narrative around what the analysis is showing and summarising the work. R Markdown/Quarto allows us to include various text components in a document. These include bolding and italicising text, creating bulleted and numbered lists and sub-lists, creating sections with section headers and sub-sections, and so on.
 
-### Section headers
-
-```markdown
-# HEADER 1
-
-## HEADER 2
-
-### HEADER 3
-
-#### HEADER 4
-
-##### HEADER 5
-
-###### HEADER 6
-```
-
-### Bolding and italicising
-
-```markdown
-**Data analytics** is the process 
-of exploring, 
-visualising and 
-modelling *Big Data*.
-```
-
-### Lists - bulleted
-
-```markdown
-Data analytics includes:
-
-- data cleaning, 
-- data visualisation, 
-- data summary, 
-- data modelling.
-
-```
-
-### Lists - numbered
-
-```markdown
-Data analytics includes:
-
-1. data cleaning, 
-2. data visualisation, 
-3. data summary, 
-4. data modelling.
-
-```
-
-### Sub-lists
-
-```markdown
-Data analytics includes:
-
-1. data cleaning, 
-2. data visualisation,
-  - categorical
-  - quantitative
-3. data summary, 
-4. data modelling.
-
-```
-
-### Including images
-
-```markdown
-Data analytics icon
-![](Data_analytics_image.jpeg)
-```
-
-### Links
-
-```markdown
-
-Learn more about data 
-analytics [here](https://bit.ly/3IlY9zv).
-
-![](Data_analytics_image.jpeg)
-
-```
-
-### Other ideas
-
-White space (tabs) matter in R Markdown! You can create tables, include bibliographies and write mathematical expressions using LaTeX code.
+R markdown and Quarto use the Markdown syntax to render text. You can find this syntax [here](https://www.markdownguide.org) for example.
 
 
-### Including code chunks
+## Including code chunks
 
-An R code chunk can be added in several ways:
-    
-1. Cmd + Option + i (MacOS) or Ctrl + Alt + i (Windows)  
-2. Clicking *Code -> Insert chunk* in RStudio IDE  
-3. Using the following:
-````
+Including code chunks in an RMarkdown/Quarto document allows us to easily modify the rendered or knitted output file.
+
+There are several ways to include an R code chunk.
+
+1.	Use a keyboard shortcut for your Mac (⌘ + ⎇ + i) or Windows (Ctrl + Alt + i) machine.
+2.	In the RStudio IDE, click on Code and then Insert chunk.
+3.	Make a code chunk with three back ticks followed by an r in curly brackets. End the chunk with three back ticks. Like that:
+````markdown
 ```{r}`r ''`
 ```
 ````
 
-````
-```{r}`r ''`
-credit_df_clean %>% 
-  count(default)
-```
-````
+The r part of the code chunk tells Markdown that R is the code engine. However, many different engines can be used such as Python, C, Julia amongst a few.
 
-Code is in the output file
-Results are in the output file
+To modify how the chunks are run, multiple options are available. The most common are:
 
+* `eval`: If set to `FALSE`, the code is not evaluated, but still print in the output file.
 
-````
-```{r}`r ''`
-credit_df_clean %>% 
-  ggplot(aes(x = education, fill = education)) +
-  geom_bar() + 
-  theme_bw() +
-  theme(legend.position = "none")
-```
-````
+* `include`: If set to `FALSE`, the code is evaluated but nothing is print in the output file. This is the option to use if you are doing lots of calculations and do not want these to be in your final report.
 
-### Code chunk options - eval
+* `echo`: If set to `FALSE`, the code is evaluated, and only the results will be print in the output file.
 
-````
-```{r, eval = FALSE}`r ''`
-credit_df_clean %>% 
-  count(default)
-```
-````
+There are lots of other chunk options. For example, setting the values of `fig.height`, `fig.width`, `fig.align` will change the size and alignment of the outputted graph(s). Setting the `message` and `warning` options to `FALSE` will ensure that and warnings or messages that are printed when running a code chunk will not appear in the output file. The list of chunk options are [here](https://rmarkdown.rstudio.com/lesson-3.html) for R Markdown and [here](https://quarto.org/docs/computations/execution-options.html) for Quarto.
 
 
-Code is in the output file
-No results are in the output file
+Code chunks can be run on their own, by clicking the green arrow on the top right hand side of the chunk or all together, by knitting the file. Pay attention that the Markdown environment and R Console are **separate** environments.
 
+One chunk is special – the setup chunk. This always appears at the top of the Markdown file and in it you can set global options, i.e. all of the code chunks that are created after the setup chunk will inherit these options. 
 
-````
-```{r, eval = FALSE}`r ''`
-credit_df_clean %>% 
-  ggplot(aes(x = education, fill = education)) +
-  geom_bar() + 
-  theme_bw() +
-  theme(legend.position = "none")
-```
-````
+::: {.callout-note appearance="simple"}
 
-### Code chunk options - include
+## Example
 
-
-````
-```{r, include = FALSE}`r ''`
-credit_df_clean %>% 
-  count(default)
-```
-````
-
-No code is in the output file
-No results are in the output file
-
-````
-```{r, include = FALSE}`r ''`
-credit_df_clean %>% 
-  ggplot(aes(x = education, fill = education)) +
-  geom_bar() + 
-  theme_bw() +
-  theme(legend.position = "none")
-```
-````
-
-### Code chunk options - echo
-
-````
-```{r, echo = FALSE}`r ''`
-credit_df_clean %>% 
-  count(default)
-```
-````
-
-No code is in the output file
-Results are in the output file
-
-````
-```{r, echo = FALSE}`r ''`
-credit_df_clean %>% 
-  ggplot(aes(x = education, fill = education)) +
-  geom_bar() + 
-  theme_bw() +
-  theme(legend.position = "none")
-```
-````
-
-### Other useful chunk options
-
-There are lots of other chunk options. `fig.height`, `fig.width`, `fig.align` change the size and alignment of the outputted graph(s). Setting the `message` and `warning` options to FALSE will ensure that and warnings or messages that are printed when running a code chunk will not appear in the output file.
-
----
-
-### Combining chunk options
-
-Place between curly braces
-````
-```{r, option=value}`r ''`
-```
-````
-
-Multiple options separated by commas
-````
-```{r, option1=value, option2=value}`r ''`
-```
-````
-
-The *r* part is the code engine (others such as Python, C, Julia, etc possible).
-
-
-### Running code chunks
-
-Code chunks can be run:
-
-1. on their own (click the green arrow on the top RHS of the chunk)
-2. all together by knitting the file
-    
-NB! The Markdown environment and R Console are **separate** environments.
-
-When you knit the Markdown file, everything is run in the that environment. If running code chunks individually (e.g. to check the code works), you are pushing the code to the R console. This means that you must load the relevant packages into the R console to avoid getting errors.
-
-If a code chunk uses information from a previous code chunk, the previous code chunk must be run first.
-
-
-### Chunk labels
-
-Code chunks can be given labels or names that can be referred to or called from other locations in the file, e.g.
-````
-```{r look, echo = FALSE}`r ''`
-str(credit_df_clean)
-```
-````
-
-- NOTE: No comma between *r* and the label *look*. 
-
-Chunk options are then listed (separated by commas).
-
-No duplicate labels allowed!
-
-
-### The setup chunk
+In this example, include is set to FALSE, which means that the set-up chunk code won’t appear in the rendered output file. Within the setup chunk, the default behaviour is to set echo to true, i.e. the code will be displayed in the output file.
 
 ````
 ```{r setup, include=FALSE}`r ''`
@@ -424,24 +201,22 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 ````
 
-- A special chunk: *setup*
-
-- Typically the first chunk in the Markdown file.
-
-- All following chunks will use these options (i.e., sets global chunk options).
-
-- Typically set include=FALSE.
-
-- You should also use individual chunk options!
-
-
+:::
 
 ## Additional resources
 
-- A short tutorial on using R Markdown is available [here](https://commonmark.org/help/tutorial/) for you to try.
 
-- The book [R Markdown: the Definitive Guide](https://bookdown.org/yihui/rmarkdown/) lists many more.
+- The book [R Markdown: the Definitive Guide](https://bookdown.org/yihui/rmarkdown/).
 
-- The [RStudio R Markdown cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) gives a great overview of these ideas.
+- The RStudio R Markdown [cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
 
-- The [RMarkdown reference guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf?_ga=2.229584860.1166261784.1645476210-1869785281.1598968492) lists lots more options!
+- The [RMarkdown reference guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf?_ga=2.229584860.1166261784.1645476210-1869785281.1598968492).
+
+- The Quarto [website](https://quarto.org).
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 05](/weeks/week-5.qmd) ⏎
+:::
