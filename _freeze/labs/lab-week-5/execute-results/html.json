@@ -1,0 +1,14 @@
+{
+  "hash": "f2a0d26001cad0d7d8d60359620f5dd2",
+  "result": {
+    "markdown": "---\ntitle: \"Reproducibility - Tutorial\"\nengine: knitr\n---\n\n\n<br>\nNo tutorial this week as I am not here. I however encourage you to use R Markdown / Quarto with R Projects for your assessment. Depending on your project, R Packaging may also be interesting. \n\nIf you have any questions, do not hesitate to ask me!\n\n\n<br><br>\n\n::: {style=\"font-size: 0.875em;\"}\nBack to [week 05](/weeks/week-5.qmd) ⏎\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
