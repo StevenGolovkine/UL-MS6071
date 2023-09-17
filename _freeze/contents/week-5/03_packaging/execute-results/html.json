@@ -1,0 +1,16 @@
+{
+  "hash": "3eb0ac3d384b728719962564e2f64f5c",
+  "result": {
+    "markdown": "---\ntitle: \"Packaging\"\nengine: knitr\n---\n\n\n<br>\n\n\n## Additional resources\n\n* The R packages [website](https://r-pkgs.org).\n\n<br><br>\n\n::: {style=\"font-size: 0.875em;\"}\nBack to [week 05](/weeks/week-5.qmd) ⏎\n:::",
+    "supporting": [
+      "03_packaging_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

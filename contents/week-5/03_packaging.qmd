@@ -1,11 +1,17 @@
 ---
-title: "Packaging in R"
+title: "Packaging"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
+<br>
 
 
-# Additional resources
+## Additional resources
+
+* The R packages [website](https://r-pkgs.org).
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 05](/weeks/week-5.qmd) ⏎
+:::

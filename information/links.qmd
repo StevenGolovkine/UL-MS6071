@@ -10,3 +10,4 @@ The page gathers some general ressources on R and statistical data science. Feel
 | R for Data Science (2nd edition) | 🔗 [link](https://r4ds.hadley.nz) |
 | Advanced R | 🔗 [link](https://adv-r.hadley.nz) |
 | `ggplot2`: Elegant Graphics for Data Analysis | 🔗 [link](https://ggplot2-book.org) |
+| R packages (2nd edition) | 🔗 [link](https://r-pkgs.org) |
