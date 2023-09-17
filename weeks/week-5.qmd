@@ -7,23 +7,14 @@ editor: visual
 
 Reproducibility is the ability to recreate and verify the results and findings of a study or analysis. It involves providing detailed documentation of the methods, data sources, and procedures used, making the analysis code and scripts available, and ensuring that others can replicate the analysis to obtain similar results. Reproducibility is essential for transparency, validation, and building trust in research and data-driven insights. It allows others to assess the rigor of the analysis and independently verify its conclusions. It moreover promotes the sharing of knowledge and best practices in data analysis, contributing to the advancement of research in various fields.
 
-The `tidyverse` library is assumed to be loaded for all materials:
-
-```{r}
-#| eval: false
-library(tidyverse)
-```
-
 
 ## Prepare
 
-📖 [Reproducibility](/contents/week-5/01_reproducibility.qmd)
+📖 [R Projects](/contents/week-5/01_r_projects.qmd)
 
-📖 [R Projects](/contents/week-5/02_r_projects.qmd)
+📖 [R Markdown and Quarto](/contents/week-5/02_rmarkdown_quarto.qmd)
 
-📖 [R Markdown and Quarto](/contents/week-5/03_rmarkdown_quarto.qmd)
-
-📖 [Packaging](/contents/week-5/04_packaging.qmd)
+📖 [Packaging](/contents/week-5/03_packaging.qmd)
 
 
 ## Questionnaire
