@@ -2,7 +2,7 @@ import os
 import re
 
 # Define the folder path containing Quarto files
-folder_path = './contents/week-4'
+folder_path = './contents/week-5'
 
 # Get a list of Quarto files in the folder
 quarto_files = [file for file in os.listdir(folder_path) if file.endswith('.qmd')]
