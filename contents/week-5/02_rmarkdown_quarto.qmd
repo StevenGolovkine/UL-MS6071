@@ -32,7 +32,7 @@ When you **knit** (or **render**) your R Markdown/Quarto file, it will generate 
 
 We will follow when using R Markdown/Quarto:
 
-1. Open a .Rmd file in RStudio using *File -> New File -> R Markdown* for R Markdown file and open a .qmd file in RStudio using *File -> New File -> Quarto Document* for Quarto file.
+1. Open a .Rmd file in RStudio using *File > New File > R Markdown* for R Markdown file and open a .qmd file in RStudio using *File > New File > Quarto Document* for Quarto file.
 2. Embed your code in code chunks.
 3. Write text and add tables, figures, images, and citations as necessary.
 4. Set the output format and options in the YAML header.

@@ -4,11 +4,299 @@ engine: knitr
 ---
 
 <br>
+Packages serve as the core component of reproducible R code. They encompass reusable R functions, along with comprehensive documentation outlining their usage, as well as sample data for practical demonstration. Within this section, we will navigate the various stages of package development by creating a toy package. This package, named `converter` will serves the purpose of converting numerical values between the imperial and metric systems (this package already exists, [link](https://cran.r-project.org/web/packages/convertr/index.html)).
+
+For more information about package development, you can visit the R packages [website](https://r-pkgs.org/).
+
+You will need the `devtools` package to develop a package. For the rest of the section, we assume that this package is loaded.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+library(devtools)
+```
+
+## Creation
+
+### Creation of the package
+
+To create a new R package, you have to call the function `create_package()` from the package `usethis` (this package is automatically loaded with `devtools`). You can select the directory path in which you want to create the package by specifying it as an argument within the function.
+
+```{r}
+#| class-output: outputcode
+#| eval: false
+#| warning: false
+create_package('./converter')
+```
+
+When running the function, you should see something similar to @fig-new-package. By default, it will open a new R session with the new package loaded like a project (re-load the `devtools` package as you are in a new session).
+
+::: {#fig-new-package}
+
+![](./images/pacakge_creation.png)
+
+Creation of a new package.
+
+:::
+
+You will find several files within the newly created `converter` directory. Let's review them:
+
+* `.gitignore`: This file specifies which files git should ignore during version control.
+
+* `.Rbuildignore`: It lists files that are necessary for package development but not needed when building the package from source.
+
+* `converter.Rproj`: This file configures the directory as an RStudio project.
+
+* `DESCRIPTION`: Contains metadata and information about the package.
+
+* `NAMESPACE`: Defines which functions the package exports.
+
+* `R/`: This directory contains the R scripts with the functions.
+
+::: {.callout-note appearance="simple"}
+
+To make the directory a git directory, you can use the `use_git()` function. It does not need to be an R package to make the function works.
+
+:::
+
+### Create a function (or two)
+
+We will create two simple functions: one that converts meter to yard and one that converts yard to meter.
+
+```{r}
+#| class-output: outputcode
+#| eval: false
+#| warning: false
+meter_to_yard <- function(x) {
+    1.0936 * x
+}
+
+yard_to_meter <- function(x) {
+    0.9144 * x
+}
+
+```
+
+With our functions ready, the next step is to save them in a `.R` file and place this file into the `R/` subdirectory. To simplify this process, we can utilise the `use_r()` function. This function will create and/or open an `.R` file with the specified name, making it a convenient way to manage our functions.
+
+```{r}
+#| class-output: outputcode
+#| eval: false
+#| warning: false
+use_r("conversion")
+```
+
+::: {.callout-note appearance="simple"}
+
+Make sure to only have the definition of the functions within the script. Do not add dependency in this script. Packages have their own dependencies management system.
+
+:::
+
+Now, call the `load_all()` function to make the functions available to experimentation. This function will simulate the process of building, intalling and loading the `converter` package, but without actually installing it.
+
+```{r}
+#| class-output: outputcode
+#| eval: false
+#| warning: false
+load_all()
+```
+
+The `load_all()` function allows us to have empirical evidence that the functions work. But we would like to be sure that every part of the package works: documentation, compilation, dependencies, ... To do so, we use the `check()` function.
+
+```{r}
+#| class-output: outputcode
+#| eval: false
+#| warning: false
+check()
+```
+
+Currently, there is not much to verify, but as the package becomes more intricate, it is advisable to perform regular checks to ensure everything is functioning correctly.
+
+::: {.callout-note appearance="simple"}
+
+If you follow the steps, the first `check()` should raise a warning concerning a missing license. By default, without a license, the code is copyrighted. People can read the code, but they have no legal right to use it. To use the code, you must contact the author directly and ask permission. You can choose a license using `use_*_license()` functions or directly write it down in the `DESCRIPTION` file.
+
+:::
+
+## Documentation
+
+An important part of package development is documentation. The documentation is used to provide users of your package with help and example on how to use your code. It requires the package to have a particular documentation file `man/conversion.Rd`, written is a R-specific markup language. The package `roxygen2` will help with that. This package is used to format comments in your R script into documentation. All you have to do is replace the comment character (`#`) by the `rxoygen2` comment character (`#'`), plus some keywords.
+
+Add the following comments to the R script.
+```{r}
+#| class-output: outputcode
+#| eval: false
+#| warning: false
+
+#' Convert meter to yard
+#'
+#' @param x A number.
+#'
+#' @return A number
+#' @export
+#'
+#' @examples
+#' meter_to_yard(1)
+meter_to_yard <- function(x) {
+    1.0936 * x
+}
+
+#' Convert yard to meter
+#'
+#' @param x A number.
+#'
+#' @return A number
+#' @export
+#'
+#' @examples
+#' yard_to_meter(1)
+yard_to_meter <- function(x) {
+    0.9144 * x
+}
+```
+
+There are four keywords in the example:
+
+* `@param`: describe the parameter of the function.
+
+* `@return`: describe what is returned by the function.
+
+* `@export`: tell R to make the function available to the user of the package. If not, the function is internal to the package.
+
+* `@examples`: show examples on the usage of the function.
+
+There are more keywords that you can find in the `roxygen2` [website](https://roxygen2.r-lib.org). 
+
+Then, you will need to convert the `rxoygen2` comments into documentation file using the function `document()`.
+
+```{r}
+#| class-output: outputcode
+#| eval: false
+#| warning: false
+document()
+```
+
+After running the `load_all()` function, you can render the documentation using `?meter_to_yard()`. It results in @fig-example-function.
+
+::: {#fig-example-function}
+
+![](./images/example_function.png)
+
+Documentation of the `meter_to_yard()` function.
+
+:::
+
+You may also see that the `NAMESPACE` file change. It now contains the functions that are available (export) to the users of the package.
+
+Do not forget to `check()` the package after this step.
+
+## Testing
+
+An important part of the process is to test your code. You can of course testing it by running small example locally. But we can formalise this using unit testing, which means that we express a concrete expectation about the correct result of a function for a specific input. We will use the `testthat` package to write the unit testing but few other package are available.
+
+To setup the use of unit testing with `testthat`, you run
+```{r}
+#| class-output: outputcode
+#| eval: false
+#| warning: false
+use_testthat()
+```
+
+This function will create a new folder `tests` that contains the directory `testthat` and the script `testthat.R`. It also add the line `Suggests: testthat` to the `DESCRIPTION` file.
+
+So, let's write a test for the `meter_to_yard()` function. First, use the helper function `use_test()` function to create a test file.
+
+```{r}
+#| class-output: outputcode
+#| eval: false
+#| warning: false
+use_test("meter_to_yard")
+```
+
+Then, populate this file with following code:
+```{r}
+#| class-output: outputcode
+#| eval: false
+#| warning: false
+test_that("meter_to_yard() works", {
+  expect_equal(meter_to_yard(1), 1.0936)
+})
+```
+This code will test if `meter_to_yard(1)` is equal to $1.0936$.
+
+You can run all the tests using the `test()` function.
+```{r}
+#| class-output: outputcode
+#| eval: false
+#| warning: false
+test()
+```
+
+::: {#fig-example-tests}
+
+![](./images/tests.png)
+
+Output of the `test` command.
+
+:::
+
+::: {.callout-note appearance="simple"}
+
+Whenever you run the command `check()`, the command `test()` is also run.
+
+:::
+
+
+## Final steps
+
+### Create a README.md
+
+It is a common practice to create a `README` file that explain what is the purpose of the package, how to install it, how to propose modification, ... The function `use_readme_rmd()` initialises a basic and executable `README.Rmd` file. 
+
+```{r}
+#| class-output: outputcode
+#| eval: false
+#| warning: false
+use_readme_rmd()
+```
+
+You can then populate this file like any other R Markdown file.
+
+### Installation
+
+The last step is to install the package on your local system. Before installing it,
+run a `check()` command and then
+
+```{r}
+#| class-output: outputcode
+#| eval: false
+#| warning: false
+install()
+```
+
+::: {#fig-install}
+
+![](./images/install.png)
+
+Installation of the package.
+
+:::
+
+::: {.callout-note appearance="simple"}
+
+You may also want to submit the package to the CRAN ([link](https://cran.r-project.org/submit.html)).
+
+:::
 
 
 ## Additional resources
 
 * The R packages [website](https://r-pkgs.org).
+
+* The `roxygen2` [website](https://roxygen2.r-lib.org).
+
+* The `testthat` [website](https://testthat.r-lib.org).
 
 <br><br>
 
