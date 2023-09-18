@@ -1,0 +1,112 @@
+---
+title: "Reproducibility - Questionnaire"
+engine: knitr
+---
+
+<br>
+
+```{r}
+#| echo: false
+library(webexercises)
+```
+
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+
+question <- "What is the purpose of a '.gitignore' file in an R project?"
+question_choices <- c(
+    "To list functions exported by the package.",
+    "To specify metadata about the package.",
+    answer = "To tell git to ignore certain files from version control.",
+    "To define unit tests for the package."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+
+question <- "Which directory in an R package typically contains R scripts with package functions?"
+question_choices <- c(
+    "The 'man/' directory.",
+    "The 'DESCRIPTION/' directory.",
+    "The 'tests/' directory.",
+    answer = "The 'R/' directory,"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+
+question <- "What is the purpose of the 'NAMESPACE' file in an R project?"
+question_choices <- c(
+    "To define metadata about the package",
+    answer = "To list the functions and objects the package exports",
+    "To specify unit tests for the package",
+    "To create an RStudio project"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+
+question <- "What is the primary purpose of R Markdown?"
+question_choices <- c(
+    "To create interactive web applications",
+    "To develop Shiny apps",
+    answer = "To blend narrative text and code to generate reports",
+    "To perform statistical analyses"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+
+question <- "Which of the following file format is commonly used for R Markdown documents output?"
+question_choices <- c(
+    ".md",
+    ".txt",
+    answer = ".html",
+    ".xlsx"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+
+question <- "Which R package is commonly used for authoring and rendering R Markdown documents?"
+question_choices <- c(
+    "`ggplot2`",
+    answer = "`markdown`",
+    "`shiny`",
+    "`lubridate`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
