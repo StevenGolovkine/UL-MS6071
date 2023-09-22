@@ -1,11 +1,16 @@
 ---
-title: "Interactive plots in plotly"
+title: "Interactive graphics with plotly"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
+<br>
 
 
-# Additional resources
+## Additional resources
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 06](/weeks/week-6.qmd) ⏎
+:::

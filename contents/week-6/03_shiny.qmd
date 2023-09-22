@@ -1,11 +1,280 @@
 ---
-title: "Dashboard with Shiny"
+title: "Interactive web apps with Shiny"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
+<br>
+
+7.5_Introduction_to_Shiny_slides:
+Slide 1:
+This video will give a brief introduction to R Shiny and how it can be used with R Markdown and flexdashboards.
+
+Slide 2:
+P1: Shiny is a framework for creating interactive web applications using R.
+
+P2: It was developed with data scientists rather than software developers in mind, to allow data scientists create quite complex apps but without in-depth knowledge of traditional web development languages such as HTML, CSS or JavaScript.
+
+P3: However, this does not limit users to prefabricated or trivial apps. Shiny is flexible enough to allow users to extend the basic functionality and add more complex components should they choose to.
+
+Slide 3:
+P1: Shiny is designed to feel easy when you are starting out creating apps.
+
+P2: But as you learn more and dig into how it works, the general building blocks and the software engineering principals behind them become more apparent.
+
+P3: Today Shiny is used everywhere including academia as a teaching tool to inspire students when teaching statistical concepts, and across a wide range of industries including pharma, manufacturing, finance, among a few. One example mention in the Mastering Shiny book is that Silicon Valley tech companies used Shiny to set up realtime metrics dashboards that incorporate advanced analytics.
+
+Slide 4: 
+P1: You don’t need to learn all about Shiny before using it. You can embed Shiny components into an R Markdown file.
+
+P2: This will create an interactive report or slideshow. 
+
+P3: Embedding Shiny into an R Markdown file is the easiest (and quickest) way to build simple Shiny apps.
+
+Slide 5:
+P1: flexdashboards are written in R Markdown, therefore we can also embed Shiny components easily into the dashboard.
+
+P2: We can add these components to the dashboard with minimal knowledge of Shiny itself.
+
+P3: Adding Shiny components will allow your flexdashboard to have reactive sections and will build interactivity for the user.
 
 
-# Additional resources
+
+
+
+Slide 6:
+P1: Making an R Markdown file (or equivalently a flexdashboard file) interactive requires two steps.
+
+P2: First, you need to change the YAML header to include the `runtime: shiny` option. Typically you’ll add this as the last line in the YAML header.
+
+P3: Then save the file using Cmd + S on Mac, Ctrl + S on Windows. 
+
+Slide 7:
+Remember, the YAML header looks like this with a title, row orientation and social media and embedded code link. 
+
+The Knit button is enabled.
+
+Slide 8:
+After adding the runtime: shiny option at the end of the YAML header AND saving the file (this will not appear until the file is saved), the Knit button is replaced with the Run Document button, i.e. R Markdown is now treating this file as a Shiny app!
+
+Click on the Run Document button. This will render the flexdashboard but now as a Shiny app! (Click on the View in Browser button to view the result properly. Notice the IP address is now in the web search bar).
+
+The app will continue running (notice there is a stop symbol in the Render tab of the R Console in R Studio) until you click the Stop button. If you make changes to the app you should stop it running to be able to make and save the changes and re-run the app.
+
+Slide 9:
+P1: The second step in creating an interactive flexdashboard is to add Shiny *widgets* and *render functions* to the Markdown file in standard R code chunks.  
+
+P2: A widget is an input given by the user (e.g. choosing a variable to plot, giving a date range of interest, etc.).
+
+P3: Render functions take the value(s) provided in the widget(s) and create the output based on that input. A widget must be linked to a render function.
+
+In the next section we’ll learn how to add widgets and render functions to a flexdashboard to make the dashboard reactive.
+
+
+
+
+
+
+
+
+
+
+7.6_Shiny_components:
+Slide 1:
+This video will outline how to add shiny widgets to a flexdashboard.
+
+Slide 2:
+P1: There are many Shiny widgets available.
+
+P2: However we will focus on two of these: `selectInput()` and `sliderInput()`.
+
+P3: The `selectInput()` widget provides a dropdown list of options to choose from. 
+
+P4: The  `sliderInput()` widget provides a slider of (numeric) options to choose from.
+
+Slide 3:
+P1: Let’s start with the `selectInput()` widget, which will create something that looks like the following example:  
+
+P2: In this example the widget has a title: "Number of bins".
+
+P3: It also has 4 options to select from: 10, 20, 35, 50.
+
+P4: Once the widget is set up we then need to use a render function to take the selected value and create the associated output (e.g. a plot or summary). 
+
+Slide 4:
+P1: The R code to create this widget is given here. The selectInput() function has 4 primary arguments that you’ll specify.
+
+P2: These are: 
+
+    * `InputId = "n_bins"` is the name of the input that you specify. We will use this name in the render function to access the value selected.
+    * `label = "Number of bins:"` is the title on the widget.
+    * `choices = c(10, 20, 35, 50)` lists the choices to select from. (this could be created e.g. to list the column names if using this to select a variable to plot).
+    * `selected = 20` is the default value selected.
+
+Slide 5:
+P1: A `sliderInput()` widget creates something that looks like the following example:  
+
+P2: In this example the widget has a title: "Bandwidth adjustment".
+
+P3: It also has a range of options to select from: 0.2 to 2, with the default value set to 1.
+
+P4: Again, we need a render function to take the selected value and create the associated output (e.g. a plot or summary). 
+
+
+
+
+Slide 6:
+P1: The R code to create this widget is given here. The sliderInput() function has several primary arguments that you’ll specify.
+
+P2: These are: 
+
+    * `InputId = "bw_adjust"` which is the name of the input that you specify. We will use this name in the render function to access the value selected.
+    * `label = "Bandwidth adjustment:"` is the title on the widget.
+    * `min = 0.2` and max = 2 sets the minimum and maximum values on the slider.
+    * `value = 1` sets the default value to 1.
+* stepsize = 0.2 sets the stepsize of the slider. This will determine the values you can select. Here the stepsize is 0.2 which means the values that can be selected are 0.2 (the min), 0.4, 0.6, all the way up to the max value 2.
+
+Slide 7:
+P1: It’s very straightforwards to add these to a flexdashboard. Typcially widgets are added to the sidebar of a dashboard. 
+
+P2: The requires specifying the R code chunk(s) underneath the level 1 header containing the information printed in the sidebar.
+
+P3: Let's see how this works.
+
+Slide 8:
+This shows the code added to the R Markdown file,
+
+First notice the runtime: shiny in the YAML header. 
+
+Next notice that both widgets are added in the same code chunk (you could separate these if you wish).
+
+Finally, notice that the code chunk appears under the text of the side bar.
+
+Click on the Run document button and open the rendered dashboard in your browser.
+
+Slide 9:
+The widgets now appear in the sidebar of the flexdashboard!
+
+At this point these widgets do nothing – they need to be linked to a render function to create the associated output. This could be a plot, or related to the valueBoxes or gauges. 
+
+Slide 10:
+P1: Try adding some widgets to the credit default sample file.
+
+P2: Investigate how you might use a `selectInput()` widget to select the variable you want to plot. 
+
+P3: Are there other widget types that you could use?
+
+7.7_Shiny_reactive_functions
+Slide 1:
+This video will outline how to write reactive functions that take the inputs from a Shiny widget or widgets and use them to create the rendered output.
+
+Slide 2:
+P1: To add reactive output to your document, you must call a render function in an R code chunk in the Markdown file.
+
+P2: There are many render functions that can be used. These include:
+
+    `renderImage`:	images (saved as a link to a source file)
+    `renderPlot`:	plots
+    `renderPrint`:	any printed output
+    `renderTable`:	data frame, matrix, other table like structures
+    `renderText`:	character strings
+    `renderUI`:	a Shiny tag object or HTML
+
+Slide 3:
+P1: We will focus on the renderPlot() function. This render function will take the value from a widget and use it to create a plot.
+
+P2: To create a histogram of bill length from the palmer penguins data using the value selected in the "Number of bins" widget use the following chunk of code.
+
+Remember to specify the library(palmerpenguins) command in the setup chunk. Within the renderPlot function notice there is a pair of round brackets and a pair of curly brackets. Within the curly brackets create the ggplot histogram as is typical. 
+
+To change the number of bins used reactively we need to use the widget. Set bins = as.numeric(input$n_bins). We use input$ in all render functions and then specify the widget InputId – here n_bins. As.numeric is used as the values used in the widget are actually character strings and we need to convert that to a number.
+
+Slide 4:
+To embed this into a flexdasboard, simply use this entire R code chunk in one of the boxes created for a chart (i.e. under a level 3 header as shown here).
+
+Slide 5:
+Clicking the Run Document button will result in the following dashboard. Only the first widget is relevant here. You can change the value for Number of bins and see the plot updating reactively!
+
+
+
+
+
+
+
+
+Slide 6:
+To create a histogram of the bill length data using both the value selected in the "Number of bins" widget AND add a density curve (which is like a line drawn over the tops of the bars of the histogram) which is created using the value selected in the "Bandwidth adjustment" widget specify the following code. 
+
+The ggplot looks pretty much as before. However we now need to tell R to plot the density curve – notice the y = ..density.. in the aes() command and the geom_density layer added. 
+
+It is in here that the widget value is allowed to change dynamically. We set the bw argument to the value from the Bandwidth widget. 
+
+Again look at how this is specified input$ followed by the InputId of the widget, here “bw_adjust”.
+
+Slide 7:
+To add this to the second box in the dashboard, add this exact chunk of code under the Chart 2 level 3 header.
+
+The changes in the code are highlighted here.
+
+Slide 8:
+Click the Run Document button and the dashboard is rendered as shown. 
+
+Remember the first plot will only be affected by changes to the Number of bins widget. 
+
+The second plot will be affected by changes to the Number of bins widget AND the bandwidth widget. 
+
+Slide 9: 
+P1: Try doing this for the credit default sample file for the widgets you created in the previous section.
+
+P2: How might you try to update the `valueBox()` or `gauge()` components dynamically?
+
+P3: It's also possible to render `ggplotly()` graphics using the same approach. Investigate how you could do that.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Slide 10:
+P1: You can publish your app to [shinyapps.io](https://www.shinyapps.io/) or to [RPubs](https://rpubs.com/).
+
+P2: Whichever you choose, you will need to create an account and then link it to RStudio. 
+
+P3: You can then share a link to the published app for others to use.
+
+Slide 11:
+To publish your app, click on the Publish button at the top of the Viewer pane in RStudio as shown.
+
+Slide 12;
+P1: Once you click Publish, select either RPubs or RStudio Connect (to go to shinyapps.io).
+
+P2: Follow the instructions to publish your app.
+
+P3: [Here is the link to my published app using the material from this section! Feel free to investigate it!
+
+Slide 13:
+P1: As always the material presented is a subsection of what is available. The following resources should help you to expand your knowledge further.
+
+See this webinar on the basics of flexdashboards available [here](https://www.rstudio.com/resources/webinars/introducing-flexdashboards/).
+
+P2:  The flexdashboard [website](https://pkgs.rstudio.com/flexdashboard/) has many [flexdashboard examples](https://pkgs.rstudio.com/flexdashboard/articles/examples.html) for inspiration!
+
+P3: An introduction to interactive documents is available at this link 
+
+
+
+## Additional resources
+
+* The book [Mastering Shiny](https://mastering-shiny.org/).
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 06](/weeks/week-6.qmd) ⏎
+:::

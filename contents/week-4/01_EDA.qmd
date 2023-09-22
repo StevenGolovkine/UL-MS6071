@@ -17,7 +17,7 @@ In the realm of data analytics, **domain knowledge** holds significant importanc
 
 ::: {.callout-note appearance="simple"}
 
-The data collection process is the **most** step, yet it is sometimes overlooked or not thoroughly considered. Data collection frequently occurs without a systematic approach or proper consideration of the specific problem at hand. The quality of the data thus is essential, as without high-quality data, the effectiveness of data analytics, statistics, machine learning, or AI is severely compromised.
+The data collection process is the **most** important step, yet it is sometimes overlooked or not thoroughly considered. Data collection frequently occurs without a systematic approach or proper consideration of the specific problem at hand. The quality of the data thus is essential, as without high-quality data, the effectiveness of data analytics, statistics, machine learning, or AI is severely compromised.
 
 :::
 
