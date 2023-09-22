@@ -4,42 +4,30 @@ engine: knitr
 ---
 
 <br>
+Dashboards are a means of creating dynamic and user-friendly data visualisations. In R, we usually use the `flexdashboard` package. A `flexdashboard` is a dashboard that is based on R Markdown (the compatibility with Quarto is planned but not yet implemented). Dashboards are the next step towards building a fully interactive web app, but are much easier to create and do not require such a steep learning curve. Flexdashboards also easy to publish and share.
 
-7.1_Introduction_to_flexdashboards.
+Flexdashboards are implemented in a way that they will intelligently re-size to fill a browser window and will display appropriately on other mobile devices such as mobile phones. They can contain many components including htmlwidets (like `plotly` plots), `ggplot2` graphics, tables, gauges, value boxes and text.
 
-Slide 1:
-This video will give an overview of flexdashboards and show how to create your first simple dashboard!
+Before you start, you will need to download and install the `flexdashboard` and `DT` packages.
 
-Slide 2:
-P1: A flexdashboard is a dashboard that is based on R Markdown and is really useful for displaying data.
+```{r}
+#| eval: false
+#| class-output: outputcode
+install.packages('flexdashboard')
+install.packages('DT')
+```
 
-P2: Flexdashboards are the next step towards building a fully interactive R Shiny application, but are much easier to create and don’t require such a steep learning curve. Flexdashboards also easy to publish and share.
+## Getting started
 
-P3: The rendered dashboards will intelligently re-size to fill a browser window and will display appropriately on other mobile devices such as mobile phones.
+A `flexdashboard` is based on R Markdown. The package provides template files to get you started. To open a template file, in RStudio, we could go to *New file > R Markdown*. In the pop-up window (@fig-flexdashboard), click *From Template* and select *Flex Dashboard* from the list of templates. This will open a pre-populated R Markdown file with a `flexdashboard` template to get you started.
 
-P4: The dashboards can contain many components including htmlwidets (e.g. ggplotly plots), base R graphics, tables, gauges, value boxes and text.
+::: {#fig-flexdashboard}
 
-P5: You can also introduce R Shiny components if you wish to build fully customised interactions!
+![](./images/flexdashboard.png)
 
-Slide 3:
-P1: To get started, you will need to download and install the flexdashboard package eith in RStudio using the Install button,
+Creation of a dashboard using `flexdashboard`.
 
-P2: Or by running this line of code directly in the R console.
-
-P3: You will also need to download and install the DT package for formatting and displaying tables of data.
-
-Slide 4:
-P1: A flexdashboard is based on R Markdown. To open a template flexdashboard file, in RStudio we could go to New file -> R Markdown as before.
-
-Slide 5:
-In the pop-up window click New Template and select Flex Dashboard from the list on the RHS. Then click OK.
-
-This will open a pre-populated flexdashboard template to get you started.
-
-
-
-
-
+:::
 
 
 

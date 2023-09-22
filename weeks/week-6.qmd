@@ -4,7 +4,7 @@ subtitle: "Interactivity"
 editor: visual
 ---
 
-Interactive plots and dashboards are a means of creating dynamic and user-friendly data visualisations. These tools enable users to explore and interact with data, enhancing their understanding and decision-making capabilities. Interactive plots allow zooming, panning, or selecting specific data points, enabling deeper insights from complex datasets. Dashboards and web apps provide a centralized platform to display multiple interactive plots and other elements. Common used packages for these purposes are `shiny`, `plotly`, and `flexdashboard`.
+Interactive plots, dashboards and web apps are a means of creating dynamic and user-friendly data visualisations. These tools enable users to explore and interact with data, enhancing their understanding and decision-making capabilities. Interactive plots allow zooming, panning, or selecting specific data points, enabling deeper insights from complex datasets. Dashboards and web apps provide a centralized platform to display multiple interactive plots and other elements. Common used packages for these purposes are `shiny`, `plotly`, and `flexdashboard`.
 
 ## Prepare
 
