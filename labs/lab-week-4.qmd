@@ -4,7 +4,7 @@ engine: knitr
 ---
 
 <br>
-Today's tutorial has two primary objectives. First, it aims to provide you with hands-on experience in Exploratory Data Analysis and reporting the findings. Second, you will work with examples of "bad" data visualizations, analyze their shortcomings, and explore ways to enhance them.
+Today's tutorial has two primary objectives. First, it aims to provide you with hands-on experience in Exploratory Data Analysis and reporting the findings. Second, you will work with examples of "bad" data visualizations, analyse their shortcomings, and explore ways to enhance them.
 
 ## Part 1 - Exploratory Data Analysis
 

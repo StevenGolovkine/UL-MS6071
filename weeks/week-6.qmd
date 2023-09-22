@@ -7,22 +7,22 @@ editor: visual
 
 ## Prepare
 
-📖 Interactivity [🔗](/contents/week-6/01_interactivity.qmd)
 
-📖 Shiny [🔗](/contents/week-6/02_shiny.qmd)
+📖 Interactive graphics with [plotly](/contents/week-6/01_interactive_graphics.qmd)
 
-📖 Flexdashboard [🔗](/contents/week-6/03_flexdashboard.qmd)
+📖 Interactive dashboard with [flexdashboard](/contents/week-6/02_flexdashboard.qmd)
 
-📖 Plotly [🔗](/contents/week-6/04_plotly.qmd)
+📖 Interative web apps with [Shiny](/contents/week-6/03_shiny.qmd)
+
 
 
 ## Questionnaire
 
-⌨️ Questionnaire [🔗](/questionnaire/qcm-week-6.qmd)
+⌨️ [Questionnaire](/questionnaire/qcm-week-6.qmd)
 
 ## Practice
 
-📋 Tutorials [🔗](/labs/lab-week-6.qmd)
+📋 [Tutorials](/labs/lab-week-6.qmd)
 
 <br><br>
 
