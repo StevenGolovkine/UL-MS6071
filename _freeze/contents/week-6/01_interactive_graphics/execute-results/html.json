@@ -1,0 +1,14 @@
+{
+  "hash": "9748d9f502cfe7e3fe3651d8ace33468",
+  "result": {
+    "markdown": "---\ntitle: \"Interactive graphics with plotly\"\nengine: knitr\n---\n\n\n<br>\n\n\n## Additional resources\n\n\n<br><br>\n\n::: {style=\"font-size: 0.875em;\"}\nBack to [week 06](/weeks/week-6.qmd) ⏎\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
