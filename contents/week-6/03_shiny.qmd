@@ -4,6 +4,8 @@ engine: knitr
 ---
 
 <br>
+A web app created using `shiny` is an interactive, browser-based application that allows users to engage with and explore data through a graphical user interface. Shiny simplifies the process of developing web applications by providing a framework for creating dynamic and responsive interfaces.
+
 
 7.5_Introduction_to_Shiny_slides:
 Slide 1:
