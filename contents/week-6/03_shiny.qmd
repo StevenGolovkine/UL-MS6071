@@ -4,40 +4,19 @@ engine: knitr
 ---
 
 <br>
-A web app created using `shiny` is an interactive, browser-based application that allows users to engage with and explore data through a graphical user interface. Shiny simplifies the process of developing web applications by providing a framework for creating dynamic and responsive interfaces.
+A web app created using the `shiny` package is an interactive, browser-based application that allows users to engage with and explore data through a graphical user interface. Shiny simplifies the process of developing web applications by providing a framework for creating dynamic and responsive interfaces.
 
+## Getting started
 
-7.5_Introduction_to_Shiny_slides:
-Slide 1:
-This video will give a brief introduction to R Shiny and how it can be used with R Markdown and flexdashboards.
+Shiny is a framework for creating interactive web applications using R. It has been developed to creat quite complex apps but without in-depth knowledge of traditional web development languages such as HTML, CSS or JavaScript. However, this does not limit users to prefabricated or trivial apps. Shiny is flexible enough to allow users to extend the basic functionality and add more complex components should they choose to.
 
-Slide 2:
-P1: Shiny is a framework for creating interactive web applications using R.
+Shiny is designed to feel easy when you are starting out creating apps. As we learn more and dig into how it works, the general building blocks and the software engineering principals behind them become more apparent.
 
-P2: It was developed with data scientists rather than software developers in mind, to allow data scientists create quite complex apps but without in-depth knowledge of traditional web development languages such as HTML, CSS or JavaScript.
+Nowadays, Shiny is used everywhere including academia as a teaching tool to inspire students when teaching statistical concepts, and across a wide range of industries including pharma, manufacturing, finance, among a few. One example mention in the Mastering Shiny book is that Silicon Valley tech companies used Shiny to set up realtime metrics dashboards that incorporate advanced analytics.
 
-P3: However, this does not limit users to prefabricated or trivial apps. Shiny is flexible enough to allow users to extend the basic functionality and add more complex components should they choose to.
+A nice feature of Shiny is that we do not need to learn all about Shiny before using it. We can embed Shiny components into an R Markdown (or Quarto) file. This will create an interactive report or slideshow. Embedding Shiny into an R Markdown (or Quarto) file is the easiest (and quickest) way to build simple Shiny apps.
 
-Slide 3:
-P1: Shiny is designed to feel easy when you are starting out creating apps.
-
-P2: But as you learn more and dig into how it works, the general building blocks and the software engineering principals behind them become more apparent.
-
-P3: Today Shiny is used everywhere including academia as a teaching tool to inspire students when teaching statistical concepts, and across a wide range of industries including pharma, manufacturing, finance, among a few. One example mention in the Mastering Shiny book is that Silicon Valley tech companies used Shiny to set up realtime metrics dashboards that incorporate advanced analytics.
-
-Slide 4: 
-P1: You don’t need to learn all about Shiny before using it. You can embed Shiny components into an R Markdown file.
-
-P2: This will create an interactive report or slideshow. 
-
-P3: Embedding Shiny into an R Markdown file is the easiest (and quickest) way to build simple Shiny apps.
-
-Slide 5:
-P1: flexdashboards are written in R Markdown, therefore we can also embed Shiny components easily into the dashboard.
-
-P2: We can add these components to the dashboard with minimal knowledge of Shiny itself.
-
-P3: Adding Shiny components will allow your flexdashboard to have reactive sections and will build interactivity for the user.
+Flexdashboards are written using R Markdown, therefore we can also embed Shiny components easily into the dashboard. We can add these components to the dashboard with minimal knowledge of Shiny itself. Adding Shiny components will allow flexdashboards to have reactive sections and will build interactivity for the user.
 
 
 
