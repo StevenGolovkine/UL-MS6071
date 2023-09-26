@@ -4,7 +4,7 @@ engine: knitr
 ---
 
 <br>
-
+Interactive graphics in R, facilitated by the Plotly package, enable users to explore data and gain insights more dynamically. Plotly enhances the static nature of traditional plots by allowing users to interact with visualizations. This interactivity includes zooming, panning, hovering over data points for additional information, and selecting specific elements for deeper exploration. Plotly also offers a wide range of chart types, from basic scatter plots to complex 3D visualizations, all of which can be customized and fine-tuned to meet specific analytical needs. These interactive graphics provide a valuable tool for data exploration, presentation, and communication, enhancing the overall data analysis process.
 
 ## Additional resources
 

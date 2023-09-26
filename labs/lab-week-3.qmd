@@ -4,7 +4,7 @@ engine: knitr
 ---
 
 <br>
-Today's tutorial has two purposes. Firstly, it aims to acquaint you with an API for data retrieval, enhance your expertise in using the `tidyverse` for data cleansing, investigate diverse output formatting techniques, and finalize the session with a simple scheduling procedure to automate API requests. Secondly, it focuses on familiarizing you with web scraping.
+Today's tutorial has two purposes. Firstly, it aims to acquaint you with an API for data retrieval, enhance your expertise in using the `tidyverse` for data cleaning, investigate diverse output formatting techniques, and finalise the session with a simple scheduling procedure to automate API requests. Secondly, it focuses on familiarising you with web scraping.
 
 ## Part 1 - The Movies Database
 
