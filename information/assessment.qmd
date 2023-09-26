@@ -1,6 +1,6 @@
 # Assessment
 
-<br>
+## Description
 
 The assessment will be a take-home project done by a group of two or three students. The idea will be to deepen one of the topics seen in class and write a small report on it (20 pages max.), followed by an oral presentation of 10–15 minutes in front of the class. Each group has to find its own project.
 
@@ -23,6 +23,29 @@ I expect to have a small discussion with each group during the Week 4 tutorial a
 | Project proposal | 03/10/23 | 5:00pm | 10 % |
 | Manuscript + Code | 28/11/23 | 5:00pm | 50 % |
 | Presentation | 30/11/23 | 4:00pm | 40 % |
+
+## Grading Criteria
+
+The proposal will be graded on the following criteria:
+
+* The feasibility of the project.
+* The problematic.
+
+The manuscript will be graded on the following criteria:
+
+* The quality of the writing (clear, concise, ...).
+* The answering of the question.
+* The reproducibility of the code.
+
+The presentation will be graded on the following criteria:
+
+* The quality of the presentation.
+* The respect of the timings.
+* The answering to the questions.
+
+## Late Submission 
+
+No late submission will be accepted. The grade will be decreased by 25% if the submission is handed the same day but late, and by 50% if the submission in handed the next day.
 
 ::: {.callout-important}
 ## Important remarks

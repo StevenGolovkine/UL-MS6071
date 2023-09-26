@@ -184,6 +184,24 @@ We embed this into a flexdashboard as any other plots, i.e. under a level 3 head
 
 ## A complete app
 
+Integrating `shiny` components into a `flexdashboard` offers a straightforward approach, but it is not the most versatile method for building an interactive web app. In order to have control over each element of the app, we will need to create a complete app.
+
+To create a new app, in RStudio, we could go to *New File > Shiny Wep App...*. In the pop-up window (@fig-shiny-app), put a name, make sure that *Multiple File* is clicked, choose a folder and click on *Create*.
+
+::: {#fig-shiny-app}
+
+![](./images/shiny.png)
+
+Creation of a shiny app.
+
+:::
+
+::: {.callout-note appearance="simple"}
+
+Creating a complete app within a single file is possible, but it is considered good practice to use separate files for distinct purposes. For more complex apps, this approach also  simplifies navigation and organisation.
+:::
+
+
 ## Publishing
 
 You can publish your Shiny App to [shinyapps.io](https://www.shinyapps.io/), R Markdown document to [RPubs](https://rpubs.com/) and Quarto document to [QuartoPubs](https://quartopub.com).
