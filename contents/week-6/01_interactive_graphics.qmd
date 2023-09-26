@@ -4,10 +4,73 @@ engine: knitr
 ---
 
 <br>
-Interactive graphics in R, facilitated by the Plotly package, enable users to explore data and gain insights more dynamically. Plotly enhances the static nature of traditional plots by allowing users to interact with visualizations. This interactivity includes zooming, panning, hovering over data points for additional information, and selecting specific elements for deeper exploration. Plotly also offers a wide range of chart types, from basic scatter plots to complex 3D visualizations, all of which can be customized and fine-tuned to meet specific analytical needs. These interactive graphics provide a valuable tool for data exploration, presentation, and communication, enhancing the overall data analysis process.
+Interactive graphics enable users to explore data and gain insights more dynamically. This interactivity includes zooming, panning, hovering over data points for additional information, and selecting specific elements for deeper exploration. Nowadays, there are numerous R packages to create interactive plots. Here, we will focus on `plotly` as it is a general purposes data visualisation package and it works nicely with `ggplot2`.
+
+Before you start, you will need to download and install the `plotly` package. We will also need the `tidyverse`.
+
+```{r}
+#| eval: false
+#| class-output: outputcode
+install.packages('plotly')
+```
+
+```{r}
+#| eval: true
+#| warning: false
+#| class-output: outputcode
+library(tidyverse)
+library(plotly)
+```
+
+For this section, we will use a dataset gathering information on US States ([link](https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-08-01)). The dataset is assumed to be loaded using:
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+df <- read_csv('./source/states.csv')
+head(df)
+```
+
+## Make a ggplot interactive
+
+Making a `ggplot` interactive is very easy. The package `plotly` provides the function `ggplotly()` that does all the job. The function takes a `ggplot` object as input and return a `plotly` object. As it returns a `plotly` object, we can use all the formatting elements on it.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+We can create a simple plot using `ggplot2`:
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+gg <- ggplot(df) +
+    geom_point(
+        aes(x = population_2020, y = total_area_mi2, text = state)
+    ) +
+    xlab('Population in 2020') +
+    ylab('Total area in square miles') +
+    theme_bw()
+gg
+```
+
+And then, make it interactive using the `ggplotly()` function.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+ggplotly(gg, tooltip = 'text')
+```
+:::
+
 
 ## Additional resources
 
+* Plotly R [documentation](https://plotly.com/r/).
+
+* Plotly with `ggplot2` [documentation](https://plotly.com/ggplot2/).
 
 <br><br>
 
