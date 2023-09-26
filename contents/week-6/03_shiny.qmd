@@ -186,7 +186,7 @@ We embed this into a flexdashboard as any other plots, i.e. under a level 3 head
 
 Integrating `shiny` components into a `flexdashboard` offers a straightforward approach, but it is not the most versatile method for building an interactive web app. In order to have control over each element of the app, we will need to create a complete app.
 
-To create a new app, in RStudio, we could go to *New File > Shiny Wep App...*. In the pop-up window (@fig-shiny-app), put a name, make sure that *Multiple File* is clicked, choose a folder and click on *Create*.
+To create a new app, in RStudio, we could go to *New File > Shiny Wep App...*. In the pop-up window (@fig-shiny-app), put a name, make sure that *Multiple File* is clicked, choose a folder and click on *Create*. This will create a new folder with the files *ui.R* and *server.R*. By default, these files are populated with some code. Click *Run App* to render the application.
 
 ::: {#fig-shiny-app}
 
@@ -199,8 +199,12 @@ Creation of a shiny app.
 ::: {.callout-note appearance="simple"}
 
 Creating a complete app within a single file is possible, but it is considered good practice to use separate files for distinct purposes. For more complex apps, this approach also  simplifies navigation and organisation.
+
 :::
 
+The `ui.R` file will contain all user interface objects, the different panels, the widgets, the outputs, etc. This file controls the layout and the appearance of the web app. The `server.R` will contain the computation part (mostly render functions). It corresponds to the instructions that the computer needs to build the app. 
+
+For more information on building web app with Shiny, you can refer to the book [*Mastering Shiny*](https://mastering-shiny.org/index.html).
 
 ## Publishing
 
