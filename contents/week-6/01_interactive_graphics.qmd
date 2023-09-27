@@ -32,6 +32,60 @@ df <- read_csv('./source/states.csv')
 head(df)
 ```
 
+## Getting started
+
+The plotting philosophy of `plotly` is similar to the one of `ggplot2` in the sense that the plot is created by adding **layers** of information. The plots created with `plotly` are highly customisable.
+
+The figures are created using the `plot_ly()` function and the layout can be modified using the `layout()` function. If we assign variable names (e.g. `state`, `population_2020`, etc) to visual properties (e.g. `x`, `y`, `color`, etc), `plot_ly()` will try to create a sensible plot based on the information we provide. The behaviour can be changed by setting the `type` parameters.
+
+::: {.callout-note appearance="simple"}
+
+Note that to assign a variable name to a visual property, we have to use the `~` symbol. For example, `x = ~population` or `color = ~n_representatives`.
+
+:::
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+A pretty complete example to create a scatter plot in `plotly`. 
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+plot_ly(
+    data = df,
+    type = 'scatter',
+    mode = 'markers',
+    x = ~population_2020,
+    y = ~total_area_mi2,
+    text = ~paste(
+        'Population:', population_2020,
+        '\nTotal area in mi^2:', total_area_mi2,
+        '\nNumber of representative:', n_representatives
+    ),
+    marker = list(
+        color = ~n_representatives, 
+        colorbar = list(
+            title = "Number of representatives",
+            orientation = 'h'
+        ),
+        colorscale = 'Viridis',
+        showscale = TRUE
+    )
+) |> 
+    layout(
+        title = 'Population vs Total Area of American States (in 2020)',
+        xaxis = list(title = 'Population'),
+        yaxis = list(title = "Total area in miles squared")
+    )
+```
+
+:::
+
+
+
 ## Make a ggplot interactive
 
 Making a `ggplot` interactive is very easy. The package `plotly` provides the function `ggplotly()` that does all the job. The function takes a `ggplot` object as input and return a `plotly` object. As it returns a `plotly` object, we can use all the formatting elements on it.
@@ -66,11 +120,17 @@ ggplotly(gg, tooltip = 'text')
 :::
 
 
+## Configuration
+
+
+
 ## Additional resources
 
 * Plotly R [documentation](https://plotly.com/r/).
 
 * Plotly with `ggplot2` [documentation](https://plotly.com/ggplot2/).
+
+* Interactive web-based data visualization with R, plotly and shiny [book](https://plotly-r.com).
 
 <br><br>
 
