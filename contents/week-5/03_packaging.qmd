@@ -12,7 +12,7 @@ You will need the `devtools` package to develop a package. For the rest of the s
 
 ```{r}
 #| class-output: outputcode
-#| eval: true
+#| eval: false
 #| warning: false
 library(devtools)
 ```
