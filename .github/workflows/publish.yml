@@ -34,6 +34,8 @@ jobs:
             any::tidyverse
             any::logger
             any::ggthemes
+            any::httr2
+            any::plotly
 
       - name: Render and Publish 
         uses: quarto-dev/quarto-actions/publish@v2
