@@ -40,9 +40,63 @@ The figures are created using the `plot_ly()` function and the layout can be mod
 
 ::: {.callout-note appearance="simple"}
 
-Note that to assign a variable name to a visual property, we have to use the `~` symbol. For example, `x = ~population` or `color = ~n_representatives`.
+Note that to assign a variable name to a visual property, we have to use the `~` symbol. For example, `x = ~population_2020` or `color = ~n_representatives`.
 
 :::
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+We want a plot for the `n_representatives` variable and `plot_ly()` choose to do a bar plot.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+plot_ly(data = df, x = ~n_representatives)
+
+```
+
+:::
+
+The `plotly` package considers a functional approach to plotting, in the sense, that most of the functions in this package take a `plotly` object as argument and return a modified version of this object. We use the `plot_ly()` function to define the plot and use the `add_*()` functions (e.g., `add_lines()`, `add_trace()`, ...) that define how the data is rendered.
+
+It is important to note that:
+
+* Arguments specified in `plot_ly()` are **global**, so any downstream `add_*()` functions inherit theses arguments, except if `inherit = FALSE`.
+
+* Data manipulation verbs from the `dplyr` package may be used to transform the data underlying a `plotly` object. We use the `plotly_data()` to obtain the data at any point in the code.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+We do the same plot as before, but this time, we add the number of states with a certain number of representatives. This is done directly in the plot definition without the need to create a new dataframe.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| warning: false
+plot_ly(
+    data = df,
+    x = ~factor(n_representatives)  # Globally assign x
+) |> 
+    add_histogram() |>  # Add a histogram layer
+    group_by(n_representatives) |> 
+    summarise(n = n()) |>  # Modify the data in the plotly object
+    add_text(  # Add a layer of text, x is the same as before
+        text = ~n, y = ~n, 
+        textposition = "top middle", 
+        cliponaxis = FALSE
+    )
+```
+
+:::
+
+
+The plots created with `plot_ly()` are very customisable. The `layout()` function is used to add and modify part of the graphics. For example, we can change the title, axis, grid or legend using this function. It works simularly to the `theme()` function in `ggplot2`. We select the element we want to modify (e.g., the `xaxis`) and we create a list of the characteristics we desire (e.g., `list(title = 'Population', color = 'red')`).
+
 
 ::: {.callout-note appearance="simple"}
 
@@ -77,7 +131,7 @@ plot_ly(
 ) |> 
     layout(
         title = 'Population vs Total Area of American States (in 2020)',
-        xaxis = list(title = 'Population'),
+        xaxis = list(title = 'Population', color = 'red'),
         yaxis = list(title = "Total area in miles squared")
     )
 ```
@@ -122,7 +176,9 @@ ggplotly(gg, tooltip = 'text')
 
 ## Configuration
 
+The `plotly` package also includes a `config()` function that can be used to set the configuration options of the figures (by default, the top-right buttons, named the modebar). For example, we can enable the scroll zoom by setting `scrollZoom = TRUE` or make a static chart with `staticPlot = TRUE`. 
 
+Most of the configuration options are [here](https://plotly.com/r/configuration-options/).
 
 ## Additional resources
 
