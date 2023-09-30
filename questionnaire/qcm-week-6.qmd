@@ -1,0 +1,129 @@
+---
+title: "Interactivity - Questionnaire"
+engine: knitr
+---
+
+<br>
+
+```{r}
+#| echo: false
+library(webexercises)
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What package can be used to create interactive plots in R?"
+question_choices <- c(
+    "`ggplot2`", 
+    "`base`", 
+    answer = "`plotly`", 
+    "`dplyr`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the primary purpose of the `flexdashboard` package?"
+question_choices <- c(
+    answer = "Building web applications",
+    "Creating interactive plots",
+    "Designing static reports",
+    "Generating machine learning models"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "Which function in the `plotly` package is used to create an interactive scatter plot?"
+question_choices <- c(
+    "`geom_bar()`",
+    "`ggplot()`",
+    answer = "`plot_ly()`",
+    "`boxplot()`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "Which argument in `plot_ly()` is used to specify the type of plot to be created?"
+question_choices <- c(
+    answer = "type",
+    "data",
+    "color",
+    "size"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "Which `plotly` function is used to create interactive 3D scatter plots?"
+question_choices <- c(
+    answer = "`plot_ly()`",
+    "`geom_point3d()`",
+    "`scatterplot3d()`",
+    "`plot_3d()`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "In 'plotly', how can you create a plot with multiple traces, each represented in a different color?"
+question_choices <- c(
+    answer = "By specifying the 'color' argument in `plot_ly()`",
+    "By using the `facet_wrap()` function",
+    "By setting 'type' to 'multiple' in `plot_ly()`",
+    "By using `ggplot2` functions"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What does the `add_trace()` function in 'plotly' allow you to do?"
+question_choices <- c(
+    "Remove existing traces from a plot",
+    "Add a new subplot to the plot",
+    "Customize the background color of the plot",
+    answer = "Add additional data traces to an existing plot"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 06](/weeks/week-6.qmd) ⏎
+:::

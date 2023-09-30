@@ -110,3 +110,9 @@ question_choices <- c(
 )
 cat(question, longmcq(sample(question_choices)))
 ```
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 05](/weeks/week-5.qmd) ⏎
+:::
