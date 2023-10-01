@@ -1,0 +1,16 @@
+{
+  "hash": "61b2c41593fcfc3d4b8d5b974e6f7821",
+  "result": {
+    "markdown": "---\ntitle: \"Sampling from statistical distributions\"\nengine: knitr\n---\n\n\n## Distributions the `stats` package in R\n\nSome of the classical distributions have already been implemented in R, and you can easily sampled from them. All functions are based on the same schema:\n\n* `dxxx`: the density/mass function\n* `pxxx`: the cumulative distribution function\n* `qxxx`: the quantile function\n* `rxxx`: the pseuso-random number generator.\n\nThe `xxx` has be replaced by the name of the distribution, e.g., `norm` for a normal distribution, `unif` for a uniform.\n\n### Example: a sample from $\\mathcal{N}(0, 1)$\n\nHere, we generate a sample of $5$ observations following a standard normal distribution.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nset.seed(42)\nrnorm(5)\n```\n\n::: {.cell-output .cell-output-stdout}\n```{.outputcode}\n[1]  1.3709584 -0.5646982  0.3631284  0.6328626  0.4042683\n```\n:::\n:::\n\n\n### Example: a sample from $\\mathcal{B}(10, 0.5)$\n\nWe generate a sample of $5$ observations following a binomial distribution with parameters $n = 10$ and $p = 0.5$. This can be interpreted as the number of successes in $n$ trials, the probability of success being $p$.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nset.seed(42)\nrbinom(5, 10, 0.5)\n```\n\n::: {.cell-output .cell-output-stdout}\n```{.outputcode}\n[1] 7 7 4 7 6\n```\n:::\n:::\n\n\n### Example: the probability density function of $\\mathcal{B}(2, 2)$\n\nUsing a generated sample with a Beta $\\mathcal{B}(2, 2)$ distribution, we estimate the probability density function and compare to the truth.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nset.seed(42)\nsample <- rbeta(1000, 2, 2)  # Generate B(2, 2)\n\nplot(density(sample))\ncurve(dbeta(x, 2, 2), col = 'red', add = TRUE)\nlegend(\n  -0.1, 1.5, lty = 1,\n  legend = c(\"Estimate\", \"True\"),\n  col = c(\"black\", \"red\")\n)\n```\n\n::: {.cell-output-display}\n![](03_distributions_files/figure-html/unnamed-chunk-3-1.png){width=672}\n:::\n:::\n\n\n\n### Example: the cumulative density function of $\\mathcal{P}(5)$\n\nUsing the generated sample with a Poisson $\\mathcal{P}(5)$ distribution, we estimate the cumulative distribution function and compare to the truth.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nset.seed(42)\nsample <- rpois(1000, 5)  # Generate P(5)\n\nplot(ecdf(sample))\ncurve(ppois(x, 5), col = 'red', type = 's', add = TRUE)\nlegend(\n  -0.1, 1.5, lty = 1,\n  legend = c(\"Estimate\", \"True\"),\n  col = c(\"black\", \"red\")\n)\n```\n\n::: {.cell-output-display}\n![](03_distributions_files/figure-html/unnamed-chunk-4-1.png){width=672}\n:::\n:::\n\n\n# Additional resources\n\n* Distributions in R: [link](https://cran.r-project.org/web/views/Distributions.html)",
+    "supporting": [
+      "03_distributions_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

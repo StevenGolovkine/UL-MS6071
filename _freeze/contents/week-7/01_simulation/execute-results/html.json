@@ -1,0 +1,14 @@
+{
+  "hash": "e4b4cdc6240f08fb3172e79d01c472e3",
+  "result": {
+    "markdown": "---\ntitle: \"Simulation in R\"\nengine: knitr\n---\n\n\n## A motivated example\n\n# Additional resources\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

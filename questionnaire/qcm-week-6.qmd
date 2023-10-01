@@ -122,6 +122,70 @@ question_choices <- c(
 cat(question, longmcq(sample(question_choices)))
 ```
 
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the primary advantage of using `flexdashboard` for creating interactive dashboards?"
+question_choices <- c(
+    "Highly efficient for large datasets",
+    "Provides 3D data visualizations",
+    "Supports animated plots",
+    answer = "Requires minimal code for web-based reports"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the purpose of `shiny` integration with `flexdashboard`?"
+question_choices <- c(
+    answer = "To enable live data updates",
+    "To create static reports",
+    "To enhance data cleaning",
+    "To export dashboards as PDFs"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "How can you create tabs in a `flexdashboard` layout?"
+question_choices <- c(
+    "By using the `tabset_panel()` function",
+    "By adding `tab` elements within `dashboardBody()`",
+    "By setting `tabular` as the layout style",
+    answer = "By addind level 1 header."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What does the `runtime: shiny` option in a YAML header indicate in a flexdashboard?"
+question_choices <- c(
+    answer = "It activates Shiny integration for interactive elements",
+    "It specifies the duration of the dashboard runtime",
+    "It sets the rendering engine to `runtime`",
+    "It defines the dashboard's default theme"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
