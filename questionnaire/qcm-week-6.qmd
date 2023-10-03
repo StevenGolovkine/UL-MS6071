@@ -34,10 +34,10 @@ cat(question, longmcq(sample(question_choices)))
 #| results: asis
 question <- "What is the primary purpose of the `flexdashboard` package?"
 question_choices <- c(
-    answer = "Building web applications",
-    "Creating interactive plots",
-    "Designing static reports",
-    "Generating machine learning models"
+    answer = "Building web applications.",
+    "Creating interactive plots.",
+    "Designing static reports.",
+    "Generating machine learning models."
 )
 cat(question, longmcq(sample(question_choices)))
 ```
@@ -98,10 +98,10 @@ cat(question, longmcq(sample(question_choices)))
 #| results: asis
 question <- "In 'plotly', how can you create a plot with multiple traces, each represented in a different color?"
 question_choices <- c(
-    answer = "By specifying the 'color' argument in `plot_ly()`",
-    "By using the `facet_wrap()` function",
-    "By setting 'type' to 'multiple' in `plot_ly()`",
-    "By using `ggplot2` functions"
+    answer = "By specifying the 'color' argument in `plot_ly()`.",
+    "By using the `facet_wrap()` function.",
+    "By setting 'type' to 'multiple' in `plot_ly()`.",
+    "By using `ggplot2` functions."
 )
 cat(question, longmcq(sample(question_choices)))
 ```
@@ -114,10 +114,10 @@ cat(question, longmcq(sample(question_choices)))
 #| results: asis
 question <- "What does the `add_trace()` function in 'plotly' allow you to do?"
 question_choices <- c(
-    "Remove existing traces from a plot",
-    "Add a new subplot to the plot",
-    "Customize the background color of the plot",
-    answer = "Add additional data traces to an existing plot"
+    "Remove existing traces from a plot.",
+    "Add a new subplot to the plot.",
+    "Customize the background color of the plot.",
+    answer = "Add additional data traces to an existing plot."
 )
 cat(question, longmcq(sample(question_choices)))
 ```
@@ -130,10 +130,10 @@ cat(question, longmcq(sample(question_choices)))
 #| results: asis
 question <- "What is the primary advantage of using `flexdashboard` for creating interactive dashboards?"
 question_choices <- c(
-    "Highly efficient for large datasets",
-    "Provides 3D data visualizations",
-    "Supports animated plots",
-    answer = "Requires minimal code for web-based reports"
+    "Highly efficient for large datasets.",
+    "Provides 3D data visualizations.",
+    "Supports animated plots.",
+    answer = "Requires minimal code for web-based reports."
 )
 cat(question, longmcq(sample(question_choices)))
 ```
@@ -146,10 +146,10 @@ cat(question, longmcq(sample(question_choices)))
 #| results: asis
 question <- "What is the purpose of `shiny` integration with `flexdashboard`?"
 question_choices <- c(
-    answer = "To enable live data updates",
-    "To create static reports",
-    "To enhance data cleaning",
-    "To export dashboards as PDFs"
+    answer = "To enable live data updates.",
+    "To create static reports.",
+    "To enhance data cleaning.",
+    "To export dashboards as PDFs."
 )
 cat(question, longmcq(sample(question_choices)))
 ```
@@ -162,9 +162,9 @@ cat(question, longmcq(sample(question_choices)))
 #| results: asis
 question <- "How can you create tabs in a `flexdashboard` layout?"
 question_choices <- c(
-    "By using the `tabset_panel()` function",
-    "By adding `tab` elements within `dashboardBody()`",
-    "By setting `tabular` as the layout style",
+    "By using the `tabset_panel()` function.",
+    "By adding `tab` elements within `dashboardBody()`.",
+    "By setting `tabular` as the layout style.",
     answer = "By addind level 1 header."
 )
 cat(question, longmcq(sample(question_choices)))
@@ -178,10 +178,74 @@ cat(question, longmcq(sample(question_choices)))
 #| results: asis
 question <- "What does the `runtime: shiny` option in a YAML header indicate in a flexdashboard?"
 question_choices <- c(
-    answer = "It activates Shiny integration for interactive elements",
-    "It specifies the duration of the dashboard runtime",
-    "It sets the rendering engine to `runtime`",
-    "It defines the dashboard's default theme"
+    answer = "It activates Shiny integration for interactive elements.",
+    "It specifies the duration of the dashboard runtime.",
+    "It sets the rendering engine to `runtime`.",
+    "It defines the dashboard's default theme."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is a *reactive* expression in Shiny?"
+question_choices <- c(
+    answer = "A function that processes data externally.",
+    "A programming construct for defining UI elements.",
+    "An element in the Shiny user interface.",
+    "A data visualisation component."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "In Shiny, what is the purpose of `observeEvent()`?"
+question_choices <- c(
+    answer = "To perform an action in response to an event.",
+    "To render the user interface.",
+    "To define the application layout.",
+    "To trigger a reaction."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "How can you include user input controls, such as sliders, in a Shiny app?"
+question_choices <- c(
+    "By using `plotInputControls()`.",
+    "By hardcoding input values in the server function.",
+    "By writing custom JavaScript code.",
+    answer = "By defining *input* elements in the UI."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "In Shiny, what does the *server* part typically contain?"
+question_choices <- c(
+    "The user interface layout.",
+    "Data analysis code.",
+    answer = "Event handlers and reactive expressions.",
+    "UI widgets and input controls."
 )
 cat(question, longmcq(sample(question_choices)))
 ```
