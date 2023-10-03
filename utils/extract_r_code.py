@@ -2,7 +2,7 @@ import os
 import re
 
 # Define the folder path containing Quarto files
-folder_path = './contents/week-5'
+folder_path = './contents/week-6'
 
 # Get a list of Quarto files in the folder
 quarto_files = [file for file in os.listdir(folder_path) if file.endswith('.qmd')]
@@ -25,7 +25,6 @@ for quarto_file in quarto_files:
     code_chunks = re.findall(code_chunk_pattern, quarto_content, re.DOTALL)
 
     # Remove lines starting with '#|' from each code chunk
-        # Remove lines starting with '#|' from each code chunk
     cleaned_code_chunks = []
     for chunk in code_chunks:
         lines = chunk.split('\n')

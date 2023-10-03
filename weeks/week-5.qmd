@@ -16,6 +16,9 @@ Reproducibility is the ability to recreate and verify the results and findings o
 
 📖 [Packaging](/contents/week-5/03_packaging.qmd)
 
+## Source code
+
+🧑‍💻 [Source code](/contents/week-5/source/all_code_chunks.R)
 
 ## Questionnaire
 

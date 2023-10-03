@@ -15,7 +15,9 @@ Interactive plots, dashboards and web apps are a means of creating dynamic and u
 
 📖 Interative web apps with [Shiny](/contents/week-6/03_shiny.qmd)
 
+## Source code
 
+🧑‍💻 [Source code](/contents/week-6/source/all_code_chunks.R)
 
 ## Questionnaire
 
