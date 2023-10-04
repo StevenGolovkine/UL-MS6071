@@ -1,0 +1,8 @@
+---
+title: "Interactivity - Tutorial"
+engine: knitr
+---
+
+<br>
+
+The aim of today's tutorial is to create a `flexdashboard` for a particular dataset. This dashboard will include Shiny components as well as interactive plots, created wiht `plotly`. To accomplish this, we will work with a dataset related to energy, sourced from the [Our World in Data](https://ourworldindata.org/explorers/energy) webiste. The complete dataset is available [here](https://github.com/owid/energy-data) and some information about the dataset can be found [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-06-06/readme.md).
