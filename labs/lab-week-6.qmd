@@ -5,4 +5,31 @@ engine: knitr
 
 <br>
 
-The aim of today's tutorial is to create a `flexdashboard` for a particular dataset. This dashboard will include Shiny components as well as interactive plots, created wiht `plotly`. To accomplish this, we will work with a dataset related to energy, sourced from the [Our World in Data](https://ourworldindata.org/explorers/energy) webiste. The complete dataset is available [here](https://github.com/owid/energy-data) and some information about the dataset can be found [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-06-06/readme.md).
+The aim of today's tutorial is to create a `flexdashboard` for a particular dataset. This dashboard will include Shiny components as well as interactive plots, created wiht `plotly`. To accomplish this, we will work with a dataset related to energy, sourced from the [Our World in Data](https://ourworldindata.org/explorers/energy) webiste. The complete dataset is available [here](https://github.com/owid/energy-data) and some information about the dataset can be found [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-06-06/readme.md). We will use a slightly modified version of the dataset available [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-06-06/readme.md).
+
+
+1. Create an empty `flexdashboard`.
+
+2. Load the dataset to make it available to the dashboard.
+
+3. Change the title of the dashboard and a description of the dataset as a header.
+
+First, we will use the default layout to incorporate graphs.
+
+4. Create a plot of the evolution of the population of a country through the year. Add a Shiny widget to select the country in the dataset. Present the population in millions. 
+
+5. Propose an interactive plot (in `plotly`) that show the relationship between the population and the GDP. The interactivity may come from the different years. Make sure to remove the `World` from the dataset and `NA`s. Present the population in millions, the GDP in billions and use a log scale. 
+
+6. Create a specific plot for the population and GDP of the world. Make a cumulative animation using the year.
+
+Now, we will add a new page in the dashboard, and put some statistical plots into it.
+
+7. Create a new page in the dashboard.
+
+8. Plot a violin of the ratio between renewables electricity (`renewables_electricity`) and fossil electricity (`fossil_electricity`) for each year.
+
+Finally, we will modify the theme of the dahsboard.
+
+10. Look at the different available themes [here](https://bootswatch.com) and change the dashboard theme.
+
+11. Use custom theming to change the font of the dashboard.
