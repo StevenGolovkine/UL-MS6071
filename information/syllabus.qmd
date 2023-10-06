@@ -24,9 +24,9 @@
 | 4 | 05/10/23 | Data Visualisation |
 | 5 | 12/10/23 | Reproducibility |
 | 6 | 19/10/23 | Interactivity |
-| 7 | 26/10/23 | Simulation |
-| 8 | 02/11/23 | Code debugging |
-| 9 | 09/11/23 | C++ |
-| 10 | 16/11/23 | Memory Issues |
+| 7 | 26/10/23 | Memory Issues |
+| 8 | 02/11/23 | Simulation |
+| 9 | 09/11/23 | Code debugging |
+| 10 | 16/11/23 | C++ |
 | 11 | 23/11/23 | Large Language Models |
 | 12 | 30/11/23 | Group Projects |

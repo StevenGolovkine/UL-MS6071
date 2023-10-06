@@ -1,21 +1,23 @@
 ---
-title: "Week 7"
-subtitle: "Simulation"
+title: "Week &"
+subtitle: "Memory Issues"
 editor: visual
 ---
 
 
 ## Prepare
 
-📖 Simulation [🔗](/contents/week-7/01_simulation.qmd)
+📖 Numerical Oddities [🔗](/contents/week-7/01_numerical_oddities.qmd)
 
-📖 Pseudo-random number [🔗](/contents/week-7/02_pseudo_random_number.qmd)
+📖 Memory [🔗](/contents/week-7/02_memory.qmd)
 
-📖 Distributions [🔗](/contents/week-7/03_distributions.qmd)
+📖 Large Files [🔗](/contents/week-7/03_large_files.qmd)
 
-📖 Models [🔗](/contents/week-7/04_models.qmd)
+📖 Sparse Matrices [🔗](/contents/week-7/04_sparse_matrices.qmd)
 
-📖 Monte-Carlo [🔗](/contents/week-7/05_monte_carlo.qmd)
+📖 Packages for large files [🔗](/contents/week-7/05_packages_large_files.qmd)
+
+📖 Parallelisation [🔗](/contents/week-7/06_parallelisation.qmd)
 
 
 ## Questionnaire

@@ -1,23 +1,17 @@
 ---
 title: "Week 10"
-subtitle: "Memory Issues"
+subtitle: "C++"
 editor: visual
 ---
 
 
 ## Prepare
 
-📖 Numerical Oddities [🔗](/contents/week-10/01_numerical_oddities.qmd)
+📖 C++ [🔗](/contents/week-10/01_c_plus_plus.qmd)
 
-📖 Memory [🔗](/contents/week-10/02_memory.qmd)
+📖 Packaging [🔗](/contents/week-10/02_packages_and_c.qmd)
 
-📖 Large Files [🔗](/contents/week-10/03_large_files.qmd)
-
-📖 Sparse Matrices [🔗](/contents/week-10/04_sparse_matrices.qmd)
-
-📖 Packages for large files [🔗](/contents/week-10/05_packages_large_files.qmd)
-
-📖 Parallelisation [🔗](/contents/week-10/06_parallelisation.qmd)
+📖 Armadillo [🔗](/contents/week-10/03_armadillo.qmd)
 
 
 ## Questionnaire
