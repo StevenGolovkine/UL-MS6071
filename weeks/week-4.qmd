@@ -34,6 +34,8 @@ library(tidyverse)
 
 📋 [Tutorials](/labs/lab-week-4.qmd)
 
+⌨️ [Solution proposal](/labs/solutions/week-4.R)
+
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
