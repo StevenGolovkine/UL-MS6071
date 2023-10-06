@@ -1,9 +1,6 @@
 ---
 title: "Parallelisation"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
 

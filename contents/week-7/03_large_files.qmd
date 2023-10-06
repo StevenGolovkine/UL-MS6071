@@ -1,9 +1,6 @@
 ---
 title: "Dealing with large files"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
 

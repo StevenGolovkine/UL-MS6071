@@ -1,5 +1,5 @@
 ---
-title: "Week &"
+title: "Week 7"
 subtitle: "Memory Issues"
 editor: visual
 ---
@@ -7,26 +7,27 @@ editor: visual
 
 ## Prepare
 
-📖 Numerical Oddities [🔗](/contents/week-7/01_numerical_oddities.qmd)
+📖 [Numerical Oddities](/contents/week-7/01_numerical_oddities.qmd)
 
-📖 Memory [🔗](/contents/week-7/02_memory.qmd)
+📖 [Memory](/contents/week-7/02_memory.qmd)
 
-📖 Large Files [🔗](/contents/week-7/03_large_files.qmd)
+📖 [Large Files](/contents/week-7/03_large_files.qmd)
 
-📖 Sparse Matrices [🔗](/contents/week-7/04_sparse_matrices.qmd)
+📖 [Packages for large files](/contents/week-7/04_packages_large_files.qmd)
 
-📖 Packages for large files [🔗](/contents/week-7/05_packages_large_files.qmd)
+📖 [Parallelisation](/contents/week-7/05_parallelisation.qmd)
 
-📖 Parallelisation [🔗](/contents/week-7/06_parallelisation.qmd)
+## Source code
 
+🧑‍💻 [Source code](/contents/week-7/source/all_code_chunks.R)
 
 ## Questionnaire
 
-⌨️ Questionnaire [🔗](/questionnaire/qcm-week-7.qmd)
+⌨️ [Questionnaire](/questionnaire/qcm-week-7.qmd)
 
 ## Practice
 
-📋 Tutorials [🔗](/labs/lab-week-7.qmd)
+📋 [Tutorials](/labs/lab-week-7.qmd)
 
 <br><br>
 
