@@ -1,0 +1,14 @@
+{
+  "hash": "723a96f45b221eb0647c8133a27de2b4",
+  "result": {
+    "markdown": "---\ntitle: \"R packages for large files\"\nengine: knitr\n---\n\n\n\n\n# Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

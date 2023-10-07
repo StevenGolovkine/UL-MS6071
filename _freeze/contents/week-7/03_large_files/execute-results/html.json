@@ -1,8 +1,10 @@
 {
-  "hash": "ab54a63f8d9913871a242e9802f959ac",
+  "hash": "b89f49ea02f8406661d9a57efaaa27b5",
   "result": {
-    "markdown": "---\ntitle: \"Dealing with large files\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n\n# Additional resources\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Dealing with large files\"\nengine: knitr\n---\n\n\n\n\n# Additional resources\n",
+    "supporting": [
+      "03_large_files_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

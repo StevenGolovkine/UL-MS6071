@@ -1,8 +1,10 @@
 {
-  "hash": "e80f545c2c331b16fc81425c28a93f48",
+  "hash": "8e56e3c907386cd5ca38d5741876d38e",
   "result": {
-    "markdown": "---\ntitle: \"Parallelisation\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n\n# Additional resources\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Parallelisation\"\nengine: knitr\n---\n\n\n\n\n# Additional resources\n",
+    "supporting": [
+      "05_parallelisation_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
