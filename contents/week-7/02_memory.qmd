@@ -3,19 +3,27 @@ title: "Memory"
 engine: knitr
 ---
 
-Here, we will give a general overview into how the memory is adressed in a computer and in R.
+<br>
+
+In this section, we will give a general overview into how the memory is adressed in a computer and in R.
 
 ## Organisation of the RAM
 
-The Random-Access Memory (RAM) is organised as an ordered sequence of boxes, each box can contain a binary digit: $0$ or $1$. The information contained in a box, the smallest quantity of information that can be contained, is called a **bit** (for binary digit). Information is actually often organised in blocks of $8$ boxes.
+The Random-Access Memory (RAM) is organised as an ordered sequence of boxes, each box can contain a binary digit: $0$ or $1$ (see @fig-ram). The information contained in a box, the smallest quantity of information that can be contained, is called a **bit** (for binary digit). Information is actually often organised in blocks of $8$ boxes.
 
-Another unit has thus been introduced: the **byte**, which is worth $8$ bits. Note that each block is numbered; the number of a block is called its **memory address**. A memory address is thus an identifier, which designates a specific zone of memory where data (or instructions to run) can be read and stored. This identifier is usually an integer expressed in haxedecimal notation (base $16$).
+Another unit has thus been introduced: the **byte**, which is worth $8$ bits. Note that each block is numbered; the number of a block is called its **memory address**. A memory address is thus an identifier, which designates a specific zone of memory where data (or instructions to run) can be read and stored. This identifier is usually an integer expressed in hexadecimal notation (base $16$).
 
-[Add picture]
+::: {#fig-ram}
+
+![](./figures/RAM.svg)
+
+Schema of the RAM.
+
+:::
 
 ## Accessing the memory
 
-To access a given zone of memory, R uses what is called a **pointer**. A pointer is a variable containing a memory address (it points to the desired memory zone). R does that in a transparent way hidden from the user. At the address contained in a given pointer, we can find for example a data point. Remember that rach data point has a specific type, such as integer, double, etc.
+To access a given zone of memory, R uses what is called a **pointer**. A pointer is a variable containing a memory address (it points to the desired memory zone). R does that in a transparent way hidden from the user. At the address contained in a given pointer, we can find for example a data point. Remember that each data point has a specific type, such as integer, double, etc.
 
 An integer is coded on $4$ bytes, a double on $8$ bytes, a character on $1$ byte, a logical on $4$ bytes and a complex on $16$ bytes to cite the most common variable types. This is true on a $32$ bit processor and on a $64$ bit processor.
 
@@ -25,9 +33,8 @@ An integer is coded on $4$ bytes, a double on $8$ bytes, a character on $1$ byte
 x <- 3L  # Create the value 3 of type integer.
 ```
 
-So, what happen when we previous command is run? A memory slot of $32$ successive blocks ($4$ bytes of $8$ bits each) is allocated (or reserved) and a pointer is created containing the address of the first of these boxes. Actually, the pointer must not only contain the address of the variable `x` but also its type to know over how many boxes the variable is stored. The pointers are said to be **typed**. When a typed pointer is incremented, i.e., when we need to add one unit to the address it contains, it is not necessarily incremented by $1$, but by the size of the pointed type.
+So, what happen when the previous command is run? A memory slot of $32$ successive blocks ($4$ bytes of $8$ bits each) is allocated (or reserved) and a pointer is created containing the address of the first of these boxes. Actually, the pointer must not only contain the address of the variable `x` but also its type to know over how many boxes the variable is stored. The pointers are said to be **typed**. When a typed pointer is incremented, i.e., when we need to add one unit to the address it contains, it is not necessarily incremented by $1$, but by the size of the pointed type. For example, with integers, it will be incremented by $4$.
 
-[Add picture]
 
 ## Issues with integers
 
@@ -39,7 +46,7 @@ as.integer(2^31 - 1)
 .Machine$integer.max
 ```
 
-If you try to convert to $2^{31}$ as integer, you will get an `NA`. You need a *double* variable to handle number larger than $2^{31}$.
+If you try to convert $2^{31}$ as integer, you will get an `NA`. You need a *double* variable to handle number larger than $2^{31}$.
 
 ```{r}
 #| class-output: outputcode
