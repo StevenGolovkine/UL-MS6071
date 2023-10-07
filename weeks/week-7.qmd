@@ -6,7 +6,7 @@ editor: visual
 
 Working with a big file, whose size is at least $50\%$ larger than avaialble RAM, but no more than tens or hundreds of gigabytes, may be difficult in R. By default, R loads files into memory (RAM) and so, if a file is bigger than the available RAM, it cannot load the file. Even if a file can fits into memory, when we start working on it, we may also start creating copies ot it (or create large matrices of output for some analysis) which may quickly overload the RAM.
 
-Before starting reading the materials, download ...
+Before starting reading the materials, download the data from [here](https://www.kaggle.com/datasets/wenxingdi/data-expo-2009-airline-on-time-data) and unzip it somewhere on your laptop.
 
 ## Prepare
 
