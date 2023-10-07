@@ -1,8 +1,0 @@
----
-title: "Parallelisation"
-engine: knitr
----
-
-
-
-# Additional resources

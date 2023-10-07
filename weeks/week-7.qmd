@@ -18,8 +18,6 @@ Before starting reading the materials, download the data from [here](https://www
 
 📖 [Packages for large files](/contents/week-7/04_packages_large_files.qmd)
 
-📖 [Parallelisation](/contents/week-7/05_parallelisation.qmd)
-
 ## Source code
 
 🧑‍💻 [Source code](/contents/week-7/source/all_code_chunks.R)
