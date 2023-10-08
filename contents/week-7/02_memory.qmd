@@ -136,3 +136,9 @@ An elementary understandinf of memory management on a computer, in general, and 
 * The Wikipedia RAM [page](https://en.wikipedia.org/wiki/Random-access_memory).
 
 * MapReduce [page](https://www.databricks.com/glossary/mapreduce).
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 07](/weeks/week-7.qmd) ⏎
+:::

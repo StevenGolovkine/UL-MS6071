@@ -1,8 +1,0 @@
----
-title: "R packages for large files"
-engine: knitr
----
-
-
-
-# Additional resources
