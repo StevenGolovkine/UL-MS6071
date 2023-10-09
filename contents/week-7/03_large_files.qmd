@@ -68,12 +68,12 @@ We can also filter by row using the command `awk` and by columns using the comma
 
 ## Example
 
-To filter the rows where the airports is in California, we will use:
+To filter the rows where the airports is in California (fourth column), we will use:
 
 ```{bash}
 #| class-output: outputcode
 #| eval: true
-awk -F, '$4 == "CA"' source/airports.csv | head -n 5
+awk -F, '$4 = "CA"' source/airports.csv | head -n 5
 ```
 
 :::
@@ -83,7 +83,7 @@ awk -F, '$4 == "CA"' source/airports.csv | head -n 5
 
 ## Example
 
-To get only the latitude and longitude in the data, we will use:
+To get only the latitude (sixth column) and longitude (seventh column) in the data, we will use:
 
 ```{bash}
 #| class-output: outputcode
@@ -93,6 +93,39 @@ cut -f6,7 -d, source/airports.csv | head -n 5
 
 :::
 
+### Some statistics
+
+The `cut` command combines with other commands, such as `sort`, `uniq`, `wc` or `grep`, can be used to derive some statistics on the dataset.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To count the number of airports in each state, we can use:
+```{bash}
+#| class-output: outputcode
+#| eval: true
+cut -f4 -d, source/airports.csv | sort | uniq -c | head -n 5
+```
+
+The `cut` command is used to select the columns with the states, then we `sort` this column alphabetically and finally, we return the count `-c` of each state.
+
+:::
+
+You remarked the `|` sign. This is the pipe operator in bash (remember in R, this is `|>` or `%>%`). It gives the output of the left hand side as the input of the right hand side.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To remove the lines with `NA` values in the fourth columns:
+```{bash}
+#| class-output: outputcode
+#| eval: true
+cut -f4 -d, source/airports.csv | grep -v NA | head -n 5
+```
+
+:::
 
 ## The `bigmemory` package
 
