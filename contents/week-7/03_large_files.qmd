@@ -127,16 +127,38 @@ cut -f4 -d, source/airports.csv | grep -v NA | head -n 5
 
 :::
 
-## The `bigmemory` package
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To count the number of unique elements in a columns:
+```{bash}
+#| class-output: outputcode
+#| eval: true
+cut -f4 -d, source/airports.csv| tail -n +2 | sort | uniq | wc -l
+```
+
+The `tail -n +2` command is used to remove the first line of the file and the `wc -l` is used to count the lines. Pay attention that it counts everything, including the `NA`.
+
+:::
+
+## Using database connection and lazy query
+
+We can use the `DBI` to lazy load the database. Once the data is loaded, we can use the `tidyverse` as usual.
+
+Use `collect()` to create an usual tibble.
 
 
-
+::: {.callout-note appearance="simple"}
+Note that you may also consider Spark to handle large data files. You can use the R package `sparklyr` to use Spark in R.
+:::
 
 ## Additional resources
 
 * Learn Bash in Y minutes [website](https://learnxinyminutes.com/docs/bash/).
 
 * Bash scripting [tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners).
+
 
 <br><br>
 
