@@ -4,9 +4,95 @@ engine: knitr
 ---
 
 <br>
-
+Large files are files that are too big for an R matrix. R matrices are limited to $2^{31} - 1 \sim 2.1$ billion elements and are likely to exceed the available RAM before reaching this limit anyway. Do not even try to open it with Excel! In this section, we will see what we can do when we have such a massive amount of data. 
 
 ## Using bash scripting
+
+Bash scripting tools are very useful when working on data analysis. Everyone that wants to work within this field should get familiar with these tools. You can access to a **terminal** to run bash command within RStudio from the Terminal pane (next to the Console pane).  
+
+::: {.callout-note appearance="simple"}
+Remember, in RStudio, the **Console** pane allows you to run R command while the **Terminal** pane allows you to run bash command.
+:::
+
+We will see some of the most used bash commands to manipulate data. For more information on bash scripting, you can refer to this [tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners). The most usuful command is the `man` command. This command is used to open the manual page of the given command. For example, `man cut` will open the manual page of the `cut` command.
+
+### Print the file
+
+The commands `cat`, `head` and `tail` can be used to print part of the files. By default, the `cat` command will print all the lines of the file, the `head` command will print the $10$ first lines and the `tail` command will print the $10$ last lines. We can choose the number of lines displayed using the `-n` option.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+For this example and the following, we assume that the `airports.csv` file is in the `source` in our current directory. This file contains information on all the airports in the US. You can find the data [herer](./source/airports.csv).
+
+```{bash}
+#| class-output: outputcode
+#| eval: true
+head source/airports.csv
+```
+
+```{bash}
+#| class-output: outputcode
+#| eval: true
+tail -n 2 source/airports.csv
+```
+
+:::
+
+### Sorting and filtering
+
+To sort a csv file using a particular columns, we simply use the `sort` command. This command has two main options:
+
+* The `-t` to define the column seperator. For csv file, it will usually be `,`.
+
+* The `-k` to define the column to sort on. 
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To sort the dataset using the `City` columns (third columns), we will use:
+
+```{bash}
+#| class-output: outputcode
+#| eval: true
+sort -t, -k3 source/airports.csv | head -n 5
+```
+
+:::
+
+We can also filter by row using the command `awk` and by columns using the command `cut`. Similarly to the `sort` function, we need to define the delimiter of the file (`-F` for the `awk` command and `-d` for the `cut` command).
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To filter the rows where the airports is in California, we will use:
+
+```{bash}
+#| class-output: outputcode
+#| eval: true
+awk -F, '$4 == "CA"' source/airports.csv | head -n 5
+```
+
+:::
+
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+To get only the latitude and longitude in the data, we will use:
+
+```{bash}
+#| class-output: outputcode
+#| eval: true
+cut -f6,7 -d, source/airports.csv | head -n 5
+```
+
+:::
+
 
 ## The `bigmemory` package
 
@@ -14,6 +100,10 @@ engine: knitr
 
 
 ## Additional resources
+
+* Learn Bash in Y minutes [website](https://learnxinyminutes.com/docs/bash/).
+
+* Bash scripting [tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners).
 
 <br><br>
 

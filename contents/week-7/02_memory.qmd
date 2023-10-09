@@ -125,7 +125,7 @@ So R allocates memory for the creation of (large) objects. When they are no long
 
 ## Some recommendations
 
-An elementary understandinf of memory management on a computer, in general, and in R, in particular, could be very useful to help identify the origin of memory-related issues.
+An elementary understanding of memory management on a computer, in general, and in R, in particular, could be very useful to help identify the origin of memory-related issues.
 
 * **Calculate the size of the object**: Before creating an object, we can calculate an approximation of its size. For example, imagine we want to create a matrix of real number of size $n \times p$. Since a real number uses up to $8$ bytes, this matrix will require $8np$ bytes. A square matrix of size $16000 \times 16000$ will roughly use $2$ Gb.
 * **Remove useless objects**: If you are not able to create a large object, we can try to remove other useless large objects, using the function `rm()`, and to free up some memory using `gc()`. You can also close other running software.
