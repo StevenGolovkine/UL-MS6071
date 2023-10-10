@@ -1,0 +1,162 @@
+---
+title: "Memory Issues - Questionnaire"
+engine: knitr
+---
+
+<br>
+
+```{r}
+#| echo: false
+library(webexercises)
+```
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What is a common memory issue when working with large datasets in R?"
+question_choices <- c(
+    answer = "Exhausting available memory",
+    "Slow data loading",
+    "Overfitting",
+    "Data corruption"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which function in R can be used to check the memory usage of an object?"
+question_choices <- c(
+    answer = "`object.size()`",
+    "`list.objects()`",
+    "`memory.inspect()`",
+    "`check.memory()`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What does 'garbage collection' refer to in the context of R?"
+question_choices <- c(
+    answer = "Reclaiming memory occupied by unused objects.",
+    "Deleting all objects in the workspace.",
+    "Creating backups of large datasets.",
+    "Generating random data."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "Which of the following is a technique to reduce memory usage when importing large CSV files into R?"
+question_choices <- c(
+    answer = "Read the file in chunks.",
+    "Import the entire file into memory.",
+    "Convert the CSV to a PDF format.",
+    "Split the file into smaller CSVs."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What does 'out-of-memory' error typically indicate in R?"
+question_choices <- c(
+    "An issue with the R graphics device.",
+    "A missing package or library.",
+    "A syntax error in the code.",
+    answer = "Insufficient RAM to handle the data."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What is 'chunking' in the context of processing large datasets?"
+question_choices <- c(
+    answer = "Dividing data into manageable portions.",
+    "Breaking data into random pieces.",
+    "Encrypting data for security.",
+    "Organizing data into folders."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What is the approxinate size of a $8000 \\times 8000$ matrix of real numbers in R?"
+question_choices <- c(
+    answer = "500 Mb",
+    "100 Mb",
+    "1 Gb",
+    "2 Gb"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "This command will throw a warning: `46360L * 46360`."
+question_choices <- c(
+    answer = "FALSE",
+    "TRUE"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What is the result of `100 * (1 - 0.57) == 43`?"
+question_choices <- c(
+    answer = "FALSE",
+    "TRUE"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis 
+question <- "What is the result of `1 - 0.02 == 0.98`?"
+question_choices <- c(
+    answer = "TRUE",
+    "FALSE"
+)
+cat(question, longmcq(sample(question_choices)))
+```
