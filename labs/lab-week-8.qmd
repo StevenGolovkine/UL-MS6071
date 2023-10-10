@@ -1,5 +1,5 @@
 ---
-title: "Labs - Simulation"
+title: "Simulation - Tutorial"
 engine: knitr
 ---
 

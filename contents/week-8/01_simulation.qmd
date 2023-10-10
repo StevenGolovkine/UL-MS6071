@@ -1,9 +1,0 @@
----
-title: "Simulation in R"
-engine: knitr
----
-
-## A motivated example
-
-# Additional resources
-

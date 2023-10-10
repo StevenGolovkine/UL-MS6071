@@ -4,27 +4,30 @@ subtitle: "Simulation"
 editor: visual
 ---
 
+Simulation involves using computational methods to model and mimic real-world scenarios or processes. It allows for the generation of data or outcomes based on specified assumptions, providing insights into the behavior of complex systems. We have access to a wide range of functions and packages for conducting simulations, from statistical distributions to complex dynamical processes. Through simulation, we can test hypotheses and assess the impact of different variables.
 
 ## Prepare
 
-📖 Simulation [🔗](/contents/week-8/01_simulation.qmd)
 
-📖 Pseudo-random number [🔗](/contents/week-8/02_pseudo_random_number.qmd)
+📖 [Pseudo-random number](/contents/week-8/01_pseudo_random_number.qmd)
 
-📖 Distributions [🔗](/contents/week-8/03_distributions.qmd)
+📖 [Distributions](/contents/week-8/02_distributions.qmd)
 
-📖 Models [🔗](/contents/week-8/04_models.qmd)
+📖 [Models](/contents/week-8/03_models.qmd)
 
-📖 Monte-Carlo [🔗](/contents/week-8/05_monte_carlo.qmd)
+📖 [Monte-Carlo](/contents/week-8/04_monte_carlo.qmd)
 
+## Source code
+
+🧑‍💻 [Source code](/contents/week-8/source/all_code_chunks.R)
 
 ## Questionnaire
 
-⌨️ Questionnaire [🔗](/questionnaire/qcm-week-8.qmd)
+⌨️ [Questionnaire](/questionnaire/qcm-week-8.qmd)
 
 ## Practice
 
-📋 Tutorials [🔗](/labs/lab-week-8.qmd)
+📋 [Tutorials](/labs/lab-week-8.qmd)
 
 <br><br>
 
