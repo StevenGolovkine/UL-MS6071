@@ -1,0 +1,88 @@
+---
+title: "Memory Issues - Tutorial"
+engine: knitr
+---
+
+<br>
+The aim of today's tutorial is to create and manipulate a large of dataset about US flights between 1987 and 2008 that represents millions on flights. You can find the data [here](https://www.kaggle.com/datasets/wenxingdi/data-expo-2009-airline-on-time-data). Note that the dataset is quite big ($\sim 11.5$ Gb). Tue tutorial is adapted from from Alex Gold [article](https://rviews.rstudio.com/2019/07/17/3-big-data-strategies-for-r/).
+
+## Part 1 - Creating the database
+
+Here, I will assume that you have downloaded the data into a folder named `archive` and that we are in this folder. So, in that folder, you have one CSV per year between 1987 and 2008 and smaller CSV files that contain metadata of airports and planes.
+
+1. We are going to merge all the files together using bash scripting. It will results in a large file with almost $120$ millions of rows.
+
+The first two lines will count the number of files and the number of lines of each files. We will use that to compare with the number of lines after the concatenation. We then loop over all the files (except `1987.csv`), remove the first line (`tail` command), because we do not need header for each of the file  and append the file to the `1987.csv` file (`cat` command). The `mv` command is used to rename a file. And finally, we count the number of lines in the big data file.
+
+```{bash}
+#| eval: false
+nbfiles="$(ls {1987..2008}.csv | wc -l)"
+nblinesbefore="$(find {1987..2008}.csv -type f -exec cat {} + | wc -l)"
+
+for res in {1988..2008}; do
+    tail -n +2 ${res}.csv | sponge ${res}.csv
+    cat ${res}.csv >> 1987.csv
+done;
+
+mv 1987.csv airline.csv
+nblinesafter="$(find airline.csv -type f -exec cat {} + | wc -l)"
+
+```
+
+2. Ensure that we have not lost any lines.
+
+We use the `$` sign to access to variable values. The `echo` command is used to print something in the terminal and the `bc` command to do the calculations.
+
+```{bash}
+#| eval: false
+echo "$nblinesbefore - $nbfiles + 1" | bc
+echo $nblinesafter
+```
+
+This should return the same number, which is $118 914 459$.
+
+3. Create the SQLite database.
+
+```{bash}
+#| eval: false
+sqlite3 -csv airline.sqlite3 '.import airline.csv airline'
+```
+
+4. Remove the unnecessary files.
+
+The `rm` command is used to remove files. The `*` is a placeholder that can replace every character and any number of them. So, the following lines will remove all the files that start with `19` or `20` and finish with `.csv`.
+
+```{bash}
+#| eval: false
+rm 19*.csv
+rm 20*.csv
+```
+
+
+## Part 2 - Some statistics with bash
+
+5. Count the number of lines.
+
+6. Show the first five flights from Des Moines (DSM) to Chicago O'Hare (ORD).
+
+7. Count the number of flights for each flight number in 1993 and save it to a new file.
+
+
+## Part 3 - Analysing the data within R
+
+9. Load the library and connect to the database.
+
+10. Create a "lazy" tibble.
+
+11. Count the number of rows.
+
+12. Get the name of the columns.
+
+13. Created a new column `delayed` that is `TRUE` if the flight has been delayed and `FALSE` otherwise. Show the SQL query.
+
+14. Get all the flights from JFK to SFO. Bring the data to R. 
+
+15. When is the best hour of the day to fly to minimise delays? What if we want to do it by year?
+
+16. Create a plot with the results.
+
