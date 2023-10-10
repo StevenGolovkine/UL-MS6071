@@ -36,6 +36,8 @@ jobs:
             any::ggthemes
             any::httr2
             any::plotly
+            any::DBI
+            any::RSQLite
 
       - name: Render and Publish 
         uses: quarto-dev/quarto-actions/publish@v2

@@ -6,6 +6,13 @@ engine: knitr
 <br>
 Large files are files that are too big for an R matrix. R matrices are limited to $2^{31} - 1 \sim 2.1$ billion elements and are likely to exceed the available RAM before reaching this limit anyway. Do not even try to open it with Excel! In this section, we will see what we can do when we have such a massive amount of data. 
 
+```{r}
+#| class-output: outputcode
+#| eval: true
+#| include: false
+library(tidyverse)
+```
+
 ## Using bash scripting
 
 Bash scripting tools are very useful when working on data analysis. Everyone that wants to work within this field should get familiar with these tools. You can access to a **terminal** to run bash command within RStudio from the Terminal pane (next to the Console pane).  
@@ -144,13 +151,100 @@ The `tail -n +2` command is used to remove the first line of the file and the `w
 
 ## Using database connection and lazy query
 
-We can use the `DBI` to lazy load the database. Once the data is loaded, we can use the `tidyverse` as usual.
+This part is adapted from Alex Gold [article](https://rviews.rstudio.com/2019/07/17/3-big-data-strategies-for-r/).
 
-Use `collect()` to create an usual tibble.
+In cases where the CSV file is too large to be fitted in R's memory, a practical solution is to create a database, establish a connection with it, and then, without the need to load the entire data into memory, utilise `dplyr` to query to the database. While we will employ an SQLite database for this example, the approach remains the same across various database systems.
+
+The `dplyr` package is a great resource for interacting with databases, as it allows us to write standard R code that is seamlessly translated into SQL operations on the backend. Alternatively, we have the option to employ the `DBI` package for directly sending SQL queries or employ a SQL chunk within an R Markdown/Quarto document.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+For example, to create an SQLite database with the `airports.csv` file, we can use in a terminal:
+```{bash}
+#| eval: false
+sqlite3 -csv airports.sqlite3 '.import source/airports.csv airports'
+```
+
+The different parts of the commands are:
+
+* `sqlite3`: the name of the command
+
+* `-csv`: we want to load a csv file into the database
+
+* `airports.sqlite3`: the name of the database
+
+* `.import source/airports.csv airports`: we want to import the file `airports.csv` located in the `source` folder and gie it the name `airports`.
+
+:::
+
+Establishing the connection is achieved through the `DBI` package, with the right interface for the specific database, such as RSQLite in our case. Subsequently, the `tbl` function within the `dplyr` package allows us to apply `dplyr` operations to a remote table efficiently.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+We connect to the database previously created and "convert" it to a tibble.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+connection <- DBI::dbConnect(
+    RSQLite::SQLite(), 
+    "source/airports.sqlite3"
+)
+airports_df <- dplyr::tbl(connection, "airports")
+```
+
+:::
+
+Data manipulations performed on SQL tables are designed to be lazy, meaning they will not execute the query or fetch the data unless explicitly requested. To execute the query and store the results temporarily in the database, we use `compute()`, or to bring the results into R, we use `collect()`. If we wish to view the query itself, we can do so with the `show_query()` function.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+airports_df |> 
+    count(state) |> 
+    show_query()
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+airports_df |> 
+    count(state) |> 
+    collect()
+```
+
+:::
+
+With a database at our disposal, we can employ various strategies for analysing large datasets. In the upcoming tutorial, we will outline and apply these strategies.
+
+### Sample and model
+
+To perform sampling and modeling, we can reduce the dataset to a manageable size that can be efficiently downloaded, allowing the creation of a model based on this sample. Downsizing to thousands or even hundreds of thousands of data points can facilitate reasonable model runtimes while preserving statistical integrity.
+
+If preserving class balance is essential, or if we need to over- or under-sample a specific class, it is straightforward to stratify the dataset during the sampling process.
+
+### Chunk and pull
+
+In this approach, the data is divided into distinct units, or chunks, each of which is fetched individually and processed either sequentially, concurrently, or following recombination. This strategy shares a conceptual similarity with the MapReduce algorithm. Depending on the specific task, these chunks could represent time intervals, geographical regions, or logical entities such as distinct businesses, departments, products, or customer segments.
+
+### Push compute to data
+
+In this approach, the data is compressed within the database, and only the compressed dataset is transferred from the database to R. In order to achieve notable performance improvement, we can often conduct summarisation or filtering operations within the database before extracting the data into R.
+
+Occasionally, more complex tasks can also be performed, such as computing histograms, constructing models, and generating predictions from models.
 
 
 ::: {.callout-note appearance="simple"}
-Note that you may also consider Spark to handle large data files. You can use the R package `sparklyr` to use Spark in R.
+Note that you may also consider Spark to handle large data files using `.parquet` file. You can use the R package `sparklyr` to use Spark in R, but you also need to install a Spark/Hadoop backend.
 :::
 
 ## Additional resources
@@ -159,6 +253,9 @@ Note that you may also consider Spark to handle large data files. You can use th
 
 * Bash scripting [tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners).
 
+* Three stategies for working with Big Data in R [article](https://rviews.rstudio.com/2019/07/17/3-big-data-strategies-for-r/).
+
+* MapReduce wikipedia [page](https://en.wikipedia.org/wiki/MapReduce).
 
 <br><br>
 
