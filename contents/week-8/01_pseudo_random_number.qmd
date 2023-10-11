@@ -3,6 +3,7 @@ title: "Pseudo-random number"
 engine: knitr
 ---
 
+<br>
 Pseudo-random numbers are not random in the way you might expect!
 
 
@@ -11,14 +12,15 @@ Pseudo-random numbers are not random in the way you might expect!
 ## D. H. Lehmer [@lehmer1951]
 
 A random sequence is a vague notion in which each term is unpredictable to the uninitiated, and whose digits pass a certain number of tests traditional with statisticians...
+
 :::
 
-A pseudo-random sequence have the appearance of random numbers, but are in fact completely deterministic. Pseudo-random number generator are algorithms that use mathematical formulae to produce sequcnes of numbers that appear random.
+A pseudo-random sequence have the appearance of random numbers, but are in fact completely deterministic. Pseudo-random number generator are algorithms that use mathematical formulae to produce sequences of numbers that appear random.
 
 R uses a pseudo-random generator named the Mersenne-Twister generator. Its cycle length is $2^{19937} - 1$.
 
 
-Let's see what happen when we generate some realizations from a uniform distributions.
+Let's see what happen when we generate some realisations from a uniform distributions.
 
 ```{r}
 #| class-output: outputcode
@@ -38,23 +40,25 @@ runif(4)
 ::: {.callout-important icon=false}
 ## Replication
 
-To perform an exact replication of your program, you have to specify the seed using the `seed()` function!
+To perform an exact replication of your program, you have to specify the seed using the `set.seed()` function!
 :::
 
 
 ## The inverse-transform method
 
-Let $P$ be a probability distribution defined on $\mathbb{R}$ or $\mathbb{R}^d$. We aim to generate an _independent_ and _identically distributed_ sample $X_1, \dots, X_n$ with the same distribution $P$. All random variables can be generated from the uniform distribution $\mathcal{U}(0, 1)$. So, it suffices to generate an iid sample $U_1, \dots, U_n$ from $\mathcal{U}(0, 1)$.
+It is possible to generate realisations of whatever distribution using only realisations from a uniform distribution.
+
+Let $P$ be a probability distribution defined on $\mathbb{R}$ or $\mathbb{R}^d$. We aim to generate an _independent_ and _identically distributed_ (iid) sample $X_1, \dots, X_n$ with the same distribution $P$. All random variables can be generated from the uniform distribution $\mathcal{U}(0, 1)$. So, it suffices to generate an iid sample $U_1, \dots, U_n$ from $\mathcal{U}(0, 1)$.
 
 Assume we know the cumulative distribution function $F$ of $P$. We note $F^{-1}$ the inverse function of $F$ when $F: \mathbb{R} \rightarrow [0, 1]$ is one-to-one, defined as
 $$F^{-1}(u) = \inf \{x \in \mathbb{R}, F(x) \geq u\}.$$
 
-Then, if $U \sim \mathcal{U}(0, 1)$, $F^{-1}(U)$ has the same distribution as $X$. And its reciprocal, if the cumulative distribution function $F$ is continue, then $F(X) \sim \mathcal{U}(0, 1)$.
+Then, if $U \sim \mathcal{U}(0, 1)$, $F^{-1}(U)$ has the same distribution as $X$. The converse is also true, if the cumulative distribution function $F$ is continue, then $F(X) \sim \mathcal{U}(0, 1)$.
 
 ::: {.callout-note icon=false}
 ## Algorithm: the inverse-transform method
 
-Variables:
+Input:
 
 * $n$: length of the sample
 * $F$: cumulative distribution function of the output sample
@@ -76,7 +80,9 @@ Output:
 * Sample $(x_1, \dots, x_n)$ with cumulative distribution function $F$.
 :::
 
-### Example: **Simulation of a sample from** $\mathcal{E}(\theta)$
+::: {.callout-note appearance="simple"}
+
+## Example: Simulation of a sample from $\mathcal{E}(\theta)$.
 
 We aim to generate a sample $x_1, \dots, x_n$ i.i.d. from $\mathcal{E}(\theta)$. The cumulative distribution function of $\mathcal{E}(\theta)$ is given by
 $$F(x, \theta) = 1 - \exp(-\theta x), \quad x \geq 0.$$
@@ -94,8 +100,11 @@ x <- -log(1 - u) / theta   # inverse transform method
 ks.test(x, "pexp", theta)  # Kolmogorov Smirnov test
 ```
 
+:::
 
-### Example: **Simulation of a sample from** $\mathcal{B}(\theta)$
+::: {.callout-note appearance="simple"}
+
+## Example: Simulation of a sample from $\mathcal{B}(\theta)$.
 
 We aim to generate a sample $x_1, \dots, x_n$ i.i.d from $\mathcal{B}(\theta)$ (where $\theta \in [0,1]$). The cumulative distribution function of $\mathcal{B}(\theta)$ is given by
 $$F(x) = \left\{
@@ -126,7 +135,11 @@ x <- (u > (1 - theta))    # inverse transform method
 chisq.test(table(x), p = c(1 - theta, theta))  # chisq test
 ```
 
-### References
+:::
+
+## Additional resources
+
+## References
 
 ::: {#refs}
 :::
