@@ -1,0 +1,201 @@
+---
+title: "Simulation - Questionnaire"
+engine: knitr
+---
+
+<br>
+
+```{r}
+#| echo: false
+library(webexercises)
+```
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the primary purpose of simulating data?"
+question_choices <- c(
+    answer = "To mimic real-world data for various purposes.",
+    "To generate real-world data for analysis.",
+    "To predict future data points.", 
+    "To replace actual data in analyses."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "Which function is commonly used to add random noise to simulated data?"
+question_choices <- c(
+    answer = "`rnorm()`",
+    "`sample()`",
+    "`generate_noise()`",
+    "`error_addition()`" 
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the advantage of simulating large datasets?"
+question_choices <- c(
+    answer = "It allows testing and analysis in a controlled environment.", 
+    "It is faster and more efficient than working with real data.", 
+    "It provides actual data for analysis.",
+    "It eliminates the need for statistical modeling."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "In a simulation study, what is the purpose of 'replicating' the process?"
+question_choices <- c(
+    answer = "To assess the variability and reliability of the results.",
+    "To confuse the data.",
+    "To avoid using simulation in data analysis.", 
+    "To simplify the analysis process."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the primary purpose of the inverse-transform method in simulation?"
+question_choices <- c(
+    answer = "To transform random numbers with a uniform distribution into other distributions.",
+    "To generate random numbers with uniform distribution.", 
+    "To estimate population parameters from sample data.", 
+    "To optimize predictive modeling in R."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "Which distribution is used as the basis for generating random numbers in the inverse-transform method?"
+question_choices <- c(
+    answer = "Uniform distribution",
+    "Exponential distribution",
+    "Chi-squared distribution",
+    "Normal distribution"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "In the inverse-transform method, what is the role of the cumulative distribution function of a distribution?"
+question_choices <- c(
+    answer = "To map random numbers from a uniform distribution to the desired distribution.",
+    "To generate random numbers directly.",
+    "To calculate the variance of the distribution.", 
+    "To identify extreme values in a dataset."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the output range of the `runif()` function?"
+question_choices <- c(
+    "$[-1,1]$",
+    "$\\mathbb{R}^+$",
+    "$[- \\infty, \\infty]$",
+    answer = "$[0, 1]$"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the primary challenge of using the inverse-transform method in R?"
+question_choices <- c(
+    "It can only generate uniform random numbers.",
+    "It relies on predetermined distributions and is inflexible.",
+    "It requires complex statistical equations to work effectively.",
+    answer = "It may require a significant amount of computational time, especially for complex distributions."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the 'mixture proportion' in a mixture model?"
+question_choices <- c(
+    answer = "The weight or probability assigned to each mixture component.", 
+    "The proportion of mixture components in a simulation.",
+    "The number of components in the mixture.", 
+    "The order in which components are mixed."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "Which R package is often used for fitting mixture models and conducting simulations?"
+question_choices <- c(
+    "`ggplot2`",
+    "`lubridate`",
+    "`tm`",
+    answer = "`mixtools`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the main challenge of using mixture models in simulation for large datasets?"
+question_choices <- c(
+    "They require advanced programming skills.",
+    "They tend to be less flexible compared to other models.",
+    "They do not work well with multivariate data.",
+    answer = "They can be computationally demanding and may require substantial memory resources."
+)
+cat(question, longmcq(sample(question_choices)))
+```
