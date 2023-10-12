@@ -172,3 +172,9 @@ ggplot(probs_df) +
 ## Additional resources
 
 * The R package [mixtools](https://cran.r-project.org/web/packages/mixtools/index.html).
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 08](/weeks/week-8.qmd) ⏎
+:::

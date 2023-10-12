@@ -81,3 +81,9 @@ glm(y ~ x, family = poisson(link = "log"))
 ## Additional resources
 
 * R Programming for Data Science [book](https://bookdown.org/rdpeng/rprogdatascience/).
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 08](/weeks/week-8.qmd) ⏎
+:::

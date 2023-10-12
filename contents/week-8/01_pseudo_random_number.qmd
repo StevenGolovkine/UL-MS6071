@@ -141,3 +141,9 @@ chisq.test(table(x), p = c(1 - theta, theta))  # chisq test
 
 ::: {#refs}
 :::
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 08](/weeks/week-8.qmd) ⏎
+:::

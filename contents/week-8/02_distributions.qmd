@@ -137,3 +137,9 @@ ggplot(ecdf_df) +
 # Additional resources
 
 * R Documentation: [Distributions](https://cran.r-project.org/web/views/Distributions.html)
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 08](/weeks/week-8.qmd) ⏎
+:::
