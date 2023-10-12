@@ -1,24 +1,28 @@
 ---
 title: "Week 9"
-subtitle: "Code debugging"
+subtitle: "Code debugging and profiling"
 editor: visual
 ---
 
+Code debugging and profiling are important tasks in the development and optimisation of scripts and applications. Debugging involves identifying and resolving errors, ensuring the code functions as intended, and addressing issues that may lead to runtime errors. Profiling, on the other hand, involves assessing the code's performance, understanding resource utilization, and identifying bottlenecks to enhance efficiency.
 
 ## Prepare
 
-📖 Code Debugging [🔗](/contents/week-9/01_code_debugging.qmd)
+📖 [Code Debugging](/contents/week-9/01_code_debugging.qmd)
 
-📖 Code Profiling [🔗](/contents/week-9/02_code_profiling.qmd)
+📖 [Code Profiling](/contents/week-9/02_code_profiling.qmd)
 
+## Source code
+
+🧑‍💻 [Source code](/contents/week-9/source/all_code_chunks.R)
 
 ## Questionnaire
 
-⌨️ Questionnaire [🔗](/questionnaire/qcm-week-9.qmd)
+⌨️ [Questionnaire](/questionnaire/qcm-week-9.qmd)
 
 ## Practice
 
-📋 Tutorials [🔗](/labs/lab-week-9.qmd)
+📋 [Tutorials](/labs/lab-week-9.qmd)
 
 <br><br>
 
