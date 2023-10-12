@@ -139,7 +139,5 @@ chisq.test(table(x), p = c(1 - theta, theta))  # chisq test
 
 ## Additional resources
 
-## References
-
 ::: {#refs}
 :::

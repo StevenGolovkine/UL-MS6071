@@ -3,18 +3,31 @@ title: "Sampling from statistical distributions"
 engine: knitr
 ---
 
+```{r}
+#| eval: true
+#| include: false
+#| warning: false
+#| class-output: outputcode
+library(tidyverse)
+```
+
+<br>
+Sampling from statistical distributions is the process of generating random numbers following specific distribution patterns, such as normal (Gausian), exponential or Poisson distributions. We simulate from distribution to (try to) replicate real-world data scenarios. R provides lots of functions to do so.
+
 ## Distributions the `stats` package in R
 
 Some of the classical distributions have already been implemented in R, and you can easily sampled from them. All functions are based on the same schema:
 
-* `dxxx`: the density/mass function
-* `pxxx`: the cumulative distribution function
-* `qxxx`: the quantile function
-* `rxxx`: the pseuso-random number generator.
+* `dxxx`: the density/mass function;
+* `pxxx`: the cumulative distribution function;
+* `qxxx`: the quantile function;
+* `rxxx`: the pseudo-random number generator.
 
-The `xxx` has be replaced by the name of the distribution, e.g., `norm` for a normal distribution, `unif` for a uniform.
+The `xxx` has to be replaced by the name of the distribution, e.g., `norm` for a normal distribution, `unif` for a uniform distribution or `pois` for a Poisson distribution.
 
-### Example: a sample from $\mathcal{N}(0, 1)$
+::: {.callout-note appearance="simple"}
+
+## Example: a sample from $\mathcal{N}(0, 1)$.
 
 Here, we generate a sample of $5$ observations following a standard normal distribution.
 
@@ -25,7 +38,11 @@ set.seed(42)
 rnorm(5)
 ```
 
-### Example: a sample from $\mathcal{B}(10, 0.5)$
+:::
+
+::: {.callout-note appearance="simple"}
+
+## Example: a sample from $\mathcal{B}(10, 0.5)$.
 
 We generate a sample of $5$ observations following a binomial distribution with parameters $n = 10$ and $p = 0.5$. This can be interpreted as the number of successes in $n$ trials, the probability of success being $p$.
 
@@ -36,7 +53,11 @@ set.seed(42)
 rbinom(5, 10, 0.5)
 ```
 
-### Example: the probability density function of $\mathcal{B}(2, 2)$
+:::
+
+::: {.callout-note appearance="simple"}
+
+## Example: the probability density function of $\mathcal{B}(2, 2)$.
 
 Using a generated sample with a Beta $\mathcal{B}(2, 2)$ distribution, we estimate the probability density function and compare to the truth.
 
@@ -46,17 +67,32 @@ Using a generated sample with a Beta $\mathcal{B}(2, 2)$ distribution, we estima
 set.seed(42)
 sample <- rbeta(1000, 2, 2)  # Generate B(2, 2)
 
-plot(density(sample))
-curve(dbeta(x, 2, 2), col = 'red', add = TRUE)
-legend(
-  -0.1, 1.5, lty = 1,
-  legend = c("Estimate", "True"),
-  col = c("black", "red")
-)
+density_estim <- density(sample, from = 0, to = 1)
+density_true <- dbeta(density_estim$x, 2, 2)
+
+density_df <- tibble(
+  x = density_estim$x,
+  True = density_true,
+  Estimation = density_estim$y
+) |> 
+  pivot_longer(cols = c(True, Estimation))
+
+ggplot(density_df) +
+  geom_line(aes(x = x, y = value, color = name)) +
+  xlab("") +
+  ylab("Density") +
+  theme_bw() +
+  theme(
+    legend.title = element_blank(),
+    legend.position = c(0.9, 0.9)
+  )
 ```
 
+:::
 
-### Example: the cumulative density function of $\mathcal{P}(5)$
+::: {.callout-note appearance="simple"}
+
+## Example: the cumulative density function of $\mathcal{P}(5)$
 
 Using the generated sample with a Poisson $\mathcal{P}(5)$ distribution, we estimate the cumulative distribution function and compare to the truth.
 
@@ -66,15 +102,38 @@ Using the generated sample with a Poisson $\mathcal{P}(5)$ distribution, we esti
 set.seed(42)
 sample <- rpois(1000, 5)  # Generate P(5)
 
-plot(ecdf(sample))
-curve(ppois(x, 5), col = 'red', type = 's', add = TRUE)
-legend(
-  -0.1, 1.5, lty = 1,
-  legend = c("Estimate", "True"),
-  col = c("black", "red")
-)
+x = seq(-1, 20, by = 0.1)
+ecdf_estim <- ecdf(sample)(x)
+ecdf_true <- ppois(x, 5)
+
+ecdf_df <- tibble(
+  x = x,
+  True = ecdf_true,
+  Estimation = ecdf_estim
+) |> 
+  pivot_longer(cols = c(True, Estimation))
+
+ggplot(ecdf_df) +
+  geom_step(
+    aes(x = x, y = value, color = name),
+    direction = "hv"
+  ) +
+  geom_point(
+    aes(x = x, y = value, color = name),
+    data = filter(ecdf_df, x %in% seq(-1, 20, by = 1))
+  ) +
+  xlab("") +
+  ylab("ECDF") +
+  theme_bw() +
+  theme(
+    legend.title = element_blank(),
+    legend.position = c(0.9, 0.1)
+  )
+
 ```
+
+:::
 
 # Additional resources
 
-* Distributions in R: [link](https://cran.r-project.org/web/views/Distributions.html)
+* R Documentation: [Distributions](https://cran.r-project.org/web/views/Distributions.html)
