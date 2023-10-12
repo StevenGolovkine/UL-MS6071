@@ -1,11 +1,83 @@
 ---
-title: "Monte-Carlo simulations"
+title: "Simulation of linear models"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
+```{r}
+#| eval: true
+#| include: false
+#| warning: false
+#| class-output: outputcode
+library(tidyverse)
+```
+
+<br>
+Simulating linear models is a straightforward process. We generate artificial data using known model parameters and random noise. By specifying the model equation, coefficients, and error structure, we can create datasets that mimic real-world scenarios. This approach is valuable for testing statistical techniques, evaluating model assumptions, and understanding the behavior of linear models under different conditions.
+
+This section is adapted from the R Programming for Data Science [book](https://bookdown.org/rdpeng/rprogdatascience/simulation.html#simulating-a-linear-model).
+
+## A simple linear model
+
+Suppose that we are interested by the relationship between height and circumference of a tree. We would like to model the height as a function of the circumference and some random noise:
+$$\text{height} = f(\text{circumference}) + \epsilon$$
+
+We may assume that the function $f$ is linear. We have then the following model:
+$$y = \beta_0 + \beta_1 x + \epsilon,$$
+
+where $\epsilon \sim \mathcal{N}(0, 1)$. We assume that the circumference of a tree is uniform between $30$ and $70$ centimeters. We fix $\beta_0 = 9$ (the height if the circumference is equal to $0$) and $\beta_1 = 0.25$ (when the circumference of the tree grows by $1$cm, its height grows by $0.25$).
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+set.seed(42)
+n <- 100
+x <- runif(n, 30, 70)
+eps <- rnorm(n, 0, 1)
+y <- 9 + 0.25 * x + eps
+
+ggplot() +
+  geom_point(aes(x = x, y = y)) +
+  xlab("Circumference") +
+  ylab("Height") +
+  theme_bw()
+
+```
+
+We can simulate more complex models by adding more features (`x`) or their transformations (`x^2`, `log(x)`, ...), changing the distribution of the features or of the noise.
+
+## A count linear model
+
+As we previously saw, count data are often modelled with a Poisson distribution. We will generate data for this type of model. Let's generate data using the following model:
+$$Y \sim \mathcal{P}(\mu) \quad \text{and}\quad \log\mu = \beta_0 + \beta_1 x + \epsilon,$$
+where $\epsilon = \mathcal{N}(0, 0.0625)$. We fix $\beta_0 = 0.5$ and $\beta_1 = 0.3$.
 
 
-# Additional resources
+```{r}
+#| class-output: outputcode
+#| eval: true
+set.seed(42)
+n <- 1000
+x <- runif(n, -1, 1)
+eps <- rnorm(n, 0, 0.25)
+mu <- 0.5 + 0.3 * x + eps
+y <- rpois(n, exp(mu))
+
+ggplot() +
+  geom_point(aes(x = x, y = y)) +
+  xlab("") +
+  ylab("") +
+  theme_bw()
+```
+
+We can fit a Poisson log-linear model to the generate data to see if we are able to retrieve the coefficients we fixed. We use the `glm` function in R to do so. The results seem pretty good!
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+glm(y ~ x, family = poisson(link = "log"))
+```
+
+
+## Additional resources
+
+* R Programming for Data Science [book](https://bookdown.org/rdpeng/rprogdatascience/).
