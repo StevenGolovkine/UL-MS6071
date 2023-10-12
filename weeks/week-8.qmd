@@ -13,9 +13,9 @@ Simulation involves using computational methods to model and mimic real-world sc
 
 📖 [Distributions](/contents/week-8/02_distributions.qmd)
 
-📖 [Models](/contents/week-8/03_models.qmd)
+📖 [Mixture of distributions](/contents/week-8/03_distributions_mixture.qmd)
 
-📖 [Monte-Carlo](/contents/week-8/04_monte_carlo.qmd)
+📖 [Models](/contents/week-8/04_models.qmd)
 
 ## Source code
 

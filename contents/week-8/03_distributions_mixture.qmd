@@ -1,0 +1,174 @@
+---
+title: "Simulation from a mixture of distributions"
+engine: knitr
+---
+
+```{r}
+#| eval: true
+#| include: false
+#| warning: false
+#| class-output: outputcode
+library(tidyverse)
+```
+
+<br>
+A mixture of distributions refers to a statistical model that combines multiple probability distributions. This technique is used when a single probability distribution cannot adequately capture the underlying patterns in the data. Each of the underlying distributions has its own set of parameters.
+
+## The composition method
+
+Frequently, a single distribution is insufficient for accurately modelling the data at hand. For example, consider a dataset of heights that includes both men and women. In such a scenario, we would anticipate the data to exhibit a bimodal pattern with two distinct peaks, each corresponding to the mean height of the respective gender. To better represent such data, a mixture of distributions is preferred over a single distribution.
+
+Assume that the probability density function $f$ is a convex mixture of probability density functions $f_k$:
+
+$$X \sim f(x) = \sum_{k = 1}^K \pi_k f_k(x),$$
+
+where for all $k = 1, \dots, K$, $\pi_k > 0$ and $\pi_1 + \dots + \pi_K = 1$.
+We introduce an artificial auxiliary variable $Y \sim \pi$ such that $\pi_k = P(Y = k)$ and the conditional probability function of $X$ given $Y = k$ is $f_k(\cdot)$. Then, generating $X$ with the propability density function $f$ is equivalent to generate the vector $(X, Y)$. 
+
+::: {.callout-note icon=false}
+## Algorithm: the composition method
+
+Input:
+
+* $n$: length of the sample
+* $f_k, k = 1, \dots, K$: probability density functions
+
+Algorithm:
+
+<div class="pseudocode">
+
+**for** $i$ **from** $1$ **to** $n$ **do**
+
+* generate $y_i \sim \pi(\cdot)$
+* generate $x_i = f_{y_i}(\cdot)$
+
+**endfor**
+</div>
+
+Output:
+
+* Sample $(x_1, \dots, x_n)$ with probability density function $f$.
+:::
+
+
+::: {.callout-note appearance="simple"}
+
+## Example: Simulation of a sample from a Gaussian mixture models.
+
+We aim to generate a sample $x_1, \dots, x_n$ i.i.d. from 
+$$f(x) = 0.5f_1(x) + 0.25f_2(x) + 0.25f_3(x),$$
+where $f_1$ the pdf of $\mathcal{N}(0, 1)$, $f_2$ is the pdf of $\mathcal{N}(2, 2.25)$ and $f_3$ is the pdf of $\mathcal{N}(4, 2.25)$.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+set.seed(42)  # seed setting
+n <- 10000  # number of samples   
+probs <- c(0.5, 0.25, 0.25)  # probabilities to be in each mixture
+
+# Generate the pi variable and each mixture separetely
+pi <- sample(c(1, 2, 3), n, replace = TRUE, prob = probs)
+f1 <- rnorm(n)
+f2 <- rnorm(n, 2, 1.5)
+f3 <- rnorm(n, 4, 1.5)
+
+# Create the mixture
+f <- (pi == 1) * f1 + (pi == 2) * f2 + (pi == 3) * f3
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+set.seed(42)
+
+density_estim <- density(f, from = -5, to = 10)
+density_true <- (
+    0.5 * dnorm(density_estim$x) +
+    0.25 * dnorm(density_estim$x, 2, 1.5) +
+    0.25 * dnorm(density_estim$x, 4, 1.5)
+)
+
+density_df <- tibble(
+  x = density_estim$x,
+  True = density_true,
+  Estimation = density_estim$y
+) |> 
+  pivot_longer(cols = c(True, Estimation))
+
+ggplot(density_df) +
+  geom_line(aes(x = x, y = value, color = name)) +
+  xlab("") +
+  ylab("Density") +
+  theme_bw() +
+  theme(
+    legend.title = element_blank(),
+    legend.position = c(0.9, 0.9)
+  )
+```
+
+:::
+
+
+::: {.callout-note appearance="simple"}
+
+## Example: Simulation of a Zero-Inflated model.
+
+Zero-inflated models are commonly used to model count data. The distribution of counts if often represented using a Poisson distribution. In some data, the number of zeros is greater than would be expected using a Poisson distribution. These data are referred as zero-inflated and can be simply described using a mixture model.
+
+We aim to generate a sample $x_1, \dots, x_n$ i.i.d. from 
+$$f(x) = 0.5\delta_0(x) + 0.5f_1(x),$$
+where $\delta_0$ is the function that returns $0$ and $f_1$ is the probability mass function of $\mathcal{P}(5)$.
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+set.seed(42)  # seed setting
+n <- 10000  # number of samples 
+probs <- c(0.5, 0.5)  # probabilities to be in each mixture
+
+# Generate the pi variable and each mixture separetely
+pi <- sample(c(1, 2), n, replace = TRUE, prob = probs)
+f1 <- rpois(n, 5)
+
+# Create the mixture
+f <- (pi == 1) * 0 + (pi == 2) * f1
+
+```
+
+```{r}
+#| class-output: outputcode
+#| eval: true
+# Compute the true probabilities and an estimation
+prob_estim <- as.vector(table(f) / n)[1:15]
+prob_true <- 0.5 + 0.5 * exp(-5)
+for (i in 1:14) {
+    prob_true <- c(prob_true, 0.5 * 5^i * exp(-5) / factorial(i))
+}
+
+probs_df <- tibble(
+    x = seq(0, 14, by = 1),
+    True = prob_true,
+    Estimation = prob_estim
+) |> 
+    pivot_longer(cols = c(True, Estimation))
+
+ggplot(probs_df) +
+    geom_col(
+        aes(x = x, y = value, fill = name),
+        position = "dodge"
+    ) +
+    xlab("") +
+    ylab("Probability") +
+    theme_bw() +
+    theme(
+        legend.title = element_blank(),
+        legend.position = c(0.9, 0.9)
+    )
+
+```
+
+:::
+
+## Additional resources
+
+* The R package [mixtools](https://cran.r-project.org/web/packages/mixtools/index.html).

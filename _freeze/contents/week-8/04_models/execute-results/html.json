@@ -1,8 +1,10 @@
 {
-  "hash": "8471cd7ca1bf0b9af2e9cde0add5cc97",
+  "hash": "0f3683d66e3a2a0dbcf65ac300ba01c3",
   "result": {
-    "markdown": "---\ntitle: \"Simluation of statistical models\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n\n# Additional resources\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Monte-Carlo simulations\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n\n# Additional resources\n",
+    "supporting": [
+      "04_models_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
