@@ -1,0 +1,161 @@
+---
+title: "Debugging and profiling - Questionnaire"
+engine: knitr
+---
+
+<br>
+
+```{r}
+#| echo: false
+library(webexercises)
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the primary purpose of debugging code?"
+question_choices <- c(
+    answer = "To find errors and correct them.",
+    "To make code faster.",
+    "To write new code.",
+    "To document code."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the first step in the debugging process?"
+question_choices <- c(
+    answer = "Identify the problem.",
+    "Run the code.",
+    "Fix the error.",
+    "Write more code."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "Why is creating a reproducible example important in debugging?"
+question_choices <- c(
+    "It is not important.",
+    "To demonstrate your coding skills.",
+    "To make your code run faster.",
+    answer = "To facilitate error diagnosis."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the benefit of having automated tests in place for code?"
+question_choices <- c(
+    "They make your code run faster.",
+    "They help preserve existing good behavior.",
+    "They reduce the number of bugs.",
+    answer = "They make debugging easier."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What should you do if you cannot identify the bug quickly?"
+question_choices <- c(
+    answer = "Adopt a systematic approach.",
+    "Give up and start over.",
+    "Keep trying different things until it works.",
+    "Ask someone else to fix it."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "When does the 'scientific method' approach to debugging come in handy?"
+question_choices <- c(
+    "Never.",
+    "When writing new code.",
+    "When you are using complex algorithms.",
+    answer = "When you need a systematic approach."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is a microbenchmark used for?"
+question_choices <- c(
+    answer = "Measuring the performance of lines of code.",
+    "Testing large code sections.",
+    "Creating random data.",
+    "Running complex algorithms."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "Why might you see the `<GC>` entry in a flame graph?"
+question_choices <- c(
+    answer = "It represents the garbage collector running.",
+    "It indicates a problem in your code.",
+    "It is a way to label code sections.",
+    "It symbolises graphical content."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "When the garbage collector (`<GC>`) takes a lot of time, what does it suggest?"
+question_choices <- c(
+    answer = "Short-lived objects are being created.",
+    "The code is running smoothly.",
+    "There is no need for further analysis.",
+    "The code is too fast."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 09](/weeks/week-9.qmd) ⏎
+:::
