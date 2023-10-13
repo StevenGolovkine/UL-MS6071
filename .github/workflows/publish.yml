@@ -38,6 +38,7 @@ jobs:
             any::plotly
             any::DBI
             any::RSQLite
+            any::bench
 
       - name: Render and Publish 
         uses: quarto-dev/quarto-actions/publish@v2
