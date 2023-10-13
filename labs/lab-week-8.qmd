@@ -42,3 +42,9 @@ Generate $X \sim \mathcal{U}(1, 5)$. Plot the data. Fit a linear and try to retr
 $$ Y \sim \mathcal{B}(p), \quad\text{where}\quad p = xz.$$
 
 Generate $X \sim \mathcal{U}(0, 1)$ and $Z \sim \mathcal{U}(0, 1)$. Plot the data.
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 08](/weeks/week-8.qmd) ⏎
+:::

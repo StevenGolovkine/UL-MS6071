@@ -1,0 +1,33 @@
+---
+title: "Debugging and profiling - Tutorial"
+engine: knitr
+---
+
+<br>
+The aim of today's tutorial is to find and fix bugs in R functions and do some profiling of common R functions to see if some optimisation is feasible.
+
+## Fixing bugs
+
+For the following code snippets, find and fix the bugs using `browser()` and `debug()`. It may have multiple bugs in each snippets.
+
+```{r}
+#| eval: false
+calc_factorial <- function(n) {
+    result <- 0
+    for (i in 1:n) {
+        result <- result * i
+    }
+    return(result)
+}
+```
+
+
+## Profiling code
+
+Do the profiling of the following functions with different inputs and try to understand if they can optimised in some way.
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 09](/weeks/week-9.qmd) ⏎
+:::

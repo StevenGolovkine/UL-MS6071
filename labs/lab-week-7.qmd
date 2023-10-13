@@ -86,3 +86,8 @@ rm 20*.csv
 
 16. Create a plot with the results.
 
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 07](/weeks/week-7.qmd) ⏎
+:::

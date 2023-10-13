@@ -1,0 +1,14 @@
+{
+  "hash": "cfe10beff41c7311304ad02ac09c4145",
+  "result": {
+    "markdown": "---\ntitle: \"Debugging and profiling - Tutorial\"\nengine: knitr\n---\n\n\n<br>\nThe aim of today's tutorial is to find and fix bugs in R functions and do some profiling of common R functions to see if some optimisation is feasible.\n\n## Fixing bugs\n\nFor the following code snippets, find and fix the bugs using `browser()` and `debug()`. It may have multiple bugs in each snippets.\n\n\n::: {.cell}\n\n```{.r .cell-code}\ncalc_factorial <- function(n) {\n    result <- 0\n    for (i in 1:n) {\n        result <- result * i\n    }\n    return(result)\n}\n```\n:::\n\n\n\n## Profiling code\n\nDo the profiling of the following functions with different inputs and try to understand if they can optimised in some way.\n\n<br><br>\n\n::: {style=\"font-size: 0.875em;\"}\nBack to [week 09](/weeks/week-9.qmd) ⏎\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
