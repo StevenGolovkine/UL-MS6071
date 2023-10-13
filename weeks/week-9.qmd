@@ -4,7 +4,7 @@ subtitle: "Code debugging and profiling"
 editor: visual
 ---
 
-Code debugging and profiling are important tasks in the development and optimisation of scripts and applications. Debugging involves identifying and resolving errors, ensuring the code functions as intended, and addressing issues that may lead to runtime errors. Profiling, on the other hand, involves assessing the code's performance, understanding resource utilization, and identifying bottlenecks to enhance efficiency.
+Code debugging and profiling are important tasks in the development and optimisation of scripts and applications. Debugging involves identifying and resolving errors, ensuring the code functions as intended, and addressing issues that may lead to runtime errors. Profiling, on the other hand, involves assessing the code performance, understanding resource usage, and identifying bottlenecks to enhance efficiency.
 
 ## Prepare
 
