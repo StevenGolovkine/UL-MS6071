@@ -6,25 +6,58 @@ engine: knitr
 <br>
 The aim of today's tutorial is to find and fix bugs in R functions and do some profiling of common R functions to see if some optimisation is feasible.
 
-## Fixing bugs
 
-For the following code snippets, find and fix the bugs using `browser()` and `debug()`. It may have multiple bugs in each snippets.
+For the following code snippets, find and fix the bugs using `browser()` and `debug()`. It may have multiple bugs in each snippets. In a second step, do the profiling of the snippets using `profvis` and `bench`. You can try the functions with different inputs and try to understand if they can optimised in some way.
+
 
 ```{r}
 #| eval: false
 calc_factorial <- function(n) {
     result <- 0
     for (i in 1:n) {
-        result <- result * i
+        result <- c(result, result * i)
     }
-    return(result)
+    return(result[length(result)])
 }
 ```
 
+```{r}
+#| eval: false
+is_prime <- function(n) {
+  if (n <= 1) {
+    return(FALSE)
+  }
+  if (n %% 2 == 0 || n %% 3 == 0) {
+    return(FALSE)
+  }
+  i <- 5
+  while (i * i <= n) {
+    if (n %% i == 0 || n %% (i + 2) == 0) {
+      return(FALSE)
+    }
+    i <- i + 4
+  }
+  return(TRUE)
+}
 
-## Profiling code
+sum_primes <- function(limit) {
+  if (limit < 2) {
+    return(0)
+  }
+  primes <- c(2)
+  sum <- 2
 
-Do the profiling of the following functions with different inputs and try to understand if they can optimised in some way.
+  for (i in 3:limit) {
+    if (is_prime(i)) {
+      primes <- c(primes, i)
+      sum <- sum + i
+    }
+  }
+  
+  return(list("primes" = primes, "sum" = sum))
+}
+```
+
 
 <br><br>
 
