@@ -31,7 +31,7 @@ importFrom(Rcpp, sourceCpp)
 
 Importing something from `Rcpp` (here, `sourceCpp`) is essential for proper loading of internal `Rcpp` code due to a bug in R. To set this up automatically, we can use `usethis::use_rcpp()`.
 
-Before building the package, we have to execute `Rcpp::compileAttributes()`. This function scans the C++ files for `Rcpp::export` attributes and generates the necessary code to make the functions available in R. We have to make sure to re-run `compileAttributes()` when we add, remove, or modify functions, which is typically handled automatically by the `devtools` package and RStudio.
+Before building the package, we have to execute `Rcpp::compileAttributes()`. This function scans the C++ files for `Rcpp::export` attributes and generates the necessary code to make the functions available in R. We have to make sure to re-run `Rcpp::compileAttributes()` when we add, remove, or modify functions, which is typically handled automatically by the `devtools` package and RStudio.
 
 ::: {.callout-note appearance="simple"}
 

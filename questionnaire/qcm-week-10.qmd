@@ -1,0 +1,139 @@
+---
+title: "C++ - Questionnaire"
+engine: knitr
+---
+
+<br>
+
+```{r}
+#| echo: false
+library(webexercises)
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "Which function is used to compile C++ code in R using the `Rcpp` package?"
+question_choices <- c(
+    answer = "`sourceCpp()`",
+    "`compileC()`",
+    "`compileCpp()`",
+    "`executeCpp()`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What does adding `LinkingTo: Rcpp` in the DESCRIPTION file of an R package indicate?"
+question_choices <- c(
+    answer = "A requirement to link the package to Rcpp.",
+    "A requirement to link the package to R.",
+    "A suggestion to users to install Rcpp.",
+    "A suggestion to users to install R."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "When integrating C++ code into an R package, in which directory should you place your C++ source files?"
+question_choices <- c(
+    "`data/`",
+    "`inst/`",
+    "`R/`",
+    answer = "`src/`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is the purpose of running `Rcpp::compileAttributes()` in the development of an R package with C++ code?"
+question_choices <- c(
+    answer = "It scans C++ files for Rcpp attributes.",
+    "It compiles the R code.",
+    "It generates R documentation.",
+    "It installs the package."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "To ensure that internal Rcpp code is properly loaded, what should you include in your NAMESPACE file of the R package?"
+question_choices <- c(
+    "`useCppLib(Rcpp)`",
+    "`importCppLib(Rcpp)`",
+    "`useDynLib(mypackage)`",
+    answer = "`importFrom(Rcpp, sourceCpp)`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What action should you take when modifying C++ functions within an R package?"
+question_choices <- c(
+    answer = "Re-execute `compileAttributes()`.",
+    "Rerun `sourceCpp()`.",
+    "Rebuild the entire package.",
+    "Remove the C++ files."
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "Which R package helps integrate C++ code into an R package most efficiently?"
+question_choices <- c(
+    answer = "`devtools`",
+    "`RcppTools`",
+    "`CppUtil`",
+    "`RcppEigen`"
+)
+cat(question, longmcq(sample(question_choices)))
+```
+
+<br>
+
+```{r}
+#| class: webex-box
+#| echo: false
+#| results: asis
+question <- "What is a key benefit of moving C++ code from a standalone source file to an R package?"
+question_choices <- c(
+    answer = "It makes the code accessible to external users.",
+    "It creates dependencies on external libraries.",
+    "It provides infrastructure for testing and documentation.",
+    "It decreases the visibility of your code."
+)
+cat(question, longmcq(sample(question_choices)))
+```
