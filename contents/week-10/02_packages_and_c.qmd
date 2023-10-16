@@ -1,11 +1,45 @@
 ---
-title: "Packaging with C++ integration"
+title: "Packaging"
 engine: knitr
 format:
   html:
     css: ../ul.css
 ---
 
+<br>
+The same C++ code utilised with `sourceCpp()` can be integrated into an R package. Packaging standalone C++ source files offers several advantages:
+
+* Accessibility: Users can access our code without requiring C++ development tools (but we will need to provide a compiled version of the code for each system).
+
+* Dependency Handling: The R package build system manages multiple source files and their dependencies automatically.
+
+* Infrastructure: Packages offer additional support for testing, documentation, and maintaining consistency in your code.
+
+To incorporate `Rcpp` into an existing package, we should place your C++ files in the `src/` directory and create or modify specific configuration files:
+
+In the `DESCRIPTION` file, include:
+```r
+LinkingTo: Rcpp
+Imports: Rcpp
+```
+
+In the `NAMESPACE` file, include:
+```r
+useDynLib(mypackage)
+importFrom(Rcpp, sourceCpp)
+```
+
+Importing something from `Rcpp` (here, `sourceCpp`) is essential for proper loading of internal `Rcpp` code due to a bug in R. To set this up automatically, we can use `usethis::use_rcpp()`.
+
+Before building the package, we have to execute `Rcpp::compileAttributes()`. This function scans the C++ files for `Rcpp::export` attributes and generates the necessary code to make the functions available in R. We have to make sure to re-run `compileAttributes()` when we add, remove, or modify functions, which is typically handled automatically by the `devtools` package and RStudio.
+
+::: {.callout-note appearance="simple"}
+
+We can use the function `Rcpp.package.skeleton()` from the `Rcpp` package to create a skeleton of an R package that incorporate C++ function.
+
+:::
 
 
-# Additional resources
+## Additional resources
+
+* Vignette: [Writing a package that uses Rcpp](https://cran.rstudio.com/web/packages/Rcpp/vignettes/Rcpp-package.pdf).

@@ -1,11 +1,53 @@
 ---
 title: "C++ Integration in R"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
+<br>
+R is an interpreted language, meaning it directly executes instructions without a prior compilation into machine-language code. This execution occurs in real-time as the program is written in the R language. Interpreting code offers dynamic and interactive typing, allowing for flexibility in coding. However, this flexibility comes at the cost of reliability since there is no static type-checking typical of a compiled language. Additionally, interpreting code might lead to slower execution compared to natively compiled machine code.
+
+To enhance computational speed and integrate C++ into R, we will write C++ code and call it from R. This approach offers the advantage of faster computations while ensuring that the results are readily available within the R environment.
+
+In this section, we will use the package `Rcpp`. If it is not already installed, do it and then load it. Pay attention that you would need a C++ compiler.
+
+```{r}
+#| eval: false
+library(Rcpp)
+```
+
+## Getting started with C++
+
+We can create `.cpp` file easily within RStudio. We can do it with *File > New File > C++ File*. In this file, we will put our C++ code. When a new file is created it already has some code in it.
+
+```c
+#include <Rcpp.h>
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+NumericVector timesTwo(NumericVector x) {
+  return x * 2;
+}
+```
+
+When we click on the *Source* button, R will compile the function and then we will be able to use our C++ function as any other function in R. There is also a possibiltiy to test the function directly from the C++ file using the following snippet.
+
+```c
+/*** R
+timesTwo(42)
+*/
+```
 
 
-# Additional resources
+::: {.callout-note appearance="simple"}
+
+Be careful that indexing in C++ starts at 0, while in R, it starts at 1.
+
+:::
+
+We will not go into more details here. Consider reading `Rcpp` documentation for more insights.
+
+## Additional resources
+
+* Rcpp [website](https://www.rcpp.org).
+
+* Advanced R book, [Chapter 25](https://adv-r.hadley.nz/rcpp.html).
