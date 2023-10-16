@@ -1,26 +1,29 @@
 ---
 title: "Week 10"
 subtitle: "C++"
-editor: visual
 ---
 
+C++ is a general-purpose programming language. It supports procedural, object-oriented, and generic programming paradigms. C++ is efficient, flexible and widely used in software development for a range of applications. C++ is known for its high performance and is commonly used in performance-critical applications.
 
 ## Prepare
 
-📖 C++ [🔗](/contents/week-10/01_c_plus_plus.qmd)
+📖 [R and C++](/contents/week-10/01_c_plus_plus.qmd)
 
-📖 Packaging [🔗](/contents/week-10/02_packages_and_c.qmd)
+📖 [Packaging](/contents/week-10/02_packages_and_c.qmd)
 
-📖 Armadillo [🔗](/contents/week-10/03_armadillo.qmd)
+📖 [Armadillo](/contents/week-10/03_armadillo.qmd)
 
+## Source code
+
+🧑‍💻 [Source code](/contents/week-10/source/all_code_chunks.R)
 
 ## Questionnaire
 
-⌨️ Questionnaire [🔗](/questionnaire/qcm-week-10.qmd)
+⌨️ [Questionnaire](/questionnaire/qcm-week-10.qmd)
 
 ## Practice
 
-📋 Tutorials [🔗](/labs/lab-week-10.qmd)
+📋 [Tutorials](/labs/lab-week-10.qmd)
 
 <br><br>
 
