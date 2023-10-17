@@ -1,9 +1,6 @@
 ---
 title: "Packaging"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
 <br>
