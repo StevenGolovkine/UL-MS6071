@@ -1,7 +1,7 @@
 {
-  "hash": "dba31139cb2f3ace94b117dc76289ddb",
+  "hash": "cf81020b31cbb832ba63165b0dcf4f70",
   "result": {
-    "markdown": "---\ntitle: \"Armadillo\"\nengine: knitr\nformat:\n  html:\n    css: ../ul.css\n---\n\n\n\n\n# Additional resources\n",
+    "markdown": "---\ntitle: \"Armadillo\"\nengine: knitr\n---\n\n\n<br>\nArmadillo is a linear algebra library for the C++ language. The `RcppArmadillo` package provides an interface from R to and from Armadillo by utilising the `Rcpp` package.\n\nWe need to add these lines in the header of the `.cpp` file.\n```c\n#include <RcppArmadillo.h>\n// [[Rcpp::depends(RcppArmadillo)]]\n```\n\n\nWe can alternatively use the `RcppEigen` package, that uses the C++ `Eigen` library as a backend for linear algebra tasks. Both packages offer comparable features, making the choice between them a matter of personal preference.\n\n## Additional resources\n\n* Armadillo [documentation](https://arma.sourceforge.net).\n\n* `RcppArmadillo` package [documentation](https://cran.r-project.org/web/packages/RcppArmadillo/index.html).",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

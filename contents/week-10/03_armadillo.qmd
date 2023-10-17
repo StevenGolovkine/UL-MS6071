@@ -1,11 +1,22 @@
 ---
 title: "Armadillo"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
+<br>
+Armadillo is a linear algebra library for the C++ language. The `RcppArmadillo` package provides an interface from R to and from Armadillo by utilising the `Rcpp` package.
+
+We need to add these lines in the header of the `.cpp` file.
+```c
+#include <RcppArmadillo.h>
+// [[Rcpp::depends(RcppArmadillo)]]
+```
 
 
-# Additional resources
+We can alternatively use the `RcppEigen` package, that uses the C++ `Eigen` library as a backend for linear algebra tasks. Both packages offer comparable features, making the choice between them a matter of personal preference.
+
+## Additional resources
+
+* Armadillo [documentation](https://arma.sourceforge.net).
+
+* `RcppArmadillo` package [documentation](https://cran.r-project.org/web/packages/RcppArmadillo/index.html).

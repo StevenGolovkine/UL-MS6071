@@ -64,7 +64,7 @@ It will then be possible to compare this ratio to $\alpha$ in order to see if we
 
 2. Create an R function to perform the Monte Carlo procedure. This function should call the function you previously write.
 
-**Input**: Two arguments
+**Input**:
 
 - `x`: vector of the $x_i$'s of length $n$.
 - `M`: integer with default value $10^5$.
