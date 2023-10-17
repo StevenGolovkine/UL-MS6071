@@ -15,6 +15,8 @@ The same C++ code utilised with `sourceCpp()` can be integrated into an R packag
 
 * Infrastructure: Packages offer additional support for testing, documentation, and maintaining consistency in your code.
 
+## Create a package
+
 To incorporate `Rcpp` into an existing package, we should place your C++ files in the `src/` directory and create or modify specific configuration files:
 
 In the `DESCRIPTION` file, include:
