@@ -17,19 +17,19 @@ library(Rcpp)
 
 ## Getting started with C++
 
-We can create `.cpp` file easily within RStudio. We can do it with *File > New File > C++ File*. In this file, we will put our C++ code. When a new file is created it already has some code in it.
+We can create `.cpp` file easily within RStudio. We can do it with *File > New File > C++ File*. In this file, we will put our C++ code. When a new file is created, it already has some code in it.
 
 ```c
-#include <Rcpp.h>
-using namespace Rcpp;
+#include <Rcpp.h>  // To use Rcpp functions
+using namespace Rcpp;  // To add Rcpp functions in the namespace
 
-// [[Rcpp::export]]
+// [[Rcpp::export]]  // To make the function available in R
 NumericVector timesTwo(NumericVector x) {
   return x * 2;
 }
 ```
 
-When we click on the *Source* button, R will compile the function and then we will be able to use our C++ function as any other function in R. There is also a possibiltiy to test the function directly from the C++ file using the following snippet.
+When we click on the *Source* button, R will compile the function and then we will be able to use our C++ function as any other function in R. (We could also use the function `Rcpp::sourceCpp()` to source the file.) We can call `timesTwo(42)` from the R Console and the function is available in the *Environment* pane. There is also a possibiltiy to test the function directly from the C++ file using the following snippet.
 
 ```c
 /*** R
@@ -37,12 +37,58 @@ timesTwo(42)
 */
 ```
 
+This function has been compiled and `Rcpp` constructed an R function that connects to the compiled function. So, the R function call C++ code. If we look at the body of the R function, we see something like:
+```r
+function (x) 
+.Call(<pointer: 0x106c96aec>, x)
+```
+
+## Some C++ syntax
+
+Creating functions in C++ require explicit type declarations and syntax. The creation has a similar syntax than function calls. We need to declare the return type of the function. For example, to return a single integer, we specify `int`, for character, `String`, for boolean, `bool`, etc. Common types for R vectors are represented in C++ as `NumericVector`, `IntegerVector`, `CharacterVector`, and `LogicalVector`.
+We must explicitely use the `return` statement. Each statement is terminated by a semicolon (`;`).
 
 ::: {.callout-note appearance="simple"}
 
-Be careful that indexing in C++ starts at 0, while in R, it starts at 1.
+## Example
+
+Here is the comparison between functions with no input, and simple output in R and C++.
+
+```r
+one <- function() 1L
+```
+
+```c
+int one() {
+  return 1;
+}
+```
 
 :::
+
+Every variable declaration must include a specified type. It is the responsibility of the programmer to explicitly state the type for each variable. Unlike some other programming languages, C++ does not attempt to deduce or guess the variable type; we must be explicit in our type declarations. This strict typing system in C++ helps ensure clarity and precision in code.
+
+In C++, methods are called with a full stop (`.`). For example, if we want the size of a vector `x`, we will call `x.size()`.
+
+::: {.callout-note appearance="simple"}
+
+When dealing with vectors in C++, it is important to note that indexing begins at 0, whereas in R, indexing starts at 1. This discrepancy in indexing can lead to off-by-one errors when translating code between the two languages.
+
+:::
+
+The package `Rcpp` also provides wrapper for all other base R data types. For example, we have access to list (`Lisst`), data frames (`DataFrame`) and functions (`Functions`).
+
+## The Standard Template Library
+
+The use of C++ starts to be interesting when we have to implement more complex algorithms. The Standard Template Library (STL) contains widely used data structures and algorithms, like iterators, maps or sets.
+
+To use the available algorithms in the STL, we need to add the `<algorithm>` header at the top of the `.cpp` file.
+```c
+#include <algorithm>
+```
+Using algorithms from the STL is often preferable to develop our own (if it is available of course) because it provides efficiency, correctness, and maintainability. STL algorithms are designed by C++ professionals, prioritising efficiency. Moreover, they have undergone rigorous testing over time, ensuring reliability. The common functions that we will use in R are implemented in the STL.
+
+The STL provides a larger set of data structures. The most important are `vector`, `unordered_set` and `unordered_map`. The `vector` is similar to an R vector, except that we need to specify which type the elements of the vector will have. For example, a vector that contains integers is declared as `vector<int>`. The `unordered_set` contains unordered unique set of values. We have to add `#include <unordered_set>` as a header to use `unordered_set`. The `unordered_map` may contains data represented as key/value pairs. It is similar to `list` in R. When initialised, we need to specify the type of both the keys and values, e.g. `unordered_map<int, String>`.
 
 We will not go into more details here. Consider reading `Rcpp` documentation for more insights.
 
@@ -51,3 +97,7 @@ We will not go into more details here. Consider reading `Rcpp` documentation for
 * Rcpp [website](https://www.rcpp.org).
 
 * Advanced R book, [Chapter 25](https://adv-r.hadley.nz/rcpp.html).
+
+* Standard Template Library, [algortihms](https://en.cppreference.com/w/cpp/algorithm).
+
+* Standard Template Library, [containers](https://en.cppreference.com/w/cpp/container).
