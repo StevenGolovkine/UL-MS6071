@@ -1,11 +1,12 @@
 ---
 title: "Large Language Model"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
+<br>
+Large language models are systems designed to process and generate human-like text. They are built using extensive textual data and find applications in natural language understanding, text generation, and question answering. These models are created to understand and generate human language.
+
+Examples of LLM include GPT (from OpenAI), PaML (from Google) and LLaMa (from Meta).
 
 
-# Additional resources
+## Additional resources

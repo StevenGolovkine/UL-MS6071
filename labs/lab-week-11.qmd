@@ -1,0 +1,13 @@
+---
+title: "Large Language Models - Tutorial"
+engine: knitr
+---
+
+<br>
+The aim of today's tutorial is to understand how handle LLM work with the R model. For that, I asked ChatGPT to answer some R/statistics questions and we will analyse the outcomes. Secondly, we will use ChatGPT to generate some code and decide when to use it. 
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 11](/weeks/week-11.qmd) ⏎
+:::

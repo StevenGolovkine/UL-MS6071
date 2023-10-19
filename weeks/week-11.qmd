@@ -1,24 +1,27 @@
 ---
 title: "Week 11"
 subtitle: "Large Language Models"
-editor: visual
 ---
 
+Large Language Models (LLM), such as GPT or LLaMA, are systems capable of processing and generating human-like text based on the input they receive. These models have been developed using vast amounts of textual data and are used in a wide range of applications, including natural language understanding, text generation, and answering questions.
 
 ## Prepare
 
-📖 Large Language Models [🔗](/contents/week-11/01_LLM.qmd)
+📖 [Large Language Models](/contents/week-11/01_LLM.qmd)
 
-📖 Request API [🔗](/contents/week-11/02_request_API.qmd)
+📖 [Request API](/contents/week-11/02_request_API.qmd)
 
+## Source code
+
+🧑‍💻 [Source code](/contents/week-11/source/all_code_chunks.R)
 
 ## Questionnaire
 
-⌨️ Questionnaire [🔗](/questionnaire/qcm-week-11.qmd)
+⌨️ [Questionnaire](/questionnaire/qcm-week-11.qmd)
 
 ## Practice
 
-📋 Tutorials [🔗](/labs/lab-week-11.qmd)
+📋 [Tutorials](/labs/lab-week-11.qmd)
 
 <br><br>
 

@@ -1,0 +1,14 @@
+{
+  "hash": "e33630432125edf3f929a6b9b0802075",
+  "result": {
+    "markdown": "---\ntitle: \"Requesting API in R\"\nengine: knitr\n---\n\n\n<br>\nLLM are now commonly available through APIs. So, we can request these APIs as any other APIs, like what we did in previous sections. Here, we will use [HuggingFace](https://huggingface.co) APIs to access to LLM.\n\nThis first step to do is to create a HuggingFace account and set a token. Once the account is created, we click on your profile (top-right of the page), *Settings > Access Tokens*. Once the token has been generated, it need to be added to every requests sent to HuggingFace APIs.\n\n\n## Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

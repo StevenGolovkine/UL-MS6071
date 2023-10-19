@@ -1,0 +1,14 @@
+{
+  "hash": "8ce56db6bbdb0c2e26df402a55af0a57",
+  "result": {
+    "markdown": "---\ntitle: \"Large Language Model\"\nengine: knitr\n---\n\n\n<br>\nLarge language models are systems designed to process and generate human-like text. They are built using extensive textual data and find applications in natural language understanding, text generation, and question answering. These models are created to understand and generate human language.\n\nExamples of LLM include GPT (from OpenAI), PaML (from Google) and LLaMa (from Meta).\n\n\n## Additional resources\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

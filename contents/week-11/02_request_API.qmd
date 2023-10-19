@@ -1,11 +1,12 @@
 ---
 title: "Requesting API in R"
 engine: knitr
-format:
-  html:
-    css: ../ul.css
 ---
 
+<br>
+LLM are now commonly available through APIs. So, we can request these APIs as any other APIs, like what we did in previous sections. Here, we will use [HuggingFace](https://huggingface.co) APIs to access to LLM.
+
+This first step to do is to create a HuggingFace account and set a token. Once the account is created, we click on your profile (top-right of the page), *Settings > Access Tokens*. Once the token has been generated, it need to be added to every requests sent to HuggingFace APIs.
 
 
-# Additional resources
+## Additional resources
