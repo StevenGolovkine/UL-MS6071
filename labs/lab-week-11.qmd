@@ -102,6 +102,11 @@ F-statistic: The F-statistic tests whether at least one of the independent varia
 
 The p-values in the output are essential for assessing the significance of the coefficients and the overall model. Low p-values (typically < 0.05) suggest that the corresponding coefficient or the model as a whole is statistically significant. In your case, both coefficients and the model are highly significant.
 
+## Results from a linear regression - 2
+
+**Prompt**
+
+
 ## Code generation
 
 <br><br>
