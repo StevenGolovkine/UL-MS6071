@@ -70,3 +70,9 @@ We can alternatively use the `RcppEigen` package, that uses the C++ `Eigen` libr
 * Armadillo [documentation](https://arma.sourceforge.net).
 
 * `RcppArmadillo` package [documentation](https://cran.r-project.org/web/packages/RcppArmadillo/index.html).
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 10](/weeks/week-10.qmd) ⏎
+:::

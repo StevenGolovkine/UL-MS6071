@@ -42,3 +42,9 @@ We can use the function `Rcpp.package.skeleton()` from the `Rcpp` package to cre
 ## Additional resources
 
 * Vignette: [Writing a package that uses Rcpp](https://cran.rstudio.com/web/packages/Rcpp/vignettes/Rcpp-package.pdf).
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 10](/weeks/week-10.qmd) ⏎
+:::
