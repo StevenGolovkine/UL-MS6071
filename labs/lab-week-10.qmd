@@ -81,3 +81,12 @@ It will then be possible to compare this ratio to $\alpha$ in order to see if we
 4. Write a function to perform the Monte Carlo procedure in C++.
 
 4. Compare the computation time of the Monte Carlo procedure using `lm()`, your implementation of a linear model with and without C++.
+
+5. Comment on the results.
+
+
+<br><br>
+
+::: {style="font-size: 0.875em;"}
+Back to [week 10](/weeks/week-10.qmd) ⏎
+:::
