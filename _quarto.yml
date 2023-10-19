@@ -68,10 +68,8 @@ website:
             text: "Week 9"
           - href: weeks/week-10.qmd
             text: "Week 10"
-          - href: weeks/week-11.qmd
-            text: "Week 11"
           - href: weeks/week-12.qmd
-            text: "Week 12"
+            text: "Week 11"
 
 bibliography: bibliography.bib
 

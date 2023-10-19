@@ -7,9 +7,11 @@ editor: visual
 
 ## Prepare
 
-📖 Read the [syllabus](/course-syllabus.html)
+📖 Read the [syllabus](/information/syllabus.qmd).
 
-📖 Read the [support](/course-support.html) resources
+📖 Read the [project information](/information/assessment.qmd).
+
+📖 Read the [support](/information/links.qmd) resources.
 
 
 <br><br>
