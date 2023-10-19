@@ -10,8 +10,58 @@ We need to add these lines in the header of the `.cpp` file.
 ```c
 #include <RcppArmadillo.h>
 // [[Rcpp::depends(RcppArmadillo)]]
+using namespace Rcpp;
+using namespace arma;
 ```
 
+## Armadillo implementation
+
+The functions from `RcppArmadillo` are similar to R code, and we can write C++ code (almost) like we would write R code. The documentation (with all the functions) is available [here](https://arma.sourceforge.net/docs.html#misc_fns). All of the common linear algebra related functions are already implemented.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+In this example, we create a matrix and perform some common manipulation using R and `RcppArmadillo`.
+
+```r
+X = matrix(rnorm(100), nrow = 10, ncol = 10)  # Create a matrix
+X[1, 1]  # Slicing
+nrow(X)  # Get the number of rows
+t(X)  # Transpose the matrix
+```
+
+```c
+mat X = mat(10, 10, arma::fill::randn);  // Create a matrix
+X(0, 0)  // Slicing
+X.n_rows  // Get the number of rows
+X.t()  // Transpose the matrix
+```
+
+Remember that, in C++, indexing starts at 0.
+
+:::
+
+Some statictics functions are also available. We can compute histograms, PCA or generate random vectors using `RcppArmadillo`.
+
+::: {.callout-note appearance="simple"}
+
+## Example
+
+We create a matrix with random entries (with a Normal distribution), compute the principal components and perform a k-means clustering 
+
+```c
+mat X(100, 5, fill::randu);  // Matrix with Gaussian distribution
+
+mat coeff, score;  // Create placeholders
+vec latent, tsquared;  // Create placeholders
+princomp(coeff, score, latent, tsquared, X);  // Perforn PCA
+
+mat means;  // Create placeholders
+bool status = kmeans(means, X, 2, random_subset, 10, true);  // KMeans
+```
+
+:::
 
 We can alternatively use the `RcppEigen` package, that uses the C++ `Eigen` library as a backend for linear algebra tasks. Both packages offer comparable features, making the choice between them a matter of personal preference.
 
