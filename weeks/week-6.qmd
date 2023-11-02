@@ -27,6 +27,8 @@ Interactive plots, dashboards and web apps are a means of creating dynamic and u
 
 📋 [Tutorials](/labs/lab-week-6.qmd)
 
+⌨️ [Solution proposal](/labs/solutions/week-6.Rmd)
+
 <br><br>
 
 ::: {style="font-size: 0.875em;"}

@@ -2,6 +2,8 @@
 
 <br>
 
+* 02/11/23 - Week 6 - Lab solution proposal added.
+
 * 19/10/23 - Week 10 added.
 
 * 16/10/23 - Week 9 added.

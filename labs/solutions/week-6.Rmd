@@ -1,0 +1,265 @@
+<!--
+################################################################################
+# Possible solution for week 6 lab - Interactivity
+################################################################################
+# Uncomment the file to make it work.
+-->
+
+<!-- ---
+title: "Our World in Data"
+output:
+    flexdashboard::flex_dashboard:
+        theme: 
+            version: 4
+            bootswatch: pulse
+            base_font: 
+                google: Source Code Pro
+        orientation: columns
+runtime: shiny
+--- -->
+
+```{r setup, include=FALSE}
+# library(flexdashboard)
+# library(jsonlite)
+# library(leaflet)
+# library(plotly)
+# library(tidyverse)
+
+
+# df <- read_csv("./owid-energy.csv")
+# world <- geojsonio::geojson_read("./countries.geojson", what = "sp")
+
+# # HTML fixes
+# css_fix <- "div.info.legend.leaflet-control br {clear: both;}" # CSS to correct spacing
+# html_fix <- htmltools::tags$style(type = "text/css", css_fix)  # Convert CSS to HTML
+
+# # Some functions
+# accumulate_by <- function(dat, var) {
+#     var <- lazyeval::f_eval(var, dat)
+#     lvls <- plotly:::getLevels(var)
+#     dats <- lapply(seq_along(lvls), function(x) {
+#         cbind(dat[var %in% lvls[seq(1, x)], ], frame = lvls[[x]])
+#     })
+#     dplyr::bind_rows(dats)
+# }
+
+```
+
+The complete Energy dataset is a collection of key metrics maintained by Our World in Data. It is updated regularly and includes data on energy consumption (primary energy, per capita, and growth rates), energy mix, electricity mix and other relevant metrics.
+
+This data has been collected, aggregated, and documented by Hannah Ritchie, Pablo Rosado, Edouard Mathieu, Max Roser.
+
+[Our World in Data](https://ourworldindata.org/about) makes data and research on the world's largest problems understandable and accessible.
+
+# General 
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Relationship between population and GDP
+
+```{r}
+# temp <- df |> 
+#     filter(country != 'World') |> 
+#     filter(!is.na(population), !is.na(gdp)) |> 
+#     select(country, year, population, gdp) |> 
+#     mutate(population = population / 1e6) |> 
+#     mutate(gdp = gdp / 1e9)
+
+# fig <- temp |> 
+#     plot_ly(
+#         x = ~population, 
+#         y = ~gdp, 
+#         frame = ~year, 
+#         text = ~country, 
+#         hoverinfo = "text",
+#         type = 'scatter',
+#         mode = 'markers'
+#     ) |> 
+#     layout(
+#         xaxis = list(title = 'Population (in millions)', type = "log"),
+#         yaxis = list(title = 'GDP (in billions)', type = "log"),
+#         showlegend = FALSE
+#     ) |> 
+#     animation_opts(
+#         1000, easing = "elastic", redraw = FALSE
+#   )
+
+# fig
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Evolution of the population
+
+```{r}
+# fillCol(
+#     height = 600,
+#     flex = c(NA, 1), 
+#     selectInput(
+#         inputId = "country",
+#         label = "Which country:",
+#         choices = unique(df$country),
+#         selected = "Ireland" 
+#     ),
+#     plotOutput("population_plot", height = "100%")
+# )
+
+# output$population_plot <- renderPlot({
+#     temp <- df |> 
+#         filter(country == input$country) |> 
+#         select(year, population) |> 
+#         mutate(population = population / 1e6)
+#     ggplot(temp) +
+#         geom_line(aes(x = year, y = population)) +
+#         xlab("") +
+#         ylab("Population (in millions)") +
+#         theme_bw()
+# })
+```
+
+### Population and GDP for the world
+
+```{r}
+# temp <- df |> 
+#     filter(country == 'World') |> 
+#     filter(!is.na(population), !is.na(gdp)) |> 
+#     select(country, year, population, gdp) |> 
+#     mutate(population = population / 1e6) |> 
+#     mutate(gdp = gdp / 1e9) |> 
+#     accumulate_by(~year)
+
+# temp %>%
+#     plot_ly(
+#         x = ~population, 
+#         y = ~gdp, 
+#         frame = ~frame, 
+#         text = ~year, 
+#         hoverinfo = "text",
+#         type = 'scatter',
+#         mode = 'lines+markers'
+#     ) |> 
+#     layout(
+#         xaxis = list(title = 'Population (in millions)', type = "log"),
+#         yaxis = list(title = 'GDP (in billions)', type = "log"),
+#         showlegend = FALSE
+#     ) |> 
+#     animation_opts(
+#         frame = 100, 
+#         transition = 0, 
+#         redraw = TRUE
+#     )
+
+```
+
+# Some statistics
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Ratio betwen the demand in electricity and its generation in terawatt-hours in 2018
+
+```{r}
+# new_df <- df |>
+#     filter(year == 2018) |> 
+#     mutate(ratio_electricity = electricity_demand / electricity_generation)
+
+# world@data <- world@data |> 
+#     left_join(new_df, by = join_by("ADMIN" == "country"))
+
+# pal <- colorNumeric("Reds", NULL, na.color = '#CCCCCC')
+
+# leaflet(world) |> 
+#     addTiles() |> 
+#     addPolygons(
+#         stroke = TRUE,
+#         color = '#000000',
+#         weight = 1,
+#         smoothFactor = 0.3,
+#         fillOpacity = 1,
+#         fillColor = ~pal(log(ratio_electricity)),
+#         label = ~paste0(
+#             ADMIN, "\n ",
+#             "\tDemand:", formatC(electricity_demand, big.mark = ","),
+#             "\tGeneration:", formatC(electricity_generation, big.mark = ",")
+#         )
+#     ) |> 
+#     addLegend(
+#         "bottomleft",
+#         pal = pal,
+#         values = ~ratio_electricity,
+#         opacity = 1.0,
+#         title = "Electricity (2018)"
+#     ) |> 
+#     htmlwidgets::prependContent(html_fix)       
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Comparison between renewable and fossil electricity produced
+
+```{r}
+# fillCol(
+#     height = 600,
+#     flex = c(NA, 1), 
+#     selectInput(
+#         inputId = "year",
+#         label = "Which year:",
+#         choices = unique(df$year),
+#         selected = "2018" 
+#     ),
+#     plotOutput("electricity_plot", height = "100%")
+# )
+
+# output$electricity_plot <- renderPlot({
+#     temp <- df |>
+#         filter(year == input$year) |> 
+#         select(
+#             country, fossil_electricity, renewables_electricity
+#         ) |> 
+#         filter(
+#             !is.na(fossil_electricity), !is.na(renewables_electricity)
+#         ) |> 
+#         mutate(
+#             ratio = renewables_electricity / fossil_electricity
+#         )
+#     ggplot(temp) +
+#         geom_violin(aes(x = ratio, y = 0)) +
+#         ggtitle(paste("Year:", input$year)) +
+#         xlim(c(0, 10)) +
+#         xlab("Ratio between renewable and fossil electricity") +
+#         theme_bw() +
+#         theme(
+#             axis.title.y = element_blank(),
+#             axis.ticks.y = element_blank(),
+#             axis.text.y = element_blank()
+#         )
+# })
+
+```
+
+### Information
+
+```{r}
+# fillCol(
+#     height = 600,
+#     flex = c(NA, 1), 
+#     selectInput(
+#         inputId = "country",
+#         label = "Which country:",
+#         choices = unique(df$country),
+#         selected = "Ireland" 
+#     ),
+#     tableOutput("information_table")
+# )
+
+# output$information_table <- renderTable({
+#     temp <- df |>
+#         filter(country == input$country)
+#     temp
+# })
+```
