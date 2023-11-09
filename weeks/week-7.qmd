@@ -28,6 +28,8 @@ Before starting reading the materials, download the data from [here](https://www
 
 📋 [Tutorials](/labs/lab-week-7.qmd)
 
+⌨️ [Solution proposal](/labs/solutions/week-7.R)
+
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
