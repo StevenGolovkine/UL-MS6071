@@ -24,6 +24,8 @@ Code debugging and profiling are important tasks in the development and optimisa
 
 📋 [Tutorials](/labs/lab-week-9.qmd)
 
+⌨️ [Solution proposal](/labs/solutions/week-9.R)
+
 <br><br>
 
 ::: {style="font-size: 0.875em;"}

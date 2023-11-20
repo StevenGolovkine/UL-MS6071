@@ -1,0 +1,170 @@
+---
+title: "Possible solution for week 8 lab - Simulation"
+output:
+  html_document: default
+  pdf_document: default
+date: "2023-10-12"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## The inverse transform method
+
+1. Let $f : x \in (0, 1/2) \to 1/\sqrt{2x}$ be a probability density function of a random variable $X$. Generate using the inverse transform method a sample of size 100 of $X$.
+
+Let $F$ be the associated cdf of $f$. Then
+$$F(t) = \int_{-\infty}^{t}f(x)dx = \left\{
+    \begin{array}{r c l}
+        1 &\text{if}& x \geq 1/2\\
+        \int_{0}^{t}f(x)dx &\text{if}& x \in ]0,1/2[\\
+        0 &\text{if}& x \leq 0
+    \end{array}\right. = \left\{
+    \begin{array}{r c l}
+        1 &\text{if}& x \geq 1/2\\
+        \sqrt{2t} &\text{if}& x \in ]0,1/2[\\
+        0 &if& x \leq 0
+    \end{array}\right..$$
+    
+```{r}
+set.seed(42)
+n <- 100
+u <- runif(n, 0, 1)
+x <- u^2/2
+
+# Compare the empirical cdf of x
+plot(ecdf(x), xlim = c(0,1/2))
+curve(sqrt(x*2), col = 'red', add = TRUE)
+```
+                                                                         
+2. Generate a sample from the cumulative density function $F(x)=1- \exp(-\exp((x-\mu)/\sigma))$. Compare the empirical cumulative density function of the generated sample with $F$.
+
+The inverse if the cdf is given by:
+$$F^{-1}(u) = \sigma\ln(-\ln(1-u)) + \mu.$$
+
+```{r}
+set.seed(0)
+n <- 100
+mu <- 5
+sigma <- 0.2
+u <- runif(n, 0, 1)
+x <- sigma * log(-log(1 - u)) + mu
+
+# Compare the empirical cdf of x
+plot(ecdf(x))
+curve(1 - exp(-exp((x - mu)/sigma)), col = 'red', add = TRUE)
+```
+
+## Using R functions
+
+3. Plot the probability density function of a Student distribution with varying parameters. Generate a sample of data with a $t(5)$ distribution, compute the empirical cumulative density function and compare it to the true one.
+
+```{r}
+set.seed(42)
+
+curve(dt(x, 1), from = -10, to = 10, ylim = c(0, 0.5))
+for (df in seq(2, 16, by = 2)) {
+    curve(dt(x, df), from = -10, to = 10, add = TRUE, col = df)
+}
+
+```
+
+```{r}
+set.seed(42)
+
+n <- 100
+sample <- rt(n, 5)
+
+plot(ecdf(sample))
+curve(pt(x, 5), col = 'red', add = TRUE)
+```
+
+## Composition method
+
+Let $X_1 \sim \Gamma(2,2)$ and $X_2 \sim \Gamma(2,4)$ be independent.
+The probability density function of $X_i$ $(i=1,2)$ is denoted by $f_i$.
+
+4. Generate a sample of size $100$ from $Y_1 = (X_1+X_2)/2$.
+
+```{r}
+set.seed(0)
+n <- 100
+x1 <- rgamma(n, 2, 2)
+x2 <- rgamma(n, 2, 4)
+
+y1 <- (x1 + x2)/2
+plot(density(y1), xlab = '', ylab = '', main = '')
+```
+
+5. Let $Y_2$ be a random variable of pdf $\frac{1}{2} f_1 + \frac{1}{2} f_2.$ Generate a sample of size 100 from $Y_2.$
+
+```{r}
+set.seed(0)
+n <- 100
+
+u <- runif(n, 0, 1)
+y <- 1*(u < 0.5) + 2*(u >= 0.5)
+
+y2 <- (y == 1)*rgamma(n, 2, 2) + (y == 2)*rgamma(n, 2, 4)
+
+curve(0.5 * dgamma(x, 2, 2) + 0.5 * dgamma(x, 2, 4), xlim = c(0,5), ylab = "")
+curve(0.5 * dgamma(x, 2, 2), add = TRUE, col = 'red')
+curve(0.5 * dgamma(x, 2, 4), add = TRUE, col = 'green')
+
+rug(y2[y == 1], col = 'red')
+rug(y2[y == 2], col = 'green')
+```
+
+6. Compare the sampling distribution of $Y_1$ and $Y_2.$
+
+```{r}
+qqplot(y1, y2)
+abline(0, 1, col = 'red')
+```
+
+
+7. Generate some data using this model:
+
+$$ Y = \beta_0 + \beta_1 x^2 + \beta_2 \log(x) + \epsilon,$$
+
+where $\epsilon = \mathcal{N}(0, 1)$. Fix $\beta_0 = 4$, $\beta_1 = 0.3$ and $\beta_2 = 2$.
+Generate $X \sim \mathcal{U}(1, 5)$. Plot the data. Fit a linear and try to retrieve the coefficients.
+
+```{r}
+set.seed(42)
+n <- 100
+x <- runif(n, 1, 5)
+eps <- rnorm(n, 0, 1)
+
+y <- 4 + 0.3 * x^2 + 2 * log(x) + eps
+
+plot(x, y)
+```
+
+```{r}
+summary(lm(y ~ I(x^2) + log(x)))
+```
+
+8. Generate some data using this model:
+
+$$ Y \sim \mathcal{B}(p),$$
+
+where
+
+$$p = xz + \epsilon,$$
+
+with $\epsilon = \mathcal{N}(0, 0.05)$. Generate $X \sim \mathcal{U}(0, 1)$ and $Z \sim \mathcal{U}(0, 1)$. Plot the data.
+
+```{r}
+set.seed(42)
+n <- 100
+x <- rbeta(n, 2, 1)
+z <- rbeta(n, 1, 2)
+
+y <- rbinom(100, 1, x * z)
+
+plot(x, y)
+plot(z, y)
+```

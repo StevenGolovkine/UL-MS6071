@@ -29,6 +29,8 @@ Simulation involves using computational methods to model and mimic real-world sc
 
 📋 [Tutorials](/labs/lab-week-8.qmd)
 
+⌨️ [Solution proposal](/labs/solutions/week-8.Rmd)
+
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
