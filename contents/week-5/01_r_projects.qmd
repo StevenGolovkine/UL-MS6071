@@ -54,5 +54,5 @@ I also encourage you to use git versionning for your projects. To learn more abo
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 05](/weeks/week-5.qmd) ⏎
+[Back](/weeks/week-5.qmd) ⏎
 :::

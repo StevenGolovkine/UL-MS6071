@@ -191,5 +191,5 @@ Most of the configuration options are [here](https://plotly.com/r/configuration-
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 06](/weeks/week-6.qmd) ⏎
+[Back](/weeks/week-6.qmd) ⏎
 :::

@@ -1,5 +1,5 @@
 ################################################################################
-# Possible solution for week 9 lab - Debugging and profiling
+# Possible solution for lab - Debugging and profiling
 ################################################################################
 
 # 1. In this function, we want to compute $n!$ for $n \in \mathbb{N}$. For the

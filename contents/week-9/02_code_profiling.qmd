@@ -137,5 +137,5 @@ In the example, both expressions take almost the time and changing one for anoth
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 09](/weeks/week-9.qmd) ⏎
+[Back](/weeks/week-9.qmd) ⏎
 :::

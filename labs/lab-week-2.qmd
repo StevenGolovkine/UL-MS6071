@@ -5,7 +5,7 @@ engine: knitr
 
 <br>
 
-The aim of today's tutorial is to introduce you to the `tidyverse` packages. To accomplish this, we will work with a dataset related to EU Student Mobility, sourced from the [portal for European data](https://data.europa.eu/data/datasets?locale=en&catalog=eac&query=erasmus&page=1&sort=issued%2Bdesc,%20relevance%2Bdesc,%20title.en%2Basc). Detailed information about the dataset can be accessed [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-08/readme.md), and it is available for download [here](/labs/ressources/erasmus.csv).
+The aim of the tutorial is to introduce you to the `tidyverse` packages. To accomplish this, we will work with a dataset related to EU Student Mobility, sourced from the [portal for European data](https://data.europa.eu/data/datasets?locale=en&catalog=eac&query=erasmus&page=1&sort=issued%2Bdesc,%20relevance%2Bdesc,%20title.en%2Basc). Detailed information about the dataset can be accessed [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-08/readme.md), and it is available for download [here](/labs/ressources/erasmus.csv).
 
 While it is possible to address the questions using R base functions, our focus will be on employing the `tidyverse` packages for these tasks.
 
@@ -56,5 +56,5 @@ For all the questions regarding the plots, make sure to set proper axis, titles,
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 02](/weeks/week-2.qmd) ⏎
+[Back](/weeks/week-2.qmd) ⏎
 :::

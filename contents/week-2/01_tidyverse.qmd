@@ -73,7 +73,7 @@ into the R console.
     
 ### Creating a tibble
 
-To create a tibble use the `tibble()` function in place of the `data.frame()` function. In the first week, we saw how to create a data frame using:
+To create a tibble use the `tibble()` function in place of the `data.frame()` function. We saw how to create a data frame using:
 
 ```{r}
 #| class-output: outputcode
@@ -199,5 +199,5 @@ Remember, this works because a tibble/data frame is stored as a list! In contras
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 02](/weeks/week-2.qmd) ⏎
+[Back](/weeks/week-2.qmd) ⏎
 :::

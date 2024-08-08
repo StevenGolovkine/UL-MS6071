@@ -46,5 +46,5 @@ We can use the function `Rcpp.package.skeleton()` from the `Rcpp` package to cre
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 10](/weeks/week-10.qmd) ⏎
+[Back](/weeks/week-10.qmd) ⏎
 :::

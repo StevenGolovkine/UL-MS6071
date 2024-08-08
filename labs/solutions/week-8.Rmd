@@ -1,5 +1,5 @@
 ---
-title: "Possible solution for week 8 lab - Simulation"
+title: "Possible solution for lab - Simulation"
 output:
   html_document: default
   pdf_document: default

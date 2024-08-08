@@ -158,5 +158,5 @@ head(tables[[2]])
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 03](/weeks/week-3.qmd) ⏎
+[Back](/weeks/week-3.qmd) ⏎
 :::

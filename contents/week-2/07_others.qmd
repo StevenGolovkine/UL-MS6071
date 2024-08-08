@@ -233,5 +233,5 @@ Up to now, we have seen all the core `tidyverse` packages, but other packages ar
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 02](/weeks/week-2.qmd) ⏎
+[Back](/weeks/week-2.qmd) ⏎
 :::

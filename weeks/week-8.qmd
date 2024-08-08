@@ -1,6 +1,5 @@
 ---
-title: "Week 8"
-subtitle: "Simulation"
+title: "Simulation"
 editor: visual
 ---
 

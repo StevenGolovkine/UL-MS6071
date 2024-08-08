@@ -1,0 +1,15 @@
+{
+  "hash": "132381c30fe9304b0c585f0b9de985af",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Monitoring and Logging\"\nengine: knitr\n---\n\n\n\n<br>\nMonitoring and logging involves the continuous tracking and recording of key events and metrics to ensure the integrity and performance of data workflows. Through monitoring, data professionals can observe job progress, resource utilization, and potential bottlenecks, enabling proactive problem-solving. Logging captures important information, including errors, warnings, and successful executions, facilitating post-processing analysis and debugging.\n\n## The `logger` package\n\nThe `logger` package is used to observe the behaviour of your code, streamline the debugging process, and improve the formatting of the output and save in an external file when compared to utilizing the print function. Note that, this is not a debugging tool (see [Debugging](../../weeks/week-8.qmd)).\n\n::: {.callout-note appearance=\"simple\"}\n\n## Example\n\nLet's start by loading the package.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(logger)\n```\n:::\n\n\n\nOnce the library is loaded, we have to set the level threshold of the log. For example, the level `TRACE` will print everything, while the level `INFO` will print message with at least the `INFO` log level.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlog_threshold(TRACE)\n```\n:::\n\n\n\nYou can then prints message using the `log_*` functions with the desired level (trace, debug, info, success, warn, error and fatal).\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlog_info('Starting the script...')\nlog_debug('Debugging line')\nlog_error(\"No! 1 + 1 is not equal to 3.\")\n```\n:::\n\n\n\nBy default, the logs are printed in the standard output (usually the console in RStudio). To record the logs into a file \n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nfile <- './source/temp.log'\nlog_appender(appender_file(file))\nlog_info('Written in the temp.log file.')\n\nreadLines(file)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```{.outputcode}\n[1] \"INFO [2023-09-11 14:15:09] Written in the temp.log file.\"\n[2] \"INFO [2024-08-08 11:34:26] Written in the temp.log file.\"\n[3] \"INFO [2024-08-08 11:34:47] Written in the temp.log file.\"\n```\n\n\n:::\n:::\n\n\n\n:::\n\nYou can look at the package documentation for more information.\n\n## Additional resources\n\n* The `logger` [website](https://daroczig.github.io/logger/).\n\n\n<br><br>\n\n::: {style=\"font-size: 0.875em;\"}\n[Back](/weeks/week-3.qmd) ⏎\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

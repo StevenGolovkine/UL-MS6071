@@ -141,5 +141,5 @@ Maintaining readable, clear, and maintainable code is essential in good programm
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 01](/weeks/week-1.qmd) ⏎
+[Back](/weeks/week-1.qmd) ⏎
 :::

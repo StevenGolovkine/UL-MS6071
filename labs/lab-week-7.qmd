@@ -4,7 +4,7 @@ engine: knitr
 ---
 
 <br>
-The aim of today's tutorial is to create and manipulate a large of dataset about US flights between 1987 and 2008 that represents millions on flights. You can find the data [here](https://www.kaggle.com/datasets/wenxingdi/data-expo-2009-airline-on-time-data). Note that the dataset is quite big ($\sim 11.5$ Gb). Tue tutorial is adapted from from Alex Gold [article](https://rviews.rstudio.com/2019/07/17/3-big-data-strategies-for-r/).
+The aim of the tutorial is to create and manipulate a large of dataset about US flights between 1987 and 2008 that represents millions on flights. You can find the data [here](https://www.kaggle.com/datasets/wenxingdi/data-expo-2009-airline-on-time-data). Note that the dataset is quite big ($\sim 11.5$ Gb). Tue tutorial is adapted from from Alex Gold [article](https://rviews.rstudio.com/2019/07/17/3-big-data-strategies-for-r/).
 
 ## Part 1 - Creating the database
 
@@ -89,5 +89,5 @@ rm 20*.csv
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 07](/weeks/week-7.qmd) ⏎
+[Back](/weeks/week-7.qmd) ⏎
 :::

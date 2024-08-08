@@ -53,5 +53,5 @@ Normally R does not print warmings at the time they are issued, it collects them
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 09](/weeks/week-9.qmd) ⏎
+[Back](/weeks/week-9.qmd) ⏎
 :::

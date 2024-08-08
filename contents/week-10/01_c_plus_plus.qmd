@@ -105,5 +105,5 @@ We will not go into more details here. Consider reading `Rcpp` documentation for
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 10](/weeks/week-10.qmd) ⏎
+[Back](/weeks/week-10.qmd) ⏎
 :::

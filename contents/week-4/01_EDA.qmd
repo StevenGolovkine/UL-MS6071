@@ -117,5 +117,5 @@ Please remember that this exploratory data analysis step is not used to generali
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 04](/weeks/week-4.qmd) ⏎
+[Back](/weeks/week-4.qmd) ⏎
 :::

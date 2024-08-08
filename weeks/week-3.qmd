@@ -1,6 +1,5 @@
 ---
-title: "Week 3"
-subtitle: "Extract, Transform and Load"
+title: "Extract, Transform and Load"
 editor: visual
 ---
 

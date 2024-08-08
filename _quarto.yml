@@ -33,7 +33,7 @@ website:
           - href: information/overview.qmd
             text: Overview
           - href: information/syllabus.qmd
-            text: Syllabus
+            text: Information
           - href: information/assessment.qmd
             text: Assessment
           - href: information/support.qmd
@@ -46,30 +46,28 @@ website:
             text: FAQ
           - href: information/update.qmd
             text: Updates
-      - section: "Weekly materials"
+      - section: "Topics"
         contents:
           - href: weeks/week-1.qmd
-            text: "Week 1"
+            text: "1 - R Basics"
           - href: weeks/week-2.qmd
-            text: "Week 2"
+            text: "2 - Tidyverse"
           - href: weeks/week-3.qmd
-            text: "Week 3"
+            text: "3 - Extract, transform and load"
           - href: weeks/week-4.qmd
-            text: "Week 4"
+            text: "4 - Data visualisation"
           - href: weeks/week-5.qmd
-            text: "Week 5"
+            text: "5 - Reproducibility"
           - href: weeks/week-6.qmd
-            text: "Week 6"
+            text: "6 - Interactivity"
           - href: weeks/week-7.qmd
-            text: "Week 7"
+            text: "7 - Memory issues"
           - href: weeks/week-8.qmd
-            text: "Week 8"
+            text: "8 - Simulation"
           - href: weeks/week-9.qmd
-            text: "Week 9"
+            text: "9 - Code debugging"
           - href: weeks/week-10.qmd
-            text: "Week 10"
-          - href: weeks/week-12.qmd
-            text: "Week 11"
+            text: "10 - C++"
 
 bibliography: bibliography.bib
 

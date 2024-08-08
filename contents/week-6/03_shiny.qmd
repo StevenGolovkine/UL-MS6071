@@ -227,5 +227,5 @@ You can also look at [Github Pages](https://pages.github.com) and [Netlify](http
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 06](/weeks/week-6.qmd) ⏎
+[Back](/weeks/week-6.qmd) ⏎
 :::

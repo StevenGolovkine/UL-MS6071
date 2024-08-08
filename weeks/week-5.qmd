@@ -1,6 +1,5 @@
 ---
-title: "Week 5"
-subtitle: "Reproducibility"
+title: "Reproducibility"
 editor: visual
 ---
 

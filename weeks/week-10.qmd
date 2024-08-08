@@ -1,6 +1,5 @@
 ---
-title: "Week 10"
-subtitle: "C++"
+title: "C++"
 ---
 
 C++ is a general-purpose programming language. It supports procedural, object-oriented, and generic programming paradigms. C++ is efficient, flexible and widely used in software development for a range of applications. C++ is known for its high performance and is commonly used in performance-critical applications.

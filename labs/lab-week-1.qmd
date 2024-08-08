@@ -5,7 +5,7 @@ engine: knitr
 
 <br>
 
-The objective of today's tutorial is to familiarize you with fundamental R commands. To achieve this, we will create a basic version of the Hangman game. For this simple version, we will let R to chooses the word to guess.
+The objective of the tutorial is to familiarize you with fundamental R commands. To achieve this, we will create a basic version of the Hangman game. For this simple version, we will let R to chooses the word to guess.
 
 Rules of the game versus the computer:
 
@@ -44,5 +44,5 @@ My simple implementation of the Hangman game.
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 01](/weeks/week-1.qmd) ⏎
+[Back](/weeks/week-1.qmd) ⏎
 :::

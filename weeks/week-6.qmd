@@ -1,6 +1,5 @@
 ---
-title: "Week 6"
-subtitle: "Interactivity"
+title: "Interactivity"
 editor: visual
 ---
 

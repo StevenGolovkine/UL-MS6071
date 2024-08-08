@@ -1,6 +1,5 @@
 ---
-title: "Week 1"
-subtitle: "R Basics"
+title: "R Basics"
 editor: visual
 ---
 

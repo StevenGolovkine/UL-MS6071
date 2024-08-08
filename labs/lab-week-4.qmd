@@ -4,7 +4,7 @@ engine: knitr
 ---
 
 <br>
-Today's tutorial has two primary objectives. First, it aims to provide you with hands-on experience in Exploratory Data Analysis and reporting the findings. Second, you will work with examples of "bad" data visualizations, analyse their shortcomings, and explore ways to enhance them.
+The tutorial has two primary objectives. First, it aims to provide you with hands-on experience in Exploratory Data Analysis and reporting the findings. Second, you will work with examples of "bad" data visualizations, analyse their shortcomings, and explore ways to enhance them.
 
 ## Part 1 - Exploratory Data Analysis
 
@@ -74,5 +74,5 @@ Percentage of seniors in OECD countries.
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 04](/weeks/week-4.qmd) ⏎
+[Back](/weeks/week-4.qmd) ⏎
 :::

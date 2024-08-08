@@ -5,7 +5,7 @@ engine: knitr
 
 <br>
 
-The aim of today's tutorial is to create a `flexdashboard` for a particular dataset. This dashboard will include Shiny components as well as interactive plots, created wiht `plotly`. To accomplish this, we will work with a dataset related to energy, sourced from the [Our World in Data](https://ourworldindata.org/explorers/energy) webiste. The complete dataset is available [here](https://github.com/owid/energy-data) and some information about the dataset can be found [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-06-06/readme.md). We will use a slightly modified version of the dataset available [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-06-06/readme.md). To plot the map of the world, you can use the data provided [here](./ressources/countries.geojson).
+The aim of the tutorial is to create a `flexdashboard` for a particular dataset. This dashboard will include Shiny components as well as interactive plots, created wiht `plotly`. To accomplish this, we will work with a dataset related to energy, sourced from the [Our World in Data](https://ourworldindata.org/explorers/energy) webiste. The complete dataset is available [here](https://github.com/owid/energy-data) and some information about the dataset can be found [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-06-06/readme.md). We will use a slightly modified version of the dataset available [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-06-06/readme.md). To plot the map of the world, you can use the data provided [here](./ressources/countries.geojson).
 
 
 1. Create an empty `flexdashboard`.
@@ -42,5 +42,5 @@ Finally, we will modify the theme of the dahsboard.
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 06](/weeks/week-6.qmd) ⏎
+[Back](/weeks/week-6.qmd) ⏎
 :::

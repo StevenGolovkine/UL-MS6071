@@ -8,7 +8,7 @@ Monitoring and logging involves the continuous tracking and recording of key eve
 
 ## The `logger` package
 
-The `logger` package is used to observe the behaviour of your code, streamline the debugging process, and improve the formatting of the output and save in an external file when compared to utilizing the print function. Note that, this is not a debugging tool (see [Week 8](../../weeks/week-8.qmd)).
+The `logger` package is used to observe the behaviour of your code, streamline the debugging process, and improve the formatting of the output and save in an external file when compared to utilizing the print function. Note that, this is not a debugging tool (see [Debugging](../../weeks/week-8.qmd)).
 
 ::: {.callout-note appearance="simple"}
 
@@ -68,5 +68,5 @@ You can look at the package documentation for more information.
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 03](/weeks/week-3.qmd) ⏎
+[Back](/weeks/week-3.qmd) ⏎
 :::

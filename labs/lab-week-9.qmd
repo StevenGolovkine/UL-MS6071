@@ -4,7 +4,7 @@ engine: knitr
 ---
 
 <br>
-The aim of today's tutorial is to find and fix bugs in R functions and do some profiling of common R functions to see if some optimisation is feasible.
+The aim of the tutorial is to find and fix bugs in R functions and do some profiling of common R functions to see if some optimisation is feasible.
 
 
 For the following code snippets, find and fix the bugs using `browser()` and `debug()`. It may have multiple bugs in each snippets. In a second step, do the profiling of the snippets using `profvis` and `bench`. You can try the functions with different inputs and try to understand if they can be optimised in some way.
@@ -104,5 +104,5 @@ v <- subset_data(df)
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 09](/weeks/week-9.qmd) ⏎
+[Back](/weeks/week-9.qmd) ⏎
 :::

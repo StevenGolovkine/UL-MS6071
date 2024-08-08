@@ -1,5 +1,5 @@
 ################################################################################
-# Possible solution for week 4 lab - Data visualisation
+# Possible solution for lab - Data visualisation
 ################################################################################
 
 library(tidyverse)

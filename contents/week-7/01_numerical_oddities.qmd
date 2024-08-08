@@ -192,5 +192,5 @@ A == B
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 07](/weeks/week-7.qmd) ⏎
+[Back](/weeks/week-7.qmd) ⏎
 :::

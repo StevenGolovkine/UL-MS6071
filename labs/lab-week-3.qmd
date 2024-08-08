@@ -4,7 +4,7 @@ engine: knitr
 ---
 
 <br>
-Today's tutorial has two purposes. Firstly, it aims to acquaint you with an API for data retrieval, enhance your expertise in using the `tidyverse` for data cleaning, investigate diverse output formatting techniques, and finalise the session with a simple scheduling procedure to automate API requests. Secondly, it focuses on familiarising you with web scraping.
+The tutorial has two purposes. Firstly, it aims to acquaint you with an API for data retrieval, enhance your expertise in using the `tidyverse` for data cleaning, investigate diverse output formatting techniques, and finalise the session with a simple scheduling procedure to automate API requests. Secondly, it focuses on familiarising you with web scraping.
 
 ## Part 1 - The Movies Database
 
@@ -45,5 +45,5 @@ Regarding web scraping, our focus will be on extracting data from Wikipedia. Spe
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 03](/weeks/week-3.qmd) ⏎
+[Back](/weeks/week-3.qmd) ⏎
 :::

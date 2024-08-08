@@ -286,5 +286,5 @@ New symbols appear in the top right corner of the dashboard. Clicking on the soc
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 06](/weeks/week-6.qmd) ⏎
+[Back](/weeks/week-6.qmd) ⏎
 :::

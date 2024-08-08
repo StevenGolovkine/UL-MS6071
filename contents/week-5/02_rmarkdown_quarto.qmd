@@ -218,5 +218,5 @@ knitr::opts_chunk$set(echo = TRUE)
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 05](/weeks/week-5.qmd) ⏎
+[Back](/weeks/week-5.qmd) ⏎
 :::

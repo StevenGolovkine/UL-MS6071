@@ -141,5 +141,5 @@ cat(question, longmcq(sample(question_choices)))
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 10](/weeks/week-10.qmd) ⏎
+[Back](/weeks/week-10.qmd) ⏎
 :::

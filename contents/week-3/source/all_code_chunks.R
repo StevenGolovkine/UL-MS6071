@@ -1,5 +1,5 @@
 ################################################################################
-# Script file for Week 03 - Extract, Transform and Load
+# Script file for Extract, Transform and Load
 ################################################################################
 
 library(tidyverse)

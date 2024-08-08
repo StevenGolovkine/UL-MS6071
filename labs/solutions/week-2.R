@@ -1,5 +1,5 @@
 ################################################################################
-# Possible solution for week 2 lab - Tidyverse
+# Possible solution for lab - Tidyverse
 ################################################################################
 
 # Load libraries

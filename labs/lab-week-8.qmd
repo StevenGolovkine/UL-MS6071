@@ -4,7 +4,7 @@ engine: knitr
 ---
 
 <br>
-The aim of today's tutorial is to manipulate different simulation scenarios.
+The aim of the tutorial is to manipulate different simulation scenarios.
 
 
 ## The inverse transform method
@@ -46,5 +46,5 @@ Generate $X \sim \mathcal{U}(0, 1)$ and $Z \sim \mathcal{U}(0, 1)$. Plot the dat
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 08](/weeks/week-8.qmd) ⏎
+[Back](/weeks/week-8.qmd) ⏎
 :::

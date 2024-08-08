@@ -1,6 +1,6 @@
 <!--
 ################################################################################
-# Possible solution for week 6 lab - Interactivity
+# Possible solution for lab - Interactivity
 ################################################################################
 # Uncomment the file to make it work.
 -->

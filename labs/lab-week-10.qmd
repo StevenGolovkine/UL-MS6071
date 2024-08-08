@@ -4,7 +4,7 @@ engine: knitr
 ---
 
 <br>
-The aim of today's tutorial is to write the C++ version of the `lm()` function. We will compare the implementation of `lm()`, our own implementation of a linear model in R and our implementation of a linear model in C++.
+The aim of the tutorial is to write the C++ version of the `lm()` function. We will compare the implementation of `lm()`, our own implementation of a linear model in R and our implementation of a linear model in C++.
 
 ## Maths
 
@@ -88,5 +88,5 @@ It will then be possible to compare this ratio to $\alpha$ in order to see if we
 <br><br>
 
 ::: {style="font-size: 0.875em;"}
-Back to [week 10](/weeks/week-10.qmd) ⏎
+[Back](/weeks/week-10.qmd) ⏎
 :::
