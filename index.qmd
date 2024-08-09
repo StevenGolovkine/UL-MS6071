@@ -5,11 +5,8 @@ tbl-colwidths: [5,5,5,5,5,5]
 
 <br>
 
-This page contains an outline of the topics, content, and assignments for the
-semester.
+This page contains different topics related to R for statistical data science. The content covers a range of subjects that are fundamental to understanding and applying R in the context of data analysis and statistics. While these topics offer a broad overview, they are not exhaustive, and you may encounter other areas that are equally compelling and relevant to your work in data science.
 
-Note that this schedule will be updated as the semester progresses, with all
-changes documented here.
 
 | Topic | Prepare | MCQ | Lab | Lab solutions | Source code |
 |-----------------------------|:--------------------------------------------------------------------------:|:----------------------------------------------------------------------------:|:---------------------------------------------------------------------:|:-------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------:|

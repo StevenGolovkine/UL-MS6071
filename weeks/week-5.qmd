@@ -23,9 +23,6 @@ Reproducibility is the ability to recreate and verify the results and findings o
 
 ⌨️ [Questionnaire](/questionnaire/qcm-week-5.qmd)
 
-## Practice
-
-📋 [Tutorials](/labs/lab-week-5.qmd)
 
 <br><br>
 

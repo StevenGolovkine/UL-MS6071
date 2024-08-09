@@ -39,7 +39,7 @@ website:
           - href: information/support.qmd
             text: Support
           - href: index.qmd
-            text: Schedule
+            text: Topics
           - href: information/links.qmd
             text: Useful links
           - href: information/faq.qmd

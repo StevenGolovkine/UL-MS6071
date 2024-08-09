@@ -2,21 +2,27 @@
 
 ## Description
 
-The assessment will be a take-home project done by a group of two or three students. The idea will be to deepen one of the topics seen in class and write a small report on it (20 pages max.), followed by an oral presentation of 10–15 minutes in front of the class. Each group has to find its own project.
+In order to receive credit for the course, each person must complete a project about a selected problem using R. A project may be undertaken by a group of 1-3 people. The recommended group size is 2. The project report and the oral examination shall demonstrate that the intended learning outcomes of the [course](/information/overview.qmd) are reached. 
 
-Here are some examples of projects:
 
-* analyse a very big dataset, like the flight dataset;
+Each person will be required to:
 
-* create a package implementing some GPU computation;
+* Give a ... minutes (group) presentation of her/his problem.
 
-* explain how to debug R/C/C++ files using an IDE like VSCode;
+* Hand in a project report and R code.
 
-* develop a Shiny app for a particular dataset;
+* Based on the report, give another ... minutes (group) presentation of the results obtained.
 
-* compare the results of the different LLM on the generation of R code.
+On Week 2 (or one of the previous weeks) topics will be selected, and groups will be formed. Ideas for project topics can be seen below. You are free to create you own groups, possibly consisting of one person only. Each group will have time during the lectures to work on the chosen problem. Each group has to present their problem on Week 5 (or 6) and their final results on Week 11. I will give feedback on Week 12. The purpose of these presentations is for the participants and teacher to influence and inspire each other such that maybe a better report can be written.
 
-I expect to have a small discussion with each group during the Week 4 tutorial about their project before they actually start working on it, in order to see if it is doable.
+## Formal requirements
+
+The project report must be written in English, with an English abstract. Each project must fill at most 15 pages (1 person) or 20 pages (2-3 persons), appendix and source code not included. The report's cover page should include title in English, name(s), student's ID. The project report must be compiled using Quarto or Latex. A Quarto template is available [here]() and a Latex template is available [here](). Program files/code should **not** be included as appendices in the report but be sent as separate files.
+
+
+## Schedule
+
+**The report must be sent in ... before 5pm**. A pdf-file of the report and source must be sent by email at **steven.golovkine@ul.ie** with **MS6071** as object.
 
 | Description | Date deadline | Hour deadline | % of the grade |
 |:------:|--------:|--------:|:--------:|
@@ -46,6 +52,35 @@ The presentation will be graded on the following criteria:
 ## Late Submission 
 
 No late submission will be accepted. The grade will be decreased by 25% if the submission is handed the same day but late, and by 50% if the submission in handed the next day.
+
+
+## Examples of project
+
+Below you will find suggestions for topics you may consider in your project. You may also consider other topics. Please consult with me beore the final topic is chosen. In general chose a topic you are familar with. In all cases, you have to provide your analysis in R.
+
+
+Projects can roughly be put in three categories:
+
+* Pick a dataset and analyze it.
+
+* Pick a research paper and reimplement the analysis.
+
+* Perform a simulation study on a topic of interest. 
+
+Here are some examples of projects:
+
+* analyse a very big dataset, like the flight dataset;
+
+* create a package implementing some GPU computation;
+
+* explain how to debug R/C/C++ files using an IDE like VSCode;
+
+* develop a Shiny app for a particular dataset;
+
+* compare the results of the different LLM on the generation of R code.
+
+
+## Miscellaneous
 
 ::: {.callout-important}
 ## Important remarks
