@@ -64,7 +64,7 @@ Below you will find suggestions for topics you may consider in your project. You
 
 Projects can roughly be put in three categories:
 
-* Pick a dataset and analyze it.
+* Pick a dataset and create visualization / Shiny app.
 
 * Pick a research paper and reimplement the analysis.
 
@@ -72,15 +72,26 @@ Projects can roughly be put in three categories:
 
 Here are some examples of projects:
 
-* analyse a very big dataset, like the flight dataset;
+* For a data-based project:
+    - [Weather](https://github.com/taohan10200/WEATHER-5K).
+    - [Marine](https://data.marine.copernicus.eu/products).
+    - [Anatomy](https://physionet.org/about/database/).
+    - [Physics](http://opendata.cern.ch).
+    - ...
 
-* create a package implementing some GPU computation;
+* For a research-based project:
+    - Quantile regression [@soomro2024bayesian].
+    - Time series modelling [@shoari2024vector].
+    - Missing data [@mcneish2017missing].
+    - Functional data [@benkoCommonFunctionalPrincipal2009].
+    - ...
 
-* explain how to debug R/C/C++ files using an IDE like VSCode;
+* For a simulation-based project:
+    - Airline yield-management problems [@lautenbacher1999underlying],[@talluri2004revenue].
+    - Optimal prices of a job shop with a single work station [@johansen1991optimal].
+    - Study of insurance contract [@palfrey1985repeated].
+    - ...
 
-* develop a Shiny app for a particular dataset;
-
-* compare the results of the different LLM on the generation of R code.
 
 ## Last year projects
 
