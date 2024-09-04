@@ -25,7 +25,6 @@ The project report must be written in English, with an English abstract. Each pr
 
 | Description | Date deadline | Hour deadline |
 |:------:|--------:|--------:|
-| Project proposal | 03/10/23 | 5:00pm |
 | Proposal presentation | 15/08/24 | 4:00pm |
 | Manuscript + Code | 22/11/24 | 5:00pm |
 
@@ -34,20 +33,24 @@ The project report must be written in English, with an English abstract. Each pr
 
 The proposal will be graded on the following criteria:
 
-* The feasibility of the project.
-* The problematic.
+* Clear statement of objectives and purpose.
 
-The manuscript will be graded on the following criteria:
+* Quality and relevance of sources used.
 
-* The quality of the writing (clear, concise, ...).
-* The answering of the question.
-* The reproducibility of the code.
+* Demonstrates a clear understanding of the topic.
 
-The presentation will be graded on the following criteria:
+* Critical thinking and analysis of the information presented.
 
-* The quality of the presentation.
-* The respect of the timings.
-* The answering to the questions.
+* Clear and concise writing.
+
+* Adherence to required formatting guidelines.
+
+* Implementation in R.
+
+* Clean R code.
+
+* Reproducibilty of the R code.
+
 
 ## Late Submission 
 
