@@ -7,28 +7,28 @@ In order to receive credit for the course, each person must complete a project a
 
 Each person will be required to:
 
-* Give a ... minutes (group) presentation of her/his problem.
+* Give a 5 minutes (group) presentation of her/his problem.
 
 * Hand in a project report and R code.
 
-* Based on the report, give another ... minutes (group) presentation of the results obtained.
 
-On Week 2 (or one of the previous weeks) topics will be selected, and groups will be formed. Ideas for project topics can be seen below. You are free to create you own groups, possibly consisting of one person only. Each group will have time during the lectures to work on the chosen problem. Each group has to present their problem on Week 5 (or 6) and their final results on Week 11. I will give feedback on Week 12. The purpose of these presentations is for the participants and teacher to influence and inspire each other such that maybe a better report can be written.
+On Week 2 topics will be selected, and groups will be formed. Ideas for project topics can be seen below. You are free to create you own groups, possibly consisting of one person only. Each group will have time during the lectures to work on the chosen problem. Each group has to present their problem on Week 6 and their final results on Week 11. I will give feedback on Week 12. The purpose of these presentations is for the participants and teacher to influence and inspire each other such that maybe a better report can be written.
 
 ## Formal requirements
 
-The project report must be written in English, with an English abstract. Each project must fill at most 15 pages (1 person) or 20 pages (2-3 persons), appendix and source code not included. The report's cover page should include title in English, name(s), student's ID. The project report must be compiled using Quarto or Latex. A Quarto template is available [here]() and a Latex template is available [here](). Program files/code should **not** be included as appendices in the report but be sent as separate files.
+The project report must be written in English, with an English abstract. Each project must fill at most 15 pages (1 person) or 20 pages (2-3 persons), appendix and source code not included. The report's cover page should include title in English, name(s), student's ID. The project report must be compiled using Quarto or Latex. A Quarto template is available [here](/information/templates/template_quarto.zip) and a Latex template is available [here](/information/templates/template_latex.zip). Program files/code should **not** be included as appendices in the report but be sent as separate files.
 
 
 ## Schedule
 
-**The report must be sent in ... before 5pm**. A pdf-file of the report and source must be sent by email at **steven.golovkine@ul.ie** with **MS6071** as object.
+**The report must be sent in Friday, November 22 before 5pm**. A pdf-file of the report and source code must be sent by email at **steven.golovkine@ul.ie** with **MS6071** as object.
 
-| Description | Date deadline | Hour deadline | % of the grade |
-|:------:|--------:|--------:|:--------:|
-| Project proposal | 03/10/23 | 5:00pm | 10 % |
-| Manuscript + Code | 28/11/23 | 5:00pm | 50 % |
-| Presentation | 30/11/23 | 4:00pm | 40 % |
+| Description | Date deadline | Hour deadline |
+|:------:|--------:|--------:|
+| Project proposal | 03/10/23 | 5:00pm |
+| Proposal presentation | 15/08/24 | 4:00pm |
+| Manuscript + Code | 22/11/24 | 5:00pm |
+
 
 ## Grading Criteria
 
@@ -78,6 +78,20 @@ Here are some examples of projects:
 * develop a Shiny app for a particular dataset;
 
 * compare the results of the different LLM on the generation of R code.
+
+## Last year projects
+
+* Review of global agriculture data for famine and obesity using the programming language R
+
+* EPL data analysis: From raw data to predictive insights
+
+* Cricket data analysis with R
+
+* Statistical analysis of housing in Ireland
+
+* Image classification
+
+* Exploring health and well-being: A comprehensive statistical analysis of health indicators using R
 
 
 ## Miscellaneous
