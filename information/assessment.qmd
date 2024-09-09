@@ -2,7 +2,14 @@
 
 ## Description
 
+
 In order to receive credit for the course, each person must complete a project about a selected problem using R. A project may be undertaken by a group of 1-3 people. The recommended group size is 2. The project report and the oral examination shall demonstrate that the intended learning outcomes of the [course](/information/overview.qmd) are reached. 
+
+
+Please fill this Google sheet for the group project:
+
+<center>[LINK](https://docs.google.com/spreadsheets/d/1f-UrPNahYLqjcTAoHOrhbr95mFoPksRxuwZTlJRRYgc/edit?usp=sharing)</center>
+
 
 
 Each person will be required to:
@@ -25,7 +32,7 @@ The project report must be written in English, with an English abstract. Each pr
 
 | Description | Date deadline | Hour deadline |
 |:------:|--------:|--------:|
-| Proposal presentation | 15/08/24 | 4:00pm |
+| Proposal presentation | 15/10/24 | 4:00pm |
 | Manuscript + Code | 22/11/24 | 5:00pm |
 
 
