@@ -84,6 +84,7 @@ Here are some examples of projects:
     - [Marine](https://data.marine.copernicus.eu/products).
     - [Anatomy](https://physionet.org/about/database/).
     - [Physics](http://opendata.cern.ch).
+    - [Public sector](https://data.gov.ie).
     - ...
 
 * For a research-based project:
