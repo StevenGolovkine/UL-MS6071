@@ -14,12 +14,12 @@ Please fill this Google sheet for the group project:
 
 Each person will be required to:
 
-* Give a 5 minutes (group) presentation of her/his problem.
+* Give a 8 minutes (group) presentation + 2 minutes of questions of her/his problem.
 
 * Hand in a project report and R code.
 
 
-On Week 2 topics will be selected, and groups will be formed. Ideas for project topics can be seen below. You are free to create you own groups, possibly consisting of one person only. Each group will have time during the lectures to work on the chosen problem. Each group has to present their problem on Week 7 and their final results on Week 11. I will give feedback on Week 12. The purpose of these presentations is for the participants and teacher to influence and inspire each other such that maybe a better report can be written.
+On Week 2 topics will be selected, and groups will be formed. Ideas for project topics can be seen below. You are free to create you own groups, possibly consisting of one person only. Each group will have time during the lectures to work on the chosen problem. Each group has to present their problem on Week 8 and their final results on Week 11. I will give feedback on Week 12. The purpose of these presentations is for the participants and teacher to influence and inspire each other such that maybe a better report can be written.
 
 ## Formal requirements
 
@@ -32,7 +32,7 @@ The project report must be written in English, with an English abstract. Each pr
 
 | Description | Date deadline | Hour deadline |
 |:------:|--------:|--------:|
-| Proposal presentation | 22/10/24 | 9:00am |
+| Proposal presentation | 29/10/24 | 9:00am |
 | Manuscript + Code | 22/11/24 | 5:00pm |
 
 
